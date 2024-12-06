@@ -1,0 +1,1202 @@
+[0;32mI (158) esp_image: segment 1: paddr=00081058 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403d0428
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=71030h (462896) map[0m
+[0;32mI (158) esp_image: segment 1: paddr=00081058 vaddr=3fc94c00 size=02ee8h ( 12008) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=00083f48 vaddr=40380000 size=0c0d0h ( 49360) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e7654h (947796) map[0m
+[0;32mI (319) esp_image: segment 4: paddr=0017767c vaddr=4038c0d0 size=089dch ( 35292) load[0m
+[0;32mI (326) esp_image: segment 5: paddr=00180060 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (332) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (332) boot: Disabling RNG early entropy source...[0m
+[0;32mI (344) cpu_start: Unicore app[0m
+[0;32mI (352) cpu_start: Pro cpu start user code[0m
+[0;32mI (352) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (353) app_init: Application information:[0m
+[0;32mI (353) app_init: Project name:     wss_server[0m
+[0;32mI (357) app_init: App version:      05b6ba9-dirty[0m
+[0;32mI (361) app_init: Compile time:     Dec  6 2024 17:23:26[0m
+[0;32mI (366) app_init: ELF file SHA256:  1214613d9...[0m
+[0;32mI (370) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (376) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (380) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (384) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (388) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (394) heap_init: At 3FC9D8A0 len 00022760 (137 KiB): RAM[0m
+[0;32mI (400) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (406) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (412) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (418) spi_flash: detected chip: generic[0m
+[0;32mI (421) spi_flash: flash io: dio[0m
+[0;32mI (424) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (430) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (437) main_task: Started on CPU0[0m
+[0;32mI (437) main_task: Calling app_main()[0m
+[0;32mI (447) button: IoT Button Version: 3.4.0[0m
+[0;32mI (447) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (447) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (457) pp: pp rom version: 9387209[0m
+[0;32mI (457) net80211: net80211 rom version: 9387209[0m
+[0;32mI (477) wifi_init: rx ba win: 6[0m
+[0;32mI (477) wifi_init: accept mbox: 6[0m
+[0;32mI (477) wifi_init: tcpip mbox: 32[0m
+[0;32mI (477) wifi_init: udp mbox: 6[0m
+[0;32mI (477) wifi_init: tcp mbox: 6[0m
+[0;32mI (477) wifi_init: tcp tx win: 5760[0m
+[0;32mI (487) wifi_init: tcp rx win: 5760[0m
+[0;32mI (487) wifi_init: tcp mss: 1440[0m
+[0;32mI (487) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (497) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (777) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (807) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (817) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (817) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (817) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (817) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+app_nvs_load_sta_creds: SSID: LUMI_TEST Password: lumivn274!
+[0;32mI (837) wifi_app: Loaded station configuration[0m
+[0;32mI (837) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (837) esp_https_server: Starting server[0m
+[0;32mI (847) esp_https_server: Server listening on port 443[0m
+[0;32mI (847) https_server: Registering URI handlers[0m
+[0;32mI (1147) serial: Recv 36 bytes[0m
+[0;32mI (1177) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 202
+[0;32mI (1197) main_task: Returned from app_main()[0m
+[0;32mI (1227) serial: Recv 13 bytes[0m
+[0;32mI (4007) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 205
+[0;32mI (4137) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (5617) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (5617) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (5617) wifi_app: Local IP: 172.16.100.108[0m
+[0;32mI (5617) wifi_app: Broadcast IP: 172.16.100.255[0m
+[0;32mI (5617) udp_task: Device MAC: F4F1FC[0m
+[0;32mI (5627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5627) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (10627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (15627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (20627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (25627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (30627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (35627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (40627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (43757) serial: Recv 8 bytes[0m
+[0;32mI (44727) serial: Recv 68 bytes[0m
+[0;32mI (44757) serial: Recv 8 bytes[0m
+[0;32mI (45627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (45667) RFID MANAGER: Heap Free: 152140 bytes[0m
+[0;32mI (45737) serial: Recv 68 bytes[0m
+[0;32mI (45757) serial: Recv 8 bytes[0m
+[0;33mW (46677) RFID MANAGER: Heap Free: 152140 bytes[0m
+[0;32mI (46747) serial: Recv 68 bytes[0m
+[0;32mI (46777) serial: Recv 8 bytes[0m
+[0;33mW (47687) RFID MANAGER: Heap Free: 152136 bytes[0m
+[0;32mI (47757) serial: Recv 68 bytes[0m
+[0;32mI (47787) serial: Recv 8 bytes[0m
+[0;33mW (48697) RFID MANAGER: Heap Free: 151788 bytes[0m
+[0;32mI (48767) serial: Recv 68 bytes[0m
+[0;32mI (48797) serial: Recv 8 bytes[0m
+[0;33mW (49707) RFID MANAGER: Heap Free: 152136 bytes[0m
+[0;32mI (49777) serial: Recv 68 bytes[0m
+[0;32mI (49807) serial: Recv 8 bytes[0m
+[0;32mI (50627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (50717) RFID MANAGER: Heap Free: 152128 bytes[0m
+[0;32mI (50787) serial: Recv 68 bytes[0m
+[0;32mI (50817) serial: Recv 8 bytes[0m
+[0;33mW (51727) RFID MANAGER: Heap Free: 152136 bytes[0m
+[0;32mI (51797) serial: Recv 68 bytes[0m
+[0;32mI (51827) serial: Recv 8 bytes[0m
+[0;33mW (52737) RFID MANAGER: Heap Free: 152128 bytes[0m
+[0;32mI (52807) serial: Recv 68 bytes[0m
+[0;32mI (52837) serial: Recv 8 bytes[0m
+[0;33mW (53747) RFID MANAGER: Heap Free: 152136 bytes[0m
+[0;32mI (53817) serial: Recv 68 bytes[0m
+[0;32mI (53847) serial: Recv 8 bytes[0m
+[0;33mW (54757) RFID MANAGER: Heap Free: 152128 bytes[0m
+[0;32mI (54827) serial: Recv 68 bytes[0m
+[0;32mI (54857) serial: Recv 8 bytes[0m
+[0;32mI (55627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (55767) RFID MANAGER: Heap Free: 152136 bytes[0m
+[0;32mI (55837) serial: Recv 68 bytes[0m
+[0;32mI (55857) serial: Recv 8 bytes[0m
+[0;33mW (56777) RFID MANAGER: Heap Free: 152128 bytes[0m
+[0;32mI (56847) serial: Recv 68 bytes[0m
+[0;32mI (56867) serial: Recv 8 bytes[0m
+[0;33mW (57787) RFID MANAGER: Heap Free: 152136 bytes[0m
+[0;32mI (57857) serial: Recv 68 bytes[0m
+[0;32mI (57887) serial: Recv 8 bytes[0m
+[0;33mW (58797) RFID MANAGER: Heap Free: 152128 bytes[0m
+[0;32mI (58867) serial: Recv 68 bytes[0m
+[0;32mI (58897) serial: Recv 8 bytes[0m
+[0;33mW (59807) RFID MANAGER: Heap Free: 152136 bytes[0m
+[0;32mI (59877) serial: Recv 68 bytes[0m
+[0;32mI (59907) serial: Recv 8 bytes[0m
+[0;32mI (60627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (60817) RFID MANAGER: Heap Free: 152132 bytes[0m
+[0;32mI (60887) serial: Recv 68 bytes[0m
+[0;32mI (60907) serial: Recv 8 bytes[0m
+[0;33mW (61827) RFID MANAGER: Heap Free: 152136 bytes[0m
+[0;32mI (61897) serial: Recv 68 bytes[0m
+[0;32mI (61927) serial: Recv 8 bytes[0m
+[0;33mW (62837) RFID MANAGER: Heap Free: 152128 bytes[0m
+[0;32mI (62907) serial: Recv 68 bytes[0m
+[0;32mI (62937) serial: Recv 8 bytes[0m
+[0;33mW (63847) RFID MANAGER: Heap Free: 152136 bytes[0m
+[0;32mI (63927) serial: Recv 102 bytes[0m
+[0;32mI (63957) serial: Recv 8 bytes[0m
+[0;33mW (64857) RFID MANAGER: Heap Free: 151824 bytes[0m
+[0;32mI (64927) serial: Recv 68 bytes[0m
+[0;32mI (64957) serial: Recv 8 bytes[0m
+[0;32mI (65627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (65867) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (65937) serial: Recv 68 bytes[0m
+[0;32mI (65967) serial: Recv 8 bytes[0m
+[0;33mW (66877) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (66957) serial: Recv 102 bytes[0m
+[0;32mI (66977) serial: Recv 8 bytes[0m
+[0;33mW (67887) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (67967) serial: Recv 102 bytes[0m
+[0;32mI (67997) serial: Recv 8 bytes[0m
+[0;33mW (68897) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (68967) serial: Recv 68 bytes[0m
+[0;32mI (68987) serial: Recv 8 bytes[0m
+[0;33mW (69907) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (69977) serial: Recv 68 bytes[0m
+[0;32mI (70007) serial: Recv 8 bytes[0m
+[0;32mI (70627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (70917) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (70997) serial: Recv 102 bytes[0m
+[0;32mI (71017) serial: Recv 8 bytes[0m
+[0;33mW (71927) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (71997) serial: Recv 68 bytes[0m
+[0;32mI (72027) serial: Recv 8 bytes[0m
+[0;33mW (72937) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (73007) serial: Recv 68 bytes[0m
+[0;32mI (73037) serial: Recv 8 bytes[0m
+[0;33mW (73947) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (74027) serial: Recv 102 bytes[0m
+[0;32mI (74057) serial: Recv 8 bytes[0m
+[0;33mW (74957) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (75037) serial: Recv 102 bytes[0m
+[0;32mI (75067) serial: Recv 8 bytes[0m
+[0;32mI (75627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (75967) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (76057) serial: Recv 102 bytes[0m
+[0;32mI (76077) serial: Recv 8 bytes[0m
+[0;33mW (76977) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (77047) serial: Recv 68 bytes[0m
+[0;32mI (77077) serial: Recv 8 bytes[0m
+[0;33mW (77987) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (78057) serial: Recv 68 bytes[0m
+[0;32mI (78087) serial: Recv 8 bytes[0m
+[0;33mW (78997) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (79077) serial: Recv 102 bytes[0m
+[0;32mI (79097) serial: Recv 8 bytes[0m
+[0;33mW (80007) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (80087) serial: Recv 102 bytes[0m
+[0;32mI (80117) serial: Recv 8 bytes[0m
+[0;32mI (80627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (81017) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (81097) serial: Recv 102 bytes[0m
+[0;32mI (81127) serial: Recv 8 bytes[0m
+[0;33mW (82027) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (82107) serial: Recv 102 bytes[0m
+[0;32mI (82137) serial: Recv 8 bytes[0m
+[0;33mW (83037) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (83117) serial: Recv 102 bytes[0m
+[0;32mI (83147) serial: Recv 8 bytes[0m
+[0;33mW (84047) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (84117) serial: Recv 68 bytes[0m
+[0;32mI (84137) serial: Recv 8 bytes[0m
+[0;33mW (85057) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (85127) serial: Recv 68 bytes[0m
+[0;32mI (85157) serial: Recv 8 bytes[0m
+[0;32mI (85627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (86067) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (86137) serial: Recv 68 bytes[0m
+[0;32mI (86167) serial: Recv 8 bytes[0m
+[0;33mW (87077) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (87147) serial: Recv 68 bytes[0m
+[0;32mI (87177) serial: Recv 8 bytes[0m
+[0;33mW (88087) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (88157) serial: Recv 56 bytes[0m
+[0;32mI (88177) serial: Recv 8 bytes[0m
+[0;33mW (89097) RFID MANAGER: Heap Free: 151708 bytes[0m
+[0;32mI (89167) serial: Recv 68 bytes[0m
+[0;32mI (89197) serial: Recv 8 bytes[0m
+[0;33mW (90107) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (90177) serial: Recv 68 bytes[0m
+[0;32mI (90207) serial: Recv 8 bytes[0m
+[0;32mI (90627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (91117) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (91187) serial: Recv 68 bytes[0m
+[0;32mI (91217) serial: Recv 8 bytes[0m
+[0;33mW (92127) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (92197) serial: Recv 68 bytes[0m
+[0;32mI (92217) serial: Recv 8 bytes[0m
+[0;33mW (93137) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (93207) serial: Recv 68 bytes[0m
+[0;32mI (93227) serial: Recv 8 bytes[0m
+[0;33mW (94147) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (94237) serial: Recv 102 bytes[0m
+[0;32mI (94257) serial: Recv 8 bytes[0m
+[0;33mW (95157) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (95227) serial: Recv 68 bytes[0m
+[0;32mI (95257) serial: Recv 8 bytes[0m
+[0;32mI (95627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (96167) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (96237) serial: Recv 68 bytes[0m
+[0;32mI (96257) serial: Recv 8 bytes[0m
+[0;33mW (97177) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (97247) serial: Recv 68 bytes[0m
+[0;32mI (97277) serial: Recv 8 bytes[0m
+[0;33mW (98187) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (98257) serial: Recv 68 bytes[0m
+[0;32mI (98287) serial: Recv 8 bytes[0m
+[0;33mW (99197) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (99267) serial: Recv 68 bytes[0m
+[0;32mI (99297) serial: Recv 8 bytes[0m
+[0;33mW (100207) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (100277) serial: Recv 68 bytes[0m
+[0;32mI (100307) serial: Recv 8 bytes[0m
+[0;32mI (100627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (101217) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (101287) serial: Recv 68 bytes[0m
+[0;32mI (101317) serial: Recv 8 bytes[0m
+[0;33mW (102227) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (102297) serial: Recv 68 bytes[0m
+[0;32mI (102317) serial: Recv 8 bytes[0m
+[0;33mW (103237) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (103307) serial: Recv 68 bytes[0m
+[0;32mI (103337) serial: Recv 8 bytes[0m
+[0;33mW (104247) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (104317) serial: Recv 68 bytes[0m
+[0;32mI (104347) serial: Recv 8 bytes[0m
+[0;33mW (105257) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (105327) serial: Recv 68 bytes[0m
+[0;32mI (105347) serial: Recv 8 bytes[0m
+[0;32mI (105627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (106267) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (106337) serial: Recv 68 bytes[0m
+[0;32mI (106367) serial: Recv 8 bytes[0m
+[0;33mW (107277) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (107347) serial: Recv 68 bytes[0m
+[0;32mI (107377) serial: Recv 8 bytes[0m
+[0;33mW (108287) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (108357) serial: Recv 68 bytes[0m
+[0;32mI (108387) serial: Recv 8 bytes[0m
+[0;33mW (109297) RFID MANAGER: Heap Free: 150692 bytes[0m
+[0;32mI (109367) serial: Recv 68 bytes[0m
+[0;32mI (109397) serial: Recv 8 bytes[0m
+[0;33mW (110307) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (110377) serial: Recv 68 bytes[0m
+[0;32mI (110407) serial: Recv 8 bytes[0m
+[0;32mI (110627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (111317) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (111387) serial: Recv 68 bytes[0m
+[0;32mI (111417) serial: Recv 8 bytes[0m
+[0;33mW (112327) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (112397) serial: Recv 68 bytes[0m
+[0;32mI (112427) serial: Recv 8 bytes[0m
+[0;33mW (113337) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (113407) serial: Recv 68 bytes[0m
+[0;32mI (113427) serial: Recv 8 bytes[0m
+[0;33mW (114347) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (114417) serial: Recv 68 bytes[0m
+[0;32mI (114447) serial: Recv 8 bytes[0m
+[0;33mW (115357) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (115427) serial: Recv 68 bytes[0m
+[0;32mI (115447) serial: Recv 8 bytes[0m
+[0;32mI (115627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (116367) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (116437) serial: Recv 68 bytes[0m
+[0;32mI (116467) serial: Recv 8 bytes[0m
+[0;33mW (117377) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (117457) serial: Recv 102 bytes[0m
+[0;32mI (117487) serial: Recv 8 bytes[0m
+[0;33mW (118387) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (118467) serial: Recv 102 bytes[0m
+[0;32mI (118497) serial: Recv 8 bytes[0m
+[0;33mW (119397) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (119467) serial: Recv 68 bytes[0m
+[0;32mI (119487) serial: Recv 8 bytes[0m
+[0;33mW (120407) RFID MANAGER: Heap Free: 152048 bytes[0m
+[0;32mI (120477) serial: Recv 68 bytes[0m
+[0;32mI (120507) serial: Recv 8 bytes[0m
+[0;32mI (120627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (121417) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (121507) serial: Recv 102 bytes[0m
+[0;32mI (121527) serial: Recv 8 bytes[0m
+[0;33mW (122427) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (122497) serial: Recv 68 bytes[0m
+[0;32mI (122527) serial: Recv 8 bytes[0m
+[0;33mW (123437) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (123507) serial: Recv 68 bytes[0m
+[0;32mI (123537) serial: Recv 8 bytes[0m
+[0;33mW (124447) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (124527) serial: Recv 102 bytes[0m
+[0;32mI (124557) serial: Recv 8 bytes[0m
+[0;33mW (125457) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (125537) serial: Recv 102 bytes[0m
+[0;32mI (125567) serial: Recv 8 bytes[0m
+[0;32mI (125627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (126467) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (126547) serial: Recv 102 bytes[0m
+[0;32mI (126567) serial: Recv 8 bytes[0m
+[0;33mW (127477) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (127547) serial: Recv 68 bytes[0m
+[0;32mI (127577) serial: Recv 8 bytes[0m
+[0;33mW (128487) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (128557) serial: Recv 68 bytes[0m
+[0;32mI (128577) serial: Recv 8 bytes[0m
+[0;33mW (129497) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (129577) serial: Recv 102 bytes[0m
+[0;32mI (129597) serial: Recv 8 bytes[0m
+[0;33mW (130507) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (130597) serial: Recv 102 bytes[0m
+[0;32mI (130617) serial: Recv 8 bytes[0m
+[0;32mI (130627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (131517) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (131587) serial: Recv 68 bytes[0m
+[0;32mI (131607) serial: Recv 8 bytes[0m
+[0;33mW (132527) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (132597) serial: Recv 68 bytes[0m
+[0;32mI (132627) serial: Recv 8 bytes[0m
+[0;33mW (133537) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (133617) serial: Recv 102 bytes[0m
+[0;32mI (133637) serial: Recv 8 bytes[0m
+[0;33mW (134547) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (134617) serial: Recv 68 bytes[0m
+[0;32mI (134647) serial: Recv 8 bytes[0m
+[0;33mW (135557) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (135627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (135627) serial: Recv 68 bytes[0m
+[0;32mI (135657) serial: Recv 8 bytes[0m
+[0;33mW (136567) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (136637) serial: Recv 68 bytes[0m
+[0;32mI (136667) serial: Recv 8 bytes[0m
+[0;33mW (137577) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (137647) serial: Recv 68 bytes[0m
+[0;32mI (137667) serial: Recv 8 bytes[0m
+[0;33mW (138587) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (138657) serial: Recv 68 bytes[0m
+[0;32mI (138677) serial: Recv 8 bytes[0m
+[0;33mW (139597) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (139667) serial: Recv 68 bytes[0m
+[0;32mI (139687) serial: Recv 8 bytes[0m
+[0;33mW (140607) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (140627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (140677) serial: Recv 68 bytes[0m
+[0;32mI (140697) serial: Recv 8 bytes[0m
+[0;33mW (141617) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (141687) serial: Recv 68 bytes[0m
+[0;32mI (141717) serial: Recv 8 bytes[0m
+[0;33mW (142627) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (142697) serial: Recv 68 bytes[0m
+[0;32mI (142727) serial: Recv 8 bytes[0m
+[0;33mW (143637) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (143707) serial: Recv 68 bytes[0m
+[0;32mI (143737) serial: Recv 8 bytes[0m
+[0;33mW (144647) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (144717) serial: Recv 68 bytes[0m
+[0;32mI (144747) serial: Recv 8 bytes[0m
+[0;32mI (145627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (145657) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (145727) serial: Recv 68 bytes[0m
+[0;32mI (145747) serial: Recv 8 bytes[0m
+[0;33mW (146667) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (146737) serial: Recv 68 bytes[0m
+[0;32mI (146757) serial: Recv 8 bytes[0m
+[0;33mW (147677) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (147747) serial: Recv 68 bytes[0m
+[0;32mI (147777) serial: Recv 8 bytes[0m
+[0;33mW (148687) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (148757) serial: Recv 68 bytes[0m
+[0;32mI (148777) serial: Recv 8 bytes[0m
+[0;33mW (149697) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (149767) serial: Recv 68 bytes[0m
+[0;32mI (149797) serial: Recv 8 bytes[0m
+[0;32mI (150627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (150707) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (150777) serial: Recv 68 bytes[0m
+[0;32mI (150797) serial: Recv 8 bytes[0m
+[0;33mW (151717) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (151787) serial: Recv 68 bytes[0m
+[0;32mI (151817) serial: Recv 8 bytes[0m
+[0;33mW (152727) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (152797) serial: Recv 68 bytes[0m
+[0;32mI (152827) serial: Recv 8 bytes[0m
+[0;33mW (153737) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (153807) serial: Recv 68 bytes[0m
+[0;32mI (153827) serial: Recv 8 bytes[0m
+[0;33mW (154747) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (154837) serial: Recv 102 bytes[0m
+[0;32mI (154857) serial: Recv 8 bytes[0m
+[0;32mI (155627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (155757) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (155827) serial: Recv 68 bytes[0m
+[0;32mI (155857) serial: Recv 8 bytes[0m
+[0;33mW (156767) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (156837) serial: Recv 68 bytes[0m
+[0;32mI (156867) serial: Recv 8 bytes[0m
+[0;33mW (157777) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (157847) serial: Recv 68 bytes[0m
+[0;32mI (157877) serial: Recv 8 bytes[0m
+[0;33mW (158787) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (158857) serial: Recv 68 bytes[0m
+[0;32mI (158887) serial: Recv 8 bytes[0m
+[0;33mW (159797) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (159867) serial: Recv 68 bytes[0m
+[0;32mI (159887) serial: Recv 8 bytes[0m
+[0;32mI (160627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (160807) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (160877) serial: Recv 68 bytes[0m
+[0;32mI (160907) serial: Recv 8 bytes[0m
+[0;33mW (161817) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (161887) serial: Recv 68 bytes[0m
+[0;32mI (161917) serial: Recv 8 bytes[0m
+[0;33mW (162827) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (162897) serial: Recv 68 bytes[0m
+[0;32mI (162927) serial: Recv 8 bytes[0m
+[0;33mW (163837) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (163907) serial: Recv 68 bytes[0m
+[0;32mI (163927) serial: Recv 8 bytes[0m
+[0;33mW (164847) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (164917) serial: Recv 68 bytes[0m
+[0;32mI (164947) serial: Recv 8 bytes[0m
+[0;32mI (165627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (165857) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (165927) serial: Recv 68 bytes[0m
+[0;32mI (165947) serial: Recv 8 bytes[0m
+[0;33mW (166867) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (166937) serial: Recv 68 bytes[0m
+[0;32mI (166957) serial: Recv 8 bytes[0m
+[0;33mW (167877) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (167957) serial: Recv 90 bytes[0m
+[0;32mI (167987) serial: Recv 8 bytes[0m
+[0;33mW (168887) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (168967) serial: Recv 102 bytes[0m
+[0;32mI (168997) serial: Recv 8 bytes[0m
+[0;33mW (169897) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (169967) serial: Recv 68 bytes[0m
+[0;32mI (169997) serial: Recv 8 bytes[0m
+[0;32mI (170627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (170907) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (170977) serial: Recv 68 bytes[0m
+[0;32mI (171007) serial: Recv 8 bytes[0m
+[0;33mW (171917) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (171997) serial: Recv 102 bytes[0m
+[0;32mI (172027) serial: Recv 8 bytes[0m
+[0;33mW (172927) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (172997) serial: Recv 68 bytes[0m
+[0;32mI (173027) serial: Recv 8 bytes[0m
+[0;33mW (173937) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (174007) serial: Recv 68 bytes[0m
+[0;32mI (174037) serial: Recv 8 bytes[0m
+[0;33mW (174947) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (175027) serial: Recv 102 bytes[0m
+[0;32mI (175047) serial: Recv 8 bytes[0m
+[0;32mI (175627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (175957) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (176037) serial: Recv 102 bytes[0m
+[0;32mI (176067) serial: Recv 8 bytes[0m
+[0;33mW (176967) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (177047) serial: Recv 102 bytes[0m
+[0;32mI (177077) serial: Recv 8 bytes[0m
+[0;33mW (177977) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (178047) serial: Recv 68 bytes[0m
+[0;32mI (178067) serial: Recv 8 bytes[0m
+[0;33mW (178987) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (179057) serial: Recv 68 bytes[0m
+[0;32mI (179077) serial: Recv 8 bytes[0m
+[0;33mW (179997) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (180077) serial: Recv 102 bytes[0m
+[0;32mI (180107) serial: Recv 8 bytes[0m
+[0;32mI (180627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (181007) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (181087) serial: Recv 102 bytes[0m
+[0;32mI (181117) serial: Recv 8 bytes[0m
+[0;33mW (182017) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (182097) serial: Recv 90 bytes[0m
+[0;32mI (182127) serial: Recv 8 bytes[0m
+[0;33mW (183027) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (183097) serial: Recv 68 bytes[0m
+[0;32mI (183127) serial: Recv 8 bytes[0m
+[0;33mW (184037) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (184117) serial: Recv 102 bytes[0m
+[0;32mI (184147) serial: Recv 8 bytes[0m
+[0;33mW (185047) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (185117) serial: Recv 68 bytes[0m
+[0;32mI (185147) serial: Recv 8 bytes[0m
+[0;32mI (185627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (186057) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (186127) serial: Recv 68 bytes[0m
+[0;32mI (186147) serial: Recv 8 bytes[0m
+[0;33mW (187067) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (187137) serial: Recv 68 bytes[0m
+[0;32mI (187157) serial: Recv 8 bytes[0m
+[0;33mW (188077) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (188147) serial: Recv 68 bytes[0m
+[0;32mI (188167) serial: Recv 8 bytes[0m
+[0;33mW (189087) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (189157) serial: Recv 68 bytes[0m
+[0;32mI (189177) serial: Recv 8 bytes[0m
+[0;33mW (190097) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (190167) serial: Recv 68 bytes[0m
+[0;32mI (190187) serial: Recv 8 bytes[0m
+[0;32mI (190627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (191107) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (191177) serial: Recv 68 bytes[0m
+[0;32mI (191207) serial: Recv 8 bytes[0m
+[0;33mW (192117) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (192187) serial: Recv 68 bytes[0m
+[0;32mI (192217) serial: Recv 8 bytes[0m
+[0;33mW (193127) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (193197) serial: Recv 68 bytes[0m
+[0;32mI (193227) serial: Recv 8 bytes[0m
+[0;33mW (194137) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (194207) serial: Recv 68 bytes[0m
+[0;32mI (194237) serial: Recv 8 bytes[0m
+[0;33mW (195147) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (195217) serial: Recv 68 bytes[0m
+[0;32mI (195247) serial: Recv 8 bytes[0m
+[0;32mI (195627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (196157) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (196227) serial: Recv 68 bytes[0m
+[0;32mI (196257) serial: Recv 8 bytes[0m
+[0;33mW (197167) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (197237) serial: Recv 68 bytes[0m
+[0;32mI (197267) serial: Recv 8 bytes[0m
+[0;33mW (198177) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (198247) serial: Recv 68 bytes[0m
+[0;32mI (198277) serial: Recv 8 bytes[0m
+[0;33mW (199187) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (199257) serial: Recv 68 bytes[0m
+[0;32mI (199287) serial: Recv 8 bytes[0m
+[0;33mW (200197) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (200267) serial: Recv 68 bytes[0m
+[0;32mI (200297) serial: Recv 8 bytes[0m
+[0;32mI (200627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (201207) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (201277) serial: Recv 68 bytes[0m
+[0;32mI (201307) serial: Recv 8 bytes[0m
+[0;33mW (202217) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (202287) serial: Recv 68 bytes[0m
+[0;32mI (202307) serial: Recv 8 bytes[0m
+[0;33mW (203227) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (203297) serial: Recv 68 bytes[0m
+[0;32mI (203317) serial: Recv 8 bytes[0m
+[0;33mW (204237) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (204307) serial: Recv 68 bytes[0m
+[0;32mI (204327) serial: Recv 8 bytes[0m
+[0;33mW (205247) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (205317) serial: Recv 68 bytes[0m
+[0;32mI (205337) serial: Recv 8 bytes[0m
+[0;32mI (205627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (206257) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (206327) serial: Recv 68 bytes[0m
+[0;32mI (206347) serial: Recv 8 bytes[0m
+[0;33mW (207267) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (207337) serial: Recv 68 bytes[0m
+[0;32mI (207367) serial: Recv 8 bytes[0m
+[0;33mW (208277) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (208347) serial: Recv 68 bytes[0m
+[0;32mI (208367) serial: Recv 8 bytes[0m
+[0;33mW (209287) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (209357) serial: Recv 68 bytes[0m
+[0;32mI (209387) serial: Recv 8 bytes[0m
+[0;33mW (210297) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (210367) serial: Recv 68 bytes[0m
+[0;32mI (210397) serial: Recv 8 bytes[0m
+[0;32mI (210627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (211307) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (211377) serial: Recv 68 bytes[0m
+[0;32mI (211397) serial: Recv 8 bytes[0m
+[0;33mW (212317) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (212387) serial: Recv 68 bytes[0m
+[0;32mI (212417) serial: Recv 8 bytes[0m
+[0;33mW (213327) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (213397) serial: Recv 68 bytes[0m
+[0;32mI (213427) serial: Recv 8 bytes[0m
+[0;33mW (214337) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (214407) serial: Recv 68 bytes[0m
+[0;32mI (214427) serial: Recv 8 bytes[0m
+[0;33mW (215347) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (215427) serial: Recv 102 bytes[0m
+[0;32mI (215457) serial: Recv 8 bytes[0m
+[0;32mI (215627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (216357) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (216427) serial: Recv 68 bytes[0m
+[0;32mI (216447) serial: Recv 8 bytes[0m
+[0;33mW (217367) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (217437) serial: Recv 68 bytes[0m
+[0;32mI (217467) serial: Recv 8 bytes[0m
+[0;33mW (218377) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (218457) serial: Recv 102 bytes[0m
+[0;32mI (218487) serial: Recv 8 bytes[0m
+[0;33mW (219387) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (219467) serial: Recv 102 bytes[0m
+[0;32mI (219497) serial: Recv 8 bytes[0m
+[0;33mW (220397) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (220467) serial: Recv 68 bytes[0m
+[0;32mI (220497) serial: Recv 8 bytes[0m
+[0;32mI (220627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (221407) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (221477) serial: Recv 68 bytes[0m
+[0;32mI (221507) serial: Recv 8 bytes[0m
+[0;33mW (222417) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (222497) serial: Recv 102 bytes[0m
+[0;32mI (222527) serial: Recv 8 bytes[0m
+[0;33mW (223427) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (223497) serial: Recv 68 bytes[0m
+[0;32mI (223527) serial: Recv 8 bytes[0m
+[0;33mW (224437) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (224507) serial: Recv 68 bytes[0m
+[0;32mI (224537) serial: Recv 8 bytes[0m
+[0;33mW (225447) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (225527) serial: Recv 102 bytes[0m
+[0;32mI (225557) serial: Recv 8 bytes[0m
+[0;32mI (225627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (226457) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (226537) serial: Recv 90 bytes[0m
+[0;32mI (226557) serial: Recv 8 bytes[0m
+[0;33mW (227467) RFID MANAGER: Heap Free: 151828 bytes[0m
+[0;32mI (227547) serial: Recv 102 bytes[0m
+[0;32mI (227577) serial: Recv 8 bytes[0m
+[0;33mW (228477) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (228547) serial: Recv 68 bytes[0m
+[0;32mI (228577) serial: Recv 8 bytes[0m
+[0;33mW (229487) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (229557) serial: Recv 68 bytes[0m
+[0;32mI (229587) serial: Recv 8 bytes[0m
+[0;33mW (230497) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (230577) serial: Recv 102 bytes[0m
+[0;32mI (230597) serial: Recv 8 bytes[0m
+[0;32mI (230627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (231507) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (231587) serial: Recv 102 bytes[0m
+[0;32mI (231617) serial: Recv 8 bytes[0m
+[0;33mW (232517) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (232587) serial: Recv 68 bytes[0m
+[0;32mI (232617) serial: Recv 8 bytes[0m
+[0;33mW (233527) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (233597) serial: Recv 68 bytes[0m
+[0;32mI (233627) serial: Recv 8 bytes[0m
+[0;33mW (234537) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (234617) serial: Recv 102 bytes[0m
+[0;32mI (234647) serial: Recv 8 bytes[0m
+[0;33mW (235547) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (235617) serial: Recv 68 bytes[0m
+[0;32mI (235627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (235647) serial: Recv 8 bytes[0m
+[0;33mW (236557) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (236627) serial: Recv 68 bytes[0m
+[0;32mI (236657) serial: Recv 8 bytes[0m
+[0;33mW (237567) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (237637) serial: Recv 68 bytes[0m
+[0;32mI (237667) serial: Recv 8 bytes[0m
+[0;33mW (238577) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (238647) serial: Recv 68 bytes[0m
+[0;32mI (238677) serial: Recv 8 bytes[0m
+[0;33mW (239587) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (239657) serial: Recv 68 bytes[0m
+[0;32mI (239687) serial: Recv 8 bytes[0m
+[0;33mW (240597) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (240627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (240667) serial: Recv 68 bytes[0m
+[0;32mI (240697) serial: Recv 8 bytes[0m
+[0;33mW (241607) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (241677) serial: Recv 68 bytes[0m
+[0;32mI (241707) serial: Recv 8 bytes[0m
+[0;33mW (242617) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (242687) serial: Recv 68 bytes[0m
+[0;32mI (242717) serial: Recv 8 bytes[0m
+[0;33mW (243627) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (243697) serial: Recv 68 bytes[0m
+[0;32mI (243727) serial: Recv 8 bytes[0m
+[0;33mW (244637) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (244707) serial: Recv 68 bytes[0m
+[0;32mI (244737) serial: Recv 8 bytes[0m
+[0;32mI (245627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (245647) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (245717) serial: Recv 68 bytes[0m
+[0;32mI (245747) serial: Recv 8 bytes[0m
+[0;33mW (246657) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (246727) serial: Recv 68 bytes[0m
+[0;32mI (246757) serial: Recv 8 bytes[0m
+[0;33mW (247667) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (247737) serial: Recv 68 bytes[0m
+[0;32mI (247767) serial: Recv 8 bytes[0m
+[0;33mW (248677) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (248747) serial: Recv 68 bytes[0m
+[0;32mI (248777) serial: Recv 8 bytes[0m
+[0;33mW (249687) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (249757) serial: Recv 68 bytes[0m
+[0;32mI (249787) serial: Recv 8 bytes[0m
+[0;32mI (250627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (250697) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (250767) serial: Recv 68 bytes[0m
+[0;32mI (250797) serial: Recv 8 bytes[0m
+[0;33mW (251707) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (251777) serial: Recv 68 bytes[0m
+[0;32mI (251807) serial: Recv 8 bytes[0m
+[0;33mW (252717) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (252787) serial: Recv 68 bytes[0m
+[0;32mI (252817) serial: Recv 8 bytes[0m
+[0;33mW (253727) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (253797) serial: Recv 68 bytes[0m
+[0;32mI (253827) serial: Recv 8 bytes[0m
+[0;33mW (254737) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (254807) serial: Recv 68 bytes[0m
+[0;32mI (254837) serial: Recv 8 bytes[0m
+[0;32mI (255627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (255747) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (255827) serial: Recv 102 bytes[0m
+[0;32mI (255857) serial: Recv 8 bytes[0m
+[0;33mW (256757) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (256827) serial: Recv 68 bytes[0m
+[0;32mI (256857) serial: Recv 8 bytes[0m
+[0;33mW (257767) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (257837) serial: Recv 68 bytes[0m
+[0;32mI (257867) serial: Recv 8 bytes[0m
+[0;33mW (258777) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (258847) serial: Recv 68 bytes[0m
+[0;32mI (258877) serial: Recv 8 bytes[0m
+[0;33mW (259787) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (259857) serial: Recv 68 bytes[0m
+[0;32mI (259887) serial: Recv 8 bytes[0m
+[0;32mI (260627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (260797) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (260867) serial: Recv 68 bytes[0m
+[0;32mI (260897) serial: Recv 8 bytes[0m
+[0;33mW (261807) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (261877) serial: Recv 68 bytes[0m
+[0;32mI (261907) serial: Recv 8 bytes[0m
+[0;33mW (262817) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (262887) serial: Recv 68 bytes[0m
+[0;32mI (262917) serial: Recv 8 bytes[0m
+[0;33mW (263827) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (263897) serial: Recv 68 bytes[0m
+[0;32mI (263927) serial: Recv 8 bytes[0m
+[0;33mW (264837) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (264907) serial: Recv 68 bytes[0m
+[0;32mI (264927) serial: Recv 8 bytes[0m
+[0;32mI (265627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (265847) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (265917) serial: Recv 68 bytes[0m
+[0;32mI (265947) serial: Recv 8 bytes[0m
+[0;33mW (266857) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (266927) serial: Recv 68 bytes[0m
+[0;32mI (266957) serial: Recv 8 bytes[0m
+[0;33mW (267867) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (267937) serial: Recv 68 bytes[0m
+[0;32mI (267967) serial: Recv 8 bytes[0m
+[0;33mW (268877) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (268967) serial: Recv 102 bytes[0m
+[0;32mI (268987) serial: Recv 8 bytes[0m
+[0;33mW (269887) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (269967) serial: Recv 102 bytes[0m
+[0;32mI (269997) serial: Recv 8 bytes[0m
+[0;32mI (270627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (270897) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (270967) serial: Recv 68 bytes[0m
+[0;32mI (270997) serial: Recv 8 bytes[0m
+[0;33mW (271907) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (271977) serial: Recv 68 bytes[0m
+[0;32mI (272007) serial: Recv 8 bytes[0m
+[0;33mW (272917) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (273007) serial: Recv 102 bytes[0m
+[0;32mI (273027) serial: Recv 8 bytes[0m
+[0;33mW (273927) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (273997) serial: Recv 68 bytes[0m
+[0;32mI (274027) serial: Recv 8 bytes[0m
+[0;33mW (274937) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (275007) serial: Recv 68 bytes[0m
+[0;32mI (275027) serial: Recv 8 bytes[0m
+[0;32mI (275627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (275947) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (276027) serial: Recv 102 bytes[0m
+[0;32mI (276047) serial: Recv 8 bytes[0m
+[0;33mW (276957) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (277037) serial: Recv 102 bytes[0m
+[0;32mI (277067) serial: Recv 8 bytes[0m
+[0;33mW (277967) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (278047) serial: Recv 102 bytes[0m
+[0;32mI (278077) serial: Recv 8 bytes[0m
+[0;33mW (278977) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (279047) serial: Recv 68 bytes[0m
+[0;32mI (279077) serial: Recv 8 bytes[0m
+[0;33mW (279987) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (280057) serial: Recv 68 bytes[0m
+[0;32mI (280087) serial: Recv 8 bytes[0m
+[0;32mI (280627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (280997) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (281077) serial: Recv 102 bytes[0m
+[0;32mI (281107) serial: Recv 8 bytes[0m
+[0;33mW (282007) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (282087) serial: Recv 102 bytes[0m
+[0;32mI (282117) serial: Recv 8 bytes[0m
+[0;33mW (283017) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (283087) serial: Recv 68 bytes[0m
+[0;32mI (283117) serial: Recv 8 bytes[0m
+[0;33mW (284027) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (284097) serial: Recv 68 bytes[0m
+[0;32mI (284127) serial: Recv 8 bytes[0m
+[0;33mW (285037) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (285117) serial: Recv 102 bytes[0m
+[0;32mI (285147) serial: Recv 8 bytes[0m
+[0;32mI (285627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (286047) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (286117) serial: Recv 68 bytes[0m
+[0;32mI (286147) serial: Recv 8 bytes[0m
+[0;33mW (287057) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (287127) serial: Recv 68 bytes[0m
+[0;32mI (287157) serial: Recv 8 bytes[0m
+[0;33mW (288067) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (288137) serial: Recv 68 bytes[0m
+[0;32mI (288167) serial: Recv 8 bytes[0m
+[0;33mW (289077) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (289147) serial: Recv 68 bytes[0m
+[0;32mI (289167) serial: Recv 8 bytes[0m
+[0;33mW (290087) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (290157) serial: Recv 68 bytes[0m
+[0;32mI (290187) serial: Recv 8 bytes[0m
+[0;32mI (290627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (291097) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (291167) serial: Recv 68 bytes[0m
+[0;32mI (291197) serial: Recv 8 bytes[0m
+[0;33mW (292107) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (292177) serial: Recv 68 bytes[0m
+[0;32mI (292207) serial: Recv 8 bytes[0m
+[0;33mW (293117) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (293187) serial: Recv 68 bytes[0m
+[0;32mI (293217) serial: Recv 8 bytes[0m
+[0;33mW (294127) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (294197) serial: Recv 68 bytes[0m
+[0;32mI (294227) serial: Recv 8 bytes[0m
+[0;33mW (295137) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (295207) serial: Recv 68 bytes[0m
+[0;32mI (295237) serial: Recv 8 bytes[0m
+[0;32mI (295627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (296147) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (296217) serial: Recv 68 bytes[0m
+[0;32mI (296247) serial: Recv 8 bytes[0m
+[0;33mW (297157) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (297227) serial: Recv 68 bytes[0m
+[0;32mI (297247) serial: Recv 8 bytes[0m
+[0;33mW (298167) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (298237) serial: Recv 68 bytes[0m
+[0;32mI (298267) serial: Recv 8 bytes[0m
+[0;33mW (299177) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (299247) serial: Recv 68 bytes[0m
+[0;32mI (299277) serial: Recv 8 bytes[0m
+[0;33mW (300187) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (300257) serial: Recv 68 bytes[0m
+[0;32mI (300287) serial: Recv 8 bytes[0m
+[0;32mI (300627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (301197) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (301267) serial: Recv 68 bytes[0m
+[0;32mI (301297) serial: Recv 8 bytes[0m
+[0;33mW (302207) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (302277) serial: Recv 68 bytes[0m
+[0;32mI (302307) serial: Recv 8 bytes[0m
+[0;33mW (303217) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (303287) serial: Recv 68 bytes[0m
+[0;32mI (303317) serial: Recv 8 bytes[0m
+[0;33mW (304227) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (304297) serial: Recv 68 bytes[0m
+[0;32mI (304327) serial: Recv 8 bytes[0m
+[0;33mW (305237) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (305307) serial: Recv 68 bytes[0m
+[0;32mI (305337) serial: Recv 8 bytes[0m
+[0;32mI (305627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (306247) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (306327) serial: Recv 102 bytes[0m
+[0;32mI (306357) serial: Recv 8 bytes[0m
+[0;33mW (307257) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (307327) serial: Recv 68 bytes[0m
+[0;32mI (307357) serial: Recv 8 bytes[0m
+[0;33mW (308267) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (308337) serial: Recv 68 bytes[0m
+[0;32mI (308367) serial: Recv 8 bytes[0m
+[0;33mW (309277) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (309347) serial: Recv 68 bytes[0m
+[0;32mI (309377) serial: Recv 8 bytes[0m
+[0;33mW (310287) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (310357) serial: Recv 68 bytes[0m
+[0;32mI (310387) serial: Recv 8 bytes[0m
+[0;32mI (310627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (311297) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (311367) serial: Recv 68 bytes[0m
+[0;32mI (311397) serial: Recv 8 bytes[0m
+[0;33mW (312307) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (312377) serial: Recv 68 bytes[0m
+[0;32mI (312397) serial: Recv 8 bytes[0m
+[0;33mW (313317) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (313387) serial: Recv 68 bytes[0m
+[0;32mI (313417) serial: Recv 8 bytes[0m
+[0;33mW (314327) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (314397) serial: Recv 68 bytes[0m
+[0;32mI (314427) serial: Recv 8 bytes[0m
+[0;33mW (315337) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (315407) serial: Recv 68 bytes[0m
+[0;32mI (315427) serial: Recv 8 bytes[0m
+[0;32mI (315627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (316347) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (316417) serial: Recv 68 bytes[0m
+[0;32mI (316447) serial: Recv 8 bytes[0m
+[0;33mW (317357) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (317427) serial: Recv 68 bytes[0m
+[0;32mI (317447) serial: Recv 8 bytes[0m
+[0;33mW (318367) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (318447) serial: Recv 102 bytes[0m
+[0;32mI (318467) serial: Recv 8 bytes[0m
+[0;33mW (319377) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (319457) serial: Recv 102 bytes[0m
+[0;32mI (319487) serial: Recv 8 bytes[0m
+[0;33mW (320387) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (320467) serial: Recv 102 bytes[0m
+[0;32mI (320497) serial: Recv 8 bytes[0m
+[0;32mI (320627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (321397) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (321467) serial: Recv 68 bytes[0m
+[0;32mI (321497) serial: Recv 8 bytes[0m
+[0;33mW (322407) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (322477) serial: Recv 68 bytes[0m
+[0;32mI (322507) serial: Recv 8 bytes[0m
+[0;33mW (323417) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (323497) serial: Recv 102 bytes[0m
+[0;32mI (323527) serial: Recv 8 bytes[0m
+[0;33mW (324427) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (324497) serial: Recv 68 bytes[0m
+[0;32mI (324527) serial: Recv 8 bytes[0m
+[0;33mW (325437) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (325507) serial: Recv 68 bytes[0m
+[0;32mI (325527) serial: Recv 8 bytes[0m
+[0;32mI (325627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (326447) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (326527) serial: Recv 102 bytes[0m
+[0;32mI (326557) serial: Recv 8 bytes[0m
+[0;33mW (327457) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (327537) serial: Recv 102 bytes[0m
+[0;32mI (327567) serial: Recv 8 bytes[0m
+[0;33mW (328467) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (328547) serial: Recv 102 bytes[0m
+[0;32mI (328577) serial: Recv 8 bytes[0m
+[0;33mW (329477) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (329547) serial: Recv 68 bytes[0m
+[0;32mI (329577) serial: Recv 8 bytes[0m
+[0;33mW (330487) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (330557) serial: Recv 68 bytes[0m
+[0;32mI (330577) serial: Recv 8 bytes[0m
+[0;32mI (330627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (331497) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (331587) serial: Recv 102 bytes[0m
+[0;32mI (331607) serial: Recv 8 bytes[0m
+[0;33mW (332507) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (332587) serial: Recv 102 bytes[0m
+[0;32mI (332617) serial: Recv 8 bytes[0m
+[0;33mW (333517) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (333587) serial: Recv 68 bytes[0m
+[0;32mI (333607) serial: Recv 8 bytes[0m
+[0;33mW (334527) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (334597) serial: Recv 68 bytes[0m
+[0;32mI (334627) serial: Recv 8 bytes[0m
+[0;33mW (335537) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (335617) serial: Recv 102 bytes[0m
+[0;32mI (335627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (335647) serial: Recv 8 bytes[0m
+[0;33mW (336547) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (336617) serial: Recv 68 bytes[0m
+[0;32mI (336637) serial: Recv 8 bytes[0m
+[0;33mW (337557) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (337627) serial: Recv 68 bytes[0m
+[0;32mI (337657) serial: Recv 8 bytes[0m
+[0;33mW (338567) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (338637) serial: Recv 68 bytes[0m
+[0;32mI (338667) serial: Recv 8 bytes[0m
+[0;33mW (339577) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (339647) serial: Recv 68 bytes[0m
+[0;32mI (339677) serial: Recv 8 bytes[0m
+[0;33mW (340587) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (340627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (340657) serial: Recv 68 bytes[0m
+[0;32mI (340687) serial: Recv 8 bytes[0m
+[0;33mW (341597) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (341667) serial: Recv 68 bytes[0m
+[0;32mI (341697) serial: Recv 8 bytes[0m
+[0;33mW (342607) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (342677) serial: Recv 68 bytes[0m
+[0;32mI (342707) serial: Recv 8 bytes[0m
+[0;33mW (343617) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (343687) serial: Recv 68 bytes[0m
+[0;32mI (343717) serial: Recv 8 bytes[0m
+[0;33mW (344627) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (344697) serial: Recv 68 bytes[0m
+[0;32mI (344717) serial: Recv 8 bytes[0m
+[0;32mI (345627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (345637) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (345707) serial: Recv 68 bytes[0m
+[0;32mI (345737) serial: Recv 8 bytes[0m
+[0;33mW (346647) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (346717) serial: Recv 68 bytes[0m
+[0;32mI (346747) serial: Recv 8 bytes[0m
+[0;33mW (347657) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (347727) serial: Recv 68 bytes[0m
+[0;32mI (347757) serial: Recv 8 bytes[0m
+[0;33mW (348667) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (348737) serial: Recv 68 bytes[0m
+[0;32mI (348767) serial: Recv 8 bytes[0m
+[0;33mW (349677) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (349747) serial: Recv 68 bytes[0m
+[0;32mI (349777) serial: Recv 8 bytes[0m
+[0;32mI (350627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (350687) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (350757) serial: Recv 68 bytes[0m
+[0;32mI (350777) serial: Recv 8 bytes[0m
+[0;33mW (351697) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (351767) serial: Recv 68 bytes[0m
+[0;32mI (351787) serial: Recv 8 bytes[0m
+[0;33mW (352707) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (352777) serial: Recv 68 bytes[0m
+[0;32mI (352807) serial: Recv 8 bytes[0m
+[0;33mW (353717) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (353787) serial: Recv 68 bytes[0m
+[0;32mI (353817) serial: Recv 8 bytes[0m
+[0;33mW (354727) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (354797) serial: Recv 68 bytes[0m
+[0;32mI (354827) serial: Recv 8 bytes[0m
+[0;32mI (355627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (355737) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (355807) serial: Recv 68 bytes[0m
+[0;32mI (355837) serial: Recv 8 bytes[0m
+[0;33mW (356747) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (356827) serial: Recv 102 bytes[0m
+[0;32mI (356857) serial: Recv 8 bytes[0m
+[0;33mW (357757) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (357827) serial: Recv 68 bytes[0m
+[0;32mI (357847) serial: Recv 8 bytes[0m
+[0;33mW (358767) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (358837) serial: Recv 68 bytes[0m
+[0;32mI (358867) serial: Recv 8 bytes[0m
+[0;33mW (359777) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (359847) serial: Recv 68 bytes[0m
+[0;32mI (359877) serial: Recv 8 bytes[0m
+[0;32mI (360627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (360787) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (360857) serial: Recv 68 bytes[0m
+[0;32mI (360887) serial: Recv 8 bytes[0m
+[0;33mW (361797) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (361867) serial: Recv 68 bytes[0m
+[0;32mI (361897) serial: Recv 8 bytes[0m
+[0;33mW (362807) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (362877) serial: Recv 68 bytes[0m
+[0;32mI (362907) serial: Recv 8 bytes[0m
+[0;33mW (363817) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (363887) serial: Recv 68 bytes[0m
+[0;32mI (363917) serial: Recv 8 bytes[0m
+[0;33mW (364827) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (364897) serial: Recv 68 bytes[0m
+[0;32mI (364927) serial: Recv 8 bytes[0m
+[0;32mI (365627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (365837) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (365907) serial: Recv 68 bytes[0m
+[0;32mI (365937) serial: Recv 8 bytes[0m
+[0;33mW (366847) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (366917) serial: Recv 68 bytes[0m
+[0;32mI (366947) serial: Recv 8 bytes[0m
+[0;33mW (367857) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (367927) serial: Recv 68 bytes[0m
+[0;32mI (367957) serial: Recv 8 bytes[0m
+[0;33mW (368867) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (368937) serial: Recv 68 bytes[0m
+[0;32mI (368967) serial: Recv 8 bytes[0m
+[0;33mW (369877) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (369957) serial: Recv 102 bytes[0m
+[0;32mI (369977) serial: Recv 8 bytes[0m
+[0;32mI (370627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (370887) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (370967) serial: Recv 102 bytes[0m
+[0;32mI (370997) serial: Recv 8 bytes[0m
+[0;33mW (371897) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (371967) serial: Recv 68 bytes[0m
+[0;32mI (371997) serial: Recv 8 bytes[0m
+[0;33mW (372907) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (372977) serial: Recv 56 bytes[0m
+[0;32mI (373007) serial: Recv 8 bytes[0m
+[0;33mW (373917) RFID MANAGER: Heap Free: 152080 bytes[0m
+[0;32mI (373997) serial: Recv 102 bytes[0m
+[0;32mI (374027) serial: Recv 8 bytes[0m
+[0;33mW (374927) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (374997) serial: Recv 68 bytes[0m
+[0;32mI (375027) serial: Recv 8 bytes[0m
+[0;32mI (375627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (375937) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (376007) serial: Recv 68 bytes[0m
+[0;32mI (376027) serial: Recv 8 bytes[0m
+[0;33mW (376947) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (377037) serial: Recv 102 bytes[0m
+[0;32mI (377057) serial: Recv 8 bytes[0m
+[0;33mW (377957) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (378037) serial: Recv 102 bytes[0m
+[0;32mI (378067) serial: Recv 8 bytes[0m
+[0;33mW (378967) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (379047) serial: Recv 102 bytes[0m
+[0;32mI (379077) serial: Recv 8 bytes[0m
+[0;33mW (379977) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (380047) serial: Recv 68 bytes[0m
+[0;32mI (380077) serial: Recv 8 bytes[0m
+[0;32mI (380627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (380987) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (381057) serial: Recv 68 bytes[0m
+[0;32mI (381087) serial: Recv 8 bytes[0m
+[0;33mW (381997) RFID MANAGER: Heap Free: 152076 bytes[0m
+[0;32mI (382077) serial: Recv 102 bytes[0m
+[0;32mI (382097) serial: Recv 8 bytes[0m
+[0;33mW (383007) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (383087) serial: Recv 102 bytes[0m
+[0;32mI (383117) serial: Recv 8 bytes[0m
+[0;33mW (384017) RFID MANAGER: Heap Free: 151856 bytes[0m
+[0;32mI (384087) serial: Recv 68 bytes[0m
+[0;32mI (384117) serial: Recv 8 bytes[0m
+[0;33mW (385027) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (385097) serial: Recv 68 bytes[0m
+[0;32mI (385127) serial: Recv 8 bytes[0m
+[0;32mI (385627) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (386037) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (386117) serial: Recv 102 bytes[0m
+[0;32mI (386137) serial: Recv 8 bytes[0m
+[0;33mW (387047) RFID MANAGER: Heap Free: 151860 bytes[0m
+[0;32mI (387117) serial: Recv 68 bytes[0m
+[0;32mI (387147) serial: Recv 8 bytes[0m
+[0;33mW (388057) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (388127) serial: Recv 68 bytes[0m
+[0;32mI (388147) serial: Recv 8 bytes[0m
+[0;33mW (389067) RFID MANAGER: Heap Free: 151740 bytes[0m
+[0;32mI (389137) serial: Recv 68 bytes[0m
+[0;32mI (389167) serial: Recv 8 bytes[0m
+[0;33mW (390077) RFID MANAGER: Heap Free: 152084 bytes[0m
+[0;32mI (390147) serial: Recv 68 bytes[0m
+[0;32mI (390167) serial: Recv 8 bytes[0m

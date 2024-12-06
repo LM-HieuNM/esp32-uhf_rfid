@@ -1,0 +1,95 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/hieunm/Desktop/wss_server/build/bootloader/esp-idf/esptool_py && /home/hieunm/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/hieunm/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/hieunm/Desktop/wss_server/build/bootloader/bootloader.bin
+Bootloader binary size 0x5150 bytes. 0x2eb0 bytes (36%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lib/https_server/http_server.c.obj
+[3/8] Linking C static library esp-idf/main/libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable wss_server.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /home/hieunm/Desktop/wss_server/build/wss_server.bin
+[7/8] cd /home/hieunm/Desktop/wss_server/build/esp-idf/esptool_py && /home/hieunm/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/hieunm/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/hieunm/Desktop/wss_server/build/partition_table/partition-table.bin /home/hieunm/Desktop/wss_server/build/wss_server.bin
+wss_server.bin binary size 0x16f780 bytes. Smallest app partition is 0x177000 bytes. 0x7880 bytes (2%) free.
+Warning: The smallest app partition is nearly full (2% free space left)!
+[7/8] cd /home/hieunm/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/hieunm/esp-idf -D "SERIAL_TOOL=/home/hieunm/.espressif/python_env/idf5.4_py3.10_env/bin/python;;/home/hieunm/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32c3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/hieunm/Desktop/wss_server/build -P /home/hieunm/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32c3 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 4MB 0x0 bootloader/bootloader.bin 0x10000 wss_server.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-C3 (QFN32) (revision v0.4)
+Features: WiFi, BLE
+Crystal is 40MHz
+MAC: dc:da:0c:f4:f1:fc
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x0017ffff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20816 bytes to 13052...
+Writing at 0x00000000... (100 %)
+Wrote 20816 bytes (13052 compressed) at 0x00000000 in 0.4 seconds (effective 393.9 kbit/s)...
+Hash of data verified.
+Compressed 1505152 bytes to 742277...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001ca64... (4 %)
+Writing at 0x000276ae... (6 %)
+Writing at 0x0003bb9d... (8 %)
+Writing at 0x00056ace... (10 %)
+Writing at 0x00063785... (13 %)
+Writing at 0x00070d5c... (15 %)
+Writing at 0x00078659... (17 %)
+Writing at 0x00083ea8... (19 %)
+Writing at 0x0008a02a... (21 %)
+Writing at 0x000911c1... (23 %)
+Writing at 0x00097e78... (26 %)
+Writing at 0x0009f968... (28 %)
+Writing at 0x000a72e4... (30 %)
+Writing at 0x000ae2e0... (32 %)
+Writing at 0x000b4f38... (34 %)
+Writing at 0x000bc09c... (36 %)
+Writing at 0x000c2ee2... (39 %)
+Writing at 0x000ca0ef... (41 %)
+Writing at 0x000d12c0... (43 %)
+Writing at 0x000d79c5... (45 %)
+Writing at 0x000de145... (47 %)
+Writing at 0x000e50c4... (50 %)
+Writing at 0x000eb57e... (52 %)
+Writing at 0x000f1cb9... (54 %)
+Writing at 0x000f7d4f... (56 %)
+Writing at 0x000fdcba... (58 %)
+Writing at 0x00103ef2... (60 %)
+Writing at 0x0010a58e... (63 %)
+Writing at 0x00110673... (65 %)
+Writing at 0x00116757... (67 %)
+Writing at 0x0011cf18... (69 %)
+Writing at 0x00123047... (71 %)
+Writing at 0x00129346... (73 %)
+Writing at 0x0012ff9b... (76 %)
+Writing at 0x00136fa9... (78 %)
+Writing at 0x0013e3d4... (80 %)
+Writing at 0x001452c1... (82 %)
+Writing at 0x0014ca29... (84 %)
+Writing at 0x00155342... (86 %)
+Writing at 0x0015af8e... (89 %)
+Writing at 0x00161011... (91 %)
+Writing at 0x00168471... (93 %)
+Writing at 0x00170a93... (95 %)
+Writing at 0x00177113... (97 %)
+Writing at 0x0017d5fc... (100 %)
+Wrote 1505152 bytes (742277 compressed) at 0x00010000 in 10.0 seconds (effective 1201.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 105...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.1 seconds (effective 348.8 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

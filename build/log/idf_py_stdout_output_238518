@@ -1,0 +1,695 @@
+[0;32mI (157) esp_image: segment 1: paddr=00080e40 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40058836
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=70e18h (462360) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=00080e40 vaddr=3fc94c00 size=02ee8h ( 12008) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=00083d30 vaddr=40380000 size=0c2e8h ( 49896) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e7208h (946696) map[0m
+[0;32mI (319) esp_image: segment 4: paddr=00177230 vaddr=4038c2e8 size=087c4h ( 34756) load[0m
+[0;32mI (325) esp_image: segment 5: paddr=0017f9fc vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (332) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (332) boot: Disabling RNG early entropy source...[0m
+[0;32mI (344) cpu_start: Unicore app[0m
+[0;32mI (352) cpu_start: Pro cpu start user code[0m
+[0;32mI (352) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (352) app_init: Application information:[0m
+[0;32mI (352) app_init: Project name:     wss_server[0m
+[0;32mI (356) app_init: App version:      1[0m
+[0;32mI (360) app_init: Compile time:     Dec  6 2024 12:16:39[0m
+[0;32mI (365) app_init: ELF file SHA256:  7159ae813...[0m
+[0;32mI (369) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (375) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (379) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (383) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (387) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (393) heap_init: At 3FC9D8A0 len 00022760 (137 KiB): RAM[0m
+[0;32mI (398) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (404) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (410) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (417) spi_flash: detected chip: generic[0m
+[0;32mI (419) spi_flash: flash io: dio[0m
+[0;32mI (423) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (429) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (435) main_task: Started on CPU0[0m
+[0;32mI (435) main_task: Calling app_main()[0m
+[0;32mI (445) button: IoT Button Version: 3.4.0[0m
+[0;32mI (445) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (445) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (455) pp: pp rom version: 9387209[0m
+[0;32mI (455) net80211: net80211 rom version: 9387209[0m
+[0;32mI (475) wifi_init: rx ba win: 6[0m
+[0;32mI (475) wifi_init: accept mbox: 6[0m
+[0;32mI (475) wifi_init: tcpip mbox: 32[0m
+[0;32mI (475) wifi_init: udp mbox: 6[0m
+[0;32mI (475) wifi_init: tcp mbox: 6[0m
+[0;32mI (475) wifi_init: tcp tx win: 5760[0m
+[0;32mI (485) wifi_init: tcp rx win: 5760[0m
+[0;32mI (485) wifi_init: tcp mss: 1440[0m
+[0;32mI (485) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (495) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (775) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (815) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (815) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (815) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (815) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (825) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+app_nvs_load_sta_creds: SSID: LUMI_TEST Password: lumivn274!
+[0;32mI (835) wifi_app: Loaded station configuration[0m
+[0;32mI (835) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (845) esp_https_server: Starting server[0m
+[0;32mI (1125) esp_https_server: Server listening on port 443[0m
+[0;32mI (1125) https_server: Registering URI handlers[0m
+[0;32mI (1145) serial: Recv 18 bytes[0m
+[0;32mI (1165) serial: Recv 18 bytes[0m
+[0;32mI (1165) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 202
+[0;32mI (1215) main_task: Returned from app_main()[0m
+[0;32mI (1245) serial: Recv 13 bytes[0m
+[0;32mI (3995) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 205
+[0;32mI (4095) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (5495) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (5495) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (5495) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (7715) esp_https_server: performing session handshake[0m
+[1;31mE (8405) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (8405) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (8405) https_server: Client disconnected 57[0m
+[1;31mE (8415) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (8415) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (8425) esp_https_server: performing session handshake[0m
+[1;31mE (8805) wss_keep_alive: Cannot remove client fd:57[0m
+[1;31mE (9115) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (9125) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (9125) https_server: Client disconnected 57[0m
+[1;31mE (9125) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (9135) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (9135) esp_https_server: performing session handshake[0m
+[1;31mE (9515) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (10125) https_server: New client connected 57[0m
+[0;32mI (10295) https_server: index.html requested[0m
+[0;32mI (10525) https_server: Jquery requested[0m
+[0;32mI (12165) esp_https_server: performing session handshake[0m
+[1;31mE (12865) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (12865) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (12875) https_server: Client disconnected 58[0m
+[1;31mE (12875) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (12885) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (12885) https_server: app.css requested[0m
+[1;31mE (12895) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (12925) esp_https_server: performing session handshake[0m
+[1;31mE (13625) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (13625) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (13625) https_server: Client disconnected 58[0m
+[1;31mE (13635) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (13635) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (13645) https_server: app.js requested[0m
+[1;31mE (13655) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (13705) esp_https_server: performing session handshake[0m
+[0;32mI (14605) https_server: New client connected 58[0m
+[0;32mI (14605) https_server: OTAstatus requested[0m
+[0;32mI (14735) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (14735) https_server: http_server_get_wifi_connect_info_json_handler: 3[0m
+[0;32mI (14805) https_server: favicon.ico requested[0m
+[1;31mE (40615) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (40615) https_server: Client not alive check for fd 57, retry count: 0[0m
+[0;32mI (40615) https_server: Retrying connection for fd 57, attempt 1/3[0m
+[1;31mE (41615) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (41615) https_server: Client not alive check for fd 57, retry count: 1[0m
+[0;32mI (41615) https_server: Retrying connection for fd 57, attempt 2/3[0m
+[1;31mE (42615) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (42615) https_server: Client not alive check for fd 57, retry count: 2[0m
+[0;32mI (42615) https_server: Retrying connection for fd 57, attempt 3/3[0m
+[1;31mE (43615) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (43615) https_server: Client not alive check for fd 57, retry count: 3[0m
+[1;31mE (43615) https_server: Client not alive, closing fd 57 after 3 retries[0m
+[0;32mI (43615) https_server: Client disconnected 57[0m
+[1;31mE (43625) wss_keep_alive: Cannot remove client fd:57[0m
+[1;31mE (44625) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (44625) https_server: Client not alive check for fd 58, retry count: 0[0m
+[0;32mI (44625) https_server: Retrying connection for fd 58, attempt 1/3[0m
+[1;31mE (45625) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (45625) https_server: Client not alive check for fd 58, retry count: 1[0m
+[0;32mI (45625) https_server: Retrying connection for fd 58, attempt 2/3[0m
+[1;31mE (46625) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (46625) https_server: Client not alive check for fd 58, retry count: 2[0m
+[0;32mI (46625) https_server: Retrying connection for fd 58, attempt 3/3[0m
+[1;31mE (47625) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (47625) https_server: Client not alive check for fd 58, retry count: 3[0m
+[1;31mE (47625) https_server: Client not alive, closing fd 58 after 3 retries[0m
+[0;32mI (47625) https_server: Client disconnected 58[0m
+[1;31mE (47635) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (153485) serial: Recv 8 bytes[0m
+[0;32mI (154465) serial: Recv 102 bytes[0m
+[0;32mI (154485) serial: Recv 8 bytes[0m
+[0;33mW (155395) RFID MANAGER: Heap Free: 156152 bytes[0m
+[0;32mI (155475) serial: Recv 102 bytes[0m
+[0;32mI (155505) serial: Recv 8 bytes[0m
+[0;33mW (156405) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (156485) serial: Recv 102 bytes[0m
+[0;32mI (156515) serial: Recv 8 bytes[0m
+[0;33mW (157415) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (157495) serial: Recv 102 bytes[0m
+[0;32mI (157525) serial: Recv 8 bytes[0m
+[0;33mW (158425) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (158505) serial: Recv 102 bytes[0m
+[0;32mI (158535) serial: Recv 8 bytes[0m
+[0;33mW (159435) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (159515) serial: Recv 102 bytes[0m
+[0;32mI (159535) serial: Recv 8 bytes[0m
+[0;33mW (160445) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (160525) serial: Recv 102 bytes[0m
+[0;32mI (160545) serial: Recv 8 bytes[0m
+[0;33mW (161455) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (161535) serial: Recv 102 bytes[0m
+[0;32mI (161565) serial: Recv 8 bytes[0m
+[0;33mW (162465) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (162545) serial: Recv 102 bytes[0m
+[0;32mI (162575) serial: Recv 8 bytes[0m
+[0;33mW (163475) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (163555) serial: Recv 102 bytes[0m
+[0;32mI (163575) serial: Recv 8 bytes[0m
+[0;33mW (164485) RFID MANAGER: Heap Free: 155052 bytes[0m
+[0;32mI (164545) esp_https_server: performing session handshake[0m
+[0;32mI (164955) serial: Recv 110 bytes[0m
+[1;31mE (165235) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (165235) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (165235) https_server: Client disconnected 57[0m
+[1;31mE (165245) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (165245) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (165255) esp_https_server: performing session handshake[0m
+[0;33mW (165675) RFID MANAGER: Heap Free: 118672 bytes[0m
+[1;31mE (165675) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (165755) serial: Recv 102 bytes[0m
+[0;32mI (165775) serial: Recv 8 bytes[0m
+[1;31mE (165955) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (165955) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (165965) https_server: Client disconnected 57[0m
+[1;31mE (165965) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (165965) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (165975) esp_https_server: performing session handshake[0m
+[1;31mE (166355) wss_keep_alive: Cannot remove client fd:57[0m
+[0;33mW (166685) RFID MANAGER: Heap Free: 123156 bytes[0m
+[0;32mI (166765) serial: Recv 102 bytes[0m
+[0;32mI (166915) https_server: New client connected 57[0m
+[0;32mI (166925) serial: Recv 8 bytes[0m
+[0;32mI (166985) https_server: index.html requested[0m
+[0;32mI (167105) https_server: Jquery requested[0m
+[0;32mI (167505) esp_https_server: performing session handshake[0m
+[0;33mW (167935) RFID MANAGER: Heap Free: 83348 bytes[0m
+[0;32mI (168015) serial: Recv 102 bytes[0m
+[0;32mI (168055) serial: Recv 8 bytes[0m
+[1;31mE (168215) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (168215) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (168215) https_server: Client disconnected 58[0m
+[1;31mE (168215) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (168225) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (168235) https_server: app.css requested[0m
+[1;31mE (168235) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (168345) esp_https_server: performing session handshake[0m
+[0;33mW (168945) RFID MANAGER: Heap Free: 87016 bytes[0m
+[1;31mE (169035) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (169045) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (169045) https_server: Client disconnected 58[0m
+[1;31mE (169045) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (169055) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (169055) https_server: app.js requested[0m
+[1;31mE (169065) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (169075) serial: Recv 110 bytes[0m
+[0;32mI (169115) esp_https_server: performing session handshake[0m
+[0;32mI (170035) https_server: New client connected 58[0m
+[0;32mI (170035) https_server: OTAstatus requested[0m
+[0;33mW (170045) RFID MANAGER: Heap Free: 90712 bytes[0m
+[0;32mI (170115) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (170115) https_server: http_server_get_wifi_connect_info_json_handler: 3[0m
+[0;32mI (170135) https_server: favicon.ico requested[0m
+[0;32mI (170135) serial: Recv 102 bytes[0m
+[0;32mI (170155) serial: Recv 8 bytes[0m
+[0;33mW (171055) RFID MANAGER: Heap Free: 96960 bytes[0m
+[0;32mI (171135) serial: Recv 102 bytes[0m
+[0;32mI (171155) serial: Recv 8 bytes[0m
+[0;33mW (172065) RFID MANAGER: Heap Free: 96956 bytes[0m
+[0;32mI (172145) serial: Recv 102 bytes[0m
+[0;32mI (172175) serial: Recv 8 bytes[0m
+[0;33mW (173075) RFID MANAGER: Heap Free: 96956 bytes[0m
+[0;32mI (173155) serial: Recv 102 bytes[0m
+[0;32mI (173185) serial: Recv 8 bytes[0m
+[0;33mW (174085) RFID MANAGER: Heap Free: 96952 bytes[0m
+[0;32mI (174165) serial: Recv 102 bytes[0m
+[0;32mI (174185) serial: Recv 8 bytes[0m
+[0;33mW (175095) RFID MANAGER: Heap Free: 96952 bytes[0m
+[0;32mI (175175) serial: Recv 102 bytes[0m
+[0;32mI (175205) serial: Recv 8 bytes[0m
+[0;33mW (176105) RFID MANAGER: Heap Free: 96948 bytes[0m
+[0;32mI (176185) serial: Recv 102 bytes[0m
+[0;32mI (176205) serial: Recv 8 bytes[0m
+[0;33mW (177115) RFID MANAGER: Heap Free: 96952 bytes[0m
+[0;32mI (177205) serial: Recv 102 bytes[0m
+[0;32mI (177225) serial: Recv 8 bytes[0m
+[0;33mW (178125) RFID MANAGER: Heap Free: 96940 bytes[0m
+[0;32mI (178205) serial: Recv 102 bytes[0m
+[0;32mI (178225) serial: Recv 8 bytes[0m
+[0;33mW (179135) RFID MANAGER: Heap Free: 96952 bytes[0m
+[0;32mI (179215) serial: Recv 102 bytes[0m
+[0;32mI (179245) serial: Recv 8 bytes[0m
+[0;33mW (180145) RFID MANAGER: Heap Free: 96952 bytes[0m
+[0;32mI (180225) serial: Recv 102 bytes[0m
+[0;32mI (180245) serial: Recv 8 bytes[0m
+[0;33mW (181155) RFID MANAGER: Heap Free: 96944 bytes[0m
+[0;32mI (181245) serial: Recv 102 bytes[0m
+[0;32mI (181265) serial: Recv 8 bytes[0m
+[0;33mW (182165) RFID MANAGER: Heap Free: 96948 bytes[0m
+[0;32mI (182245) serial: Recv 102 bytes[0m
+[0;32mI (182275) serial: Recv 8 bytes[0m
+[0;33mW (183175) RFID MANAGER: Heap Free: 96956 bytes[0m
+[0;32mI (183255) serial: Recv 102 bytes[0m
+[0;32mI (183285) serial: Recv 8 bytes[0m
+[0;33mW (184185) RFID MANAGER: Heap Free: 96968 bytes[0m
+[0;32mI (184265) serial: Recv 102 bytes[0m
+[0;32mI (184285) serial: Recv 8 bytes[0m
+[0;33mW (185195) RFID MANAGER: Heap Free: 96968 bytes[0m
+[0;32mI (185275) serial: Recv 102 bytes[0m
+[0;32mI (185305) serial: Recv 8 bytes[0m
+[0;33mW (186205) RFID MANAGER: Heap Free: 96956 bytes[0m
+[0;32mI (186285) serial: Recv 102 bytes[0m
+[0;32mI (186305) serial: Recv 8 bytes[0m
+[0;33mW (187215) RFID MANAGER: Heap Free: 96968 bytes[0m
+[0;32mI (187295) serial: Recv 102 bytes[0m
+[0;32mI (187325) serial: Recv 8 bytes[0m
+[0;33mW (188225) RFID MANAGER: Heap Free: 93840 bytes[0m
+[0;32mI (188315) serial: Recv 102 bytes[0m
+[0;32mI (188335) serial: Recv 8 bytes[0m
+[0;33mW (189235) RFID MANAGER: Heap Free: 90720 bytes[0m
+[0;32mI (189315) serial: Recv 102 bytes[0m
+[0;32mI (189345) serial: Recv 8 bytes[0m
+[0;33mW (190245) RFID MANAGER: Heap Free: 90716 bytes[0m
+[0;32mI (190325) serial: Recv 102 bytes[0m
+[0;32mI (190355) serial: Recv 8 bytes[0m
+[0;33mW (191255) RFID MANAGER: Heap Free: 96964 bytes[0m
+[0;32mI (191335) serial: Recv 102 bytes[0m
+[0;32mI (191365) serial: Recv 8 bytes[0m
+[0;33mW (192265) RFID MANAGER: Heap Free: 96968 bytes[0m
+[0;32mI (192345) serial: Recv 102 bytes[0m
+[0;32mI (192375) serial: Recv 8 bytes[0m
+[0;33mW (193275) RFID MANAGER: Heap Free: 96968 bytes[0m
+[0;32mI (193365) serial: Recv 102 bytes[0m
+[0;32mI (193385) serial: Recv 8 bytes[0m
+[0;33mW (194285) RFID MANAGER: Heap Free: 96628 bytes[0m
+[0;32mI (194365) serial: Recv 102 bytes[0m
+[0;32mI (194395) serial: Recv 8 bytes[0m
+[0;33mW (195295) RFID MANAGER: Heap Free: 96968 bytes[0m
+[0;32mI (195375) serial: Recv 102 bytes[0m
+[0;32mI (195405) serial: Recv 8 bytes[0m
+[0;33mW (196305) RFID MANAGER: Heap Free: 96968 bytes[0m
+[0;32mI (196385) serial: Recv 102 bytes[0m
+[0;32mI (196415) serial: Recv 8 bytes[0m
+[1;31mE (197055) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (197055) https_server: Client not alive check for fd 57, retry count: 0[0m
+[0;32mI (197055) https_server: Retrying connection for fd 57, attempt 1/3[0m
+[1;31mE (197165) esp-tls-mbedtls: read error :-0x0050[0m
+[0;32mI (197165) https_server: Client disconnected 57[0m
+[1;31mE (197165) esp-tls-mbedtls: read error :-0x0050[0m
+[0;32mI (197165) https_server: Client disconnected 58[0m
+[0;33mW (197315) RFID MANAGER: Heap Free: 156168 bytes[0m
+[0;32mI (197395) serial: Recv 102 bytes[0m
+[0;32mI (197425) serial: Recv 8 bytes[0m
+[0;33mW (198325) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (198405) serial: Recv 102 bytes[0m
+[0;32mI (198435) serial: Recv 8 bytes[0m
+[0;33mW (199335) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (199415) serial: Recv 102 bytes[0m
+[0;32mI (199445) serial: Recv 8 bytes[0m
+[0;33mW (200345) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (200425) serial: Recv 102 bytes[0m
+[0;32mI (200455) serial: Recv 8 bytes[0m
+[0;33mW (201355) RFID MANAGER: Heap Free: 156160 bytes[0m
+[0;32mI (201435) serial: Recv 102 bytes[0m
+[0;32mI (201465) serial: Recv 8 bytes[0m
+[0;33mW (202365) RFID MANAGER: Heap Free: 156168 bytes[0m
+[0;32mI (202445) serial: Recv 102 bytes[0m
+[0;32mI (202475) serial: Recv 8 bytes[0m
+[0;33mW (203375) RFID MANAGER: Heap Free: 156164 bytes[0m
+[0;32mI (203455) serial: Recv 102 bytes[0m
+[0;32mI (203485) serial: Recv 8 bytes[0m
+[0;33mW (204385) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (204465) serial: Recv 102 bytes[0m
+[0;32mI (204495) serial: Recv 8 bytes[0m
+[0;33mW (205395) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (205475) serial: Recv 102 bytes[0m
+[0;32mI (205505) serial: Recv 8 bytes[0m
+[0;33mW (206405) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (206485) serial: Recv 102 bytes[0m
+[0;32mI (206515) serial: Recv 8 bytes[0m
+[0;33mW (207415) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (207495) serial: Recv 102 bytes[0m
+[0;32mI (207525) serial: Recv 8 bytes[0m
+[0;33mW (208425) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (208505) serial: Recv 102 bytes[0m
+[0;32mI (208535) serial: Recv 8 bytes[0m
+[0;33mW (209435) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (209515) serial: Recv 102 bytes[0m
+[0;32mI (209545) serial: Recv 8 bytes[0m
+[0;33mW (210445) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (210525) serial: Recv 102 bytes[0m
+[0;32mI (210555) serial: Recv 8 bytes[0m
+[0;33mW (211455) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (211535) serial: Recv 102 bytes[0m
+[0;32mI (211565) serial: Recv 8 bytes[0m
+[0;33mW (212465) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (212545) serial: Recv 102 bytes[0m
+[0;32mI (212575) serial: Recv 8 bytes[0m
+[0;33mW (213475) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (213555) serial: Recv 102 bytes[0m
+[0;32mI (213585) serial: Recv 8 bytes[0m
+[0;33mW (214485) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (214565) serial: Recv 102 bytes[0m
+[0;32mI (214585) serial: Recv 8 bytes[0m
+[0;33mW (215495) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (215575) serial: Recv 102 bytes[0m
+[0;32mI (215605) serial: Recv 8 bytes[0m
+[0;33mW (216505) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (216585) serial: Recv 102 bytes[0m
+[0;32mI (216605) serial: Recv 8 bytes[0m
+[0;33mW (217515) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (217605) serial: Recv 102 bytes[0m
+[0;32mI (217625) serial: Recv 8 bytes[0m
+[0;33mW (218525) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (218605) serial: Recv 90 bytes[0m
+[0;32mI (218635) serial: Recv 8 bytes[0m
+[0;33mW (219535) RFID MANAGER: Heap Free: 156132 bytes[0m
+[0;32mI (219615) serial: Recv 102 bytes[0m
+[0;32mI (219645) serial: Recv 8 bytes[0m
+[0;33mW (220545) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (220625) serial: Recv 102 bytes[0m
+[0;32mI (220655) serial: Recv 8 bytes[0m
+[0;33mW (221555) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (221635) serial: Recv 102 bytes[0m
+[0;32mI (221665) serial: Recv 8 bytes[0m
+[0;33mW (222565) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (222645) serial: Recv 102 bytes[0m
+[0;32mI (222665) serial: Recv 8 bytes[0m
+[0;33mW (223575) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (223655) serial: Recv 102 bytes[0m
+[0;32mI (223685) serial: Recv 8 bytes[0m
+[0;33mW (224585) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (224675) serial: Recv 102 bytes[0m
+[0;32mI (224695) serial: Recv 8 bytes[0m
+[0;33mW (225595) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (225675) serial: Recv 102 bytes[0m
+[0;32mI (225705) serial: Recv 8 bytes[0m
+[0;33mW (226605) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (226695) serial: Recv 102 bytes[0m
+[0;32mI (226715) serial: Recv 8 bytes[0m
+[0;33mW (227615) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (227695) serial: Recv 102 bytes[0m
+[0;32mI (227725) serial: Recv 8 bytes[0m
+[0;33mW (228625) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (228705) serial: Recv 102 bytes[0m
+[0;32mI (228735) serial: Recv 8 bytes[0m
+[0;33mW (229635) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (229715) serial: Recv 102 bytes[0m
+[0;32mI (229745) serial: Recv 8 bytes[0m
+[0;33mW (230645) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (230725) serial: Recv 102 bytes[0m
+[0;32mI (230755) serial: Recv 8 bytes[0m
+[0;33mW (231655) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (231735) serial: Recv 102 bytes[0m
+[0;32mI (231755) serial: Recv 8 bytes[0m
+[0;33mW (232665) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (232745) serial: Recv 102 bytes[0m
+[0;32mI (232775) serial: Recv 8 bytes[0m
+[0;33mW (233675) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (233755) serial: Recv 102 bytes[0m
+[0;32mI (233785) serial: Recv 8 bytes[0m
+[0;33mW (234685) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (234765) serial: Recv 102 bytes[0m
+[0;32mI (234795) serial: Recv 8 bytes[0m
+[0;33mW (235695) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (235785) serial: Recv 102 bytes[0m
+[0;32mI (235805) serial: Recv 8 bytes[0m
+[0;33mW (236705) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (236785) serial: Recv 102 bytes[0m
+[0;32mI (236815) serial: Recv 8 bytes[0m
+[0;33mW (237715) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (237805) serial: Recv 102 bytes[0m
+[0;32mI (237825) serial: Recv 8 bytes[0m
+[0;33mW (238725) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (238805) serial: Recv 102 bytes[0m
+[0;32mI (238835) serial: Recv 8 bytes[0m
+[0;33mW (239735) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (239815) serial: Recv 102 bytes[0m
+[0;32mI (239845) serial: Recv 8 bytes[0m
+[0;33mW (240745) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (240825) serial: Recv 102 bytes[0m
+[0;32mI (240855) serial: Recv 8 bytes[0m
+[0;33mW (241755) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (241835) serial: Recv 102 bytes[0m
+[0;32mI (241865) serial: Recv 8 bytes[0m
+[0;33mW (242765) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (242845) serial: Recv 102 bytes[0m
+[0;32mI (242865) serial: Recv 8 bytes[0m
+[0;33mW (243775) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (243855) serial: Recv 90 bytes[0m
+[0;32mI (243885) serial: Recv 8 bytes[0m
+[0;33mW (244785) RFID MANAGER: Heap Free: 156132 bytes[0m
+[0;32mI (244865) serial: Recv 102 bytes[0m
+[0;32mI (244895) serial: Recv 8 bytes[0m
+[0;33mW (245795) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (245875) serial: Recv 102 bytes[0m
+[0;32mI (245905) serial: Recv 8 bytes[0m
+[0;33mW (246805) RFID MANAGER: Heap Free: 155816 bytes[0m
+[0;32mI (246885) serial: Recv 102 bytes[0m
+[0;32mI (246915) serial: Recv 8 bytes[0m
+[0;33mW (247815) RFID MANAGER: Heap Free: 155816 bytes[0m
+[0;32mI (247905) serial: Recv 102 bytes[0m
+[0;32mI (247925) serial: Recv 8 bytes[0m
+[0;33mW (248825) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (248905) serial: Recv 102 bytes[0m
+[0;32mI (248925) serial: Recv 8 bytes[0m
+[0;33mW (249835) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (249915) serial: Recv 102 bytes[0m
+[0;32mI (249945) serial: Recv 8 bytes[0m
+[0;33mW (250845) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (250935) serial: Recv 102 bytes[0m
+[0;32mI (250955) serial: Recv 8 bytes[0m
+[0;33mW (251855) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (251935) serial: Recv 102 bytes[0m
+[0;32mI (251965) serial: Recv 8 bytes[0m
+[0;33mW (252865) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (252955) serial: Recv 102 bytes[0m
+[0;32mI (252975) serial: Recv 8 bytes[0m
+[0;33mW (253875) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (253955) serial: Recv 102 bytes[0m
+[0;32mI (253985) serial: Recv 8 bytes[0m
+[0;33mW (254885) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (254975) serial: Recv 102 bytes[0m
+[0;32mI (254995) serial: Recv 8 bytes[0m
+[0;33mW (255895) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (255975) serial: Recv 102 bytes[0m
+[0;32mI (256005) serial: Recv 8 bytes[0m
+[0;33mW (256905) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (256985) serial: Recv 102 bytes[0m
+[0;32mI (257015) serial: Recv 8 bytes[0m
+[0;33mW (257915) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (257995) serial: Recv 102 bytes[0m
+[0;32mI (258025) serial: Recv 8 bytes[0m
+[0;33mW (258925) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (259005) serial: Recv 102 bytes[0m
+[0;32mI (259025) serial: Recv 8 bytes[0m
+[0;33mW (259935) RFID MANAGER: Heap Free: 155816 bytes[0m
+[0;32mI (260015) serial: Recv 102 bytes[0m
+[0;32mI (260045) serial: Recv 8 bytes[0m
+[0;33mW (260945) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (261035) serial: Recv 102 bytes[0m
+[0;32mI (261055) serial: Recv 8 bytes[0m
+[0;33mW (261955) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (262035) serial: Recv 102 bytes[0m
+[0;32mI (262065) serial: Recv 8 bytes[0m
+[0;33mW (262965) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (263045) serial: Recv 102 bytes[0m
+[0;32mI (263075) serial: Recv 8 bytes[0m
+[0;33mW (263975) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (264055) serial: Recv 102 bytes[0m
+[0;32mI (264085) serial: Recv 8 bytes[0m
+[0;33mW (264985) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (265075) serial: Recv 102 bytes[0m
+[0;32mI (265095) serial: Recv 8 bytes[0m
+[0;33mW (265995) RFID MANAGER: Heap Free: 156156 bytes[0m
+[0;32mI (266075) serial: Recv 102 bytes[0m
+[0;32mI (266095) esp_https_server: performing session handshake[0m
+[0;32mI (266465) serial: Recv 8 bytes[0m
+[0;32mI (267005) https_server: New client connected 57[0m
+[0;33mW (267015) RFID MANAGER: Heap Free: 123440 bytes[0m
+[0;32mI (267085) https_server: Handshake done, the new connection was opened[0m
+[0;32mI (267095) serial: Recv 102 bytes[0m
+[0;32mI (267115) serial: Recv 8 bytes[0m
+[0;32mI (268025) https_server: Sending to client (fd=57)[0m
+[0;33mW (268025) RFID MANAGER: Heap Free: 123072 bytes[0m
+[0;32mI (268105) serial: Recv 102 bytes[0m
+[0;32mI (268135) serial: Recv 8 bytes[0m
+[0;32mI (269035) https_server: Sending to client (fd=57)[0m
+[0;33mW (269035) RFID MANAGER: Heap Free: 123072 bytes[0m
+[0;32mI (269115) serial: Recv 102 bytes[0m
+[0;32mI (269145) serial: Recv 8 bytes[0m
+[0;32mI (270045) https_server: Sending to client (fd=57)[0m
+[0;33mW (270045) RFID MANAGER: Heap Free: 123076 bytes[0m
+[0;32mI (270125) serial: Recv 90 bytes[0m
+[0;32mI (270155) serial: Recv 8 bytes[0m
+[0;32mI (271055) https_server: Sending to client (fd=57)[0m
+[0;33mW (271055) RFID MANAGER: Heap Free: 123072 bytes[0m
+[0;32mI (271135) serial: Recv 102 bytes[0m
+[0;32mI (271155) serial: Recv 8 bytes[0m
+[0;32mI (272065) https_server: Sending to client (fd=57)[0m
+[0;33mW (272065) RFID MANAGER: Heap Free: 123312 bytes[0m
+[0;32mI (272145) serial: Recv 102 bytes[0m
+[0;32mI (272175) serial: Recv 8 bytes[0m
+[0;32mI (273075) https_server: Sending to client (fd=57)[0m
+[0;33mW (273075) RFID MANAGER: Heap Free: 123316 bytes[0m
+[0;32mI (273155) serial: Recv 102 bytes[0m
+[0;32mI (273175) serial: Recv 8 bytes[0m
+[0;32mI (274085) https_server: Sending to client (fd=57)[0m
+[0;33mW (274085) RFID MANAGER: Heap Free: 123312 bytes[0m
+[0;32mI (274165) serial: Recv 102 bytes[0m
+[0;32mI (274195) serial: Recv 8 bytes[0m
+[0;32mI (275095) https_server: Sending to client (fd=57)[0m
+[0;33mW (275095) RFID MANAGER: Heap Free: 123084 bytes[0m
+[0;32mI (275175) serial: Recv 102 bytes[0m
+[0;32mI (275195) serial: Recv 8 bytes[0m
+[0;32mI (276105) https_server: Sending to client (fd=57)[0m
+[0;33mW (276105) RFID MANAGER: Heap Free: 123076 bytes[0m
+[0;32mI (276185) serial: Recv 102 bytes[0m
+[0;32mI (276215) serial: Recv 8 bytes[0m
+[0;32mI (277115) https_server: Sending to client (fd=57)[0m
+[0;33mW (277115) RFID MANAGER: Heap Free: 123312 bytes[0m
+[0;32mI (277175) serial: Recv 34 bytes[0m
+[0;32mI (277205) serial: Recv 8 bytes[0m
+[0;32mI (278125) https_server: Sending to client (fd=57)[0m
+[0;33mW (278125) RFID MANAGER: Heap Free: 123536 bytes[0m
+[0;32mI (278205) serial: Recv 8 bytes[0m
+[0;32mI (279215) serial: Recv 8 bytes[0m
+[0;32mI (280225) serial: Recv 8 bytes[0m
+[0;32mI (281235) serial: Recv 8 bytes[0m
+[0;32mI (282225) serial: Recv 34 bytes[0m
+[0;32mI (282255) serial: Recv 8 bytes[0m
+[0;32mI (283175) https_server: Sending to client (fd=57)[0m
+[0;33mW (283175) RFID MANAGER: Heap Free: 123548 bytes[0m
+[0;32mI (283235) serial: Recv 34 bytes[0m
+[0;32mI (283265) serial: Recv 8 bytes[0m
+[0;32mI (284185) https_server: Sending to client (fd=57)[0m
+[0;33mW (284185) RFID MANAGER: Heap Free: 123760 bytes[0m
+[0;32mI (284245) serial: Recv 34 bytes[0m
+[0;32mI (284275) serial: Recv 8 bytes[0m
+[0;32mI (285195) https_server: Sending to client (fd=57)[0m
+[0;33mW (285195) RFID MANAGER: Heap Free: 123536 bytes[0m
+[0;32mI (285255) serial: Recv 34 bytes[0m
+[0;32mI (285285) serial: Recv 8 bytes[0m
+[0;32mI (286205) https_server: Sending to client (fd=57)[0m
+[0;33mW (286205) RFID MANAGER: Heap Free: 123540 bytes[0m
+[0;32mI (286265) serial: Recv 34 bytes[0m
+[0;32mI (286295) serial: Recv 8 bytes[0m
+[0;32mI (287215) https_server: Sending to client (fd=57)[0m
+[0;33mW (287215) RFID MANAGER: Heap Free: 123772 bytes[0m
+[0;32mI (287275) serial: Recv 34 bytes[0m
+[0;32mI (287305) serial: Recv 8 bytes[0m
+[0;32mI (288225) https_server: Sending to client (fd=57)[0m
+[0;33mW (288225) RFID MANAGER: Heap Free: 123776 bytes[0m
+[0;32mI (288305) serial: Recv 8 bytes[0m
+[0;32mI (289305) serial: Recv 68 bytes[0m
+[0;32mI (289335) serial: Recv 8 bytes[0m
+[0;32mI (290245) https_server: Sending to client (fd=57)[0m
+[0;33mW (290245) RFID MANAGER: Heap Free: 123508 bytes[0m
+[0;32mI (290315) serial: Recv 68 bytes[0m
+[0;32mI (290345) serial: Recv 8 bytes[0m
+[0;32mI (291255) https_server: Sending to client (fd=57)[0m
+[0;33mW (291255) RFID MANAGER: Heap Free: 123516 bytes[0m
+[0;32mI (291325) serial: Recv 68 bytes[0m
+[0;32mI (291355) serial: Recv 8 bytes[0m
+[0;32mI (292265) https_server: Sending to client (fd=57)[0m
+[0;33mW (292265) RFID MANAGER: Heap Free: 123272 bytes[0m
+[0;32mI (292335) serial: Recv 68 bytes[0m
+[0;32mI (292355) serial: Recv 8 bytes[0m
+[0;32mI (293275) https_server: Sending to client (fd=57)[0m
+[0;33mW (293275) RFID MANAGER: Heap Free: 123516 bytes[0m
+[0;32mI (293345) serial: Recv 68 bytes[0m
+[0;32mI (293375) serial: Recv 8 bytes[0m
+[0;32mI (294285) https_server: Sending to client (fd=57)[0m
+[0;33mW (294285) RFID MANAGER: Heap Free: 123504 bytes[0m
+[0;32mI (294365) serial: Recv 102 bytes[0m
+[0;32mI (294395) serial: Recv 8 bytes[0m
+[0;32mI (295295) https_server: Sending to client (fd=57)[0m
+[0;33mW (295295) RFID MANAGER: Heap Free: 123312 bytes[0m
+[0;32mI (295365) serial: Recv 68 bytes[0m
+[0;32mI (295395) serial: Recv 8 bytes[0m
+[0;32mI (296305) https_server: Sending to client (fd=57)[0m
+[0;33mW (296305) RFID MANAGER: Heap Free: 123508 bytes[0m
+[0;32mI (296375) serial: Recv 68 bytes[0m
+[0;32mI (296405) serial: Recv 8 bytes[0m
+[0;32mI (297315) https_server: Sending to client (fd=57)[0m
+[0;33mW (297315) RFID MANAGER: Heap Free: 123516 bytes[0m
+[0;32mI (297385) serial: Recv 68 bytes[0m
+[0;32mI (297415) serial: Recv 8 bytes[0m
+[0;32mI (298325) https_server: Sending to client (fd=57)[0m
+[0;33mW (298325) RFID MANAGER: Heap Free: 123272 bytes[0m
+[0;32mI (298395) serial: Recv 68 bytes[0m
+[0;32mI (298425) serial: Recv 8 bytes[0m
+[0;32mI (299335) https_server: Sending to client (fd=57)[0m
+[0;33mW (299335) RFID MANAGER: Heap Free: 123520 bytes[0m
+[0;32mI (299405) serial: Recv 68 bytes[0m
+[0;32mI (299435) serial: Recv 8 bytes[0m
+[0;32mI (300345) https_server: Sending to client (fd=57)[0m
+[0;33mW (300345) RFID MANAGER: Heap Free: 123280 bytes[0m
+[0;32mI (300415) serial: Recv 56 bytes[0m
+[0;32mI (300445) serial: Recv 8 bytes[0m
+[0;32mI (301355) https_server: Sending to client (fd=57)[0m
+[0;33mW (301355) RFID MANAGER: Heap Free: 123516 bytes[0m
+[0;32mI (301425) serial: Recv 68 bytes[0m
+[0;32mI (301455) serial: Recv 8 bytes[0m
+[0;32mI (302365) https_server: Sending to client (fd=57)[0m
+[0;33mW (302365) RFID MANAGER: Heap Free: 123276 bytes[0m
+[0;32mI (302435) serial: Recv 68 bytes[0m
+[0;32mI (302465) serial: Recv 8 bytes[0m
+[0;32mI (303375) https_server: Sending to client (fd=57)[0m
+[0;33mW (303375) RFID MANAGER: Heap Free: 123276 bytes[0m
+[0;32mI (303445) serial: Recv 68 bytes[0m
+[0;32mI (303475) serial: Recv 8 bytes[0m
+[0;32mI (304385) https_server: Sending to client (fd=57)[0m
+[0;33mW (304385) RFID MANAGER: Heap Free: 123524 bytes[0m
+[0;32mI (304455) serial: Recv 68 bytes[0m
+[0;32mI (304485) serial: Recv 8 bytes[0m
+[0;32mI (305395) https_server: Sending to client (fd=57)[0m
+[0;33mW (305395) RFID MANAGER: Heap Free: 123504 bytes[0m
+[0;32mI (305465) serial: Recv 68 bytes[0m
+[0;32mI (305485) serial: Recv 8 bytes[0m
+[0;32mI (306405) https_server: Sending to client (fd=57)[0m
+[0;33mW (306405) RFID MANAGER: Heap Free: 123284 bytes[0m
+[0;32mI (306475) serial: Recv 68 bytes[0m
+[0;32mI (306505) serial: Recv 8 bytes[0m
+[0;32mI (307415) https_server: Sending to client (fd=57)[0m
+[0;33mW (307415) RFID MANAGER: Heap Free: 122936 bytes[0m
+[0;32mI (307495) serial: Recv 102 bytes[0m
+[0;32mI (307515) serial: Recv 8 bytes[0m
+[0;32mI (308425) https_server: Sending to client (fd=57)[0m
+[0;33mW (308425) RFID MANAGER: Heap Free: 123072 bytes[0m
+[0;32mI (308505) serial: Recv 102 bytes[0m
+[0;32mI (308535) serial: Recv 8 bytes[0m

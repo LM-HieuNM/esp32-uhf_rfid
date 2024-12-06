@@ -22,6 +22,7 @@ static const char TAG[] = "nvs";
 // NVS name space used for station mode credentials
 const char app_nvs_sta_creds_namespace[] = "stacreds";
 const char app_nvs_socket_creds_namespace[] = "socketcreds";
+const char app_nvs_antenna_namespace[] = "antenna";
 
 esp_err_t app_nvs_save_sta_creds(void)
 {
@@ -252,36 +253,99 @@ bool app_nvs_load_socket_creds(void)
 	}
 }
 
-//esp_err_t app_nvs_clear_sta_creds(void)
-//{
-//	nvs_handle handle;
-//	esp_err_t esp_err;
-//	ESP_LOGI(TAG, "app_nvs_clear_sta_creds: Clearing Wifi station mode credentials from flash");
-//
-//	esp_err = nvs_open(app_nvs_sta_creds_namespace, NVS_READWRITE, &handle);
-//	if (esp_err != ESP_OK)
-//	{
-//		printf("app_nvs_clear_sta_creds: Error (%s) opening NVS handle!\n", esp_err_to_name(esp_err));
-//		return esp_err;
-//	}
-//
-//	// Erase credentials
-//	esp_err = nvs_erase_all(handle);
-//	if (esp_err != ESP_OK)
-//	{
-//		printf("app_nvs_clear_sta_creds: Error (%s) erasing station mode credentials!\n", esp_err_to_name(esp_err));
-//		return esp_err;
-//	}
-//
-//	// Commit clearing credentials from NVS
-//	esp_err = nvs_commit(handle);
-//	if (esp_err != ESP_OK)
-//	{
-//		printf("app_nvs_clear_sta_creds: Error (%s) NVS commit!\n", esp_err_to_name(esp_err));
-//		return esp_err;
-//	}
-//	nvs_close(handle);
-//
-//	printf("app_nvs_clear_sta_creds: returned ESP_OK\n");
-//	return ESP_OK;
-//}
+esp_err_t app_nvs_save_antenna_config(antenna_config_t *config)
+{
+    nvs_handle handle;
+    esp_err_t esp_err;
+    ESP_LOGI(TAG, "app_nvs_save_antenna_config: Saving antenna config to flash");
+
+    esp_err = nvs_open(app_nvs_antenna_namespace, NVS_READWRITE, &handle);
+    if (esp_err != ESP_OK)
+    {
+        printf("app_nvs_save_antenna_config: Error (%s) opening NVS handle!\n", esp_err_to_name(esp_err));
+        return esp_err;
+    }
+
+    // Lưu power
+    esp_err = nvs_set_i32(handle, "power", config->power);
+    if (esp_err != ESP_OK)
+    {
+        printf("app_nvs_save_antenna_config: Error (%s) saving power!\n", esp_err_to_name(esp_err));
+        return esp_err;
+    }
+
+    // Lưu antenna array
+    esp_err = nvs_set_blob(handle, "antennas", config->antennas, sizeof(config->antennas));
+    if (esp_err != ESP_OK)
+    {
+        printf("app_nvs_save_antenna_config: Error (%s) saving antennas!\n", esp_err_to_name(esp_err));
+        return esp_err;
+    }
+
+    // Commit
+    esp_err = nvs_commit(handle);
+    if (esp_err != ESP_OK)
+    {
+        printf("app_nvs_save_antenna_config: Error (%s) committing data to NVS!\n", esp_err_to_name(esp_err));
+        return esp_err;
+    }
+
+    nvs_close(handle);
+    ESP_LOGI(TAG, "app_nvs_save_antenna_config: Saved power: %d", config->power);
+    return ESP_OK;
+}
+
+esp_err_t app_nvs_load_antenna_config(antenna_config_t *config)
+{
+    nvs_handle handle;
+    esp_err_t esp_err;
+
+    ESP_LOGI(TAG, "app_nvs_load_antenna_config: Loading antenna config from flash");
+
+    if (nvs_open(app_nvs_antenna_namespace, NVS_READONLY, &handle) == ESP_OK)
+    {
+        // Load power
+        int32_t power;
+        esp_err = nvs_get_i32(handle, "power", &power);
+        if (esp_err == ESP_OK)
+        {
+            config->power = power;
+        }
+        else if (esp_err == ESP_ERR_NVS_NOT_FOUND)
+        {
+            // Set default power
+            config->power = 10;
+            printf("app_nvs_load_antenna_config: No power value found, using default: %d\n", config->power);
+        }
+        else
+        {
+            printf("app_nvs_load_antenna_config: Error (%s) reading power!\n", esp_err_to_name(esp_err));
+            nvs_close(handle);
+            return esp_err;
+        }
+
+        // Load antennas
+        size_t required_size = sizeof(config->antennas);
+        esp_err = nvs_get_blob(handle, "antennas", config->antennas, &required_size);
+        if (esp_err == ESP_ERR_NVS_NOT_FOUND)
+        {
+            // Set defaults: all off except antenna 1
+            memset(config->antennas, false, sizeof(config->antennas));
+            config->antennas[0] = true;
+            printf("app_nvs_load_antenna_config: No antenna config found, using defaults\n");
+        }
+        else if (esp_err != ESP_OK)
+        {
+            printf("app_nvs_load_antenna_config: Error (%s) reading antennas!\n", esp_err_to_name(esp_err));
+            nvs_close(handle);
+            return esp_err;
+        }
+
+        nvs_close(handle);
+        ESP_LOGI(TAG, "app_nvs_load_antenna_config: Loaded power: %d", config->power);
+        return ESP_OK;
+    }
+
+    printf("app_nvs_load_antenna_config: Error opening NVS handle!\n");
+    return ESP_FAIL;
+}

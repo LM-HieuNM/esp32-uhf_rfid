@@ -1,10 +1,3 @@
-/*
- * http_server.c
- *
- *  Created on: Oct 20, 2021
- *      Author: kjagu
- */
-
 #include "esp_https_server.h"
 #include "esp_log.h"
 #include "esp_ota_ops.h"
@@ -14,7 +7,9 @@
 #include "esp_timer.h"
 #include "lwip/sockets.h"
 #include "keep_alive.h"
-
+#include "TagManage.hpp"
+#include "cJSON.h"
+#include "app_nvs.h"
 #include "wifi_app.h"
 #include "tasks_common.h"
 #include "http_server.h"
@@ -35,6 +30,7 @@ static QueueHandle_t http_server_monitor_queue_handle;
 struct async_resp_arg {
     httpd_handle_t hd;
     int fd;
+    void* data;
 };
 
 const esp_timer_create_args_t fw_update_reset_args = {
@@ -72,7 +68,7 @@ static esp_err_t http_server_wifi_disconnect_json_handler(httpd_req_t *req);
 static esp_err_t ws_handler(httpd_req_t *req)
 {
     if (req->method == HTTP_GET) {
-        ESP_LOGI(TAG, "Handshake done, the new connection was opened");
+        ESP_LOGI(TAG, "WebSocket handshake for fd %d", httpd_req_to_sockfd(req));
         return ESP_OK;
     }
 
@@ -102,13 +98,49 @@ static esp_err_t ws_handler(httpd_req_t *req)
         }
     }
 
-    // Improved PONG handling
-    if (ws_pkt.type == HTTPD_WS_TYPE_PONG) {
-        ESP_LOGD(TAG, "Received PONG from client fd %d", httpd_req_to_sockfd(req));
-        wss_keep_alive_t h = httpd_get_global_user_ctx(req->handle);
-        if (h) {
-            wss_keep_alive_client_is_active(h, httpd_req_to_sockfd(req));
-        }
+    switch (ws_pkt.type) {
+        case HTTPD_WS_TYPE_TEXT:
+            // Xử lý text message
+            ESP_LOGI(TAG, "Received text message: %s", (char*)ws_pkt.payload);
+            // Có thể echo lại message cho client
+            httpd_ws_frame_t ws_response = {
+                .final = true,
+                .fragmented = false,
+                .type = HTTPD_WS_TYPE_TEXT,
+                .payload = ws_pkt.payload,
+                .len = ws_pkt.len
+            };
+            ret = httpd_ws_send_frame(req, &ws_response);
+            if (ret != ESP_OK) {
+                ESP_LOGE(TAG, "httpd_ws_send_frame failed with %d", ret);
+            }
+            break;
+            
+        case HTTPD_WS_TYPE_BINARY:
+            // Xử lý binary message
+            ESP_LOGI(TAG, "Received binary message, len=%d", ws_pkt.len);
+            break;
+            
+        case HTTPD_WS_TYPE_PONG:
+            ESP_LOGD(TAG, "Received PONG from client fd %d", httpd_req_to_sockfd(req));
+            wss_keep_alive_t h = httpd_get_global_user_ctx(req->handle);
+            if (h) {
+                wss_keep_alive_client_is_active(h, httpd_req_to_sockfd(req));
+            }
+            break;
+            
+        case HTTPD_WS_TYPE_PING:
+            // Tự động trả lời PING bằng PONG
+            ws_pkt.type = HTTPD_WS_TYPE_PONG;
+            ret = httpd_ws_send_frame(req, &ws_pkt);
+            if (ret != ESP_OK) {
+                ESP_LOGE(TAG, "httpd_ws_send_frame failed with %d", ret);
+            }
+            break;
+            
+        default:
+            ESP_LOGI(TAG, "Received unknown message type: %d", ws_pkt.type);
+            break;
     }
     
     free(buf);
@@ -117,7 +149,7 @@ static esp_err_t ws_handler(httpd_req_t *req)
 
 static esp_err_t http_server_jquery_handler(httpd_req_t *req)
 {
-	ESP_LOGI(TAG, "Jquery requested");
+	ESP_LOGI(TAG, "Jquery requested from fd %d", httpd_req_to_sockfd(req));
 
 	httpd_resp_set_type(req, "application/javascript");
 	httpd_resp_send(req, (const char *)jquery_3_3_1_min_js_start, jquery_3_3_1_min_js_end - jquery_3_3_1_min_js_start);
@@ -128,7 +160,7 @@ static esp_err_t http_server_jquery_handler(httpd_req_t *req)
 
 static esp_err_t http_server_index_html_handler(httpd_req_t *req)
 {
-	ESP_LOGI(TAG, "index.html requested");
+	ESP_LOGI(TAG, "index.html requested from fd %d", httpd_req_to_sockfd(req));
 
 	httpd_resp_set_type(req, "text/html");
 	httpd_resp_send(req, (const char *)index_html_start, index_html_end - index_html_start);
@@ -148,7 +180,7 @@ static esp_err_t http_server_app_css_handler(httpd_req_t *req)
 
 static esp_err_t http_server_app_js_handler(httpd_req_t *req)
 {
-	ESP_LOGI(TAG, "app.js requested");
+	ESP_LOGI(TAG, "app.js requested from fd %d", httpd_req_to_sockfd(req));
 
 	httpd_resp_set_type(req, "application/javascript");
 	httpd_resp_send(req, (const char *)app_js_start, app_js_end - app_js_start);
@@ -384,6 +416,92 @@ static void http_server_fw_update_reset_timer(void)
 	}
 }
 
+static esp_err_t http_server_antenna_config_handler(httpd_req_t *req)
+{
+    char buf[200];
+    char response[200];
+
+    if (req->method == HTTP_GET) {
+        // Tạo JSON response với cấu hình hiện tại
+        snprintf(response, sizeof(response), 
+                "{\"power\":%d,\"antennas\":[%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d]}", 
+                current_antenna_config.power,
+                current_antenna_config.antennas[0], current_antenna_config.antennas[1],
+                current_antenna_config.antennas[2], current_antenna_config.antennas[3],
+                current_antenna_config.antennas[4], current_antenna_config.antennas[5],
+                current_antenna_config.antennas[6], current_antenna_config.antennas[7],
+                current_antenna_config.antennas[8], current_antenna_config.antennas[9],
+                current_antenna_config.antennas[10], current_antenna_config.antennas[11],
+                current_antenna_config.antennas[12], current_antenna_config.antennas[13],
+                current_antenna_config.antennas[14], current_antenna_config.antennas[15]);
+
+		esp_err_t err = app_nvs_save_antenna_config(&current_antenna_config);
+		if (err != ESP_OK) {
+			const char *error_response = "{\"status\":\"error\",\"message\":\"Failed to save config\"}";
+			httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, error_response);
+			return ESP_FAIL;
+		}
+
+        httpd_resp_set_type(req, "application/json");
+        httpd_resp_send(req, response, strlen(response));
+        return ESP_OK;
+    }
+    else if (req->method == HTTP_POST) {
+        // Đọc JSON request
+        int ret = httpd_req_recv(req, buf, sizeof(buf) - 1);
+        if (ret <= 0) {
+            if (ret == HTTPD_SOCK_ERR_TIMEOUT) {
+                httpd_resp_send_408(req);
+            }
+            return ESP_FAIL;
+        }
+        buf[ret] = '\0';
+
+        // Parse JSON
+        cJSON *root = cJSON_Parse(buf);
+        if (root == NULL) {
+            const char *error_response = "{\"status\":\"error\",\"message\":\"Invalid JSON\"}";
+            httpd_resp_send_err(req, HTTPD_400_BAD_REQUEST, error_response);
+            return ESP_FAIL;
+        }
+
+        // Lấy giá trị power
+        cJSON *power = cJSON_GetObjectItem(root, "power");
+        if (cJSON_IsNumber(power)) {
+            current_antenna_config.power = power->valueint;
+        }
+
+        // Lấy mảng trạng thái anten
+        cJSON *antennas = cJSON_GetObjectItem(root, "antennas");
+        if (cJSON_IsArray(antennas)) {
+            int array_size = cJSON_GetArraySize(antennas);
+            for (int i = 0; i < MIN(array_size, 16); i++) {
+                cJSON *antenna = cJSON_GetArrayItem(antennas, i);
+                if (cJSON_IsBool(antenna)) {
+                    current_antenna_config.antennas[i] = cJSON_IsTrue(antenna);
+                }
+            }
+        }
+
+        // Áp dụng cấu hình vào phần cứng
+        // TODO: Thêm code điều khiển phần cứng ở đây
+        ESP_LOGI(TAG, "Applied antenna config - Power: %d", current_antenna_config.power);
+        for (int i = 0; i < 16; i++) {
+            ESP_LOGI(TAG, "Antenna %d: %s", i + 1, current_antenna_config.antennas[i] ? "ON" : "OFF");
+        }
+
+        cJSON_Delete(root);
+
+        // Gửi response thành công
+        const char *success_response = "{\"status\":\"success\"}";
+        httpd_resp_set_type(req, "application/json");
+        httpd_resp_send(req, success_response, strlen(success_response));
+        return ESP_OK;
+    }
+
+    return ESP_FAIL;
+}
+
 static void http_server_monitor(void *parameter)
 {
 	http_server_queue_message_t msg;
@@ -467,10 +585,13 @@ bool client_not_alive_cb(wss_keep_alive_t h, int fd)
     
     httpd_handle_t hd = wss_keep_alive_get_user_ctx(h);
     if (hd) {
+        // Xóa client khỏi keep-alive list trước
+        wss_keep_alive_remove_client(h, fd);
+        // Sau đó đóng kết nối
         httpd_sess_trigger_close(hd, fd);
     }
     
-    return true;
+    return false;  // Không tiếp tục theo dõi client này nữa
 }
 
 bool check_client_alive_cb(wss_keep_alive_t h, int fd)
@@ -512,31 +633,29 @@ void wss_close_fd(httpd_handle_t hd, int sockfd)
 
 static httpd_handle_t start_wss_echo_server(void)
 {
-
-
-
     // Prepare keep-alive engine
-    // wss_keep_alive_config_t keep_alive_config = KEEP_ALIVE_CONFIG_DEFAULT();
-    // keep_alive_config.max_clients = max_clients;
-    // keep_alive_config.keep_alive_period_ms = KEEPALIVE_INTERVAL * 1000;  
-    // keep_alive_config.not_alive_after_ms = KEEPALIVE_TIMEOUT * 1000;
-    // keep_alive_config.client_not_alive_cb = client_not_alive_cb;
-    // keep_alive_config.check_client_alive_cb = check_client_alive_cb;
-    // wss_keep_alive_t keep_alive = wss_keep_alive_start(&keep_alive_config);
+    wss_keep_alive_config_t keep_alive_config = KEEP_ALIVE_CONFIG_DEFAULT();
+    keep_alive_config.max_clients = max_clients;
+    keep_alive_config.keep_alive_period_ms = KEEPALIVE_INTERVAL * 1000;  
+    keep_alive_config.not_alive_after_ms = KEEPALIVE_TIMEOUT * 1000;
+    keep_alive_config.client_not_alive_cb = client_not_alive_cb;
+    keep_alive_config.check_client_alive_cb = check_client_alive_cb;
+    wss_keep_alive_t keep_alive = wss_keep_alive_start(&keep_alive_config);
 
     // Start the httpd server
     httpd_handle_t server = NULL;
     httpd_ssl_config_t conf = HTTPD_SSL_CONFIG_DEFAULT();
     
     // Điều chỉnh các thông số server
-    // conf.httpd.max_open_sockets = max_clients;
-    // conf.httpd.lru_purge_enable = true;  // Enable LRU purge
-    // conf.httpd.recv_wait_timeout = 30;   // 30 seconds timeout
-    // conf.httpd.send_wait_timeout = 30;   // 30 seconds timeout
-    // conf.httpd.global_user_ctx = keep_alive;
-    // conf.httpd.global_user_ctx_free_fn = NULL;
-    // conf.httpd.open_fn = wss_open_fd;
-    // conf.httpd.close_fn = wss_close_fd;
+    conf.httpd.max_open_sockets = max_clients;
+    conf.httpd.lru_purge_enable = true;  // Enable LRU purge
+    conf.httpd.recv_wait_timeout = 30;   // 30 seconds timeout
+    conf.httpd.send_wait_timeout = 30;   // 30 seconds timeout
+    conf.httpd.global_user_ctx = keep_alive;
+    conf.httpd.global_user_ctx_free_fn = NULL;
+    conf.httpd.open_fn = wss_open_fd;
+    conf.httpd.close_fn = wss_close_fd;
+
 	conf.httpd.stack_size = 8192;
 	conf.httpd.max_uri_handlers = 20;
 
@@ -550,7 +669,8 @@ static httpd_handle_t start_wss_echo_server(void)
     conf.prvtkey_pem = prvtkey_pem_start;
     conf.prvtkey_len = prvtkey_pem_end - prvtkey_pem_start;
 
-	conf.transport_mode = HTTPD_SSL_TRANSPORT_INSECURE;
+	// conf.transport_mode = HTTPD_SSL_TRANSPORT_INSECURE;
+	conf.transport_mode = HTTPD_SSL_TRANSPORT_SECURE;
 	conf.session_tickets = false;
 
     esp_err_t ret = httpd_ssl_start(&server, &conf);
@@ -561,17 +681,16 @@ static httpd_handle_t start_wss_echo_server(void)
 
     // Set URI handlers
     ESP_LOGI(TAG, "Registering URI handlers");
-    // httpd_register_uri_handler(server, &ws);
-	
-// static const httpd_uri_t ws = {
-//         .uri        = "/ws",
-//         .method     = HTTP_GET,
-//         .handler    = ws_handler,
-//         .user_ctx   = NULL,
-//         .is_websocket = true,
-//         .handle_ws_control_frames = true
-// };
-
+    
+	static const httpd_uri_t ws = {
+			.uri        = "/ws",
+			.method     = HTTP_GET,
+			.handler    = ws_handler,
+			.user_ctx   = NULL,
+			.is_websocket = true,
+			.handle_ws_control_frames = true
+	};
+	httpd_register_uri_handler(server, &ws);
 
 	httpd_uri_t jquery_js = {
         .uri = "/jquery-3.3.1.min.js",
@@ -669,7 +788,23 @@ static httpd_handle_t start_wss_echo_server(void)
 	};
 	httpd_register_uri_handler(server, &OTA_status);
 
-    // wss_keep_alive_set_user_ctx(keep_alive, server);
+	httpd_uri_t antenna_config = {
+		.uri = "/antennaConfig.json",
+		.method = HTTP_GET,
+		.handler = http_server_antenna_config_handler,
+		.user_ctx = NULL
+	};
+	httpd_register_uri_handler(server, &antenna_config);
+
+	httpd_uri_t antenna_config_post = {
+		.uri = "/antennaConfig.json",
+		.method = HTTP_POST,
+		.handler = http_server_antenna_config_handler,
+		.user_ctx = NULL
+	};
+	httpd_register_uri_handler(server, &antenna_config_post);
+
+    wss_keep_alive_set_user_ctx(keep_alive, server);
 
 	xTaskCreate(
 			&http_server_monitor, 
@@ -730,3 +865,137 @@ void http_server_fw_update_reset_callback(void *arg)
 	esp_restart();
 }
 
+
+
+// static void send_hello(void *arg)
+// {
+//     static const char * data = "Hello client. Iam WSS";
+//     ESP_LOGI(TAG, "Send Hello");
+//     struct async_resp_arg *resp_arg = arg;
+//     httpd_handle_t hd = resp_arg->hd;
+//     int fd = resp_arg->fd;
+//     httpd_ws_frame_t ws_pkt;
+//     memset(&ws_pkt, 0, sizeof(httpd_ws_frame_t));
+//     ws_pkt.payload = (uint8_t*)data;
+//     ws_pkt.len = strlen(data);
+//     ws_pkt.type = HTTPD_WS_TYPE_TEXT;
+
+//     httpd_ws_send_frame_async(hd, fd, &ws_pkt);
+//     free(resp_arg);
+// }
+
+
+
+// static void wss_server_send_messages(httpd_handle_t* server)
+// {
+//     bool send_messages = true;
+
+//     // Send async message to all connected clients that use websocket protocol every 10 seconds
+//     while (send_messages) {
+//         ESP_LOGI(TAG, "Heap free: %ld", esp_get_free_heap_size());
+//         vTaskDelay(10000 / portTICK_PERIOD_MS);
+
+//         if (!*server) { // httpd might not have been created by now
+//             continue;
+//         }
+//         size_t clients = max_clients;
+//         int    client_fds[max_clients];
+//         if (httpd_get_client_list(*server, &clients, client_fds) == ESP_OK) {
+//             for (size_t i=0; i < clients; ++i) {
+//                 int sock = client_fds[i];
+//                 if (httpd_ws_get_fd_info(*server, sock) == HTTPD_WS_CLIENT_WEBSOCKET) {
+//                     ESP_LOGI(TAG, "Active client (fd=%d) -> sending async message", sock);
+//                     struct async_resp_arg *resp_arg = malloc(sizeof(struct async_resp_arg));
+//                     assert(resp_arg != NULL);
+//                     resp_arg->hd = *server;
+//                     resp_arg->fd = sock;
+//                     if (httpd_queue_work(resp_arg->hd, send_hello, resp_arg) != ESP_OK) {
+//                         ESP_LOGE(TAG, "httpd_queue_work failed!");
+//                         send_messages = false;
+//                         break;
+//                     }
+//                 }
+//             }
+//         } else {
+//             ESP_LOGE(TAG, "httpd_get_client_list failed!");
+//             return;
+//         }
+//     }
+// }
+
+static void send_json(void *arg)
+{
+    struct async_resp_arg *resp_arg = arg;
+    httpd_handle_t hd = resp_arg->hd;
+    int fd = resp_arg->fd;
+    const char* json_data = (const char*)resp_arg->data;
+    // ESP_LOGI(TAG, "Sending JSON: %s", json_data);
+    httpd_ws_frame_t ws_pkt;
+    memset(&ws_pkt, 0, sizeof(httpd_ws_frame_t));
+    ws_pkt.payload = (uint8_t*)json_data;
+    ws_pkt.len = strlen(json_data);
+    ws_pkt.type = HTTPD_WS_TYPE_TEXT;
+
+    httpd_ws_send_frame_async(hd, fd, &ws_pkt);
+    free(resp_arg->data); // Free the JSON string
+    free(resp_arg);
+}
+
+// Gửi JSON cho một client cụ thể
+esp_err_t wss_server_send_json_to_client(int client_fd, const char* json_data) 
+{
+    if (http_server_handle == NULL) {
+        ESP_LOGE(TAG, "Server handle is NULL");
+        return ESP_FAIL;
+    }
+
+    struct async_resp_arg *resp_arg = malloc(sizeof(struct async_resp_arg));
+    if (resp_arg == NULL) {
+        return ESP_ERR_NO_MEM;
+    }
+    
+    char* json_copy = strdup(json_data);
+    if (json_copy == NULL) {
+        free(resp_arg);
+        return ESP_ERR_NO_MEM;
+    }
+
+    resp_arg->hd = http_server_handle;
+    resp_arg->fd = client_fd;
+    resp_arg->data = json_copy;
+
+    if (httpd_queue_work(http_server_handle, send_json, resp_arg) != ESP_OK) {
+        free(json_copy);
+        free(resp_arg);
+        return ESP_FAIL;
+    }
+    
+    return ESP_OK;
+}
+
+// Broadcast JSON cho tất cả clients
+esp_err_t wss_server_broadcast_json(const char* json_data)
+{
+    if (http_server_handle == NULL) {
+        ESP_LOGE(TAG, "Server handle is NULL");
+        return ESP_FAIL;
+    }
+
+    size_t clients = max_clients;
+    int client_fds[max_clients];
+    
+    if (httpd_get_client_list(http_server_handle, &clients, client_fds) != ESP_OK) {
+        ESP_LOGE(TAG, "httpd_get_client_list failed!");
+        return ESP_FAIL;
+    }
+    
+    for (size_t i = 0; i < clients; ++i) {
+        int sock = client_fds[i];
+        if (httpd_ws_get_fd_info(http_server_handle, sock) == HTTPD_WS_CLIENT_WEBSOCKET) {
+            ESP_LOGI(TAG, "Sending to client (fd=%d)", sock);
+            wss_server_send_json_to_client(sock, json_data);
+        }
+    }
+    
+    return ESP_OK;
+}

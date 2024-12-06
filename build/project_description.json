@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "wss_server",
-    "project_version":    "1",
+    "project_version":    "05b6ba9-dirty",
     "project_path":       "/home/hieunm/Desktop/wss_server",
     "idf_path":           "/home/hieunm/esp-idf",
     "build_dir":          "/home/hieunm/Desktop/wss_server/build",
@@ -1225,8 +1225,8 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__button", "protocol_examples_common" ],
             "file": "/home/hieunm/Desktop/wss_server/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/hieunm/Desktop/wss_server/main/main.c", "/home/hieunm/Desktop/wss_server/main/lib/wifi_app/wifi_app.c", "/home/hieunm/Desktop/wss_server/main/lib/https_server/keep_alive.c", "/home/hieunm/Desktop/wss_server/main/lib/https_server/http_server.c", "/home/hieunm/Desktop/wss_server/main/lib/app_nvs/app_nvs.c", "/home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp", "/home/hieunm/Desktop/wss_server/main/lib/serial/serial.cpp", "/home/hieunm/Desktop/wss_server/main/lib/packet/packet.cpp", "/home/hieunm/Desktop/wss_server/main/lib/tag_manager/tag_list.cpp", "/home/hieunm/Desktop/wss_server/main/lib/board/button.c", "/home/hieunm/Desktop/wss_server/main/lib/time/sntp_time.c", "/home/hieunm/Desktop/wss_server/build/favicon.ico.S", "/home/hieunm/Desktop/wss_server/build/app.css.S", "/home/hieunm/Desktop/wss_server/build/app.js.S", "/home/hieunm/Desktop/wss_server/build/index.html.S", "/home/hieunm/Desktop/wss_server/build/jquery-3.3.1.min.js.S", "/home/hieunm/Desktop/wss_server/build/servercert.pem.S", "/home/hieunm/Desktop/wss_server/build/prvtkey.pem.S" ],
-            "include_dirs": [ "lib/wifi_app", "lib/https_server", "lib/app_nvs", "lib/utils", "lib/tag_manager", "lib/serial", "lib/packet", "lib/board", "lib/time" ]
+            "sources": [ "/home/hieunm/Desktop/wss_server/main/main.c", "/home/hieunm/Desktop/wss_server/main/lib/wifi_app/wifi_app.c", "/home/hieunm/Desktop/wss_server/main/lib/https_server/keep_alive.c", "/home/hieunm/Desktop/wss_server/main/lib/https_server/http_server.c", "/home/hieunm/Desktop/wss_server/main/lib/app_nvs/app_nvs.c", "/home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp", "/home/hieunm/Desktop/wss_server/main/lib/serial/serial.cpp", "/home/hieunm/Desktop/wss_server/main/lib/packet/packet.cpp", "/home/hieunm/Desktop/wss_server/main/lib/tag_manager/tag_list.cpp", "/home/hieunm/Desktop/wss_server/main/lib/board/button.c", "/home/hieunm/Desktop/wss_server/main/lib/time/sntp_time.c", "/home/hieunm/Desktop/wss_server/main/lib/upd/udp_task.c", "/home/hieunm/Desktop/wss_server/build/favicon.ico.S", "/home/hieunm/Desktop/wss_server/build/app.css.S", "/home/hieunm/Desktop/wss_server/build/app.js.S", "/home/hieunm/Desktop/wss_server/build/index.html.S", "/home/hieunm/Desktop/wss_server/build/jquery-3.3.1.min.js.S", "/home/hieunm/Desktop/wss_server/build/servercert.pem.S", "/home/hieunm/Desktop/wss_server/build/prvtkey.pem.S" ],
+            "include_dirs": [ "lib/wifi_app", "lib/https_server", "lib/app_nvs", "lib/utils", "lib/tag_manager", "lib/serial", "lib/packet", "lib/board", "lib/time", "lib/upd" ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -2875,7 +2875,7 @@
             "priv_reqs": [ "espressif__button", "protocol_examples_common" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__button", "protocol_examples_common" ],
-            "include_dirs": [ "lib/wifi_app", "lib/https_server", "lib/app_nvs", "lib/utils", "lib/tag_manager", "lib/serial", "lib/packet", "lib/board", "lib/time" ]
+            "include_dirs": [ "lib/wifi_app", "lib/https_server", "lib/app_nvs", "lib/utils", "lib/tag_manager", "lib/serial", "lib/packet", "lib/board", "lib/time", "lib/upd" ]
         },
         "espressif__button": {
             "alias": "idf::espressif__button",

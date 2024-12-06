@@ -1,0 +1,476 @@
+[0;32mI (159) esp_image: segment 1: paddr=00082b60 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4005880e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=72b38h (469816) map[0m
+[0;32mI (159) esp_image: segment 1: paddr=00082b60 vaddr=3fc94c00 size=02ee8h ( 12008) load[0m
+[0;32mI (161) esp_image: segment 2: paddr=00085a50 vaddr=40380000 size=0a5c8h ( 42440) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e7654h (947796) map[0m
+[0;32mI (319) esp_image: segment 4: paddr=0017767c vaddr=4038a5c8 size=0a4e4h ( 42212) load[0m
+[0;32mI (327) esp_image: segment 5: paddr=00181b68 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (333) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (333) boot: Disabling RNG early entropy source...[0m
+[0;32mI (344) cpu_start: Unicore app[0m
+[0;32mI (353) cpu_start: Pro cpu start user code[0m
+[0;32mI (353) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (353) app_init: Application information:[0m
+[0;32mI (353) app_init: Project name:     wss_server[0m
+[0;32mI (357) app_init: App version:      05b6ba9-dirty[0m
+[0;32mI (361) app_init: Compile time:     Dec  6 2024 17:23:26[0m
+[0;32mI (366) app_init: ELF file SHA256:  270ee3b54...[0m
+[0;32mI (371) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (377) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (381) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (385) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (388) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (395) heap_init: At 3FC9D8A0 len 00022760 (137 KiB): RAM[0m
+[0;32mI (400) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (406) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (412) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (418) spi_flash: detected chip: generic[0m
+[0;32mI (421) spi_flash: flash io: dio[0m
+[0;32mI (425) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (430) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (437) main_task: Started on CPU0[0m
+[0;32mI (437) main_task: Calling app_main()[0m
+[0;32mI (447) button: IoT Button Version: 3.4.0[0m
+[0;32mI (447) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (447) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (457) pp: pp rom version: 9387209[0m
+[0;32mI (457) net80211: net80211 rom version: 9387209[0m
+[0;32mI (477) wifi_init: rx ba win: 6[0m
+[0;32mI (477) wifi_init: accept mbox: 6[0m
+[0;32mI (477) wifi_init: tcpip mbox: 32[0m
+[0;32mI (477) wifi_init: udp mbox: 6[0m
+[0;32mI (477) wifi_init: tcp mbox: 6[0m
+[0;32mI (477) wifi_init: tcp tx win: 5760[0m
+[0;32mI (487) wifi_init: tcp rx win: 5760[0m
+[0;32mI (487) wifi_init: tcp mss: 1440[0m
+[0;32mI (487) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (497) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (777) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (827) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (827) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (827) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (837) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (837) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+app_nvs_load_sta_creds: SSID: LUMI_TEST Password: lumivn274!
+[0;32mI (847) wifi_app: Loaded station configuration[0m
+[0;32mI (857) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (857) esp_https_server: Starting server[0m
+[0;32mI (867) esp_https_server: Server listening on port 443[0m
+[0;32mI (1147) https_server: Registering URI handlers[0m
+[0;32mI (1157) serial: Recv 18 bytes[0m
+[0;32mI (1177) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 202
+[0;32mI (1187) serial: Recv 18 bytes[0m
+[0;32mI (1237) main_task: Returned from app_main()[0m
+[0;32mI (1267) serial: Recv 13 bytes[0m
+[0;32mI (4017) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 205
+[0;32mI (4137) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (5717) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (5717) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (5717) wifi_app: Local IP: 172.16.100.108[0m
+[0;32mI (5717) wifi_app: Broadcast IP: 172.16.100.255[0m
+[0;32mI (5717) udp_task: Device MAC: F4F1FC[0m
+[0;32mI (5727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5727) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (7427) esp_https_server: performing session handshake[0m
+[1;31mE (8127) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (8137) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (8137) https_server: Client disconnected 58[0m
+[1;31mE (8137) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (8147) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (8147) esp_https_server: performing session handshake[0m
+[1;31mE (8537) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (8857) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (8857) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (8857) https_server: Client disconnected 58[0m
+[1;31mE (8867) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (8867) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (8877) esp_https_server: performing session handshake[0m
+[1;31mE (9257) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (9817) https_server: New client connected 58[0m
+[0;32mI (9917) https_server: index.html requested from fd 58[0m
+[0;32mI (10117) esp_https_server: performing session handshake[0m
+[0;32mI (10727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (10827) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (10827) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (10827) https_server: Client disconnected 59[0m
+[1;31mE (10827) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (10837) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (10847) https_server: app.css requested[0m
+[1;31mE (10847) wss_keep_alive: Cannot remove client fd:59[0m
+[0;32mI (10967) esp_https_server: performing session handshake[0m
+[1;31mE (11667) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (11667) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (11667) https_server: Client disconnected 59[0m
+[1;31mE (11667) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (11677) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (11687) https_server: Jquery requested from fd 58[0m
+[1;31mE (11687) wss_keep_alive: Cannot remove client fd:59[0m
+[0;32mI (12617) esp_https_server: performing session handshake[0m
+[0;32mI (13547) https_server: New client connected 59[0m
+[0;32mI (13557) https_server: app.js requested from fd 58[0m
+[0;32mI (13597) esp_https_server: performing session handshake[0m
+[1;31mE (14297) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (14297) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (14297) https_server: Client disconnected 60[0m
+[1;31mE (14307) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (14307) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (14317) https_server: OTAstatus requested[0m
+[0;32mI (14327) esp_https_server: performing session handshake[0m
+[1;31mE (14707) wss_keep_alive: Cannot remove client fd:60[0m
+[0;32mI (15257) https_server: New client connected 60[0m
+[0;32mI (15257) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (15257) https_server: http_server_get_wifi_connect_info_json_handler: 3[0m
+[0;32mI (15267) https_server: favicon.ico requested[0m
+[0;32mI (15727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (17247) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (17247) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (17257) https_server: Client disconnected 59[0m
+[0;32mI (20727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (20797) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (20807) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (20807) https_server: Client disconnected 58[0m
+[0;33mW (21667) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (21667) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (21667) https_server: Client disconnected 60[0m
+[0;32mI (22377) esp_https_server: performing session handshake[0m
+[1;31mE (23077) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (23077) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (23077) https_server: Client disconnected 58[0m
+[1;31mE (23087) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (23087) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (23097) esp_https_server: performing session handshake[0m
+[1;31mE (23477) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (23997) https_server: New client connected 58[0m
+[0;33mW (24137) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (24137) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (24147) https_server: Client disconnected 58[0m
+[0;32mI (24217) esp_https_server: performing session handshake[0m
+[1;31mE (24927) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (24927) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (24927) https_server: Client disconnected 58[0m
+[1;31mE (24927) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (24937) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (24937) esp_https_server: performing session handshake[0m
+[1;31mE (25327) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (25647) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (25647) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (25647) https_server: Client disconnected 58[0m
+[1;31mE (25657) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (25657) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (25667) esp_https_server: performing session handshake[0m
+[0;32mI (25727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (26047) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (26567) https_server: New client connected 58[0m
+[0;32mI (26567) esp_https_server: performing session handshake[0m
+[0;32mI (27477) https_server: New client connected 59[0m
+[0;33mW (27477) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (27477) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (27487) https_server: Client disconnected 58[0m
+[0;32mI (27527) esp_https_server: performing session handshake[0m
+[1;31mE (28227) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (28237) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (28237) https_server: Client disconnected 58[0m
+[1;31mE (28237) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (28247) httpd: httpd_server: error accepting new connection[0m
+[0;33mW (28247) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (28257) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (28267) https_server: Client disconnected 59[0m
+[1;31mE (28267) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (28377) esp_https_server: performing session handshake[0m
+[1;31mE (29077) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (29087) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (29087) https_server: Client disconnected 58[0m
+[1;31mE (29087) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (29097) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (29097) esp_https_server: performing session handshake[0m
+[1;31mE (29477) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (29997) https_server: New client connected 58[0m
+[0;33mW (30067) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (30067) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (30077) https_server: Client disconnected 58[0m
+[0;32mI (30127) esp_https_server: performing session handshake[0m
+[0;32mI (30727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (30837) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (30837) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (30837) https_server: Client disconnected 58[0m
+[1;31mE (30837) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (30847) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (30857) esp_https_server: performing session handshake[0m
+[1;31mE (31237) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (31807) https_server: New client connected 58[0m
+[0;33mW (31887) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (31887) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (31897) https_server: Client disconnected 58[0m
+[0;32mI (31927) esp_https_server: performing session handshake[0m
+[1;31mE (32627) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (32627) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (32627) https_server: Client disconnected 58[0m
+[1;31mE (32637) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (32637) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (32647) esp_https_server: performing session handshake[0m
+[1;31mE (33027) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (33567) https_server: New client connected 58[0m
+[0;33mW (33657) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (33657) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (33667) https_server: Client disconnected 58[0m
+[0;32mI (35727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (36667) esp_https_server: performing session handshake[0m
+[1;31mE (37377) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (37377) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (37377) https_server: Client disconnected 58[0m
+[1;31mE (37387) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (37387) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (37397) esp_https_server: performing session handshake[0m
+[1;31mE (37777) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (38107) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (38107) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (38107) https_server: Client disconnected 58[0m
+[1;31mE (38107) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (38117) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (38117) esp_https_server: performing session handshake[0m
+[1;31mE (38497) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (39037) https_server: New client connected 58[0m
+[0;32mI (39037) esp_https_server: performing session handshake[0m
+[0;32mI (39947) https_server: New client connected 59[0m
+[0;33mW (39947) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (39947) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (39957) https_server: Client disconnected 58[0m
+[0;32mI (40727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (44507) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (44507) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (44517) https_server: Client disconnected 59[0m
+[0;32mI (45727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (50727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (55727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (60727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (65727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (70727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (75727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (80727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (85727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (90727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (95727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (100727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (105727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (110727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (115727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (120727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (125727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (130727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (135727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (140727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (145727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (150727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (155727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (160727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (165727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (170727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (175727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (176507) esp_https_server: performing session handshake[0m
+[1;31mE (177207) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (177207) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (177207) https_server: Client disconnected 58[0m
+[1;31mE (177217) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (177217) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (177227) esp_https_server: performing session handshake[0m
+[1;31mE (177607) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (178157) https_server: New client connected 58[0m
+[0;33mW (178237) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (178237) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (178247) https_server: Client disconnected 58[0m
+[0;32mI (178277) esp_https_server: performing session handshake[0m
+[1;31mE (178977) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (178977) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (178977) https_server: Client disconnected 58[0m
+[1;31mE (178987) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (178987) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (178997) esp_https_server: performing session handshake[0m
+[1;31mE (179377) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (180037) https_server: New client connected 58[0m
+[0;33mW (180137) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (180137) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (180147) https_server: Client disconnected 58[0m
+[0;32mI (180197) esp_https_server: performing session handshake[0m
+[0;32mI (180727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (180907) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (180907) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (180907) https_server: Client disconnected 58[0m
+[1;31mE (180917) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (180917) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (180927) esp_https_server: performing session handshake[0m
+[1;31mE (181307) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (181857) https_server: New client connected 58[0m
+[0;33mW (181927) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (181927) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (181927) https_server: Client disconnected 58[0m
+[0;32mI (181957) esp_https_server: performing session handshake[0m
+[1;31mE (182657) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (182657) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (182657) https_server: Client disconnected 58[0m
+[1;31mE (182667) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (182667) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (182677) esp_https_server: performing session handshake[0m
+[1;31mE (183057) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (183377) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (183377) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (183377) https_server: Client disconnected 58[0m
+[1;31mE (183377) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (183387) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (183397) esp_https_server: performing session handshake[0m
+[1;31mE (183777) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (184297) https_server: New client connected 58[0m
+[0;32mI (184297) esp_https_server: performing session handshake[0m
+[0;32mI (185227) https_server: New client connected 59[0m
+[0;33mW (185237) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (185237) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (185247) https_server: Client disconnected 58[0m
+[0;32mI (185267) esp_https_server: performing session handshake[0m
+[0;32mI (185727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (185967) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (185967) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (185967) https_server: Client disconnected 58[0m
+[1;31mE (185977) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (185977) httpd: httpd_server: error accepting new connection[0m
+[0;33mW (185987) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (185987) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (186007) https_server: Client disconnected 59[0m
+[1;31mE (186007) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (186027) esp_https_server: performing session handshake[0m
+[1;31mE (186727) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (186727) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (186727) https_server: Client disconnected 58[0m
+[1;31mE (186727) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (186737) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (186737) esp_https_server: performing session handshake[0m
+[1;31mE (187127) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (187447) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (187447) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (187447) https_server: Client disconnected 58[0m
+[1;31mE (187447) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (187457) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (187467) esp_https_server: performing session handshake[0m
+[1;31mE (187847) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (188667) https_server: New client connected 58[0m
+[0;32mI (188667) esp_https_server: performing session handshake[0m
+[0;32mI (189567) https_server: New client connected 59[0m
+[0;33mW (189577) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (189577) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (189587) https_server: Client disconnected 58[0m
+[0;32mI (189607) esp_https_server: performing session handshake[0m
+[1;31mE (190307) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (190307) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (190317) https_server: Client disconnected 58[0m
+[1;31mE (190317) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (190327) httpd: httpd_server: error accepting new connection[0m
+[0;33mW (190327) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (190337) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (190347) https_server: Client disconnected 59[0m
+[0;32mI (190347) esp_https_server: performing session handshake[0m
+[0;32mI (190727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (190737) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (191057) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (191057) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (191057) https_server: Client disconnected 58[0m
+[1;31mE (191067) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (191067) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (191077) esp_https_server: performing session handshake[0m
+[1;31mE (191457) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (191777) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (191777) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (191777) https_server: Client disconnected 58[0m
+[1;31mE (191787) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (191787) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (191797) esp_https_server: performing session handshake[0m
+[1;31mE (192177) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (192697) https_server: New client connected 58[0m
+[0;32mI (192697) esp_https_server: performing session handshake[0m
+[0;32mI (193617) https_server: New client connected 59[0m
+[0;33mW (193627) httpd_uri: httpd_uri: URI '/antennaConfig.json' not found[0m
+[0;33mW (193627) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (193637) https_server: Client disconnected 58[0m
+[0;32mI (195727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (200727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (205727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (210727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (215727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (220727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (224637) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (224637) https_server: Client not alive check for fd 59, retry count: 0[0m
+[0;32mI (224637) https_server: Retrying connection for fd 59, attempt 1/3[0m
+[1;31mE (225637) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (225637) https_server: Client not alive check for fd 59, retry count: 1[0m
+[0;32mI (225637) https_server: Retrying connection for fd 59, attempt 2/3[0m
+[0;32mI (225727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (226637) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (226637) https_server: Client not alive check for fd 59, retry count: 2[0m
+[0;32mI (226637) https_server: Retrying connection for fd 59, attempt 3/3[0m
+[1;31mE (227637) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (227637) https_server: Client not alive check for fd 59, retry count: 3[0m
+[1;31mE (227637) https_server: Client not alive, closing fd 59 after 3 retries[0m
+[0;32mI (230727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (235727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (240727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (245727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (250727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (255727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (260727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (265727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (270727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (275727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (280727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (285727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (290727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (295727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (300727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (305727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (310727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (315727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (320727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (325727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (330727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (335727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (340727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (345727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (350727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (355727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (360727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (365727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (370727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (375727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (380727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (385727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (390727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (395727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (400727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (405727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (410727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (415727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (420727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (425727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (430727) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (435727) udp_task: Discovery message sent to: 172.16.100.255[0m

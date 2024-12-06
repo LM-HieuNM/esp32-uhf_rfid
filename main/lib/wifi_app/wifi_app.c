@@ -8,10 +8,13 @@
 #include "esp_log.h"
 #include "esp_wifi.h"
 #include "lwip/netdb.h"
+#include "esp_netif.h"
+#include "esp_wifi.h"
 #include "sntp_time.h"
 #include "app_nvs.h"
 #include "http_server.h"
 #include "tasks_common.h"
+#include "udp_task.h"
 #include "wifi_app.h"
 
 
@@ -39,6 +42,7 @@ static QueueHandle_t wifi_app_queue_handle;
 esp_netif_t* esp_netif_sta = NULL;
 esp_netif_t* esp_netif_ap  = NULL;
 
+static void start_services_broadcast(void);
 /**
  * WiFi application event handler
  * @param arg data, aside from event data, that is passed to the handler when it is called
@@ -274,7 +278,7 @@ static void wifi_app_task(void *pvParameters)
 
 				case WIFI_APP_MSG_STA_CONNECTED_GOT_IP:
 					init_time_sntp();
-
+					start_services_broadcast();
 					http_server_monitor_send_message(HTTP_MSG_WIFI_CONNECT_SUCCESS);
 
 					eventBits = xEventGroupGetBits(wifi_app_event_group);
@@ -375,5 +379,36 @@ void wifi_app_start(void)
 
 	// Start the WiFi application task
 	xTaskCreate(wifi_app_task, "wifi_app_task", WIFI_APP_TASK_STACK_SIZE, NULL, WIFI_APP_TASK_PRIORITY, NULL);
+}
+
+static void start_services_broadcast(void) {
+    esp_netif_t *netif = esp_netif_get_handle_from_ifkey("WIFI_STA_DEF");
+    if (netif == NULL) {
+        ESP_LOGE(TAG, "Failed to get netif handle");
+        return;
+    }
+    
+    // Lấy IP info
+    esp_netif_ip_info_t ip_info;
+    if (esp_netif_get_ip_info(netif, &ip_info) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to get IP info");
+        return;
+    }
+    
+    // Tính broadcast address
+    uint32_t broadcast_addr = ip_info.ip.addr | (~ip_info.netmask.addr);
+    
+    // Convert IP addresses to strings
+    char broadcast_ip[16];
+    esp_ip4addr_ntoa((const esp_ip4_addr_t*)&broadcast_addr, broadcast_ip, sizeof(broadcast_ip));
+    
+    char local_ip[16];
+    esp_ip4addr_ntoa(&ip_info.ip, local_ip, sizeof(local_ip));
+    
+    ESP_LOGI(TAG, "Local IP: %s", local_ip);
+    ESP_LOGI(TAG, "Broadcast IP: %s", broadcast_ip);
+    
+    // Start UDP task với các thông số đã tính
+    udp_task_start(broadcast_ip, local_ip);
 }
 

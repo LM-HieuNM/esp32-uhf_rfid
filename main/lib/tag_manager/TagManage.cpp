@@ -5,7 +5,6 @@
  *      Author: HieuNM
  */
 
-
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
@@ -25,7 +24,9 @@
 #include "driver/gpio.h"
 #include "cJSON.h"
 #include "tag_list.hpp"
+#include "app_nvs.h"
 #include "button.h"
+#include "http_server.h"
 #include "TagManage.hpp"
 
 #define PRESET_VALUE 0xFFFF
@@ -55,14 +56,35 @@ typedef enum{
     STATUS_26 = 0x26,               // After inventory, deliver statistic data of the last inventory process
 }inventory_status_t;
 
+antenna_config_t current_antenna_config = {
+    .power = 10,  // Công suất mặc định = 10
+    .antennas = {true, false, false, false,    // ant1 = true, còn lại false
+                 false, false, false, false,
+                 false, false, false, false,
+                 false, false, false, false}
+};
+
 static const char *TASK_TAG = "RFID MANAGER";
 std::unique_ptr<TagList> g_tagList = std::make_unique<TagList>();
 bool_t is_inventory = false;
+
+static bool setRFPower(uint8_t power);
+
 static void stop_reader(void){
     uint8_t buffer[] = STOP;
     send_buffer(buffer, sizeof(buffer));
 }
 
+static void 
+init_antenna_config(void) {
+    esp_err_t err = app_nvs_load_antenna_config(&current_antenna_config);
+    if (err != ESP_OK) {
+        // Set defaults if loading fails
+        current_antenna_config.power = 10;
+        memset(current_antenna_config.antennas, false, sizeof(current_antenna_config.antennas));
+        current_antenna_config.antennas[0] = true;
+    }
+}
 static void EX100_init(void) {
 	uint8_t buff[] = INIT_1;
 	send_buffer(buff, sizeof(buff));
@@ -80,22 +102,48 @@ static void EX100_init(void) {
 	send_buffer(buff3, sizeof(buff3));
 }
 
+static void tag_start_inventory(u8_t antenna){
+    static bool_t target[16] = {0};
+
+    if(antenna >= 16) {
+        ESP_LOGE(TASK_TAG, "Invalid antenna number: %d", antenna);
+        return;
+    }
+    uint8_t antenna_mask = 0x80 | antenna;  // 0x80 + antenna offset
+    // Len + addr + cmd + Data + crc16
+
+    uint8_t buffer[] = {
+        0x09,               // Length
+        0x00,               // Address
+        0x01,               // Command
+        0x24,               // Sub-command
+        0xFD,               // Parameter
+        target[antenna],    // 0 or 1 to inventory
+        antenna_mask,       // Antenna selection
+        0x32,               // Parameter
+        0x00,               // CRC low (placeholder)
+        0x00                // CRC high (placeholder)
+    };
+    // Calculate CRC
+
+    uint16_t crc = uiCrc16Cal(buffer, sizeof(buffer) - 2);
+    buffer[8] = crc & 0xFF;
+    buffer[9] = (crc >> 8) & 0xFF;
+    
+    send_buffer(buffer, sizeof(buffer));
+    ESP_LOGI(TASK_TAG, "Inventory antenna %d", antenna);
+    target[antenna] = !target[antenna];
+}
+
 static void tag_manager_handle(void *arg)
 {
 	static bool_t state = 0;
 	bool_t button_state;
-	while(1){
+    setRFPower(current_antenna_config.power);
+	while(1) {
         if(is_inventory){
             // Step 1: Send command to reader
-            if(state){
-                uint8_t buffer1[] = READ_1;
-                send_buffer(buffer1, sizeof(buffer1));
-            }
-            else{
-                uint8_t buffer2[] = READ_2;
-                send_buffer(buffer2, sizeof(buffer2));
-            }
-            state = !state;
+            tag_start_inventory(0);
             // Step 2: Wait for reader to respond
             vTaskDelay(1000 / portTICK_PERIOD_MS);
 
@@ -104,7 +152,10 @@ static void tag_manager_handle(void *arg)
                 // TODO: Send data to server
                 std::string jsonString = g_tagList->GetJsonString();
                 g_tagList->Clear();
-                ESP_LOGI(TASK_TAG, "JSON string: %s", jsonString.c_str());
+                // ESP_LOGI(TASK_TAG, "JSON string: %s", jsonString.c_str());
+                wss_server_broadcast_json(jsonString.c_str());
+                size_t heap_size = esp_get_free_heap_size();
+                ESP_LOGW(TASK_TAG, "Heap Free: %u bytes", heap_size);
             }
         }
         vTaskDelay(10 / portTICK_PERIOD_MS);
@@ -130,6 +181,7 @@ void tag_manager_init(void) {
 	esp_log_level_set(TASK_TAG, ESP_LOG_INFO);
     serial_init();
     vTaskDelay(100 / portTICK_PERIOD_MS);
+    init_antenna_config();
     EX100_init();
     xTaskCreate(tag_manager_action, "Tag manager action", 1024, NULL, 2, NULL);
 	xTaskCreate(tag_manager_handle, "Task manager handle", 1024*8, NULL, 2, NULL);
@@ -216,10 +268,6 @@ std::string arrayToString(const std::array<u8_t, 12>& arr) {
     }
     return std::string(str);
 }
-void getHeapSize() {
-    size_t heap_size = esp_get_free_heap_size();
-    printf("Heap Free: %u bytes\n", heap_size);
-}
 
 unsigned int uiCrc16Cal(unsigned char const  * pucY, unsigned char ucX)
 {
@@ -248,15 +296,15 @@ unsigned int uiCrc16Cal(unsigned char const  * pucY, unsigned char ucX)
  * @param power Power level (0-10)
  * @return true if command was sent successfully
  */
-bool setRFPower(uint8_t power) {
-    if (power > 10) return false; // Validate power level
+static bool setRFPower(uint8_t power) {
+    if (power > 30) return false; // Validate power level
     
     uint8_t cmd[] = {
         0x05,       // Length
         0x00,       // Address
         0x2F,       // Command
         power,      // Power level
-        0x00,       // CRC high (placeholder)
+        0x00,       // CRC low (placeholder)
         0x00        // CRC low (placeholder)
     };
     
@@ -264,8 +312,8 @@ bool setRFPower(uint8_t power) {
     uint16_t crc = uiCrc16Cal(cmd, sizeof(cmd) - 2);
     
     // Add CRC bytes
-    cmd[4] = (crc >> 8) & 0xFF;  // CRC high byte
-    cmd[5] = crc & 0xFF;         // CRC low byte
+    cmd[4] = crc & 0xFF;         // CRC low byte
+    cmd[5] = (crc >> 8) & 0xFF;  // CRC high byte
     
     // Send command to UART/Serial
     return send_buffer(cmd, sizeof(cmd));

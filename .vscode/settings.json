@@ -124,7 +124,8 @@
         "iot_button.h": "c",
         "button.h": "c",
         "event_groups.h": "c",
-        "sntp_time.h": "c"
+        "sntp_time.h": "c",
+        "esp_http_server.h": "c"
     },
     "idf.adapterTargetName": "esp32",
     "C_Cpp.intelliSenseEngine": "default",

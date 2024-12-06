@@ -9,7 +9,8 @@ set(srcs "main.c"
         "lib/packet/packet.cpp"
         "lib/tag_manager/tag_list.cpp"
         "lib/board/button.c"
-        "lib/time/sntp_time.c")
+        "lib/time/sntp_time.c"
+        "lib/upd/udp_task.c")
 
 set(incs "lib/wifi_app"
         "lib/https_server"
@@ -19,7 +20,8 @@ set(incs "lib/wifi_app"
         "lib/serial"
         "lib/packet"
         "lib/board"
-        "lib/time")
+        "lib/time"
+        "lib/upd")
 
 idf_component_register(SRCS "${srcs}"
                     INCLUDE_DIRS "${incs}"

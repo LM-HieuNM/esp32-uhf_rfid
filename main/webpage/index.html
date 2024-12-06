@@ -45,6 +45,7 @@
 			<div class="main-content">
 				<div class="tabs">
 					<button class="tab-button active" data-tab="internet">Internet</button>
+					<button class="tab-button" data-tab="antenna">Antenna</button>
 					<button class="tab-button" data-tab="update">Update</button>
 				</div>
 
@@ -76,6 +77,96 @@
 								<div class="buttons">
 									<input id="disconnect_wifi" type="button" value="Disconnect" />
 								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="antenna" class="tab-pane">
+						<div class="antenna-config">
+							<h3>Antenna Configuration</h3>
+							
+							<div class="power-config">
+								<label for="power_level">Power Level (dBm):</label>
+								<input type="number" id="power_level" min="0" max="30" value="20">
+							</div>
+
+							<div class="antenna-grid">
+								<div class="antenna-row">
+									<div class="antenna-item">
+										<input type="checkbox" id="ant1" class="antenna-checkbox">
+										<label for="ant1">Ant 1</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant2" class="antenna-checkbox">
+										<label for="ant2">Ant 2</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant3" class="antenna-checkbox">
+										<label for="ant3">Ant 3</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant4" class="antenna-checkbox">
+										<label for="ant4">Ant 4</label>
+									</div>
+								</div>
+								<div class="antenna-row">
+									<div class="antenna-item">
+										<input type="checkbox" id="ant5" class="antenna-checkbox">
+										<label for="ant5">Ant 5</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant6" class="antenna-checkbox">
+										<label for="ant6">Ant 6</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant7" class="antenna-checkbox">
+										<label for="ant7">Ant 7</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant8" class="antenna-checkbox">
+										<label for="ant8">Ant 8</label>
+									</div>
+								</div>
+								<div class="antenna-row">
+									<div class="antenna-item">
+										<input type="checkbox" id="ant9" class="antenna-checkbox">
+										<label for="ant9">Ant 9</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant10" class="antenna-checkbox">
+										<label for="ant10">Ant 10</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant11" class="antenna-checkbox">
+										<label for="ant11">Ant 11</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant12" class="antenna-checkbox">
+										<label for="ant12">Ant 12</label>
+									</div>
+								</div>
+								<div class="antenna-row">
+									<div class="antenna-item">
+										<input type="checkbox" id="ant13" class="antenna-checkbox">
+										<label for="ant13">Ant 13</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant14" class="antenna-checkbox">
+										<label for="ant14">Ant 14</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant15" class="antenna-checkbox">
+										<label for="ant15">Ant 15</label>
+									</div>
+									<div class="antenna-item">
+										<input type="checkbox" id="ant16" class="antenna-checkbox">
+										<label for="ant16">Ant 16</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="buttons">
+								<input id="apply_antenna" type="button" value="Apply Configuration" />
 							</div>
 						</div>
 					</div>

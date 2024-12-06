@@ -58,6 +58,25 @@ $(document).ready(function(){
             $("#login_button").click();
         }
     });
+
+    $("#apply_antenna").on("click", function(){
+        saveAntennaConfig();
+    });
+
+    // Load current antenna configuration
+    function loadAntennaConfig() {
+        $.getJSON('/antennaConfig.json', function(data) {
+            $("#power_level").val(data.power);
+            data.antennas.forEach((enabled, index) => {
+                document.getElementById(`ant${index + 1}`).checked = enabled;
+            });
+        });
+    }
+
+    // Load configuration when antenna tab is selected
+    $(".tab-button[data-tab='antenna']").on("click", function(){
+        loadAntennaConfig();
+    });
 });   
 
 /**
@@ -406,5 +425,33 @@ function showToast(message, type = 'info', duration = 3000) {
             container.removeChild(toast);
         });
     }, duration);
+}
+
+function saveAntennaConfig() {
+    const antennaConfig = {
+        power: parseInt($("#power_level").val()),
+        antennas: []
+    };
+
+    // Collect status of all antennas
+    for (let i = 1; i <= 16; i++) {
+        antennaConfig.antennas.push(document.getElementById(`ant${i}`).checked);
+    }
+
+    // Send configuration to server
+    $.ajax({
+        url: '/antennaConfig.json',
+        dataType: 'json',
+        method: 'POST',
+        cache: false,
+        contentType: 'application/json',
+        data: JSON.stringify(antennaConfig),
+        success: function(response) {
+            showToast('Antenna configuration saved successfully!', 'success');
+        },
+        error: function() {
+            showToast('Failed to save antenna configuration', 'error');
+        }
+    });
 }
 

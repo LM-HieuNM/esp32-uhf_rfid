@@ -1,9 +1,6 @@
-/*
- * http_server.h
- *
- *  Created on: Oct 20, 2021
- *      Author: kjagu
- */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #ifndef MAIN_HTTP_SERVER_H_
 #define MAIN_HTTP_SERVER_H_
@@ -68,6 +65,12 @@ void http_server_stop(void);
  */
 void http_server_fw_update_reset_callback(void *arg);
 
+esp_err_t wss_server_send_json_to_client(int client_fd, const char* json_data);
+esp_err_t wss_server_broadcast_json(const char* json_data);
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* MAIN_HTTP_SERVER_H_ */

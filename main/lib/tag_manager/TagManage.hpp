@@ -14,6 +14,12 @@ extern "C" {
 
 #include "typedefs.h"
 
+typedef struct {
+    int power;
+    bool antennas[16];
+} antenna_config_t;
+extern antenna_config_t current_antenna_config;
+
 void tag_manager_init(void);
 void tag_manager_process(u8_p payload, u8_t len);
 char* create_json_command(void);

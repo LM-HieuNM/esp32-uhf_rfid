@@ -1,0 +1,106 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/hieunm/Desktop/wss_server/build/bootloader/esp-idf/esptool_py && /home/hieunm/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/hieunm/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/hieunm/Desktop/wss_server/build/bootloader/bootloader.bin
+Bootloader binary size 0x5150 bytes. 0x2eb0 bytes (36%) free.
+[2/8] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/lib/tag_manager/TagManage.cpp.obj
+/home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp: In function 'void tag_manager_handle(void*)':
+/home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:144:23: warning: unused variable 'state' [-Wunused-variable]
+  144 |         static bool_t state = 0;
+      |                       ^~~~~
+/home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:145:16: warning: unused variable 'button_state' [-Wunused-variable]
+  145 |         bool_t button_state;
+      |                ^~~~~~~~~~~~
+/home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp: At global scope:
+/home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:73:13: warning: 'void stop_reader()' defined but not used [-Wunused-function]
+   73 | static void stop_reader(void){
+      |             ^~~~~~~~~~~
+[3/8] Linking C static library esp-idf/main/libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Linking CXX executable wss_server.elf
+[6/8] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /home/hieunm/Desktop/wss_server/build/wss_server.bin
+[7/8] cd /home/hieunm/Desktop/wss_server/build/esp-idf/esptool_py && /home/hieunm/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/hieunm/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/hieunm/Desktop/wss_server/build/partition_table/partition-table.bin /home/hieunm/Desktop/wss_server/build/wss_server.bin
+wss_server.bin binary size 0x173420 bytes. Smallest app partition is 0x177000 bytes. 0x3be0 bytes (1%) free.
+Warning: The smallest app partition is nearly full (1% free space left)!
+[7/8] cd /home/hieunm/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/hieunm/esp-idf -D "SERIAL_TOOL=/home/hieunm/.espressif/python_env/idf5.4_py3.10_env/bin/python;;/home/hieunm/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32c3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/hieunm/Desktop/wss_server/build -P /home/hieunm/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32c3 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 4MB 0x0 bootloader/bootloader.bin 0x10000 wss_server.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.8.1
+Serial port /dev/ttyACM0
+Connecting...
+Chip is ESP32-C3 (QFN32) (revision v0.4)
+Features: WiFi, BLE
+Crystal is 40MHz
+MAC: dc:da:0c:f4:f1:fc
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x00183fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20816 bytes to 13052...
+Writing at 0x00000000... (100 %)
+Wrote 20816 bytes (13052 compressed) at 0x00000000 in 0.3 seconds (effective 631.4 kbit/s)...
+Hash of data verified.
+Compressed 1520672 bytes to 748306...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001cc4c... (4 %)
+Writing at 0x00027be6... (6 %)
+Writing at 0x00038e61... (8 %)
+Writing at 0x00056b0c... (10 %)
+Writing at 0x00064693... (13 %)
+Writing at 0x00071a62... (15 %)
+Writing at 0x000797f8... (17 %)
+Writing at 0x00085041... (19 %)
+Writing at 0x0008b6ae... (21 %)
+Writing at 0x00092480... (23 %)
+Writing at 0x000993e4... (26 %)
+Writing at 0x000a0d08... (28 %)
+Writing at 0x000a84c1... (30 %)
+Writing at 0x000af512... (32 %)
+Writing at 0x000b6208... (34 %)
+Writing at 0x000bd3e5... (36 %)
+Writing at 0x000c400b... (39 %)
+Writing at 0x000cb36c... (41 %)
+Writing at 0x000d2570... (43 %)
+Writing at 0x000d8ca5... (45 %)
+Writing at 0x000df443... (47 %)
+Writing at 0x000e6414... (50 %)
+Writing at 0x000ec83e... (52 %)
+Writing at 0x000f2fce... (54 %)
+Writing at 0x000f9019... (56 %)
+Writing at 0x000fef66... (58 %)
+Writing at 0x0010528d... (60 %)
+Writing at 0x0010b96d... (63 %)
+Writing at 0x001119e6... (65 %)
+Writing at 0x00117b46... (67 %)
+Writing at 0x0011e207... (69 %)
+Writing at 0x00124440... (71 %)
+Writing at 0x0012a6a2... (73 %)
+Writing at 0x00130f6e... (76 %)
+Writing at 0x00138302... (78 %)
+Writing at 0x0013f777... (80 %)
+Writing at 0x00146380... (82 %)
+Writing at 0x0014dc62... (84 %)
+Writing at 0x00156774... (86 %)
+Writing at 0x0015c415... (89 %)
+Writing at 0x001622af... (91 %)
+Writing at 0x001694e2... (93 %)
+Writing at 0x001719af... (95 %)
+Writing at 0x00178423... (97 %)
+Writing at 0x0017f012... (100 %)
+Wrote 1520672 bytes (748306 compressed) at 0x00010000 in 9.7 seconds (effective 1248.0 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 105...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (105 compressed) at 0x00008000 in 0.1 seconds (effective 349.3 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

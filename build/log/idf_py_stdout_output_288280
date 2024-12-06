@@ -1,0 +1,811 @@
+[0;32mI (159) esp_image: segment 1: paddr=00083058 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x400587e8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=73030h (471088) map[0m
+[0;32mI (159) esp_image: segment 1: paddr=00083058 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (161) esp_image: segment 2: paddr=00085f58 vaddr=40380000 size=0a0c0h ( 41152) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e8964h (952676) map[0m
+[0;32mI (319) esp_image: segment 4: paddr=0017898c vaddr=4038a0c0 size=0a9ech ( 43500) load[0m
+[0;32mI (328) esp_image: segment 5: paddr=00183380 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (334) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (334) boot: Disabling RNG early entropy source...[0m
+[0;32mI (345) cpu_start: Unicore app[0m
+[0;32mI (354) cpu_start: Pro cpu start user code[0m
+[0;32mI (354) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (354) app_init: Application information:[0m
+[0;32mI (354) app_init: Project name:     wss_server[0m
+[0;32mI (358) app_init: App version:      05b6ba9-dirty[0m
+[0;32mI (362) app_init: Compile time:     Dec  6 2024 17:23:26[0m
+[0;32mI (367) app_init: ELF file SHA256:  4b3453e03...[0m
+[0;32mI (372) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (378) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (382) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (386) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (389) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (396) heap_init: At 3FC9D8D0 len 00022730 (137 KiB): RAM[0m
+[0;32mI (401) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (407) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (413) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (419) spi_flash: detected chip: generic[0m
+[0;32mI (422) spi_flash: flash io: dio[0m
+[0;32mI (426) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (431) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (438) main_task: Started on CPU0[0m
+[0;32mI (438) main_task: Calling app_main()[0m
+[0;32mI (448) button: IoT Button Version: 3.4.0[0m
+[0;32mI (448) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (448) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (458) pp: pp rom version: 9387209[0m
+[0;32mI (458) net80211: net80211 rom version: 9387209[0m
+[0;32mI (478) wifi_init: rx ba win: 6[0m
+[0;32mI (478) wifi_init: accept mbox: 6[0m
+[0;32mI (478) wifi_init: tcpip mbox: 32[0m
+[0;32mI (478) wifi_init: udp mbox: 6[0m
+[0;32mI (478) wifi_init: tcp mbox: 6[0m
+[0;32mI (478) wifi_init: tcp tx win: 5760[0m
+[0;32mI (488) wifi_init: tcp rx win: 5760[0m
+[0;32mI (488) wifi_init: tcp mss: 1440[0m
+[0;32mI (488) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (498) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (778) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (808) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (808) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (818) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (818) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (818) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+app_nvs_load_sta_creds: SSID: LUMI_TEST Password: lumivn274!
+[0;32mI (828) wifi_app: Loaded station configuration[0m
+[0;32mI (838) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (838) esp_https_server: Starting server[0m
+[0;32mI (848) esp_https_server: Server listening on port 443[0m
+[0;32mI (1128) https_server: Registering URI handlers[0m
+[0;32mI (1128) nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (1128) nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (1148) serial: Recv 18 bytes[0m
+[0;32mI (1148) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 202
+[0;32mI (1168) serial: Recv 18 bytes[0m
+[0;32mI (1218) main_task: Returned from app_main()[0m
+[0;32mI (1248) serial: Recv 13 bytes[0m
+[0;32mI (3988) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 205
+[0;32mI (4068) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (5628) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (5628) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (5628) wifi_app: Local IP: 172.16.100.108[0m
+[0;32mI (5628) wifi_app: Broadcast IP: 172.16.100.255[0m
+[0;32mI (5628) udp_task: Device MAC: F4F1FC[0m
+[0;32mI (5638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5638) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (10638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (15638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (20638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (25638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (30638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (32588) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (32588) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (32588) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (32588) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (32588) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (32588) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (32588) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (32598) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (32598) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (32598) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (32608) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (33618) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (33618) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (33618) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (33618) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (33618) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (33618) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (33618) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (33628) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (33628) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (33628) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (33638) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (34648) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (34648) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (34648) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (34648) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (34648) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (34648) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (34648) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (34658) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (34658) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (34658) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (34668) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (35638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (35678) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (35678) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (35678) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (35678) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (35678) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (35678) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (35678) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (35688) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (35688) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (35688) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (35698) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (36708) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (36708) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (36708) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (36708) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (36708) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (36708) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (36708) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (36718) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (36718) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (36718) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (36728) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (37738) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (37738) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (37738) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (37738) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (37738) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (37738) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (37738) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (37748) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (37748) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (37748) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (37758) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (38768) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (38768) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (38768) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (38768) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (38768) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (38768) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (38768) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (38778) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (38778) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (38778) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (38788) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (39798) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (39798) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (39798) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (39798) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (39798) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (39798) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (39798) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (39808) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (39808) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (39808) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (39818) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (40638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (40828) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (40828) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (40828) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (40828) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (40828) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (40828) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (40828) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (40838) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (40838) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (40838) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (40848) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (41858) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (41858) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (41858) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (41858) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (41858) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (41858) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (41858) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (41868) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (41868) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (41868) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (41878) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (42888) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (42888) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (42888) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (42888) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (42888) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (42888) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (42888) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (42898) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (42898) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (42898) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (42908) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (43918) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (43918) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (43918) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (43918) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (43918) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (43918) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (43918) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (43928) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (43928) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (43928) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (43938) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (44948) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (44948) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (44948) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (44948) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (44948) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (44948) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (44948) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (44958) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (44958) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (44958) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (44968) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (45638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (45978) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (45978) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (45978) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (45978) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (45978) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (45978) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (45978) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (45988) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (45988) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (45988) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (45998) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (47008) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (47008) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (47008) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (47008) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (47008) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (47008) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (47008) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (47018) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (47018) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (47018) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (47028) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (48038) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (48038) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (48038) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (48038) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (48038) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (48038) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (48038) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (48048) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (48048) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (48048) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (48058) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (49068) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (49068) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (49068) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (49068) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (49068) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (49068) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (49068) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (49078) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (49078) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (49078) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (49088) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (50098) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (50098) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (50098) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (50098) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (50098) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (50098) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (50098) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (50108) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (50108) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (50108) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (50118) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (50638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (51128) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (51128) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (51128) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (51128) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (51128) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (51128) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (51128) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (51138) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (51138) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (51138) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (51148) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (52158) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (52158) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (52158) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (52158) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (52158) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (52158) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (52158) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (52168) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (52168) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (52168) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (52178) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (53188) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (53188) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (53188) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (53188) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (53188) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (53188) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (53188) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (53198) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (53198) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (53198) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (53208) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (54218) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (54218) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (54218) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (54218) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (54218) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (54218) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (54218) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (54228) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (54228) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (54228) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (54238) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (55248) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (55248) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (55248) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (55248) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (55248) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (55248) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (55248) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (55258) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (55258) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (55258) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (55268) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (55638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (56278) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (56278) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (56278) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (56278) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (56278) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (56278) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (56278) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (56288) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (56288) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (56288) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (56298) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (57308) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (57308) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (57308) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (57308) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (57308) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (57308) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (57308) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (57318) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (57318) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (57318) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (57328) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (58338) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (58338) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (58338) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (58338) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (58338) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (58338) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (58338) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (58348) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (58348) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (58348) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (58358) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (59368) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (59368) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (59368) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (59368) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (59368) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (59368) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (59368) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (59378) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (59378) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (59378) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (59388) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (60398) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (60398) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (60398) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (60398) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (60398) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (60398) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (60398) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (60408) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (60408) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (60408) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (60418) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (60638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (61428) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (61428) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (61428) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (61428) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (61428) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (61428) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (61428) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (61438) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (61438) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (61438) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (61448) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (62458) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (62458) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (62458) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (62458) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (62458) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (62458) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (62458) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (62468) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (62468) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (62468) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (62478) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (63488) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (63488) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (63488) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (63488) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (63488) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (63488) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (63488) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (63498) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (63498) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (63498) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (63508) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (64518) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (64518) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (64518) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (64518) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (64518) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (64518) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (64518) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (64528) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (64528) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (64528) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (64538) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (65548) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (65548) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (65548) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (65548) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (65548) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (65548) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (65548) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (65558) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (65558) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (65558) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (65568) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (65638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (66578) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (66578) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (66578) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (66578) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (66578) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (66578) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (66578) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (66588) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (66588) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (66588) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (66598) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (67608) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (67608) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (67608) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (67608) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (67608) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (67608) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (67608) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (67618) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (67618) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (67618) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (67628) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (68638) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (68638) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (68638) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (68638) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (68638) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (68638) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (68638) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (68648) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (68648) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (68648) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (68658) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (69668) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (69668) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (69668) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (69668) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (69668) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (69668) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (69668) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (69678) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (69678) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (69678) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (69688) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (70638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (70698) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (70698) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (70698) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (70698) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (70698) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (70698) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (70698) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (70708) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (70708) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (70708) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (70718) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (71728) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (71728) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (71728) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (71728) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (71728) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (71728) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (71728) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (71738) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (71738) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (71738) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (71748) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (72758) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (72758) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (72758) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (72758) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (72758) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (72758) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (72758) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (72768) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (72768) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (72768) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (72778) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (73788) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (73788) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (73788) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (73788) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (73788) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (73788) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (73788) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (73798) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (73798) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (73798) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (73808) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (74818) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (74818) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (74818) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (74818) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (74818) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (74818) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (74818) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (74828) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (74828) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (74828) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (74838) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (75638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (75848) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (75848) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (75848) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (75848) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (75848) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (75848) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (75848) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (75858) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (75858) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (75858) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (75868) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (76878) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (76878) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (76878) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (76878) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (76878) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (76878) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (76878) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (76888) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (76888) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (76888) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (76898) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (77908) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (77908) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (77908) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (77908) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (77908) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (77908) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (77908) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (77918) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (77918) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (77918) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (77928) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (78938) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (78938) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (78938) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (78938) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (78938) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (78938) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (78938) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (78948) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (78948) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (78948) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (78958) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (79968) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (79968) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (79968) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (79968) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (79968) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (79968) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (79968) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (79978) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (79978) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (79978) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (79988) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (80638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (80998) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (80998) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (80998) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (80998) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (80998) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (80998) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (80998) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (81008) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (81008) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (81008) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (81018) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (82028) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (82028) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (82028) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (82028) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (82028) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (82028) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (82028) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (82038) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (82038) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (82038) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (82048) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (83058) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (83058) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (83058) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (83058) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (83058) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (83058) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (83058) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (83068) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (83068) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (83068) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (83078) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (84088) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (84088) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (84088) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (84088) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (84088) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (84088) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (84088) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (84098) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (84098) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (84098) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (84108) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (85118) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (85118) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (85118) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (85118) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (85118) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (85118) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (85118) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (85128) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (85128) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (85128) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (85138) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (85638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (86148) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (86148) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (86148) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (86148) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (86148) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (86148) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (86148) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (86158) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (86158) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (86158) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (86168) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (87178) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (87178) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (87178) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (87178) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (87178) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (87178) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (87178) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (87188) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (87188) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (87188) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (87198) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (88208) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (88208) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (88208) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (88208) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (88208) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (88208) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (88208) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (88218) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (88218) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (88218) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (88228) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (89238) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (89238) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (89238) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (89238) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (89238) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (89238) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (89248) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (89248) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (89248) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (89248) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (89258) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (90268) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (90268) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (90268) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (90268) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (90268) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (90268) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (90268) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (90278) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (90278) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (90278) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (90288) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (90638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (91298) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (91298) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (91298) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (91298) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (91298) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (91298) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (91298) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (91308) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (91308) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (91308) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (91318) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (92328) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (92328) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (92328) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (92328) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (92328) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (92328) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (92328) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (92338) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (92338) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (92338) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (92348) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (93358) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (93358) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (93358) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (93358) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (93358) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (93358) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (93358) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (93368) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (93368) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (93368) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (93378) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (94388) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (94388) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (94388) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (94388) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (94388) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (94388) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (94388) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (94398) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (94398) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (94398) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (94408) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (95418) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (95418) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (95418) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (95418) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (95418) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (95418) RFID MANAGER: Buffer[5]: 01[0m
+[0;32mI (95418) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (95428) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (95428) RFID MANAGER: Buffer[8]: A1[0m
+[0;32mI (95428) RFID MANAGER: Buffer[9]: 00[0m
+[0;32mI (95438) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (95638) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (96448) RFID MANAGER: Buffer[0]: 09[0m
+[0;32mI (96448) RFID MANAGER: Buffer[1]: 00[0m
+[0;32mI (96448) RFID MANAGER: Buffer[2]: 01[0m
+[0;32mI (96448) RFID MANAGER: Buffer[3]: 24[0m
+[0;32mI (96448) RFID MANAGER: Buffer[4]: FD[0m
+[0;32mI (96448) RFID MANAGER: Buffer[5]: 00[0m
+[0;32mI (96448) RFID MANAGER: Buffer[6]: 80[0m
+[0;32mI (96458) RFID MANAGER: Buffer[7]: 32[0m
+[0;32mI (96458) RFID MANAGER: Buffer[8]: FB[0m
+[0;32mI (96458) RFID MANAGER: Buffer[9]: DC[0m
+[0;32mI (96468) RFID MANAGER: Inventory antenna 0[0m
