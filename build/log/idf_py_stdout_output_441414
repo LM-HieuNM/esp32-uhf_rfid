@@ -1,0 +1,183 @@
+[0;32mI (160) esp_image: segment 1: paddr=000847e0 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40058816
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=747b8h (477112) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=000847e0 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (162) esp_image: segment 2: paddr=000876e0 vaddr=40380000 size=08938h ( 35128) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e8980h (952704) map[0m
+[0;32mI (320) esp_image: segment 4: paddr=001789a8 vaddr=40388938 size=0c174h ( 49524) load[0m
+[0;32mI (329) esp_image: segment 5: paddr=00184b24 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (336) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (336) boot: Disabling RNG early entropy source...[0m
+[0;32mI (347) cpu_start: Unicore app[0m
+[0;32mI (355) cpu_start: Pro cpu start user code[0m
+[0;32mI (355) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (356) app_init: Application information:[0m
+[0;32mI (356) app_init: Project name:     wss_server[0m
+[0;32mI (360) app_init: App version:      353de83-dirty[0m
+[0;32mI (364) app_init: Compile time:     Dec  6 2024 20:28:31[0m
+[0;32mI (369) app_init: ELF file SHA256:  dd7ba11a4...[0m
+[0;32mI (373) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (379) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (383) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (387) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (391) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (397) heap_init: At 3FC9D8D0 len 00022730 (137 KiB): RAM[0m
+[0;32mI (402) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (409) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (415) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (421) spi_flash: detected chip: generic[0m
+[0;32mI (424) spi_flash: flash io: dio[0m
+[0;32mI (427) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (433) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (440) main_task: Started on CPU0[0m
+[0;32mI (440) main_task: Calling app_main()[0m
+[0;32mI (450) button: IoT Button Version: 3.4.0[0m
+[0;32mI (450) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (450) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (460) pp: pp rom version: 9387209[0m
+[0;32mI (460) net80211: net80211 rom version: 9387209[0m
+[0;32mI (480) wifi_init: rx ba win: 6[0m
+[0;32mI (480) wifi_init: accept mbox: 6[0m
+[0;32mI (480) wifi_init: tcpip mbox: 32[0m
+[0;32mI (480) wifi_init: udp mbox: 6[0m
+[0;32mI (480) wifi_init: tcp mbox: 6[0m
+[0;32mI (480) wifi_init: tcp tx win: 5760[0m
+[0;32mI (490) wifi_init: tcp rx win: 5760[0m
+[0;32mI (490) wifi_init: tcp mss: 1440[0m
+[0;32mI (490) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (500) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (780) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (820) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (820) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (820) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (830) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (830) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+app_nvs_load_sta_creds: SSID: LUMI_TEST Password: lumivn274!
+[0;32mI (840) wifi_app: Loaded station configuration[0m
+[0;32mI (850) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (850) esp_https_server: Starting server[0m
+[0;32mI (860) esp_https_server: Server listening on port 443[0m
+[0;32mI (860) https_server: Registering URI handlers[0m
+[0;32mI (1140) nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (1140) nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (1160) serial: Recv 18 bytes[0m
+[0;32mI (1170) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 202
+[0;32mI (1180) serial: Recv 18 bytes[0m
+[0;32mI (1230) main_task: Returned from app_main()[0m
+[0;32mI (1260) serial: Recv 19 bytes[0m
+[0;32mI (4000) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 205
+[0;32mI (4070) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (5620) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (5620) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (5620) wifi_app: Local IP: 172.16.100.108[0m
+[0;32mI (5620) wifi_app: Broadcast IP: 172.16.100.255[0m
+[0;32mI (5620) udp_task: Device MAC: F4F1FC[0m
+[0;32mI (5630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5630) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (6260) esp_https_server: performing session handshake[0m
+[1;31mE (6950) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (6960) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (6960) https_server: Client disconnected 58[0m
+[1;31mE (6960) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (6970) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (6970) esp_https_server: performing session handshake[0m
+[1;31mE (7350) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (7670) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (7670) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (7670) https_server: Client disconnected 58[0m
+[1;31mE (7680) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (7680) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (7690) esp_https_server: performing session handshake[0m
+[1;31mE (8070) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (8380) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (8380) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (8390) https_server: Client disconnected 58[0m
+[1;31mE (8390) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (8390) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (8400) esp_https_server: performing session handshake[0m
+[1;31mE (8780) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (9300) https_server: New client connected 58[0m
+[0;32mI (9300) esp_https_server: performing session handshake[0m
+[0;32mI (10260) https_server: New client connected 59[0m
+[0;32mI (10270) https_server: index.html requested from fd 58[0m
+[0;32mI (10370) https_server: Jquery requested from fd 59[0m
+[0;32mI (10630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (10640) https_server: app.css requested[0m
+[0;32mI (10690) esp_https_server: performing session handshake[0m
+[1;31mE (11380) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (11380) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (11390) https_server: Client disconnected 60[0m
+[1;31mE (11390) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (11400) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (11400) https_server: app.js requested from fd 58[0m
+[1;31mE (11410) wss_keep_alive: Cannot remove client fd:60[0m
+[0;32mI (11630) https_server: OTAstatus requested[0m
+[0;32mI (11710) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (11710) https_server: http_server_get_wifi_connect_info_json_handler: 3[0m
+[0;32mI (11790) https_server: favicon.ico requested[0m
+[0;32mI (15630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;33mW (17100) httpd_uri: httpd_uri: URI '/protocolConfig.json' not found[0m
+[0;33mW (17100) httpd_txrx: httpd_resp_send_err: 404 Not Found - Nothing matches the given URI[0m
+[0;32mI (17110) https_server: Client disconnected 59[0m
+[0;32mI (20630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (25630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (30630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (35630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (39690) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (39690) https_server: Client not alive check for fd 58, retry count: 0[0m
+[0;32mI (39690) https_server: Retrying connection for fd 58, attempt 1/3[0m
+[0;32mI (40630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (40690) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (40690) https_server: Client not alive check for fd 58, retry count: 1[0m
+[0;32mI (40690) https_server: Retrying connection for fd 58, attempt 2/3[0m
+[1;31mE (41690) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (41690) https_server: Client not alive check for fd 58, retry count: 2[0m
+[0;32mI (41690) https_server: Retrying connection for fd 58, attempt 3/3[0m
+[1;31mE (42690) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (42690) https_server: Client not alive check for fd 58, retry count: 3[0m
+[1;31mE (42690) https_server: Client not alive, closing fd 58 after 3 retries[0m
+[0;32mI (42690) https_server: Client disconnected 58[0m
+[1;31mE (42700) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (45630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (50630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (55630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (60630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (65630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (70630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (75630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (80630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (85630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (90630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (95630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (100630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (105630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (110630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (115630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (120630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (125630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (130630) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (135630) udp_task: Discovery message sent to: 172.16.100.255[0m

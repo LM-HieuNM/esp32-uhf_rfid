@@ -13,7 +13,8 @@
 #include "wifi_app.h"
 #include "tasks_common.h"
 #include "http_server.h"
-
+#include <inttypes.h>
+#define MAX_ANTENNA_COUNT 16
 static const char TAG[] = "https_server";
 static const size_t max_clients = 4;
 static const int KEEPALIVE_TIMEOUT = 30;    // 30 giây
@@ -26,6 +27,8 @@ static int g_fw_update_status = OTA_UPDATE_PENDING;
 static httpd_handle_t http_server_handle = NULL;
 static TaskHandle_t task_http_server_monitor = NULL;
 static QueueHandle_t http_server_monitor_queue_handle;
+
+static protocol_config_t g_protocol_config;
 
 struct async_resp_arg {
     httpd_handle_t hd;
@@ -61,6 +64,7 @@ static esp_err_t http_server_favicon_ico_handler(httpd_req_t *req);
 static esp_err_t http_server_wifi_connect_json_handler(httpd_req_t *req);
 static esp_err_t http_server_get_wifi_connect_info_json_handler(httpd_req_t *req);
 static esp_err_t http_server_wifi_disconnect_json_handler(httpd_req_t *req);
+static esp_err_t http_server_reboot_handler(httpd_req_t *req);
 
 /*****************************************************************/
 /*********************HTTPS SERVER HANDLER************************/
@@ -200,92 +204,156 @@ static esp_err_t http_server_favicon_ico_handler(httpd_req_t *req)
 
 esp_err_t http_server_OTA_update_handler(httpd_req_t *req)
 {
-	esp_ota_handle_t ota_handle;
+    esp_ota_handle_t ota_handle;
+    const esp_partition_t *update_partition = esp_ota_get_next_update_partition(NULL);
+    
+    // Kiểm tra partition
+    if (update_partition == NULL) {
+        ESP_LOGE(TAG, "OTA update partition not found!");
+        httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "OTA partition error");
+        return ESP_FAIL;
+    }
 
-	char ota_buff[1024];
-	int content_length = req->content_len;
-	int content_received = 0;
-	int recv_len;
-	bool is_req_body_started = false;
-	bool flash_successful = false;
+    ESP_LOGI(TAG, "Writing to partition subtype %u at offset 0x%" PRIx32,
+             update_partition->subtype, update_partition->address);
 
-	const esp_partition_t *update_partition = esp_ota_get_next_update_partition(NULL);
+    // Khởi tạo OTA
+    esp_err_t err = esp_ota_begin(update_partition, OTA_SIZE_UNKNOWN, &ota_handle);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "esp_ota_begin failed (%s)", esp_err_to_name(err));
+        httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "OTA begin failed");
+        return ESP_FAIL;
+    }
 
-	do
-	{
-		// Read the data for the request
-		if ((recv_len = httpd_req_recv(req, ota_buff, MIN(content_length, sizeof(ota_buff)))) < 0)
-		{
-			// Check if timeout occurred
-			if (recv_len == HTTPD_SOCK_ERR_TIMEOUT)
-			{
-				ESP_LOGI(TAG, "http_server_OTA_update_handler: Socket Timeout");
-				continue; ///> Retry receiving if timeout occurred
-			}
-			ESP_LOGI(TAG, "http_server_OTA_update_handler: OTA other Error %d", recv_len);
-			return ESP_FAIL;
-		}
-		printf("http_server_OTA_update_handler: OTA RX: %d of %d\r", content_received, content_length);
+    ESP_LOGI(TAG, "esp_ota_begin succeeded");
 
-		// Is this the first data we are receiving
-		// If so, it will have the information in the header that we need.
-		if (!is_req_body_started)
-		{
-			is_req_body_started = true;
+    char buf[1024];
+    int received;
+    bool is_first_block = true;
+    uint32_t binary_file_length = 0;
+    uint32_t content_length = req->content_len;
+    int retry_count = 0;
+    const int MAX_RETRIES = 5;
+    
+    ESP_LOGI(TAG, "Starting OTA update, content length: %" PRIu32, content_length);
+    
+    while (binary_file_length < content_length) {
+        received = httpd_req_recv(req, buf, MIN(content_length - binary_file_length, sizeof(buf)));
+        
+        if (received < 0) {
+            if (received == HTTPD_SOCK_ERR_TIMEOUT) {
+                ESP_LOGW(TAG, "Timeout waiting for data, retrying... (%d/%d)", 
+                        retry_count + 1, MAX_RETRIES);
+                if (++retry_count >= MAX_RETRIES) {
+                    ESP_LOGE(TAG, "Max retries reached, aborting OTA");
+                    esp_ota_abort(ota_handle);
+                    httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, 
+                                      "Too many timeouts during OTA");
+                    return ESP_FAIL;
+                }
+                continue;
+            }
+            ESP_LOGE(TAG, "Error during OTA receive: %d", received);
+            esp_ota_abort(ota_handle);
+            httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "OTA receive failed");
+            return ESP_FAIL;
+        } else if (received == 0) {
+            if (binary_file_length >= content_length - 200) {
+                ESP_LOGI(TAG, "OTA receive nearly complete (actual: %" PRIu32 ", expected: %" PRIu32 ")", 
+                         binary_file_length, content_length);
+                break;
+            }
+            
+            ESP_LOGW(TAG, "Connection closed at %" PRIu32 "/%" PRIu32 " bytes, retrying... (%d/%d)", 
+                    binary_file_length, content_length, retry_count + 1, MAX_RETRIES);
+            
+            if (++retry_count >= MAX_RETRIES) {
+                ESP_LOGE(TAG, "Max retries reached, aborting OTA");
+                esp_ota_abort(ota_handle);
+                httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, 
+                                  "Connection closed too many times");
+                return ESP_FAIL;
+            }
+            
+            static uint32_t last_progress = 0;
+            if (binary_file_length == last_progress && 
+                binary_file_length < content_length - 1024) {
+                ESP_LOGE(TAG, "No progress after retry, aborting OTA");
+                esp_ota_abort(ota_handle);
+                httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, 
+                                  "Upload stalled");
+                return ESP_FAIL;
+            }
+            last_progress = binary_file_length;
+            
+            vTaskDelay(pdMS_TO_TICKS(1000));
+            continue;
+        }
+        
+        retry_count = 0; // Reset retry counter on successful receive
 
-			// Get the location of the .bin file content (remove the web form data)
-			char *body_start_p = strstr(ota_buff, "\r\n\r\n") + 4;
-			int body_part_len = recv_len - (body_start_p - ota_buff);
+        if (is_first_block) {
+            char *body_start = strstr(buf, "\r\n\r\n");
+            if (body_start) {
+                body_start += 4;
+                int body_length = received - (body_start - buf);
+                if (body_length > 0) {
+                    esp_err_t err = esp_ota_write(ota_handle, body_start, body_length);
+                    if (err != ESP_OK) {
+                        ESP_LOGE(TAG, "esp_ota_write failed (%s)", esp_err_to_name(err));
+                        esp_ota_abort(ota_handle);
+                        httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "OTA write failed");
+                        return ESP_FAIL;
+                    }
+                    binary_file_length += body_length;
+                }
+            }
+            is_first_block = false;
+        } else {
+            esp_err_t err = esp_ota_write(ota_handle, buf, received);
+            if (err != ESP_OK) {
+                ESP_LOGE(TAG, "esp_ota_write failed (%s)", esp_err_to_name(err));
+                esp_ota_abort(ota_handle);
+                httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "OTA write failed");
+                return ESP_FAIL;
+            }
+            binary_file_length += received;
+        }
 
-			printf("http_server_OTA_update_handler: OTA file size: %d\r\n", content_length);
+        ESP_LOGI(TAG, "Written image length %" PRIu32 " of %" PRIu32, 
+                 binary_file_length, content_length);
+    }
 
-			esp_err_t err = esp_ota_begin(update_partition, OTA_SIZE_UNKNOWN, &ota_handle);
-			if (err != ESP_OK)
-			{
-				printf("http_server_OTA_update_handler: Error with OTA begin, cancelling OTA\r\n");
-				return ESP_FAIL;
-			}
-			else
-			{
-				printf("http_server_OTA_update_handler: Writing to partition subtype %d at offset 0x%lx\r\n", update_partition->subtype, update_partition->address);
-			}
+    // Kết thúc OTA
+    err = esp_ota_end(ota_handle);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "esp_ota_end failed (%s)!", esp_err_to_name(err));
+        httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "OTA end failed");
+        return ESP_FAIL;
+    }
 
-			// Write this first part of the data
-			esp_ota_write(ota_handle, body_start_p, body_part_len);
-			content_received += body_part_len;
-		}
-		else
-		{
-			// Write OTA data
-			esp_ota_write(ota_handle, ota_buff, recv_len);
-			content_received += recv_len;
-		}
+    // Set boot partition
+    err = esp_ota_set_boot_partition(update_partition);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "esp_ota_set_boot_partition failed (%s)!", esp_err_to_name(err));
+        httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "Failed to set boot partition");
+        return ESP_FAIL;
+    }
 
-	} while (recv_len > 0 && content_received < content_length);
+    // Gửi response thành công
+    const char* success_response = "{\"status\":\"success\",\"message\":\"OTA update complete\"}";
+    httpd_resp_set_type(req, "application/json");
+    httpd_resp_send(req, success_response, strlen(success_response));
 
-	if (esp_ota_end(ota_handle) == ESP_OK)
-	{
-		// Lets update the partition
-		if (esp_ota_set_boot_partition(update_partition) == ESP_OK)
-		{
-			const esp_partition_t *boot_partition = esp_ota_get_boot_partition();
-			ESP_LOGI(TAG, "http_server_OTA_update_handler: Next boot partition subtype %d at offset 0x%lx", boot_partition->subtype, boot_partition->address);
-			flash_successful = true;
-		}
-		else
-		{
-			ESP_LOGI(TAG, "http_server_OTA_update_handler: FLASHED ERROR!!!");
-		}
-	}
-	else
-	{
-		ESP_LOGI(TAG, "http_server_OTA_update_handler: esp_ota_end ERROR!!!");
-	}
+    // Thông báo cho monitor task
+    http_server_monitor_send_message(HTTP_MSG_OTA_UPDATE_SUCCESSFUL);
 
-	// We won't update the global variables throughout the file, so send the message about the status
-	if (flash_successful) { http_server_monitor_send_message(HTTP_MSG_OTA_UPDATE_SUCCESSFUL); } else { http_server_monitor_send_message(HTTP_MSG_OTA_UPDATE_FAILED); }
+    // Schedule restart
+    ESP_LOGI(TAG, "OTA update successful. Restarting in 5 seconds...");
+    vTaskDelay(pdMS_TO_TICKS(5000));
+    esp_restart();
 
-	return ESP_OK;
+    return ESP_OK;
 }
 
 esp_err_t http_server_OTA_status_handler(httpd_req_t *req)
@@ -418,87 +486,224 @@ static void http_server_fw_update_reset_timer(void)
 
 static esp_err_t http_server_antenna_config_handler(httpd_req_t *req)
 {
-    char buf[200];
-    char response[200];
+    char buf[512];
+    cJSON *root = NULL;
 
+    // Handle GET request
     if (req->method == HTTP_GET) {
-        // Tạo JSON response với cấu hình hiện tại
-        snprintf(response, sizeof(response), 
-                "{\"power\":%d,\"antennas\":[%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d]}", 
-                current_antenna_config.power,
-                current_antenna_config.antennas[0], current_antenna_config.antennas[1],
-                current_antenna_config.antennas[2], current_antenna_config.antennas[3],
-                current_antenna_config.antennas[4], current_antenna_config.antennas[5],
-                current_antenna_config.antennas[6], current_antenna_config.antennas[7],
-                current_antenna_config.antennas[8], current_antenna_config.antennas[9],
-                current_antenna_config.antennas[10], current_antenna_config.antennas[11],
-                current_antenna_config.antennas[12], current_antenna_config.antennas[13],
-                current_antenna_config.antennas[14], current_antenna_config.antennas[15]);
+        ESP_LOGI(TAG, "Processing GET request for antenna config");
+        
+        root = cJSON_CreateObject();
+        
+        // Đọc cấu hình hiện tại
+        antenna_config_t current_config;
+        if (app_nvs_load_antenna_config(&current_config) != ESP_OK) {
+            ESP_LOGE(TAG, "Failed to load antenna config");
+            httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "Failed to load config");
+            return ESP_FAIL;
+        }
 
-		esp_err_t err = app_nvs_save_antenna_config(&current_antenna_config);
-		if (err != ESP_OK) {
-			const char *error_response = "{\"status\":\"error\",\"message\":\"Failed to save config\"}";
-			httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, error_response);
-			return ESP_FAIL;
-		}
+        // Create JSON response
+        cJSON_AddNumberToObject(root, "power", current_config.power);
+        cJSON *antennas = cJSON_CreateArray();
+        for (int i = 0; i < MAX_ANTENNA_COUNT; i++) {
+            cJSON_AddItemToArray(antennas, cJSON_CreateBool(current_config.antennas[i]));
+        }
+        cJSON_AddItemToObject(root, "antennas", antennas);
 
+        char *json_str = cJSON_PrintUnformatted(root);
         httpd_resp_set_type(req, "application/json");
-        httpd_resp_send(req, response, strlen(response));
+        httpd_resp_send(req, json_str, strlen(json_str));
+
+        free(json_str);
+        cJSON_Delete(root);
         return ESP_OK;
     }
-    else if (req->method == HTTP_POST) {
-        // Đọc JSON request
-        int ret = httpd_req_recv(req, buf, sizeof(buf) - 1);
+
+    // Handle POST request
+    if (req->method == HTTP_POST) {
+        ESP_LOGI(TAG, "Processing POST request for antenna config");
+        
+        // Đọc dữ liệu từ request
+        int ret = httpd_req_recv(req, buf, sizeof(buf));
         if (ret <= 0) {
-            if (ret == HTTPD_SOCK_ERR_TIMEOUT) {
-                httpd_resp_send_408(req);
-            }
+            ESP_LOGE(TAG, "Failed to receive POST data");
             return ESP_FAIL;
         }
         buf[ret] = '\0';
-
+        
         // Parse JSON
-        cJSON *root = cJSON_Parse(buf);
+        root = cJSON_Parse(buf);
         if (root == NULL) {
-            const char *error_response = "{\"status\":\"error\",\"message\":\"Invalid JSON\"}";
-            httpd_resp_send_err(req, HTTPD_400_BAD_REQUEST, error_response);
+            ESP_LOGE(TAG, "Failed to parse JSON");
+            httpd_resp_send_err(req, HTTPD_400_BAD_REQUEST, "Invalid JSON");
             return ESP_FAIL;
         }
 
-        // Lấy giá trị power
+        // Cập nhật cấu hình
+        antenna_config_t new_config = {0};
+        
+        // Đọc power level
         cJSON *power = cJSON_GetObjectItem(root, "power");
-        if (cJSON_IsNumber(power)) {
-            current_antenna_config.power = power->valueint;
+        if (power) {
+            new_config.power = power->valueint;
         }
 
-        // Lấy mảng trạng thái anten
+        // Đọc trạng thái antenna
         cJSON *antennas = cJSON_GetObjectItem(root, "antennas");
-        if (cJSON_IsArray(antennas)) {
-            int array_size = cJSON_GetArraySize(antennas);
-            for (int i = 0; i < MIN(array_size, 16); i++) {
+        if (antennas) {
+            for (int i = 0; i < MAX_ANTENNA_COUNT && i < cJSON_GetArraySize(antennas); i++) {
                 cJSON *antenna = cJSON_GetArrayItem(antennas, i);
-                if (cJSON_IsBool(antenna)) {
-                    current_antenna_config.antennas[i] = cJSON_IsTrue(antenna);
+                if (antenna) {
+                    new_config.antennas[i] = cJSON_IsTrue(antenna);
                 }
             }
         }
 
-        // Áp dụng cấu hình vào phần cứng
-        // TODO: Thêm code điều khiển phần cứng ở đây
-        ESP_LOGI(TAG, "Applied antenna config - Power: %d", current_antenna_config.power);
-        for (int i = 0; i < 16; i++) {
-            ESP_LOGI(TAG, "Antenna %d: %s", i + 1, current_antenna_config.antennas[i] ? "ON" : "OFF");
+        // Lưu cấu hình vào NVS
+        esp_err_t err = app_nvs_save_antenna_config(&new_config);
+        if (err != ESP_OK) {
+            ESP_LOGE(TAG, "Failed to save antenna config");
+            cJSON_Delete(root);
+            httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "Failed to save config");
+            return ESP_FAIL;
         }
 
-        cJSON_Delete(root);
-
         // Gửi response thành công
-        const char *success_response = "{\"status\":\"success\"}";
         httpd_resp_set_type(req, "application/json");
-        httpd_resp_send(req, success_response, strlen(success_response));
+        httpd_resp_send(req, "{\"status\":\"ok\"}", strlen("{\"status\":\"ok\"}"));
+        
+        cJSON_Delete(root);
+        ESP_LOGI(TAG, "Antenna configuration saved successfully");
         return ESP_OK;
     }
 
+    return ESP_FAIL;
+}
+
+static esp_err_t http_server_protocol_config_handler(httpd_req_t *req)
+{
+    char buf[512];
+    cJSON *root = NULL;
+    
+    // Handle GET request
+    if (req->method == HTTP_GET) {
+        // Load current config
+        if (app_nvs_load_protocol_config(&g_protocol_config) != ESP_OK) {
+            ESP_LOGE(TAG, "Failed to load protocol config");
+            httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "Failed to load config");
+            return ESP_FAIL;
+        }
+        
+        // Create JSON response
+        root = cJSON_CreateObject();
+        
+        // Add protocol type
+        const char* protocol_str = (g_protocol_config.type == PROTOCOL_WEBSOCKET) ? "websocket" : "ble_hid";
+        cJSON_AddStringToObject(root, "protocol", protocol_str);
+        
+        // Always include both configs in response
+        cJSON *websocket = cJSON_CreateObject();
+        cJSON_AddStringToObject(websocket, "url", g_protocol_config.websocket.url);
+        cJSON_AddNumberToObject(websocket, "port", g_protocol_config.websocket.port);
+        cJSON_AddNumberToObject(websocket, "max_clients", g_protocol_config.websocket.max_clients);
+        cJSON_AddItemToObject(root, "websocket", websocket);
+        
+        cJSON *ble_hid = cJSON_CreateObject();
+        cJSON_AddStringToObject(ble_hid, "device_name", g_protocol_config.ble_hid.device_name);
+        cJSON_AddStringToObject(ble_hid, "pin_code", g_protocol_config.ble_hid.pin_code);
+        cJSON_AddItemToObject(root, "ble_hid", ble_hid);
+        
+        ESP_LOGI(TAG, "Sending protocol config response");
+        
+        char *json_str = cJSON_PrintUnformatted(root);
+        httpd_resp_set_type(req, "application/json");
+        httpd_resp_send(req, json_str, strlen(json_str));
+        
+        free(json_str);
+        cJSON_Delete(root);
+        return ESP_OK;
+    }
+    
+    // Handle POST request
+    if (req->method == HTTP_POST) {
+        int ret = httpd_req_recv(req, buf, sizeof(buf));
+        if (ret <= 0) {
+            return ESP_FAIL;
+        }
+        buf[ret] = '\0';
+        
+        // Debug log
+        ESP_LOGI(TAG, "Received POST data: %s", buf);
+        
+        root = cJSON_Parse(buf);
+        if (root == NULL) {
+            httpd_resp_send_err(req, HTTPD_400_BAD_REQUEST, "Invalid JSON");
+            return ESP_FAIL;
+        }
+        
+        // Parse protocol type
+        cJSON *protocol = cJSON_GetObjectItem(root, "protocol");
+        if (protocol && protocol->valuestring) {
+            ESP_LOGI(TAG, "Setting protocol to: %s", protocol->valuestring);
+            
+            if (strcmp(protocol->valuestring, "websocket") == 0) {
+                g_protocol_config.type = PROTOCOL_WEBSOCKET;
+                
+                cJSON *websocket = cJSON_GetObjectItem(root, "websocket");
+                if (websocket) {
+                    cJSON *url = cJSON_GetObjectItem(websocket, "url");
+                    cJSON *port = cJSON_GetObjectItem(websocket, "port");
+                    cJSON *max_clients = cJSON_GetObjectItem(websocket, "max_clients");
+                    
+                    if (url && url->valuestring) {
+                        strncpy(g_protocol_config.websocket.url, url->valuestring, 
+                                sizeof(g_protocol_config.websocket.url) - 1);
+                    }
+                    if (port && port->valueint) {
+                        g_protocol_config.websocket.port = port->valueint;
+                    }
+                    if (max_clients && max_clients->valueint) {
+                        g_protocol_config.websocket.max_clients = max_clients->valueint;
+                    }
+                }
+            } else if (strcmp(protocol->valuestring, "ble_hid") == 0) {
+                g_protocol_config.type = PROTOCOL_BLE_HID;
+                
+                cJSON *ble_hid = cJSON_GetObjectItem(root, "ble_hid");
+                if (ble_hid) {
+                    cJSON *device_name = cJSON_GetObjectItem(ble_hid, "device_name");
+                    cJSON *pin_code = cJSON_GetObjectItem(ble_hid, "pin_code");
+                    
+                    if (device_name && device_name->valuestring) {
+                        strncpy(g_protocol_config.ble_hid.device_name, device_name->valuestring, 
+                                sizeof(g_protocol_config.ble_hid.device_name) - 1);
+                        ESP_LOGI(TAG, "Set BLE device name: %s", g_protocol_config.ble_hid.device_name);
+                    }
+                    if (pin_code && pin_code->valuestring) {
+                        strncpy(g_protocol_config.ble_hid.pin_code, pin_code->valuestring, 
+                                sizeof(g_protocol_config.ble_hid.pin_code) - 1);
+                        ESP_LOGI(TAG, "Set BLE PIN: %s", g_protocol_config.ble_hid.pin_code);
+                    }
+                }
+            }
+        }
+        
+        cJSON_Delete(root);
+        
+        // Save to NVS
+        esp_err_t err = app_nvs_save_protocol_config(&g_protocol_config);
+        if (err != ESP_OK) {
+            httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "Failed to save config");
+            return ESP_FAIL;
+        }
+        
+        // Send success response
+        httpd_resp_set_type(req, "application/json");
+        httpd_resp_send(req, "{\"status\":\"ok\"}", 15);
+        return ESP_OK;
+    }
+    
     return ESP_FAIL;
 }
 
@@ -804,6 +1009,47 @@ static httpd_handle_t start_wss_echo_server(void)
 	};
 	httpd_register_uri_handler(server, &antenna_config_post);
 
+	httpd_uri_t protocol_config = {
+		.uri = "/protocolConfig.json",
+		.method = HTTP_GET,
+		.handler = http_server_protocol_config_handler,
+		.user_ctx = NULL
+	};
+	httpd_register_uri_handler(server, &protocol_config);
+
+	httpd_uri_t protocol_config_post = {
+		.uri = "/protocolConfig.json",
+		.method = HTTP_POST,
+		.handler = http_server_protocol_config_handler,
+		.user_ctx = NULL
+	};
+	httpd_register_uri_handler(server, &protocol_config_post);
+
+	httpd_uri_t reboot_uri = {
+		.uri = "/reboot",
+		.method = HTTP_POST,
+		.handler = http_server_reboot_handler,
+		.user_ctx = NULL
+	};
+	httpd_register_uri_handler(server, &reboot_uri);
+
+	httpd_uri_t ota_update = {
+		.uri       = "/OTAupdate",
+		.method    = HTTP_POST,
+		.handler   = http_server_OTA_update_handler,
+		.user_ctx  = NULL
+	};
+
+	// httpd_uri_t firmware_info = {
+	// 	.uri       = "/firmware-info",
+	// 	.method    = HTTP_GET,
+	// 	.handler   = http_server_firmware_info_handler,
+	// 	.user_ctx  = NULL
+	// };
+
+	httpd_register_uri_handler(server, &ota_update);
+	// httpd_register_uri_handler(server, &firmware_info);
+
     wss_keep_alive_set_user_ctx(keep_alive, server);
 
 	xTaskCreate(
@@ -865,63 +1111,6 @@ void http_server_fw_update_reset_callback(void *arg)
 	esp_restart();
 }
 
-
-
-// static void send_hello(void *arg)
-// {
-//     static const char * data = "Hello client. Iam WSS";
-//     ESP_LOGI(TAG, "Send Hello");
-//     struct async_resp_arg *resp_arg = arg;
-//     httpd_handle_t hd = resp_arg->hd;
-//     int fd = resp_arg->fd;
-//     httpd_ws_frame_t ws_pkt;
-//     memset(&ws_pkt, 0, sizeof(httpd_ws_frame_t));
-//     ws_pkt.payload = (uint8_t*)data;
-//     ws_pkt.len = strlen(data);
-//     ws_pkt.type = HTTPD_WS_TYPE_TEXT;
-
-//     httpd_ws_send_frame_async(hd, fd, &ws_pkt);
-//     free(resp_arg);
-// }
-
-
-
-// static void wss_server_send_messages(httpd_handle_t* server)
-// {
-//     bool send_messages = true;
-
-//     // Send async message to all connected clients that use websocket protocol every 10 seconds
-//     while (send_messages) {
-//         ESP_LOGI(TAG, "Heap free: %ld", esp_get_free_heap_size());
-//         vTaskDelay(10000 / portTICK_PERIOD_MS);
-
-//         if (!*server) { // httpd might not have been created by now
-//             continue;
-//         }
-//         size_t clients = max_clients;
-//         int    client_fds[max_clients];
-//         if (httpd_get_client_list(*server, &clients, client_fds) == ESP_OK) {
-//             for (size_t i=0; i < clients; ++i) {
-//                 int sock = client_fds[i];
-//                 if (httpd_ws_get_fd_info(*server, sock) == HTTPD_WS_CLIENT_WEBSOCKET) {
-//                     ESP_LOGI(TAG, "Active client (fd=%d) -> sending async message", sock);
-//                     struct async_resp_arg *resp_arg = malloc(sizeof(struct async_resp_arg));
-//                     assert(resp_arg != NULL);
-//                     resp_arg->hd = *server;
-//                     resp_arg->fd = sock;
-//                     if (httpd_queue_work(resp_arg->hd, send_hello, resp_arg) != ESP_OK) {
-//                         ESP_LOGE(TAG, "httpd_queue_work failed!");
-//                         send_messages = false;
-//                         break;
-//                     }
-//                 }
-//             }
-//         } else {
-//             ESP_LOGE(TAG, "httpd_get_client_list failed!");
-//             return;
-//         }
-//     }
-// }
 
 static void send_json(void *arg)
 {
@@ -997,5 +1186,50 @@ esp_err_t wss_server_broadcast_json(const char* json_data)
         }
     }
     
+    return ESP_OK;
+}
+
+static esp_err_t http_server_reboot_handler(httpd_req_t *req)
+{
+    if (req->method == HTTP_POST) {
+        ESP_LOGI(TAG, "Processing reboot request");
+        
+        // Send response before reboot
+        httpd_resp_set_type(req, "application/json");
+        httpd_resp_send(req, "{\"status\":\"ok\"}", strlen("{\"status\":\"ok\"}"));
+        
+        // Delay để đảm bảo response được gửi
+        vTaskDelay(pdMS_TO_TICKS(100));
+        
+        // Reboot
+        esp_restart();
+        return ESP_OK;
+    }
+    return ESP_FAIL;
+}
+
+esp_err_t http_server_firmware_info_handler(httpd_req_t *req)
+{
+    const esp_partition_t *running = esp_ota_get_running_partition();
+    esp_app_desc_t app_desc;
+    
+    esp_err_t err = esp_ota_get_partition_description(running, &app_desc);
+    if (err != ESP_OK) {
+        httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "Failed to get firmware info");
+        return ESP_FAIL;
+    }
+
+    char json_response[200];
+    snprintf(json_response, sizeof(json_response),
+             "{\"version\":\"%s\",\"idf_ver\":\"%s\",\"project_name\":\"%s\",\"time\":\"%s\",\"date\":\"%s\"}",
+             app_desc.version,
+             app_desc.idf_ver,
+             app_desc.project_name,
+             app_desc.time,
+             app_desc.date);
+
+    httpd_resp_set_type(req, "application/json");
+    httpd_resp_send(req, json_response, strlen(json_response));
+
     return ESP_OK;
 }

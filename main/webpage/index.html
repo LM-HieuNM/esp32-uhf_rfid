@@ -13,6 +13,11 @@
 		<div id="toast-container"></div>
 		<header>
 			<h1>RFID Dashboard</h1>
+			<div class="header-right">
+				<button id="reboot-btn" class="reboot-button" style="display: none;">
+					<i class="fas fa-sync"></i> Reboot
+				</button>
+			</div>
 		</header>
 
 		<!-- Login Screen -->
@@ -46,6 +51,7 @@
 				<div class="tabs">
 					<button class="tab-button active" data-tab="internet">Internet</button>
 					<button class="tab-button" data-tab="antenna">Antenna</button>
+					<button class="tab-button" data-tab="protocol">Protocol</button>
 					<button class="tab-button" data-tab="update">Update</button>
 				</div>
 
@@ -78,6 +84,68 @@
 									<input id="disconnect_wifi" type="button" value="Disconnect" />
 								</div>
 							</div>
+						</div>
+					</div>
+
+					<div id="protocol" class="tab-pane">
+						<div class="protocol-config">
+							<h3>Protocol Configuration</h3>
+							
+							<div class="protocol-selection">
+								<div class="protocol-option">
+									<input type="radio" id="websocket" name="protocol" value="websocket">
+									<label for="websocket">WebSocket</label>
+									
+									<div class="protocol-settings websocket-settings">
+										<input type="text" id="websocket_url" placeholder="WebSocket URL">
+										<input type="number" id="websocket_port" placeholder="Port" min="1" max="65535">
+										<div class="max-clients-control">
+											<input type="number" 
+												   id="max_clients" 
+												   placeholder="Max Clients" 
+												   min="1" 
+												   max="10" 
+												   value="1">
+											<span class="input-hint">Maximum: 10 clients</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="protocol-option">
+									<input type="radio" id="ble_hid" name="protocol" value="ble_hid">
+									<label for="ble_hid">BLE HID</label>
+									
+									<div class="protocol-settings ble-settings">
+										<input type="text" id="device_name" placeholder="Device Name">
+										<input type="text" id="pin_code" 
+											   placeholder="PIN Code (6 digits)" 
+											   maxlength="6" 
+											   pattern="\d{6}"
+											   title="Please enter 6 digits">
+									</div>
+								</div>
+							</div>
+
+							<div class="buttons">
+								<input id="apply_protocol" type="button" value="Apply Protocol" />
+							</div>
+						</div>
+					</div>
+
+					<div id="update" class="tab-pane">
+						<div id="OTA" class="ota-section">
+							<h3>Firmware Update</h3>
+							<div class="firmware-info">
+								<label id="latest_firmware_label">Current Version: </label>
+								<div id="latest_firmware"></div> 
+							</div>
+							<input type="file" id="selected_file" accept=".bin" style="display: none;" onchange="getFileInfo()" />
+							<div class="buttons">
+								<input type="button" value="Select File" onclick="document.getElementById('selected_file').click();" />
+								<input type="button" value="Update" onclick="updateFirmware()" />
+							</div>
+							<div id="file_info"></div>	
+							<div id="ota_update_status"></div>
 						</div>
 					</div>
 
@@ -170,23 +238,18 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
 
-					<div id="update" class="tab-pane">
-						<div id="OTA" class="ota-section">
-							<h3>Firmware Update</h3>
-							<div class="firmware-info">
-								<label id="latest_firmware_label">Current Version: </label>
-								<div id="latest_firmware"></div> 
-							</div>
-							<input type="file" id="selected_file" accept=".bin" style="display: none;" onchange="getFileInfo()" />
-							<div class="buttons">
-								<input type="button" value="Select File" onclick="document.getElementById('selected_file').click();" />
-								<input type="button" value="Update" onclick="updateFirmware()" />
-							</div>
-							<div id="file_info"></div>	
-							<div id="ota_update_status"></div>
-						</div>
-					</div>
+		<!-- Thêm modal vào cuối body -->
+		<div id="reboot-modal" class="modal">
+			<div class="modal-content">
+				<h2>Confirm Reboot</h2>
+				<p>Are you sure you want to reboot the device?</p>
+				<div class="modal-buttons">
+					<button id="reboot-confirm" class="btn-confirm">Yes</button>
+					<button id="reboot-cancel" class="btn-cancel">No</button>
 				</div>
 			</div>
 		</div>

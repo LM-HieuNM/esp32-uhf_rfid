@@ -150,6 +150,13 @@
 /home/hieunm/Desktop/wss_server/build/esp-idf/esp_bootloader_format/CMakeFiles/install/local.dir
 /home/hieunm/Desktop/wss_server/build/esp-idf/esp_bootloader_format/CMakeFiles/install/strip.dir
 /home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/__idf_app_update.dir
+/home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/blank_ota_data.dir
+/home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/read-otadata.dir
+/home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/read_otadata.dir
+/home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/erase-otadata.dir
+/home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/erase_otadata.dir
+/home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/otadata-flash.dir
+/home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/encrypted-otadata-flash.dir
 /home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/edit_cache.dir
 /home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/rebuild_cache.dir
 /home/hieunm/Desktop/wss_server/build/esp-idf/app_update/CMakeFiles/list_install_components.dir

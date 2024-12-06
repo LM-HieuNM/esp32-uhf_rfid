@@ -1,0 +1,239 @@
+[0;32mI (161) esp_image: segment 1: paddr=00086b88 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4005880e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 001db000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=76b60h (486240) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=00086b88 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (164) esp_image: segment 2: paddr=00089a88 vaddr=40380000 size=06590h ( 26000) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e9590h (955792) map[0m
+[0;32mI (322) esp_image: segment 4: paddr=001795b8 vaddr=40386590 size=0e51ch ( 58652) load[0m
+[0;32mI (333) esp_image: segment 5: paddr=00187adc vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (339) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (339) boot: Disabling RNG early entropy source...[0m
+[0;32mI (350) cpu_start: Unicore app[0m
+[0;32mI (359) cpu_start: Pro cpu start user code[0m
+[0;32mI (359) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (359) app_init: Application information:[0m
+[0;32mI (359) app_init: Project name:     wss_server[0m
+[0;32mI (363) app_init: App version:      353de83-dirty[0m
+[0;32mI (368) app_init: Compile time:     Dec  6 2024 20:28:31[0m
+[0;32mI (373) app_init: ELF file SHA256:  804f64842...[0m
+[0;32mI (377) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (383) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (387) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (391) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (395) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (401) heap_init: At 3FC9D9A0 len 00022660 (137 KiB): RAM[0m
+[0;32mI (406) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (412) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (418) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (424) spi_flash: detected chip: generic[0m
+[0;32mI (427) spi_flash: flash io: dio[0m
+[0;32mI (431) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (436) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (443) main_task: Started on CPU0[0m
+[0;32mI (443) main_task: Calling app_main()[0m
+[0;32mI (453) button: IoT Button Version: 3.4.0[0m
+[0;32mI (453) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (453) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (463) pp: pp rom version: 9387209[0m
+[0;32mI (463) net80211: net80211 rom version: 9387209[0m
+[0;32mI (483) wifi_init: rx ba win: 6[0m
+[0;32mI (483) wifi_init: accept mbox: 6[0m
+[0;32mI (483) wifi_init: tcpip mbox: 32[0m
+[0;32mI (483) wifi_init: udp mbox: 6[0m
+[0;32mI (483) wifi_init: tcp mbox: 6[0m
+[0;32mI (483) wifi_init: tcp tx win: 5760[0m
+[0;32mI (493) wifi_init: tcp rx win: 5760[0m
+[0;32mI (493) wifi_init: tcp mss: 1440[0m
+[0;32mI (493) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (503) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (773) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (813) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (813) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (823) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (823) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (823) app_nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (833) wifi_app: Unable to load station configuration[0m
+[0;32mI (833) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (843) esp_https_server: Starting server[0m
+[0;32mI (843) esp_https_server: Server listening on port 443[0m
+[0;32mI (853) https_server: Registering URI handlers[0m
+[0;32mI (853) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (863) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (883) serial: Recv 18 bytes[0m
+[0;32mI (903) serial: Recv 18 bytes[0m
+[0;32mI (953) main_task: Returned from app_main()[0m
+[0;32mI (983) serial: Recv 19 bytes[0m
+[0;32mI (22043) wifi_app: WIFI_EVENT_AP_STACONNECTED[0m
+[0;32mI (22113) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.0.2[0m
+[0;32mI (27683) esp_https_server: performing session handshake[0m
+[1;31mE (28373) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (28373) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (28373) https_server: Client disconnected 57[0m
+[1;31mE (28373) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (28383) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (28383) esp_https_server: performing session handshake[0m
+[1;31mE (28773) wss_keep_alive: Cannot remove client fd:57[0m
+[1;31mE (29083) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (29083) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (29093) https_server: Client disconnected 57[0m
+[1;31mE (29093) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (29093) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (29103) esp_https_server: performing session handshake[0m
+[1;31mE (29483) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (30213) https_server: New client connected 57[0m
+[0;32mI (30333) https_server: index.html requested from fd 57[0m
+[0;32mI (30543) https_server: Jquery requested from fd 57[0m
+[0;32mI (30783) esp_https_server: performing session handshake[0m
+[1;31mE (31473) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (31473) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (31473) https_server: Client disconnected 58[0m
+[1;31mE (31483) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (31483) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (31493) https_server: app.css requested[0m
+[1;31mE (31503) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (31523) esp_https_server: performing session handshake[0m
+[1;31mE (32223) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (32223) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (32223) https_server: Client disconnected 58[0m
+[1;31mE (32223) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (32233) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (32243) https_server: app.js requested from fd 57[0m
+[1;31mE (32253) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (32493) https_server: OTAstatus requested[0m
+[0;32mI (32633) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (32633) https_server: http_server_get_wifi_connect_info_json_handler: 0[0m
+[0;32mI (32633) esp_https_server: performing session handshake[0m
+[1;31mE (33333) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (33333) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (33333) https_server: Client disconnected 58[0m
+[1;31mE (33333) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (33343) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (33353) https_server: favicon.ico requested[0m
+[1;31mE (33353) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (40933) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (40933) https_server: Sending protocol config response[0m
+[0;32mI (41013) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (41023) https_server: Sending protocol config response[0m
+[1;31mE (47533) esp-tls-mbedtls: read error :-0x0050[0m
+[0;32mI (47533) https_server: Client disconnected 57[0m
+[0;32mI (47543) esp_https_server: performing session handshake[0m
+[1;31mE (48243) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (48243) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (48243) https_server: Client disconnected 57[0m
+[1;31mE (48253) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (48253) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (48263) esp_https_server: performing session handshake[0m
+[1;31mE (48643) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (49143) https_server: New client connected 57[0m
+[0;32mI (49193) https_server: Processing reboot request[0m
+[0;32mI (49303) wifi_app: WIFI_EVENT_AP_STADISCONNECTED[0m
+[0;32mI (49303) wifi_app: WIFI_EVENT_AP_STOP[0m
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380838
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 001db000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=76b60h (486240) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=00086b88 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=00089a88 vaddr=40380000 size=06590h ( 26000) load[0m
+[0;32mI (169) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e9590h (955792) map[0m
+[0;32mI (321) esp_image: segment 4: paddr=001795b8 vaddr=40386590 size=0e51ch ( 58652) load[0m
+[0;32mI (332) esp_image: segment 5: paddr=00187adc vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (339) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (339) boot: Disabling RNG early entropy source...[0m
+[0;32mI (350) cpu_start: Unicore app[0m
+[0;32mI (358) cpu_start: Pro cpu start user code[0m
+[0;32mI (358) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (359) app_init: Application information:[0m
+[0;32mI (359) app_init: Project name:     wss_server[0m
+[0;32mI (363) app_init: App version:      353de83-dirty[0m
+[0;32mI (367) app_init: Compile time:     Dec  6 2024 20:28:31[0m
+[0;32mI (372) app_init: ELF file SHA256:  804f64842...[0m
+[0;32mI (376) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (382) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (386) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (390) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (394) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (400) heap_init: At 3FC9D9A0 len 00022660 (137 KiB): RAM[0m
+[0;32mI (406) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (412) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (418) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (424) spi_flash: detected chip: generic[0m
+[0;32mI (427) spi_flash: flash io: dio[0m
+[0;32mI (430) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (436) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (443) main_task: Started on CPU0[0m
+[0;32mI (443) main_task: Calling app_main()[0m
+[0;32mI (453) button: IoT Button Version: 3.4.0[0m
+[0;32mI (453) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (453) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (463) pp: pp rom version: 9387209[0m
+[0;32mI (463) net80211: net80211 rom version: 9387209[0m
+[0;32mI (483) wifi_init: rx ba win: 6[0m
+[0;32mI (483) wifi_init: accept mbox: 6[0m
+[0;32mI (483) wifi_init: tcpip mbox: 32[0m
+[0;32mI (483) wifi_init: udp mbox: 6[0m
+[0;32mI (483) wifi_init: tcp mbox: 6[0m
+[0;32mI (483) wifi_init: tcp tx win: 5760[0m
+[0;32mI (493) wifi_init: tcp rx win: 5760[0m
+[0;32mI (493) wifi_init: tcp mss: 1440[0m
+[0;32mI (493) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (503) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (773) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (813) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (813) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (813) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (813) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (823) app_nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (833) wifi_app: Unable to load station configuration[0m
+[0;32mI (833) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (833) esp_https_server: Starting server[0m
+[0;32mI (843) esp_https_server: Server listening on port 443[0m
+[0;32mI (843) https_server: Registering URI handlers[0m
+[0;32mI (853) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (863) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (873) serial: Recv 18 bytes[0m
+[0;32mI (903) serial: Recv 18 bytes[0m
+[0;32mI (953) main_task: Returned from app_main()[0m
+[0;32mI (983) serial: Recv 19 bytes[0m

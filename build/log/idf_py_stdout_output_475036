@@ -1,0 +1,403 @@
+[0;32mI (161) esp_image: segment 1: paddr=000872a8 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403d0444
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 001db000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=77280h (488064) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=000872a8 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (164) esp_image: segment 2: paddr=0008a1a8 vaddr=40380000 size=05e70h ( 24176) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e9590h (955792) map[0m
+[0;32mI (322) esp_image: segment 4: paddr=001795b8 vaddr=40385e70 size=0ec3ch ( 60476) load[0m
+[0;32mI (333) esp_image: segment 5: paddr=001881fc vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (340) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (340) boot: Disabling RNG early entropy source...[0m
+[0;32mI (351) cpu_start: Unicore app[0m
+[0;32mI (359) cpu_start: Pro cpu start user code[0m
+[0;32mI (360) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (360) app_init: Application information:[0m
+[0;32mI (360) app_init: Project name:     wss_server[0m
+[0;32mI (364) app_init: App version:      353de83-dirty[0m
+[0;32mI (368) app_init: Compile time:     Dec  6 2024 20:28:31[0m
+[0;32mI (373) app_init: ELF file SHA256:  b6c76f445...[0m
+[0;32mI (378) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (384) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (387) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (391) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (395) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (402) heap_init: At 3FC9D9A0 len 00022660 (137 KiB): RAM[0m
+[0;32mI (407) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (413) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (419) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (425) spi_flash: detected chip: generic[0m
+[0;32mI (428) spi_flash: flash io: dio[0m
+[0;32mI (432) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (437) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (444) main_task: Started on CPU0[0m
+[0;32mI (444) main_task: Calling app_main()[0m
+[0;32mI (454) button: IoT Button Version: 3.4.0[0m
+[0;32mI (454) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (454) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (464) pp: pp rom version: 9387209[0m
+[0;32mI (464) net80211: net80211 rom version: 9387209[0m
+[0;32mI (484) wifi_init: rx ba win: 6[0m
+[0;32mI (484) wifi_init: accept mbox: 6[0m
+[0;32mI (484) wifi_init: tcpip mbox: 32[0m
+[0;32mI (484) wifi_init: udp mbox: 6[0m
+[0;32mI (484) wifi_init: tcp mbox: 6[0m
+[0;32mI (484) wifi_init: tcp tx win: 5760[0m
+[0;32mI (494) wifi_init: tcp rx win: 5760[0m
+[0;32mI (494) wifi_init: tcp mss: 1440[0m
+[0;32mI (494) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (504) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (774) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (824) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (824) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (824) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (824) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (834) app_nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (834) wifi_app: Unable to load station configuration[0m
+[0;32mI (844) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (844) esp_https_server: Starting server[0m
+[0;32mI (854) esp_https_server: Server listening on port 443[0m
+[0;32mI (854) https_server: Registering URI handlers[0m
+[0;32mI (864) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (864) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (884) serial: Recv 18 bytes[0m
+[0;32mI (914) serial: Recv 18 bytes[0m
+[0;32mI (964) main_task: Returned from app_main()[0m
+[0;32mI (994) serial: Recv 19 bytes[0m
+[0;32mI (7404) wifi_app: WIFI_EVENT_AP_STACONNECTED[0m
+[0;32mI (7464) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.0.2[0m
+[0;32mI (12884) esp_https_server: performing session handshake[0m
+[1;31mE (13574) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (13574) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (13574) https_server: Client disconnected 57[0m
+[1;31mE (13584) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (13584) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (13594) esp_https_server: performing session handshake[0m
+[1;31mE (13974) wss_keep_alive: Cannot remove client fd:57[0m
+[1;31mE (14294) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (14294) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (14294) https_server: Client disconnected 57[0m
+[1;31mE (14304) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (14304) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (14314) esp_https_server: performing session handshake[0m
+[1;31mE (14694) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (15214) https_server: New client connected 57[0m
+[0;32mI (15274) https_server: index.html requested from fd 57[0m
+[0;32mI (15434) https_server: Jquery requested from fd 57[0m
+[0;32mI (15664) esp_https_server: performing session handshake[0m
+[1;31mE (16374) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (16374) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (16374) https_server: Client disconnected 58[0m
+[1;31mE (16374) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (16384) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (16394) https_server: app.css requested[0m
+[1;31mE (16404) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (16434) esp_https_server: performing session handshake[0m
+[1;31mE (17134) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (17134) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (17134) https_server: Client disconnected 58[0m
+[1;31mE (17134) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (17144) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (17154) https_server: app.js requested from fd 57[0m
+[1;31mE (17164) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (17224) https_server: OTAstatus requested[0m
+[0;32mI (17304) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (17314) https_server: http_server_get_wifi_connect_info_json_handler: 0[0m
+[0;32mI (17314) esp_https_server: performing session handshake[0m
+[1;31mE (18014) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (18014) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (18014) https_server: Client disconnected 58[0m
+[1;31mE (18014) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (18024) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (18034) https_server: favicon.ico requested[0m
+[1;31mE (18044) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (19904) https_server: Processing GET request for antenna config[0m
+[0;32mI (19914) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (19914) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (21164) https_server: Processing GET request for antenna config[0m
+[0;32mI (21164) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (21164) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (21854) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (21854) https_server: Sending protocol config response[0m
+[0;32mI (21924) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (21924) https_server: Sending protocol config response[0m
+[0;32mI (24444) https_server: Processing GET request for antenna config[0m
+[0;32mI (24444) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (24444) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (26414) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (26414) https_server: Sending protocol config response[0m
+[0;32mI (26484) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (26484) https_server: Sending protocol config response[0m
+[0;32mI (28544) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (28544) https_server: Sending protocol config response[0m
+[1;31mE (32944) esp-tls-mbedtls: read error :-0x0050[0m
+[0;32mI (32944) https_server: Client disconnected 57[0m
+[0;32mI (32954) esp_https_server: performing session handshake[0m
+[1;31mE (33644) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (33644) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (33654) https_server: Client disconnected 57[0m
+[1;31mE (33654) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (33664) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (33664) esp_https_server: performing session handshake[0m
+[1;31mE (34044) wss_keep_alive: Cannot remove client fd:57[0m
+[1;31mE (34364) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (34364) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (34364) https_server: Client disconnected 57[0m
+[1;31mE (34364) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (34374) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (34374) esp_https_server: performing session handshake[0m
+[1;31mE (34754) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (35244) https_server: New client connected 57[0m
+[0;32mI (35244) esp_https_server: performing session handshake[0m
+[0;32mI (36124) https_server: New client connected 58[0m
+[0;32mI (36134) https_server: Received POST data: {"protocol":"websocket","websocket":{"url":"wss://localhost","port":443,"max_clients":3},"ble_hid":{"device_name":"BLE_HID","pin_code":"123456"}}[0m
+[0;32mI (36144) https_server: Setting protocol to: websocket[0m
+[0;32mI (36144) app_nvs: app_nvs_save_protocol_config: Saving protocol config to flash[0m
+[0;32mI (36164) app_nvs: app_nvs_save_protocol_config: Protocol config saved successfully[0m
+[0;32mI (36214) https_server: Received POST data: {"protocol":"websocket","websocket":{"url":"wss://localhost","port":443,"max_clients":3}}[0m
+[0;32mI (36214) https_server: Setting protocol to: websocket[0m
+[0;32mI (36224) app_nvs: app_nvs_save_protocol_config: Saving protocol config to flash[0m
+[0;32mI (36234) app_nvs: app_nvs_save_protocol_config: Protocol config saved successfully[0m
+[0;32mI (37584) https_server: Processing GET request for antenna config[0m
+[0;32mI (37584) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (37584) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (41794) https_server: Processing POST request for antenna config[0m
+[0;32mI (41794) app_nvs: app_nvs_save_antenna_config: Saving antenna config to flash[0m
+[0;32mI (41804) app_nvs: app_nvs_save_antenna_config: Saved power: 10[0m
+[0;32mI (41804) https_server: Antenna configuration saved successfully[0m
+[0;32mI (45394) https_server: Processing reboot request[0m
+[0;32mI (45504) wifi_app: WIFI_EVENT_AP_STADISCONNECTED[0m
+[0;32mI (45504) wifi_app: WIFI_EVENT_AP_STOP[0m
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380838
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 001db000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=77280h (488064) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=000872a8 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=0008a1a8 vaddr=40380000 size=05e70h ( 24176) load[0m
+[0;32mI (169) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e9590h (955792) map[0m
+[0;32mI (322) esp_image: segment 4: paddr=001795b8 vaddr=40385e70 size=0ec3ch ( 60476) load[0m
+[0;32mI (333) esp_image: segment 5: paddr=001881fc vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (339) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (339) boot: Disabling RNG early entropy source...[0m
+[0;32mI (351) cpu_start: Unicore app[0m
+[0;32mI (359) cpu_start: Pro cpu start user code[0m
+[0;32mI (359) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (359) app_init: Application information:[0m
+[0;32mI (359) app_init: Project name:     wss_server[0m
+[0;32mI (363) app_init: App version:      353de83-dirty[0m
+[0;32mI (368) app_init: Compile time:     Dec  6 2024 20:28:31[0m
+[0;32mI (373) app_init: ELF file SHA256:  b6c76f445...[0m
+[0;32mI (377) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (383) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (387) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (391) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (395) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (401) heap_init: At 3FC9D9A0 len 00022660 (137 KiB): RAM[0m
+[0;32mI (406) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (412) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (418) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (425) spi_flash: detected chip: generic[0m
+[0;32mI (427) spi_flash: flash io: dio[0m
+[0;32mI (431) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (436) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (443) main_task: Started on CPU0[0m
+[0;32mI (443) main_task: Calling app_main()[0m
+[0;32mI (453) button: IoT Button Version: 3.4.0[0m
+[0;32mI (453) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (453) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (463) pp: pp rom version: 9387209[0m
+[0;32mI (463) net80211: net80211 rom version: 9387209[0m
+[0;32mI (483) wifi_init: rx ba win: 6[0m
+[0;32mI (483) wifi_init: accept mbox: 6[0m
+[0;32mI (483) wifi_init: tcpip mbox: 32[0m
+[0;32mI (483) wifi_init: udp mbox: 6[0m
+[0;32mI (483) wifi_init: tcp mbox: 6[0m
+[0;32mI (483) wifi_init: tcp tx win: 5760[0m
+[0;32mI (493) wifi_init: tcp rx win: 5760[0m
+[0;32mI (493) wifi_init: tcp mss: 1440[0m
+[0;32mI (493) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (503) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (773) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (813) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (813) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (813) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (823) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (823) app_nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (833) wifi_app: Unable to load station configuration[0m
+[0;32mI (833) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (843) esp_https_server: Starting server[0m
+[0;32mI (843) esp_https_server: Server listening on port 443[0m
+[0;32mI (853) https_server: Registering URI handlers[0m
+[0;32mI (853) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (863) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (883) serial: Recv 18 bytes[0m
+[0;32mI (903) serial: Recv 18 bytes[0m
+[0;32mI (953) main_task: Returned from app_main()[0m
+[0;32mI (983) serial: Recv 19 bytes[0m
+[0;32mI (12233) wifi_app: WIFI_EVENT_AP_STACONNECTED[0m
+[0;32mI (12243) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.0.2[0m
+[0;32mI (17673) esp_https_server: performing session handshake[0m
+[1;31mE (18363) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (18363) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (18363) https_server: Client disconnected 57[0m
+[1;31mE (18363) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (18373) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (18373) esp_https_server: performing session handshake[0m
+[1;31mE (18753) wss_keep_alive: Cannot remove client fd:57[0m
+[1;31mE (19073) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (19073) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (19073) https_server: Client disconnected 57[0m
+[1;31mE (19083) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (19083) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (19093) esp_https_server: performing session handshake[0m
+[1;31mE (19473) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (19963) https_server: New client connected 57[0m
+[0;32mI (20023) https_server: index.html requested from fd 57[0m
+[0;32mI (20113) esp_https_server: performing session handshake[0m
+[1;31mE (20813) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (20813) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (20823) https_server: Client disconnected 58[0m
+[1;31mE (20823) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (20823) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (20833) https_server: app.css requested[0m
+[1;31mE (20843) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (20883) esp_https_server: performing session handshake[0m
+[1;31mE (21583) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (21583) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (21583) https_server: Client disconnected 58[0m
+[1;31mE (21593) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (21593) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (21603) https_server: Jquery requested from fd 57[0m
+[1;31mE (21613) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (21853) esp_https_server: performing session handshake[0m
+[0;32mI (22733) https_server: New client connected 58[0m
+[0;32mI (22733) https_server: app.js requested from fd 57[0m
+[0;32mI (23013) esp_https_server: performing session handshake[0m
+[1;31mE (23703) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (23703) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (23703) https_server: Client disconnected 59[0m
+[1;31mE (23713) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (23713) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (23723) https_server: OTAstatus requested[0m
+[0;32mI (23723) esp_https_server: performing session handshake[0m
+[1;31mE (24103) wss_keep_alive: Cannot remove client fd:59[0m
+[0;32mI (24613) https_server: New client connected 59[0m
+[0;32mI (24623) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (24623) https_server: http_server_get_wifi_connect_info_json_handler: 0[0m
+[0;32mI (24623) https_server: favicon.ico requested[0m
+[0;32mI (31343) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (31343) https_server: Sending protocol config response[0m
+[0;32mI (31423) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (31433) https_server: Sending protocol config response[0m
+[0;32mI (32533) https_server: Processing GET request for antenna config[0m
+[0;32mI (32543) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (32543) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (33213) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (33213) https_server: Sending protocol config response[0m
+[0;32mI (33303) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (33303) https_server: Sending protocol config response[0m
+[1;31mE (35563) esp-tls-mbedtls: read error :-0x0050[0m
+[0;32mI (35563) https_server: Client disconnected 57[0m
+[0;32mI (35573) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (35573) https_server: Sending protocol config response[0m
+[0;32mI (37133) https_server: Processing GET request for antenna config[0m
+[0;32mI (37143) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (37143) app_nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[1;31mE (53643) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (53643) https_server: Client not alive check for fd 58, retry count: 0[0m
+[0;32mI (53643) https_server: Retrying connection for fd 58, attempt 1/3[0m
+[1;31mE (54643) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (54643) https_server: Client not alive check for fd 58, retry count: 1[0m
+[0;32mI (54643) https_server: Retrying connection for fd 58, attempt 2/3[0m
+[1;31mE (54643) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (54653) https_server: Client not alive check for fd 59, retry count: 0[0m
+[0;32mI (54653) https_server: Retrying connection for fd 59, attempt 1/3[0m
+[1;31mE (55663) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (55663) https_server: Client not alive check for fd 58, retry count: 2[0m
+[0;32mI (55663) https_server: Retrying connection for fd 58, attempt 3/3[0m
+[1;31mE (55663) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (55673) https_server: Client not alive check for fd 59, retry count: 1[0m
+[0;32mI (55673) https_server: Retrying connection for fd 59, attempt 2/3[0m
+[1;31mE (56683) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (56683) https_server: Client not alive check for fd 58, retry count: 3[0m
+[1;31mE (56683) https_server: Client not alive, closing fd 58 after 3 retries[0m
+[0;32mI (56683) https_server: Client disconnected 58[0m
+[1;31mE (56693) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (56693) https_server: Client not alive check for fd 59, retry count: 2[0m
+[0;32mI (56703) https_server: Retrying connection for fd 59, attempt 3/3[0m
+[1;31mE (56703) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (57713) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (57713) https_server: Client not alive check for fd 59, retry count: 3[0m
+[1;31mE (57713) https_server: Client not alive, closing fd 59 after 3 retries[0m
+[1;31mE (135033) esp-tls-mbedtls: read error :-0x0050[0m
+[0;32mI (135033) https_server: Client disconnected 59[0m
+[0;32mI (135033) esp_https_server: performing session handshake[0m
+[1;31mE (135413) wss_keep_alive: Cannot remove client fd:59[0m
+[1;31mE (135733) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (135733) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (135733) https_server: Client disconnected 57[0m
+[1;31mE (135733) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (135743) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (135743) esp_https_server: performing session handshake[0m
+[1;31mE (136123) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (136623) https_server: New client connected 57[0m
+[0;32mI (136683) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (136683) https_server: Sending protocol config response[0m
+[0;32mI (136753) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (136753) https_server: Sending protocol config response[0m
+[1;31mE (166633) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (166633) https_server: Client not alive check for fd 57, retry count: 0[0m
+[0;32mI (166633) https_server: Retrying connection for fd 57, attempt 1/3[0m
+[1;31mE (167633) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (167633) https_server: Client not alive check for fd 57, retry count: 1[0m
+[0;32mI (167633) https_server: Retrying connection for fd 57, attempt 2/3[0m
+[1;31mE (168633) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (168633) https_server: Client not alive check for fd 57, retry count: 2[0m
+[0;32mI (168633) https_server: Retrying connection for fd 57, attempt 3/3[0m
+[1;31mE (169633) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (169633) https_server: Client not alive check for fd 57, retry count: 3[0m
+[1;31mE (169633) https_server: Client not alive, closing fd 57 after 3 retries[0m
+[0;32mI (169633) https_server: Client disconnected 57[0m
+[1;31mE (169643) wss_keep_alive: Cannot remove client fd:57[0m

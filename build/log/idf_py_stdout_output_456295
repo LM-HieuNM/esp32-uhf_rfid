@@ -1,0 +1,323 @@
+[0;32mI (161) esp_image: segment 1: paddr=00085bf0 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4005881e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=75bc8h (482248) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=00085bf0 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=00088af0 vaddr=40380000 size=07528h ( 29992) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e9404h (955396) map[0m
+[0;32mI (321) esp_image: segment 4: paddr=0017942c vaddr=40387528 size=0d584h ( 54660) load[0m
+[0;32mI (331) esp_image: segment 5: paddr=001869b8 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (338) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (338) boot: Disabling RNG early entropy source...[0m
+[0;32mI (349) cpu_start: Unicore app[0m
+[0;32mI (357) cpu_start: Pro cpu start user code[0m
+[0;32mI (357) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (358) app_init: Application information:[0m
+[0;32mI (358) app_init: Project name:     wss_server[0m
+[0;32mI (362) app_init: App version:      353de83-dirty[0m
+[0;32mI (366) app_init: Compile time:     Dec  6 2024 20:28:31[0m
+[0;32mI (371) app_init: ELF file SHA256:  f31d56d0e...[0m
+[0;32mI (376) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (382) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (385) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (389) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (393) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (399) heap_init: At 3FC9D960 len 000226A0 (137 KiB): RAM[0m
+[0;32mI (405) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (411) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (417) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (423) spi_flash: detected chip: generic[0m
+[0;32mI (426) spi_flash: flash io: dio[0m
+[0;32mI (429) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (435) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (442) main_task: Started on CPU0[0m
+[0;32mI (442) main_task: Calling app_main()[0m
+[0;32mI (452) button: IoT Button Version: 3.4.0[0m
+[0;32mI (452) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (452) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (462) pp: pp rom version: 9387209[0m
+[0;32mI (462) net80211: net80211 rom version: 9387209[0m
+[0;32mI (482) wifi_init: rx ba win: 6[0m
+[0;32mI (482) wifi_init: accept mbox: 6[0m
+[0;32mI (482) wifi_init: tcpip mbox: 32[0m
+[0;32mI (482) wifi_init: udp mbox: 6[0m
+[0;32mI (482) wifi_init: tcp mbox: 6[0m
+[0;32mI (482) wifi_init: tcp tx win: 5760[0m
+[0;32mI (492) wifi_init: tcp rx win: 5760[0m
+[0;32mI (492) wifi_init: tcp mss: 1440[0m
+[0;32mI (492) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (502) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (782) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (822) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (822) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (822) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (832) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (832) app_nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+app_nvs_load_sta_creds: SSID: LUMI_TEST Password: lumivn274!
+[0;32mI (842) wifi_app: Loaded station configuration[0m
+[0;32mI (852) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (852) esp_https_server: Starting server[0m
+[0;32mI (862) esp_https_server: Server listening on port 443[0m
+[0;32mI (1142) https_server: Registering URI handlers[0m
+[0;32mI (1142) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+app_nvs_load_antenna_config: Error opening NVS handle!
+[0;32mI (1162) serial: Recv 18 bytes[0m
+[0;32mI (1172) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 202
+[0;32mI (1182) serial: Recv 18 bytes[0m
+[0;32mI (1232) main_task: Returned from app_main()[0m
+[0;32mI (1262) serial: Recv 19 bytes[0m
+[0;32mI (4002) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 205
+[0;32mI (4102) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (5542) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (5542) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (5542) wifi_app: Local IP: 172.16.100.108[0m
+[0;32mI (5542) wifi_app: Broadcast IP: 172.16.100.255[0m
+[0;32mI (5542) udp_task: Device MAC: F4F1FC[0m
+[0;32mI (5552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5552) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (6582) esp_https_server: performing session handshake[0m
+[1;31mE (7272) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (7272) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (7272) https_server: Client disconnected 58[0m
+[1;31mE (7282) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (7282) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (7292) esp_https_server: performing session handshake[0m
+[1;31mE (7672) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (7992) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (7992) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (7992) https_server: Client disconnected 58[0m
+[1;31mE (8002) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (8002) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (8012) esp_https_server: performing session handshake[0m
+[1;31mE (8392) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (8712) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (8712) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (8712) https_server: Client disconnected 58[0m
+[1;31mE (8722) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (8722) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (8732) esp_https_server: performing session handshake[0m
+[1;31mE (9112) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (9632) https_server: New client connected 58[0m
+[0;32mI (9642) esp_https_server: performing session handshake[0m
+[0;32mI (10552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (10562) https_server: New client connected 59[0m
+[0;32mI (10562) https_server: index.html requested from fd 58[0m
+[0;32mI (10662) https_server: Jquery requested from fd 58[0m
+[0;32mI (11192) https_server: app.css requested[0m
+[0;32mI (11262) https_server: app.js requested from fd 58[0m
+[0;32mI (11462) https_server: OTAstatus requested[0m
+[0;32mI (11552) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (11552) https_server: http_server_get_wifi_connect_info_json_handler: 3[0m
+[0;32mI (11792) https_server: favicon.ico requested[0m
+[0;32mI (14812) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (14812) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (14812) https_server: Current protocol type: WebSocket[0m
+[0;32mI (14822) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (15552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (16362) https_server: Received POST data: {"protocol":"ble_hid","ble_hid":{"device_name":"","pin_code":""}}[0m
+[0;32mI (16362) https_server: Setting protocol to: ble_hid[0m
+[0;32mI (16372) https_server: Set BLE device name: [0m
+[0;32mI (16372) https_server: Set BLE PIN: [0m
+[0;32mI (16372) app_nvs: app_nvs_save_protocol_config: Saving protocol config to flash[0m
+[1;31mE (16382) app_nvs: app_nvs_save_protocol_config: Empty BLE device name[0m
+[0;33mW (16392) httpd_txrx: httpd_resp_send_err: 500 Internal Server Error - Failed to save config[0m
+[0;33mW (16402) httpd_uri: httpd_uri: uri handler execution failed[0m
+[0;32mI (16402) https_server: Client disconnected 58[0m
+[0;32mI (16422) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (16422) https_server: Current protocol type: BLE HID[0m
+[0;32mI (16422) https_server: BLE Config - Device Name: wss://localhost, PIN: [0m
+[0;32mI (16432) https_server: Sending JSON response: {[0m
+	"protocol":	"ble_hid",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"wss://localhost",
+		"pin_code":	""
+	}
+}
+[0;32mI (20162) https_server: Received POST data: {"protocol":"websocket","websocket":{"url":"wss://localhost","port":443,"max_clients":1}}[0m
+[0;32mI (20162) https_server: Setting protocol to: websocket[0m
+[0;32mI (20172) app_nvs: app_nvs_save_protocol_config: Saving protocol config to flash[0m
+[0;32mI (20182) app_nvs: app_nvs_save_protocol_config: Protocol config saved successfully[0m
+[0;32mI (20552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (25552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (25842) esp-tls-mbedtls: read error :-0x0050[0m
+[0;32mI (25842) https_server: Client disconnected 59[0m
+[0;32mI (25882) esp_https_server: performing session handshake[0m
+[1;31mE (26582) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (26582) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (26582) https_server: Client disconnected 58[0m
+[1;31mE (26592) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (26592) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (26602) esp_https_server: performing session handshake[0m
+[1;31mE (26982) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (27542) https_server: New client connected 58[0m
+[0;32mI (27632) https_server: Received POST data: {"protocol":"ble_hid","ble_hid":{"device_name":"wss://localhost","pin_code":""}}[0m
+[0;32mI (27632) https_server: Setting protocol to: ble_hid[0m
+[0;32mI (27632) https_server: Set BLE device name: wss://localhost[0m
+[0;32mI (27642) https_server: Set BLE PIN: [0m
+[0;32mI (27642) app_nvs: app_nvs_save_protocol_config: Saving protocol config to flash[0m
+[1;31mE (27662) app_nvs: app_nvs_save_protocol_config: Empty BLE PIN[0m
+[0;33mW (27662) httpd_txrx: httpd_resp_send_err: 500 Internal Server Error - Failed to save config[0m
+[0;33mW (27672) httpd_uri: httpd_uri: uri handler execution failed[0m
+[0;32mI (27672) https_server: Client disconnected 58[0m
+[0;32mI (27712) esp_https_server: performing session handshake[0m
+[1;31mE (28412) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (28412) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (28412) https_server: Client disconnected 58[0m
+[1;31mE (28422) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (28422) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (28432) esp_https_server: performing session handshake[0m
+[1;31mE (28812) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (29342) https_server: New client connected 58[0m
+[0;32mI (29492) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (29492) https_server: Current protocol type: BLE HID[0m
+[0;32mI (29492) https_server: BLE Config - Device Name: wss://localhost, PIN: [0m
+[0;32mI (29502) https_server: Sending JSON response: {[0m
+	"protocol":	"ble_hid",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"wss://localhost",
+		"pin_code":	""
+	}
+}
+[0;32mI (29752) https_server: Received POST data: {"protocol":"websocket","websocket":{"url":"wss://localhost","port":443,"max_clients":1}}[0m
+[0;32mI (29752) https_server: Setting protocol to: websocket[0m
+[0;32mI (29752) app_nvs: app_nvs_save_protocol_config: Saving protocol config to flash[0m
+[0;32mI (29772) app_nvs: app_nvs_save_protocol_config: Protocol config saved successfully[0m
+[0;32mI (30552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (31512) app_nvs: app_nvs_save_antenna_config: Saving antenna config to flash[0m
+[0;32mI (31512) app_nvs: app_nvs_save_antenna_config: Saved power: 10[0m
+[0;32mI (35342) app_nvs: app_nvs_save_antenna_config: Saving antenna config to flash[0m
+[0;32mI (35342) app_nvs: app_nvs_save_antenna_config: Saved power: 10[0m
+[0;32mI (35552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (36182) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (36192) https_server: Current protocol type: WebSocket[0m
+[0;32mI (36192) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (38062) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (38062) https_server: Current protocol type: WebSocket[0m
+[0;32mI (38062) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (39202) https_server: Received POST data: {"protocol":"ble_hid","ble_hid":{"device_name":"wss://localhost","pin_code":""}}[0m
+[0;32mI (39202) https_server: Setting protocol to: ble_hid[0m
+[0;32mI (39202) https_server: Set BLE device name: wss://localhost[0m
+[0;32mI (39212) https_server: Set BLE PIN: [0m
+[0;32mI (39212) app_nvs: app_nvs_save_protocol_config: Saving protocol config to flash[0m
+[1;31mE (39232) app_nvs: app_nvs_save_protocol_config: Empty BLE PIN[0m
+[0;33mW (39232) httpd_txrx: httpd_resp_send_err: 500 Internal Server Error - Failed to save config[0m
+[0;33mW (39242) httpd_uri: httpd_uri: uri handler execution failed[0m
+[0;32mI (39242) https_server: Client disconnected 58[0m
+[0;32mI (39292) esp_https_server: performing session handshake[0m
+[1;31mE (40002) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (40002) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (40002) https_server: Client disconnected 58[0m
+[1;31mE (40012) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (40012) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (40022) esp_https_server: performing session handshake[0m
+[1;31mE (40402) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (40552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (40992) https_server: New client connected 58[0m
+[0;32mI (41072) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;32mI (41082) https_server: Current protocol type: BLE HID[0m
+[0;32mI (41082) https_server: BLE Config - Device Name: wss://localhost, PIN: [0m
+[0;32mI (41082) https_server: Sending JSON response: {[0m
+	"protocol":	"ble_hid",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"wss://localhost",
+		"pin_code":	""
+	}
+}
+[0;32mI (45552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (50552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (55552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (60552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (65552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (70552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (71992) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (71992) https_server: Client not alive check for fd 58, retry count: 0[0m
+[0;32mI (71992) https_server: Retrying connection for fd 58, attempt 1/3[0m
+[1;31mE (72992) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (72992) https_server: Client not alive check for fd 58, retry count: 1[0m
+[0;32mI (72992) https_server: Retrying connection for fd 58, attempt 2/3[0m
+[1;31mE (73992) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (73992) https_server: Client not alive check for fd 58, retry count: 2[0m
+[0;32mI (73992) https_server: Retrying connection for fd 58, attempt 3/3[0m
+[1;31mE (74992) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (74992) https_server: Client not alive check for fd 58, retry count: 3[0m
+[1;31mE (74992) https_server: Client not alive, closing fd 58 after 3 retries[0m
+[0;32mI (74992) https_server: Client disconnected 58[0m
+[1;31mE (75002) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (75552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (80552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (85552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (90552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (95552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (100552) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (105552) udp_task: Discovery message sent to: 172.16.100.255[0m

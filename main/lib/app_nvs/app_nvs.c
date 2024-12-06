@@ -1,13 +1,7 @@
-/*
- * app_nvs.c
- *
- *  Created on: Oct 28, 2021
- *      Author: kjagu
- */
-
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <inttypes.h>
 
 #include "esp_log.h"
 #include "nvs_flash.h"
@@ -16,13 +10,15 @@
 #include "app_nvs.h"
 #include "wifi_app.h"
 
-// Tag for logging to the monitor
-static const char TAG[] = "nvs";
+
+// Tag for logging
+static const char TAG[] = "app_nvs";
 
 // NVS name space used for station mode credentials
 const char app_nvs_sta_creds_namespace[] = "stacreds";
 const char app_nvs_socket_creds_namespace[] = "socketcreds";
 const char app_nvs_antenna_namespace[] = "antenna";
+const char app_nvs_protocol_namespace[] = "protocol";
 
 esp_err_t app_nvs_save_sta_creds(void)
 {
@@ -65,10 +61,10 @@ esp_err_t app_nvs_save_sta_creds(void)
 			return esp_err;
 		}
 		nvs_close(handle);
-		ESP_LOGI(TAG, "app_nvs_save_sta_creds: wrote wifi_sta_config: Station SSID: %s Password: %s", wifi_sta_config->sta.ssid, wifi_sta_config->sta.password);
+		ESP_LOGI(TAG, "app_nvs_save_sta_creds: wrote wifi_sta_config: Station SSID: %s Password: %s", 
+				wifi_sta_config->sta.ssid, wifi_sta_config->sta.password);
 	}
 
-	printf("app_nvs_save_sta_creds: returned ESP_OK\n");
 	return ESP_OK;
 }
 
@@ -348,4 +344,169 @@ esp_err_t app_nvs_load_antenna_config(antenna_config_t *config)
 
     printf("app_nvs_load_antenna_config: Error opening NVS handle!\n");
     return ESP_FAIL;
+}
+
+esp_err_t app_nvs_save_protocol_config(protocol_config_t *config)
+{
+    // Validate input
+    if (config == NULL) {
+        ESP_LOGE(TAG, "app_nvs_save_protocol_config: NULL config pointer");
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    // Validate protocol type
+    if (config->type != PROTOCOL_WEBSOCKET && config->type != PROTOCOL_BLE_HID) {
+        ESP_LOGE(TAG, "app_nvs_save_protocol_config: Invalid protocol type: %d", config->type);
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    nvs_handle handle;
+    esp_err_t esp_err;
+    ESP_LOGI(TAG, "app_nvs_save_protocol_config: Saving protocol config to flash");
+
+    esp_err = nvs_open(app_nvs_protocol_namespace, NVS_READWRITE, &handle);
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "app_nvs_save_protocol_config: Error (%s) opening NVS handle!", esp_err_to_name(esp_err));
+        return esp_err;
+    }
+
+    // Save protocol type
+    esp_err = nvs_set_i32(handle, "type", (int32_t)config->type);
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "app_nvs_save_protocol_config: Error (%s) saving protocol type!", esp_err_to_name(esp_err));
+        nvs_close(handle);
+        return esp_err;
+    }
+
+    // Save config based on protocol type
+    if (config->type == PROTOCOL_WEBSOCKET)
+    {
+        // Validate websocket config
+        if (strlen(config->websocket.url) == 0) {
+            ESP_LOGE(TAG, "app_nvs_save_protocol_config: Empty websocket URL");
+            nvs_close(handle);
+            return ESP_ERR_INVALID_ARG;
+        }
+        if (config->websocket.port <= 0) {
+            ESP_LOGE(TAG, "app_nvs_save_protocol_config: Invalid websocket port: %" PRId32, config->websocket.port);
+            nvs_close(handle);
+            return ESP_ERR_INVALID_ARG;
+        }
+        if (config->websocket.max_clients <= 0) {
+            ESP_LOGE(TAG, "app_nvs_save_protocol_config: Invalid max clients: %" PRId32, config->websocket.max_clients);
+            nvs_close(handle);
+            return ESP_ERR_INVALID_ARG;
+        }
+
+        esp_err = nvs_set_str(handle, "ws_url", config->websocket.url);
+        esp_err |= nvs_set_i32(handle, "ws_port", config->websocket.port);
+        esp_err |= nvs_set_i32(handle, "ws_max_clients", config->websocket.max_clients);
+    }
+    else if (config->type == PROTOCOL_BLE_HID)
+    {
+        // Validate BLE config
+        if (strlen(config->ble_hid.device_name) == 0) {
+            ESP_LOGE(TAG, "app_nvs_save_protocol_config: Empty BLE device name");
+            nvs_close(handle);
+            return ESP_ERR_INVALID_ARG;
+        }
+        if (strlen(config->ble_hid.pin_code) == 0) {
+            ESP_LOGE(TAG, "app_nvs_save_protocol_config: Empty BLE PIN");
+            nvs_close(handle);
+            return ESP_ERR_INVALID_ARG;
+        }
+
+        esp_err = nvs_set_str(handle, "ble_name", config->ble_hid.device_name);
+        esp_err |= nvs_set_str(handle, "ble_pin", config->ble_hid.pin_code);
+    }
+
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "app_nvs_save_protocol_config: Error saving protocol specific config!");
+        nvs_close(handle);
+        return esp_err;
+    }
+
+    // Commit
+    esp_err = nvs_commit(handle);
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "app_nvs_save_protocol_config: Error (%s) committing data to NVS!", esp_err_to_name(esp_err));
+        nvs_close(handle);
+        return esp_err;
+    }
+
+    nvs_close(handle);
+    ESP_LOGI(TAG, "app_nvs_save_protocol_config: Protocol config saved successfully");
+    return ESP_OK;
+}
+
+esp_err_t app_nvs_load_protocol_config(protocol_config_t *config)
+{
+    nvs_handle handle;
+    esp_err_t esp_err;
+    int32_t protocol_type;
+
+    ESP_LOGI(TAG, "app_nvs_load_protocol_config: Loading protocol config from flash");
+
+    // Khởi tạo giá trị mặc định trước
+    config->type = DEFAULT_PROTOCOL_TYPE;
+    if (config->type == PROTOCOL_WEBSOCKET) {
+        strcpy(config->websocket.url, DEFAULT_WS_URL);
+        config->websocket.port = DEFAULT_WS_PORT;
+        config->websocket.max_clients = DEFAULT_WS_MAX_CLIENTS;
+    } else {
+        strcpy(config->ble_hid.device_name, DEFAULT_BLE_DEVICE_NAME);
+        strcpy(config->ble_hid.pin_code, DEFAULT_BLE_PIN);
+    }
+
+    // Nếu mở NVS thành công thì mới đọc và ghi đè lên giá trị mặc định
+    if (nvs_open(app_nvs_protocol_namespace, NVS_READONLY, &handle) == ESP_OK)
+    {
+        // Load protocol type
+        esp_err = nvs_get_i32(handle, "type", &protocol_type);
+        if (esp_err == ESP_OK)
+        {
+            config->type = (protocol_type_t)protocol_type;
+        }
+
+        // Luôn load cả hai cấu hình, bất kể protocol type hiện tại
+        // Load WebSocket config
+        size_t required_size = sizeof(config->websocket.url);
+        esp_err = nvs_get_str(handle, "ws_url", config->websocket.url, &required_size);
+        if (esp_err != ESP_OK) {
+            strcpy(config->websocket.url, DEFAULT_WS_URL);
+        }
+        
+        esp_err = nvs_get_i32(handle, "ws_port", &config->websocket.port);
+        if (esp_err != ESP_OK) {
+            config->websocket.port = DEFAULT_WS_PORT;
+        }
+        
+        esp_err = nvs_get_i32(handle, "ws_max_clients", &config->websocket.max_clients);
+        if (esp_err != ESP_OK) {
+            config->websocket.max_clients = DEFAULT_WS_MAX_CLIENTS;
+        }
+        
+        // Load BLE HID config
+        required_size = sizeof(config->ble_hid.device_name);
+        esp_err = nvs_get_str(handle, "ble_name", config->ble_hid.device_name, &required_size);
+        if (esp_err != ESP_OK) {
+            strcpy(config->ble_hid.device_name, DEFAULT_BLE_DEVICE_NAME);
+        }
+        
+        required_size = sizeof(config->ble_hid.pin_code);
+        esp_err = nvs_get_str(handle, "ble_pin", config->ble_hid.pin_code, &required_size);
+        if (esp_err != ESP_OK) {
+            strcpy(config->ble_hid.pin_code, DEFAULT_BLE_PIN);
+        }
+
+        nvs_close(handle);
+    } else {
+        ESP_LOGW(TAG, "Error opening NVS handle, using default values");
+    }
+
+    return ESP_OK; // Luôn trả về OK vì đã có giá trị mặc định
 }

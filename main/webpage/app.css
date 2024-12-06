@@ -275,16 +275,18 @@ input[type="button"]:focus {
 /* Toast container */
 #toast-container {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 20px;
     z-index: 1000;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
 }
 
 /* Toast message */
 .toast {
     padding: 12px 24px;
     border-radius: 4px;
-    margin-bottom: 10px;
     color: white;
     font-size: 14px;
     font-weight: 500;
@@ -292,6 +294,8 @@ input[type="button"]:focus {
     transform: translateX(100%);
     animation: slideIn 0.3s ease forwards;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    max-width: 300px;
+    word-wrap: break-word;
 }
 
 .toast.success {
@@ -628,5 +632,221 @@ input[type="button"]:hover {
     .antenna-item label {
         font-size: 11px;
     }
+}
+
+/* Protocol Configuration Styles */
+.protocol-config {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.protocol-selection {
+    margin: 20px 0;
+}
+
+.protocol-option {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.protocol-option label {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-left: 8px;
+}
+
+.protocol-settings {
+    margin-top: 15px;
+    margin-left: 25px;
+    display: none;
+}
+
+.protocol-option input[type="radio"]:checked ~ .protocol-settings {
+    display: block;
+}
+
+.protocol-settings input[type="text"],
+.protocol-settings input[type="number"],
+.protocol-settings select {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.protocol-settings input:focus,
+.protocol-settings select:focus {
+    border-color: #0272B7;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(2,114,183,0.25);
+}
+
+.ble-mode {
+    margin-top: 10px;
+}
+
+.ble-mode label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Thêm style cho input PIN */
+.protocol-settings input[type="text"]#pin_code {
+    letter-spacing: 2px;
+    font-family: monospace;
+}
+
+/* Thêm validation style */
+.protocol-settings input:invalid {
+    border-color: #dc3545;
+}
+
+/* Thêm style cho max clients control */
+.max-clients-control {
+    position: relative;
+    margin-top: 10px;
+}
+
+.max-clients-control input[type="number"] {
+    width: 100%;
+    max-width: 300px;
+}
+
+.input-hint {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+    margin-left: 2px;
+}
+
+/* Ẩn mũi tên up/down mặc định của input number */
+.protocol-settings input[type="number"]::-webkit-inner-spin-button,
+.protocol-settings input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+.header-right {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.reboot-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
+}
+
+.reboot-button:hover {
+    background-color: #c82333;
+}
+
+.reboot-button i {
+    font-size: 14px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-confirm {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-confirm:hover {
+    background-color: #c82333;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268;
+}
+
+/* OTA Styles */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.firmware-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#file_info {
+    margin: 10px 0;
+    color: #666;
 }
 

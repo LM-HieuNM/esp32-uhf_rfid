@@ -11,7 +11,6 @@ var isConnectedWifi = false;
  */
 $(document).ready(function(){
 	getUpdateStatus();
-	// startDHTSensorInterval();
 	getConnectInfo();
 	$("#connect_wifi").on("click", function(){
 		checkCredentials();
@@ -47,6 +46,7 @@ $(document).ready(function(){
         if (enteredPassword === correctPassword) {
             $("#login-screen").hide();
             $("#main-content").show();
+            $("#reboot-btn").show();
         } else {
             showError("Incorrect password. Please try again.");
         }
@@ -66,16 +66,209 @@ $(document).ready(function(){
     // Load current antenna configuration
     function loadAntennaConfig() {
         $.getJSON('/antennaConfig.json', function(data) {
-            $("#power_level").val(data.power);
-            data.antennas.forEach((enabled, index) => {
-                document.getElementById(`ant${index + 1}`).checked = enabled;
-            });
+            // Chỉ cập nhật UI, không lưu
+            if (data && data.antennas) {
+                $("#power_level").val(data.power || 0);
+                data.antennas.forEach((enabled, index) => {
+                    document.getElementById(`ant${index + 1}`).checked = enabled;
+                });
+            }
+        }).fail(function(error) {
+            console.error("Failed to load antenna config:", error);
+            showToast('Failed to load antenna configuration', 'error');
         });
     }
 
     // Load configuration when antenna tab is selected
     $(".tab-button[data-tab='antenna']").on("click", function(){
         loadAntennaConfig();
+    });
+
+    // Load protocol configuration when protocol tab is selected
+    $(".tab-button[data-tab='protocol']").on("click", function(){
+        loadProtocolConfig();
+    });
+
+    $("#apply_protocol").on("click", function(){
+        saveProtocolConfig();
+    });
+
+    // Thêm validation cho PIN input
+    $("#pin_code").on('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6);
+    });
+
+    // Add validation for max clients
+    $("#max_clients").on('input', function() {
+        let value = parseInt(this.value);
+        if (value > 10) {
+            this.value = 10;
+        } else if (value < 1) {
+            this.value = 1;
+        }
+    });
+
+    // Load current protocol configuration
+    function loadProtocolConfig() {
+        $.getJSON('/protocolConfig.json', function(data) {
+            console.log("Loaded protocol config:", data);
+            
+            // Set selected protocol
+            $(`input[name="protocol"][value="${data.protocol}"]`).prop('checked', true);
+            
+            // Load data for current protocol
+            loadProtocolData(data.protocol);
+            
+            // Update UI visibility
+            if (data.protocol === 'websocket') {
+                $('.websocket-config').show();
+                $('.ble-config').hide();
+            } else if (data.protocol === 'ble_hid') {
+                $('.websocket-config').hide();
+                $('.ble-config').show();
+            }
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            console.error("Failed to load protocol config:", textStatus, errorThrown);
+            showToast('Failed to load protocol configuration', 'error');
+        });
+    }
+
+    // Add event listener for protocol radio buttons
+    $('input[name="protocol"]').on('change', function() {
+        const selectedProtocol = this.value;
+        console.log("Protocol changed to:", selectedProtocol);
+        
+        // Load dữ liệu cho protocol được chọn
+        loadProtocolData(selectedProtocol);
+        
+        // Thay đổi hiển thị UI
+        if (selectedProtocol === 'websocket') {
+            $('.websocket-config').show();
+            $('.ble-config').hide();
+        } else if (selectedProtocol === 'ble_hid') {
+            $('.websocket-config').hide();
+            $('.ble-config').show();
+        }
+    });
+
+    // Hàm load dữ liệu cho từng protocol
+    function loadProtocolData(protocol) {
+        $.getJSON('/protocolConfig.json', function(data) {
+            console.log("Loaded protocol data:", data);
+            
+            if (protocol === 'websocket') {
+                if (data.websocket) {
+                    $("#websocket_url").val(data.websocket.url);
+                    $("#websocket_port").val(data.websocket.port);
+                    $("#max_clients").val(data.websocket.max_clients);
+                } else {
+                    // Set default values if no data
+                    $("#websocket_url").val("ws://localhost");
+                    $("#websocket_port").val("8080");
+                    $("#max_clients").val("1");
+                }
+            } else if (protocol === 'ble_hid') {
+                if (data.ble_hid) {
+                    $("#device_name").val(data.ble_hid.device_name);
+                    $("#pin_code").val(data.ble_hid.pin_code);
+                } else {
+                    // Set default values if no data
+                    $("#device_name").val("ESP32_HID");
+                    $("#pin_code").val("123456");
+                }
+            }
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            console.error("Failed to load protocol data:", textStatus, errorThrown);
+            showToast('Failed to load protocol configuration', 'error');
+        });
+    }
+
+    // Xử lý khi bấm nút Apply Protocol
+    $("#apply_protocol").on("click", function() {
+        const selectedProtocol = $('input[name="protocol"]:checked').val();
+        
+        // Prepare data for saving
+        const config = {
+            protocol: selectedProtocol
+        };
+        
+        // Add protocol specific config
+        if (selectedProtocol === 'websocket') {
+            config.websocket = {
+                url: $("#websocket_url").val(),
+                port: parseInt($("#websocket_port").val()),
+                max_clients: parseInt($("#max_clients").val())
+            };
+        } else if (selectedProtocol === 'ble_hid') {
+            config.ble_hid = {
+                device_name: $("#device_name").val(),
+                pin_code: $("#pin_code").val()
+            };
+        }
+        
+        // Save the new configuration
+        $.ajax({
+            url: '/protocolConfig.json',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(config),
+            success: function(response) {
+                showToast('Protocol configuration updated', 'success');
+            },
+            error: function() {
+                showToast('Failed to update protocol configuration', 'error');
+                // Nếu lỗi, load lại để reset về trng thái trước
+                loadProtocolConfig();
+            }
+        });
+    });
+
+    // Reboot handler
+    $("#reboot-btn").on("click", function() {
+        $("#reboot-modal").css("display", "block");
+    });
+
+    $("#reboot-cancel").on("click", function() {
+        $("#reboot-modal").css("display", "none");
+    });
+
+    $("#reboot-confirm").on("click", function() {
+        const rebootBtn = $("#reboot-btn");
+        rebootBtn.prop('disabled', true);
+        rebootBtn.html('<i class="fas fa-sync fa-spin"></i> Rebooting...');
+        $("#reboot-modal").css("display", "none");
+        
+        $.ajax({
+            url: '/reboot',
+            method: 'POST',
+            success: function() {
+                showToast('Device is rebooting...', 'success');
+                // Wait for device to reboot
+                setTimeout(function() {
+                    window.location.reload();
+                }, 5000);
+            },
+            error: function() {
+                showToast('Failed to reboot device', 'error');
+                rebootBtn.prop('disabled', false);
+                rebootBtn.html('<i class="fas fa-sync"></i> Reboot');
+            }
+        });
+    });
+
+    // Close modal when clicking outside
+    $(window).on("click", function(event) {
+        if (event.target == document.getElementById("reboot-modal")) {
+            $("#reboot-modal").css("display", "none");
+        }
+    });
+
+    // OTA
+    $('#selected_file').on('change', getFileInfo);
+    $('.firmware-version').on('click', function() {
+        $.getJSON('/firmware-version', function(data) {
+            showToast(`Current version: ${data.version}`, 'info');
+        });
     });
 });   
 
@@ -185,25 +378,6 @@ function otaRebootTimer()
 }
 
 /**
- * Gets DHT22 sensor temperature and humidity values for display on the web page.
- */
-// function getDHTSensorValues()
-// {
-// 	$.getJSON('/dhtSensor.json', function(data) {
-// 		$("#temperature_reading").text(data["temp"]);
-// 		$("#humidity_reading").text(data["humidity"]);
-// 	});
-// }
-
-/**
- * Sets the interval for getting the updated DHT22 sensor values.
- */
-// function startDHTSensorInterval()
-// {
-// 	setInterval(getDHTSensorValues, 5000);    
-// }
-
-/**
  * Clears the connection status interval.
  */
 function stopWifiConnectStatusInterval()
@@ -299,7 +473,13 @@ function connectWifi()
 		method: 'POST',
 		cache: false,
 		headers: {'my-connect-ssid': selectedSSID, 'my-connect-pwd': pwd},
-		data: {'timestamp': Date.now()}
+		data: {'timestamp': Date.now()},
+		timeout: 5000,
+		error: function(xhr, status, error) {
+			if (status === 'timeout') {
+				showToast('Request timed out. Please try again.', 'error');
+			}
+		}
 	});
 	
 	startWifiConnectStatusInterval();
@@ -393,7 +573,13 @@ function disconnectWifi()
 		dataType: 'json',
 		method: 'DELETE',
 		cache: false,
-		data: { 'timestamp': Date.now() }
+		data: { 'timestamp': Date.now() },
+		timeout: 5000,
+		error: function(xhr, status, error) {
+			if (status === 'timeout') {
+				showToast('Request timed out. Please try again.', 'error');
+			}
+		}
 	});
 
 	// Remove disconnecting toast and reload after 2 seconds
@@ -428,6 +614,10 @@ function showToast(message, type = 'info', duration = 3000) {
 }
 
 function saveAntennaConfig() {
+    const button = $("#apply_antenna");
+    button.prop('disabled', true);
+    button.val('Saving...');
+    
     const antennaConfig = {
         power: parseInt($("#power_level").val()),
         antennas: []
@@ -441,16 +631,77 @@ function saveAntennaConfig() {
     // Send configuration to server
     $.ajax({
         url: '/antennaConfig.json',
-        dataType: 'json',
         method: 'POST',
+        dataType: 'json',
         cache: false,
         contentType: 'application/json',
         data: JSON.stringify(antennaConfig),
         success: function(response) {
             showToast('Antenna configuration saved successfully!', 'success');
+            button.prop('disabled', false);
+            button.val('Apply Configuration');
         },
         error: function() {
             showToast('Failed to save antenna configuration', 'error');
+            button.prop('disabled', false);
+            button.val('Apply Configuration');
+        }
+    });
+}
+
+function saveProtocolConfig() {
+    const button = $("#apply_protocol");
+    button.prop('disabled', true);
+    button.val('Saving...');
+    
+    const selectedProtocol = $('input[name="protocol"]:checked').val();
+    
+    // Validate based on protocol
+    if (selectedProtocol === 'ble_hid') {
+        const pinCode = $("#pin_code").val();
+        if (!/^\d{6}$/.test(pinCode)) {
+            showToast('PIN must be exactly 6 digits', 'error');
+            button.prop('disabled', false);
+            button.val('Apply Protocol');
+            return;
+        }
+    } else if (selectedProtocol === 'websocket') {
+        const maxClients = parseInt($("#max_clients").val());
+        if (maxClients < 1 || maxClients > 10) {
+            showToast('Max clients must be between 1 and 10', 'error');
+            button.prop('disabled', false);
+            button.val('Apply Protocol');
+            return;
+        }
+    }
+    
+    const config = {
+        protocol: selectedProtocol,
+        websocket: {
+            url: $("#websocket_url").val(),
+            port: parseInt($("#websocket_port").val()),
+            max_clients: parseInt($("#max_clients").val())
+        },
+        ble_hid: {
+            device_name: $("#device_name").val(),
+            pin_code: $("#pin_code").val()
+        }
+    };
+
+    $.ajax({
+        url: '/protocolConfig.json',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(config),
+        success: function(response) {
+            showToast('Protocol configuration saved successfully!', 'success');
+        },
+        error: function() {
+            showToast('Failed to save protocol configuration', 'error');
+        },
+        complete: function() {
+            button.prop('disabled', false);
+            button.val('Apply Protocol');
         }
     });
 }

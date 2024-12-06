@@ -1,0 +1,1551 @@
+[0;32mI (159) esp_image: segment 1: paddr=00083038 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403d0464
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=73010h (471056) map[0m
+[0;32mI (159) esp_image: segment 1: paddr=00083038 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (161) esp_image: segment 2: paddr=00085f38 vaddr=40380000 size=0a0e0h ( 41184) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e8980h (952704) map[0m
+[0;32mI (319) esp_image: segment 4: paddr=001789a8 vaddr=4038a0e0 size=0a9cch ( 43468) load[0m
+[0;32mI (328) esp_image: segment 5: paddr=0018337c vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (334) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (334) boot: Disabling RNG early entropy source...[0m
+[0;32mI (345) cpu_start: Unicore app[0m
+[0;32mI (354) cpu_start: Pro cpu start user code[0m
+[0;32mI (354) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (354) app_init: Application information:[0m
+[0;32mI (354) app_init: Project name:     wss_server[0m
+[0;32mI (358) app_init: App version:      353de83-dirty[0m
+[0;32mI (362) app_init: Compile time:     Dec  6 2024 20:28:31[0m
+[0;32mI (367) app_init: ELF file SHA256:  cd0c6b8a3...[0m
+[0;32mI (372) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (378) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (382) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (386) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (389) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (396) heap_init: At 3FC9D8D0 len 00022730 (137 KiB): RAM[0m
+[0;32mI (401) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (407) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (413) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (419) spi_flash: detected chip: generic[0m
+[0;32mI (422) spi_flash: flash io: dio[0m
+[0;32mI (426) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (431) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (438) main_task: Started on CPU0[0m
+[0;32mI (438) main_task: Calling app_main()[0m
+[0;32mI (448) button: IoT Button Version: 3.4.0[0m
+[0;32mI (448) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (448) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (458) pp: pp rom version: 9387209[0m
+[0;32mI (458) net80211: net80211 rom version: 9387209[0m
+[0;32mI (478) wifi_init: rx ba win: 6[0m
+[0;32mI (478) wifi_init: accept mbox: 6[0m
+[0;32mI (478) wifi_init: tcpip mbox: 32[0m
+[0;32mI (478) wifi_init: udp mbox: 6[0m
+[0;32mI (478) wifi_init: tcp mbox: 6[0m
+[0;32mI (478) wifi_init: tcp tx win: 5760[0m
+[0;32mI (488) wifi_init: tcp rx win: 5760[0m
+[0;32mI (488) wifi_init: tcp mss: 1440[0m
+[0;32mI (488) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (498) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (778) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;33mW (778) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;33mW (808) phy_init: saving new calibration data because of checksum failure, mode(2)[0m
+[0;32mI (818) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (818) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (828) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (828) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (828) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (838) wifi_app: Unable to load station configuration[0m
+[0;32mI (838) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (848) esp_https_server: Starting server[0m
+[0;32mI (848) esp_https_server: Server listening on port 443[0m
+[0;32mI (858) https_server: Registering URI handlers[0m
+[0;32mI (858) nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+app_nvs_load_antenna_config: Error opening NVS handle!
+[0;32mI (888) serial: Recv 18 bytes[0m
+[0;32mI (908) serial: Recv 18 bytes[0m
+[0;32mI (958) main_task: Returned from app_main()[0m
+[0;32mI (988) serial: Recv 19 bytes[0m
+[0;32mI (259938) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (260028) serial: Recv 68 bytes[0m
+[0;32mI (260048) serial: Recv 8 bytes[0m
+[0;33mW (260938) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (260948) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (261008) serial: Recv 68 bytes[0m
+[0;32mI (261038) serial: Recv 8 bytes[0m
+[0;33mW (261948) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (261958) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (262018) serial: Recv 68 bytes[0m
+[0;32mI (262048) serial: Recv 8 bytes[0m
+[0;33mW (262958) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (262968) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (263028) serial: Recv 68 bytes[0m
+[0;32mI (263058) serial: Recv 8 bytes[0m
+[0;33mW (263968) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (263978) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (264038) serial: Recv 68 bytes[0m
+[0;32mI (264068) serial: Recv 8 bytes[0m
+[0;33mW (264978) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (264988) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (265048) serial: Recv 68 bytes[0m
+[0;32mI (265078) serial: Recv 8 bytes[0m
+[0;33mW (265988) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (265998) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (266058) serial: Recv 68 bytes[0m
+[0;32mI (266088) serial: Recv 8 bytes[0m
+[0;33mW (266998) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (267008) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (267068) serial: Recv 68 bytes[0m
+[0;32mI (267098) serial: Recv 8 bytes[0m
+[0;33mW (268008) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (268018) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (268078) serial: Recv 68 bytes[0m
+[0;32mI (268108) serial: Recv 8 bytes[0m
+[0;33mW (269018) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (269028) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (269088) serial: Recv 68 bytes[0m
+[0;32mI (269118) serial: Recv 8 bytes[0m
+[0;33mW (270028) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (270038) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (270098) serial: Recv 68 bytes[0m
+[0;32mI (270128) serial: Recv 8 bytes[0m
+[0;33mW (271038) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (271048) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (271108) serial: Recv 68 bytes[0m
+[0;32mI (271138) serial: Recv 8 bytes[0m
+[0;33mW (272048) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (272058) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (272118) serial: Recv 68 bytes[0m
+[0;32mI (272148) serial: Recv 8 bytes[0m
+[0;33mW (273058) RFID MANAGER: Heap Free: 157288 bytes[0m
+[0;32mI (273068) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (273128) serial: Recv 68 bytes[0m
+[0;32mI (273158) serial: Recv 8 bytes[0m
+[0;33mW (274068) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (274078) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (274138) serial: Recv 68 bytes[0m
+[0;32mI (274168) serial: Recv 8 bytes[0m
+[0;33mW (275078) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (275088) RFID MANAGER: Inventory antenna 0[0m
+[0;32mI (275148) serial: Recv 68 bytes[0m
+[0;32mI (275178) serial: Recv 8 bytes[0m
+[0;33mW (276088) RFID MANAGER: Heap Free: 157968 bytes[0m
+[0;32mI (282758) wifi_app: WIFI_EVENT_AP_STACONNECTED[0m
+[0;32mI (282978) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.0.2[0m
+[0;32mI (404308) esp_https_server: performing session handshake[0m
+[1;31mE (404998) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (404998) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (404998) https_server: Client disconnected 57[0m
+[1;31mE (405008) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (405008) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (405018) esp_https_server: performing session handshake[0m
+[1;31mE (405398) wss_keep_alive: Cannot remove client fd:57[0m
+[1;31mE (405728) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (405728) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (405728) https_server: Client disconnected 57[0m
+[1;31mE (405728) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (405738) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (405738) esp_https_server: performing session handshake[0m
+[1;31mE (406118) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (406698) https_server: New client connected 57[0m
+[0;32mI (406758) https_server: index.html requested from fd 57[0m
+[0;32mI (406908) https_server: Jquery requested from fd 57[0m
+[0;32mI (407268) esp_https_server: performing session handshake[0m
+[1;31mE (407958) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (407958) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (407968) https_server: Client disconnected 58[0m
+[1;31mE (407968) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (407978) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (407978) https_server: app.css requested[0m
+[1;31mE (407988) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (408048) esp_https_server: performing session handshake[0m
+[1;31mE (408748) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (408748) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (408748) https_server: Client disconnected 58[0m
+[1;31mE (408748) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (408758) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (408768) https_server: app.js requested from fd 57[0m
+[1;31mE (408768) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (408898) https_server: OTAstatus requested[0m
+[0;32mI (408968) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (408968) https_server: http_server_get_wifi_connect_info_json_handler: 0[0m
+[0;32mI (409028) esp_https_server: performing session handshake[0m
+[1;31mE (409728) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (409728) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (409728) https_server: Client disconnected 58[0m
+[1;31mE (409728) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (409738) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (409748) https_server: favicon.ico requested[0m
+[1;31mE (409748) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (419288) https_server: /wifiConnect.json requested[0m
+[0;32mI (419288) https_server: http_server_wifi_connect_json_handler: Found header => my-connect-ssid: LUMI_TEST[0m
+[0;32mI (419288) https_server: http_server_wifi_connect_json_handler: Found header => my-connect-pwd: lumivn274![0m
+[0;32mI (419298) wifi_app: WIFI_APP_MSG_CONNECTING_FROM_HTTP_SERVER[0m
+[0;32mI (419308) https_server: HTTP_MSG_WIFI_CONNECT_INIT[0m
+[0;32mI (419668) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (421048) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (421048) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (421048) wifi_app: Local IP: 172.16.100.108[0m
+[0;32mI (421048) wifi_app: Broadcast IP: 172.16.100.255[0m
+[0;32mI (421058) udp_task: Device MAC: F4F1FC[0m
+[0;32mI (421058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (421058) nvs: app_nvs_save_sta_creds: Saving station mode credentials to flash[0m
+[0;32mI (421068) nvs: app_nvs_save_sta_creds: wrote wifi_sta_config: Station SSID: LUMI_TEST Password: lumivn274![0m
+app_nvs_save_sta_creds: returned ESP_OK
+[0;32mI (421078) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (422088) esp_https_server: performing session handshake[0m
+[1;31mE (422788) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (422788) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (422788) https_server: Client disconnected 59[0m
+[1;31mE (422798) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (422798) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (422808) esp_https_server: performing session handshake[0m
+[1;31mE (423188) wss_keep_alive: Cannot remove client fd:59[0m
+[0;32mI (423708) https_server: New client connected 59[0m
+[0;32mI (423808) https_server: /wifiConnectStatus requested[0m
+[0;32mI (423878) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (423878) https_server: http_server_get_wifi_connect_info_json_handler: 3[0m
+[0;32mI (426058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (428268) nvs: app_nvs_save_antenna_config: Saving antenna config to flash[0m
+[0;32mI (428268) nvs: app_nvs_save_antenna_config: Saved power: 10[0m
+[0;32mI (430868) nvs: app_nvs_save_antenna_config: Saving antenna config to flash[0m
+[0;32mI (430868) nvs: app_nvs_save_antenna_config: Saved power: 10[0m
+[0;32mI (431058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (436058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (436708) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (436708) https_server: Client not alive check for fd 57, retry count: 0[0m
+[0;32mI (436708) https_server: Retrying connection for fd 57, attempt 1/3[0m
+[1;31mE (437708) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (437708) https_server: Client not alive check for fd 57, retry count: 1[0m
+[0;32mI (437708) https_server: Retrying connection for fd 57, attempt 2/3[0m
+[1;31mE (438698) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (438698) https_server: Client not alive check for fd 57, retry count: 2[0m
+[0;32mI (438698) https_server: Retrying connection for fd 57, attempt 3/3[0m
+[1;31mE (438698) wss_keep_alive: Client (fd=57) not alive![0m
+[0;33mW (438708) https_server: Client not alive check for fd 57, retry count: 3[0m
+[1;31mE (438708) https_server: Client not alive, closing fd 57 after 3 retries[0m
+[0;32mI (438718) https_server: Client disconnected 57[0m
+[1;31mE (438728) wss_keep_alive: Cannot remove client fd:57[0m
+[0;32mI (441058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (446058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (451058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (453728) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (453728) https_server: Client not alive check for fd 59, retry count: 0[0m
+[0;32mI (453728) https_server: Retrying connection for fd 59, attempt 1/3[0m
+[1;31mE (454728) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (454728) https_server: Client not alive check for fd 59, retry count: 1[0m
+[0;32mI (454728) https_server: Retrying connection for fd 59, attempt 2/3[0m
+[1;31mE (455728) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (455728) https_server: Client not alive check for fd 59, retry count: 2[0m
+[0;32mI (455728) https_server: Retrying connection for fd 59, attempt 3/3[0m
+[0;32mI (456058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (456728) wss_keep_alive: Client (fd=59) not alive![0m
+[0;33mW (456728) https_server: Client not alive check for fd 59, retry count: 3[0m
+[1;31mE (456728) https_server: Client not alive, closing fd 59 after 3 retries[0m
+[0;32mI (456728) https_server: Client disconnected 59[0m
+[1;31mE (456738) wss_keep_alive: Cannot remove client fd:59[0m
+[0;32mI (461058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (466058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (471058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (476058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (481058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (486058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (491058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (496058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (501058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (506058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (511058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (516058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (521058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (526058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (531058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (536058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (541058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (546058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (551058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (556058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (561058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (566058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (571058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (576058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (581058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (586058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (591058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (596058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (601058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (606058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (611058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (616058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (621058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (626058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (631058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (636058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (641058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (646058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (651058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (656058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (661058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (666058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (671058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (676058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (681058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (686058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (691058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (696058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (701058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (706058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (711058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (716058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (721058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (726058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (731058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (736058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (741058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (746058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (751058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (756058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (761058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (766058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (771058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (776058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (781058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (786058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (791058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (796058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (801058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (806058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (811058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (816058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (821058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (826058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (831058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (836058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (841058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (846058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (851058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (856058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (861058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (866058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (871058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (876058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (881058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (886058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (891058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (896058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (901058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (906058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (911058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (916058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (921058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (926058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (931058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (936058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (941058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (946058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (951058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (956058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (961058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (966058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (971058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (976058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (981058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (986058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (991058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (996058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1001058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1006058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1011058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1016058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1021058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1026058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1031058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1036058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1041058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1046058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1051058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1056058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1061058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1066058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1071058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1076058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1081058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1086058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1091058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1096058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1101058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1106058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1111058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1116058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1121058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1126058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1131058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1136058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1141058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1146058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1151058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1156058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1161058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1166058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1171058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1176058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1181058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1186058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1191058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1196058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1201058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1206058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1211058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1216058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1221058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1226058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1231058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1236058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1241058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1246058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1251058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1256058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1261058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1266058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1271058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1276058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1281058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1286058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1291058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1296058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1301058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1306058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1311058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1316058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1321058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1326058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1331058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1336058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1341058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1346058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1351058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1356058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1361058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1366058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1371058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1376058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1381058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1386058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1391058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1396058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1401058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1406058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1411058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1416058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1421058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1426058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1431058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1436058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1441058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1446058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1451058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1456058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1461058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1466058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1471058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1476058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1481058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1486058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1491058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1496058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1501058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1506058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1511058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1516058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1521058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1526058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1531058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1536058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1541058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1546058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1551058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1556058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1561058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1566058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1571058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1576058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1581058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1586058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1591058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1596058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1601058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1606058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1611058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1616058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1621058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1626058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1631058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1636058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1641058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1646058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1651058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1656058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1661058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1666058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1671058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1676058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1681058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1686058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1691058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1696058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1701058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1706058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1711058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1716058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1721058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1726058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1731058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1736058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1741058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1746058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1751058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1756058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1761058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1766058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1771058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1776058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1781058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1786058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1791058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1796058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1801058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1806058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1811058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1816058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1821058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1826058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1831058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1836058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1841058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1846058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1851058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1856058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1861058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1866058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1871058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1876058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1881058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1886058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1891058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1896058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1901058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1906058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1911058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1916058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1921058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1926058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1931058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1936058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1941058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1946058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1951058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1956058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1961058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1966058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1971058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1976058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1981058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1986058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1991058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (1996058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2001058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2006058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2011058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2016058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2021058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2026058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2031058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2036058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2041058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2046058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2051058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2056058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2061058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2066058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2071058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2076058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2081058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2086058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2091058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2096058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2101058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2106058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2111058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2116058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2121058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2126058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2131058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2136058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2141058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2146058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2151058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2156058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2161058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2166058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2171058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2176058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2181058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2186058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2191058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2196058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2201058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2206058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2211058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2216058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2221058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2226058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2231058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2236058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2241058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2246058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2251058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2256058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2261058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2266058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2271058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2276058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2281058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2286058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2291058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2296058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2301058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2306058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2311058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2316058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2321058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2326058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2331058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2336058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2341058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2346058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2351058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2356058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2361058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2366058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2371058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2376058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2381058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2386058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2391058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2396058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2401058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2406058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2411058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2416058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2421058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2426058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2431058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2436058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2441058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2446058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2451058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2456058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2461058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2466058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2471058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2476058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2481058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2486058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2491058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2496058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2501058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2506058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2511058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2516058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2521058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2526058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2531058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2536058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2541058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2546058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2551058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2556058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2561058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2566058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2571058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2576058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2581058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2586058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2591058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2596058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2601058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2606058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2611058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2616058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2621058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2626058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2631058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2636058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2641058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2646058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2651058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2656058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2661058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2666058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2671058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2676058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2681058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2686058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2691058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2696058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2701058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2706058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2711058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2716058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2721058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2726058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2731058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2736058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2741058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2746058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2751058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2756058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2761058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2766058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2771058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2776058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2781058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2786058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2791058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2796058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2801058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2806058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2811058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2816058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2821058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2826058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2831058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2836058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2841058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2846058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2851058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2856058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2861058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2866058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2871058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2876058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2881058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2886058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2891058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2896058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2901058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2906058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2911058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2916058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2921058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2926058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2931058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2936058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2941058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2946058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2951058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2956058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2961058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2966058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2971058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2976058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2981058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2986058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2991058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2996058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3001058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3006058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3011058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3016058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3021058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3026058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3031058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3036058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3041058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3046058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3051058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3056058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3061058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3066058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3071058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3076058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3081058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3086058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3091058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3096058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3101058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3106058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3111058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3116058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3121058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3126058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3131058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3136058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3141058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3146058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3151058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3156058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3161058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3166058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3171058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3176058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3181058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3186058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3191058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3196058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3201058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3206058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3211058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3216058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3221058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3226058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3231058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3236058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3241058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3246058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3251058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3256058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3261058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3266058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3271058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3276058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3281058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3286058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3291058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3296058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3301058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3306058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3311058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3316058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3321058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3326058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3331058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3336058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3341058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3346058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3351058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3356058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3361058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3366058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3371058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3376058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3381058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3386058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3391058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3396058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3401058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3406058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3411058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3416058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3421058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3426058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3431058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3436058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3441058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3446058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3451058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3456058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3461058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3466058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3471058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3476058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3481058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3486058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3491058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3496058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3501058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3506058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3511058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3516058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3521058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3526058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3531058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3536058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3541058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3546058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3551058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3556058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3561058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3566058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3571058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3576058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3581058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3586058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3591058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3596058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3601058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3606058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3611058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3616058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3621058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3626058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3631058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3636058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3641058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3646058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3651058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3656058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3661058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3666058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3671058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3676058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3681058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3686058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3691058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3696058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3701058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3706058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3711058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3716058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3721058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3726058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3731058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3736058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3741058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3746058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3751058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3756058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3761058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3766058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3771058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3776058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3781058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3786058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3791058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3796058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3801058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3806058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3811058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3816058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3821058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3826058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3831058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3836058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3841058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3846058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3851058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3856058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3861058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3866058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3871058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3876058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3881058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3883378) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.0.2[0m
+[0;32mI (3886058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3891058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3896058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3901058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3906058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3911058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3916058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3921058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3926058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3931058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3936058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3941058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3946058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3951058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3956058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3961058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3966058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3971058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3976058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3981058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3986058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3991058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (3996058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4001058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4006058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4011058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4016058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4021058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4026058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4031058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4036058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4041058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4046058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4051058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4056058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4061058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4066058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4071058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4076058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4081058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4086058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4091058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4096058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4101058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4106058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4111058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4116058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4121058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4126058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4131058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4136058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4141058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4146058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4151058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4156058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4161058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4166058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4171058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4176058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4181058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4186058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4191058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4196058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4201058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4206058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4211058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4216058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4221058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4226058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4231058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4236058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4241058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4246058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4251058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4256058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4261058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4266058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4271058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4276058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4281058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4286058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4291058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4296058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4301058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4306058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4311058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4316058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4321058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4326058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4331058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4336058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4341058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4346058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4351058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4356058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4361058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4366058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4371058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4376058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4381058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4386058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4391058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4396058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4401058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4406058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4411058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4416058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4421058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4426058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4431058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4436058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4441058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4446058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4451058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4456058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4461058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4466058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4471058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4476058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4481058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4486058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4491058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4496058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4501058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4506058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4511058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4516058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4521058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4526058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4531058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4536058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4541058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4546058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4551058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4556058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4561058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4566058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4571058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4576058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4581058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4586058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4591058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4596058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4601058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4606058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4611058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4616058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4621058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4626058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4631058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4636058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4641058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4646058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4651058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4656058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4661058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4666058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4671058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4676058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4681058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4686058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4691058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4696058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4701058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4706058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4711058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4716058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4721058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4726058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4731058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4736058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4741058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4746058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4751058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4756058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4761058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4766058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4771058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4776058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4781058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4786058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4791058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4796058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4801058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4806058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4811058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4816058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4821058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4826058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4831058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4836058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4841058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4846058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4851058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4856058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4861058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4866058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4871058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4876058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4881058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4886058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4891058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4896058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4901058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4906058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4911058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4916058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4921058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4926058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4931058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4936058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4941058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4946058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4951058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4956058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4961058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4966058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4971058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4976058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4981058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4986058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4991058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (4996058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5001058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5006058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5011058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5016058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5021058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5026058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5031058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5036058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5041058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5046058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5051058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5056058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5061058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5066058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5071058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5076058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5081058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5086058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5091058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5096058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5101058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5106058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5111058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5116058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5121058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5126058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5131058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5136058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5141058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5146058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5151058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5156058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5161058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5166058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5171058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5176058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5181058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5186058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5191058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5196058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5201058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5206058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5211058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5216058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5221058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5226058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5231058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5236058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5241058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5246058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5251058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5256058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5261058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5266058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5271058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5276058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5281058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5286058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5291058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5296058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5301058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5306058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5311058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5316058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5321058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5326058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5331058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5336058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5341058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5346058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5351058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5356058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5361058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5366058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5371058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5376058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5381058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5386058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5391058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5396058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5401058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5406058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5411058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5416058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5421058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5426058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5431058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5436058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5441058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5446058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5451058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5456058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5461058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5466058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5471058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5476058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5481058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5486058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5491058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5496058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5501058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5506058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5511058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5516058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5521058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5526058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5531058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5536058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5541058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5546058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5551058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5556058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5561058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5566058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5571058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5576058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5581058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5586058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5591058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5596058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5601058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5606058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5611058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5616058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5621058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5626058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5631058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5636058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5641058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5646058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5651058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5656058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5661058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5666058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5671058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5676058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5681058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5686058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5691058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5696058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5701058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5706058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5711058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5716058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5721058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5726058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5731058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5736058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5741058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5746058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5751058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5756058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5761058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5766058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5771058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5776058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5781058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5786058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5791058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5796058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5801058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5806058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5811058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5816058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5821058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5826058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5831058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5836058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5841058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5846058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5851058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5856058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5861058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5866058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5871058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5876058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5881058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5886058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5891058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5896058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5901058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5906058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5911058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5916058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5921058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5926058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5931058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5936058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5941058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5946058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5951058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5956058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5961058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5966058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5971058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5976058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5981058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5986058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5991058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5996058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6001058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6006058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6011058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6016058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6021058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6026058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6031058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6036058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6041058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6046058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6051058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6056058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6061058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6066058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6071058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6076058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6081058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6086058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6091058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6096058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6101058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6106058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6111058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6116058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6121058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6126058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6131058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6136058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6141058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6146058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6151058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6156058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6161058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6166058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6171058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6176058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6181058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6186058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6191058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6196058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6201058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6206058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6211058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6216058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6221058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6226058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6231058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6236058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6241058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6246058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6251058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6256058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6261058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6266058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6271058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6276058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6281058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6286058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6291058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6296058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6301058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6306058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6311058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6316058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6321058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6326058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6331058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6336058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6341058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6346058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6351058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6356058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6361058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6366058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6371058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6376058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6381058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6386058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6391058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6396058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6401058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6406058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6411058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6416058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6421058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6426058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6431058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6436058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6441058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6446058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6451058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6456058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6461058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6466058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6471058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6476058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6481058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6486058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6491058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6496058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6501058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6506058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6511058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6516058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6521058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6526058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6531058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6536058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6541058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6546058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6551058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6556058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6561058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6566058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6571058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6576058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6581058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6586058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6591058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6596058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6601058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6606058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6611058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6616058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6621058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6626058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6631058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6636058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6641058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6646058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6651058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6656058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6661058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6666058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6671058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6676058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6681058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6686058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6691058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6696058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6701058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6706058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6711058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6716058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6721058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6726058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6731058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6736058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6741058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6746058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6751058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6756058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6761058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6766058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6771058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6776058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6781058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6786058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6791058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6796058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6801058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6806058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6811058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6816058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6821058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6826058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6831058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6836058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6841058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6846058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6851058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6856058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6861058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6866058) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (6871058) udp_task: Discovery message sent to: 172.16.100.255[0m

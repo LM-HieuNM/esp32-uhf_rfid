@@ -1,0 +1,566 @@
+[0;32mI (160) esp_image: segment 1: paddr=000856b8 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40058860
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=75690h (480912) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=000856b8 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (163) esp_image: segment 2: paddr=000885b8 vaddr=40380000 size=07a60h ( 31328) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e9404h (955396) map[0m
+[0;32mI (321) esp_image: segment 4: paddr=0017942c vaddr=40387a60 size=0d04ch ( 53324) load[0m
+[0;32mI (331) esp_image: segment 5: paddr=00186480 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (337) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (337) boot: Disabling RNG early entropy source...[0m
+[0;32mI (349) cpu_start: Unicore app[0m
+[0;32mI (357) cpu_start: Pro cpu start user code[0m
+[0;32mI (357) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (357) app_init: Application information:[0m
+[0;32mI (357) app_init: Project name:     wss_server[0m
+[0;32mI (361) app_init: App version:      353de83-dirty[0m
+[0;32mI (366) app_init: Compile time:     Dec  6 2024 20:28:31[0m
+[0;32mI (371) app_init: ELF file SHA256:  014f63ef5...[0m
+[0;32mI (375) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (381) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (385) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (389) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (393) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (399) heap_init: At 3FC9D960 len 000226A0 (137 KiB): RAM[0m
+[0;32mI (404) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (410) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (416) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (423) spi_flash: detected chip: generic[0m
+[0;32mI (425) spi_flash: flash io: dio[0m
+[0;32mI (429) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (434) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (441) main_task: Started on CPU0[0m
+[0;32mI (441) main_task: Calling app_main()[0m
+[0;32mI (451) button: IoT Button Version: 3.4.0[0m
+[0;32mI (451) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (451) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (461) pp: pp rom version: 9387209[0m
+[0;32mI (461) net80211: net80211 rom version: 9387209[0m
+[0;32mI (481) wifi_init: rx ba win: 6[0m
+[0;32mI (481) wifi_init: accept mbox: 6[0m
+[0;32mI (481) wifi_init: tcpip mbox: 32[0m
+[0;32mI (481) wifi_init: udp mbox: 6[0m
+[0;32mI (481) wifi_init: tcp mbox: 6[0m
+[0;32mI (481) wifi_init: tcp tx win: 5760[0m
+[0;32mI (491) wifi_init: tcp rx win: 5760[0m
+[0;32mI (491) wifi_init: tcp mss: 1440[0m
+[0;32mI (491) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (501) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (781) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (821) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (821) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (821) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (821) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (821) app_nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+app_nvs_load_sta_creds: SSID: LUMI_TEST Password: lumivn274!
+[0;32mI (841) wifi_app: Loaded station configuration[0m
+[0;32mI (841) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (851) esp_https_server: Starting server[0m
+[0;32mI (851) esp_https_server: Server listening on port 443[0m
+[0;32mI (851) https_server: Registering URI handlers[0m
+[0;32mI (861) app_nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+app_nvs_load_antenna_config: Error opening NVS handle!
+[0;32mI (1151) serial: Recv 18 bytes[0m
+[0;32mI (1181) serial: Recv 18 bytes[0m
+[0;32mI (1181) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 202
+[0;32mI (1231) main_task: Returned from app_main()[0m
+[0;32mI (1261) serial: Recv 19 bytes[0m
+[0;32mI (4011) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 205
+[0;32mI (4091) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (5481) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (5481) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (5481) wifi_app: Local IP: 172.16.100.108[0m
+[0;32mI (5481) wifi_app: Broadcast IP: 172.16.100.255[0m
+[0;32mI (5481) udp_task: Device MAC: F4F1FC[0m
+[0;32mI (5491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (5491) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (6461) esp_https_server: performing session handshake[0m
+[1;31mE (7211) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (7211) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (7211) https_server: Client disconnected 58[0m
+[1;31mE (7211) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (7221) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (7221) esp_https_server: performing session handshake[0m
+[1;31mE (7611) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (7931) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (7931) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (7931) https_server: Client disconnected 58[0m
+[1;31mE (7941) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (7941) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (7951) esp_https_server: performing session handshake[0m
+[1;31mE (8331) wss_keep_alive: Cannot remove client fd:58[0m
+[1;31mE (8651) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (8651) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (8661) https_server: Client disconnected 58[0m
+[1;31mE (8661) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (8661) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (8671) esp_https_server: performing session handshake[0m
+[1;31mE (9051) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (10491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (10771) https_server: New client connected 58[0m
+[0;32mI (10781) esp_https_server: performing session handshake[0m
+[0;32mI (11691) https_server: New client connected 59[0m
+[0;32mI (11691) https_server: index.html requested from fd 58[0m
+[0;32mI (11891) https_server: Jquery requested from fd 59[0m
+[0;32mI (12321) https_server: app.css requested[0m
+[0;32mI (12371) esp_https_server: performing session handshake[0m
+[1;31mE (13071) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (13071) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (13081) https_server: Client disconnected 60[0m
+[1;31mE (13081) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (13081) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (13091) https_server: app.js requested from fd 58[0m
+[1;31mE (13101) wss_keep_alive: Cannot remove client fd:60[0m
+[0;32mI (13311) https_server: OTAstatus requested[0m
+[0;32mI (13411) https_server: /wifiConnectInfo.json requested[0m
+[0;32mI (13411) https_server: http_server_get_wifi_connect_info_json_handler: 3[0m
+[0;32mI (13421) https_server: favicon.ico requested[0m
+[0;32mI (15491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (16581) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (16581) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (16581) https_server: Current protocol type: WebSocket[0m
+[0;32mI (16581) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (18281) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (18281) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (18291) https_server: Current protocol type: WebSocket[0m
+[0;32mI (18291) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (19331) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (19331) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (19331) https_server: Current protocol type: WebSocket[0m
+[0;32mI (19341) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (20021) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (20021) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (20021) https_server: Current protocol type: WebSocket[0m
+[0;32mI (20021) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (20491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (20611) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (20611) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (20611) https_server: Current protocol type: WebSocket[0m
+[0;32mI (20621) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (21241) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (21241) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (21241) https_server: Current protocol type: WebSocket[0m
+[0;32mI (21251) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (22621) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (22621) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (22621) https_server: Current protocol type: WebSocket[0m
+[0;32mI (22631) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (23441) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (23441) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (23441) https_server: Current protocol type: WebSocket[0m
+[0;32mI (23451) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (24871) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (24871) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (24871) https_server: Current protocol type: WebSocket[0m
+[0;32mI (24871) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (25491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (25831) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (25831) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (25831) https_server: Current protocol type: WebSocket[0m
+[0;32mI (25841) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[1;31mE (26591) esp-tls-mbedtls: read error :-0x0050[0m
+[0;32mI (26591) https_server: Client disconnected 58[0m
+[0;32mI (26591) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (26591) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (26601) https_server: Current protocol type: WebSocket[0m
+[0;32mI (26601) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[1;31mE (27421) esp-tls-mbedtls: read error :-0x0050[0m
+[0;32mI (27421) https_server: Client disconnected 59[0m
+[0;32mI (27471) esp_https_server: performing session handshake[0m
+[1;31mE (28171) esp-tls-mbedtls: mbedtls_ssl_handshake returned -0x7780[0m
+[1;31mE (28171) esp_https_server: esp_tls_create_server_session failed, 0x7780[0m
+[0;32mI (28181) https_server: Client disconnected 58[0m
+[1;31mE (28181) httpd: httpd_accept_conn: session creation failed[0m
+[0;33mW (28181) httpd: httpd_server: error accepting new connection[0m
+[0;32mI (28191) esp_https_server: performing session handshake[0m
+[1;31mE (28571) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (29141) https_server: New client connected 58[0m
+[0;32mI (29231) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (29231) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (29231) https_server: Current protocol type: WebSocket[0m
+[0;32mI (29241) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (30491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (31531) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (31531) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (31541) https_server: Current protocol type: WebSocket[0m
+[0;32mI (31541) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (33511) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (33511) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (33511) https_server: Current protocol type: WebSocket[0m
+[0;32mI (33521) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (35491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (35721) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (35721) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (35721) https_server: Current protocol type: WebSocket[0m
+[0;32mI (35721) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (36931) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (36941) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (36941) https_server: Current protocol type: WebSocket[0m
+[0;32mI (36941) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (37891) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (37891) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (37891) https_server: Current protocol type: WebSocket[0m
+[0;32mI (37901) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (38601) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (38601) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (38601) https_server: Current protocol type: WebSocket[0m
+[0;32mI (38611) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (39261) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (39261) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (39261) https_server: Current protocol type: WebSocket[0m
+[0;32mI (39261) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (39951) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (39951) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (39951) https_server: Current protocol type: WebSocket[0m
+[0;32mI (39961) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (40441) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (40441) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (40451) https_server: Current protocol type: WebSocket[0m
+[0;32mI (40451) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (40491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (40881) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (40881) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (40881) https_server: Current protocol type: WebSocket[0m
+[0;32mI (40881) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (41641) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (41641) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (41641) https_server: Current protocol type: WebSocket[0m
+[0;32mI (41651) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (42201) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (42201) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (42201) https_server: Current protocol type: WebSocket[0m
+[0;32mI (42211) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (43381) app_nvs: app_nvs_load_protocol_config: Loading protocol config from flash[0m
+[0;33mW (43381) app_nvs: Error opening NVS handle, using default values[0m
+[0;32mI (43381) https_server: Current protocol type: WebSocket[0m
+[0;32mI (43381) https_server: Sending JSON response: {[0m
+	"protocol":	"websocket",
+	"websocket":	{
+		"url":	"wss://localhost",
+		"port":	443,
+		"max_clients":	1
+	},
+	"ble_hid":	{
+		"device_name":	"UHF_HID",
+		"pin_code":	"123456"
+	}
+}
+[0;32mI (45491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (50491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (55491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (59151) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (59151) https_server: Client not alive check for fd 58, retry count: 0[0m
+[0;32mI (59151) https_server: Retrying connection for fd 58, attempt 1/3[0m
+[1;31mE (60151) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (60151) https_server: Client not alive check for fd 58, retry count: 1[0m
+[0;32mI (60151) https_server: Retrying connection for fd 58, attempt 2/3[0m
+[0;32mI (60491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[1;31mE (61151) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (61151) https_server: Client not alive check for fd 58, retry count: 2[0m
+[0;32mI (61151) https_server: Retrying connection for fd 58, attempt 3/3[0m
+[1;31mE (62151) wss_keep_alive: Client (fd=58) not alive![0m
+[0;33mW (62151) https_server: Client not alive check for fd 58, retry count: 3[0m
+[1;31mE (62151) https_server: Client not alive, closing fd 58 after 3 retries[0m
+[0;32mI (62151) https_server: Client disconnected 58[0m
+[1;31mE (62161) wss_keep_alive: Cannot remove client fd:58[0m
+[0;32mI (65491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (70491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (75491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (80491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (85491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (90491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (95491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (100491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (105491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (110491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (115491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (120491) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (125491) udp_task: Discovery message sent to: 172.16.100.255[0m

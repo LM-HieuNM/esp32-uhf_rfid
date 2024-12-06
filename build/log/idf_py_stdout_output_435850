@@ -1,0 +1,153 @@
+[0;32mI (159) esp_image: segment 1: paddr=00083038 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40058836
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=73010h (471056) map[0m
+[0;32mI (159) esp_image: segment 1: paddr=00083038 vaddr=3fc94c00 size=02ef8h ( 12024) load[0m
+[0;32mI (161) esp_image: segment 2: paddr=00085f38 vaddr=40380000 size=0a0e0h ( 41184) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e8980h (952704) map[0m
+[0;32mI (319) esp_image: segment 4: paddr=001789a8 vaddr=4038a0e0 size=0a9cch ( 43468) load[0m
+[0;32mI (328) esp_image: segment 5: paddr=0018337c vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (334) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (334) boot: Disabling RNG early entropy source...[0m
+[0;32mI (345) cpu_start: Unicore app[0m
+[0;32mI (354) cpu_start: Pro cpu start user code[0m
+[0;32mI (354) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (354) app_init: Application information:[0m
+[0;32mI (354) app_init: Project name:     wss_server[0m
+[0;32mI (358) app_init: App version:      353de83-dirty[0m
+[0;32mI (362) app_init: Compile time:     Dec  6 2024 20:28:31[0m
+[0;32mI (367) app_init: ELF file SHA256:  cd0c6b8a3...[0m
+[0;32mI (372) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (378) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (382) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (386) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (389) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (396) heap_init: At 3FC9D8D0 len 00022730 (137 KiB): RAM[0m
+[0;32mI (401) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (407) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (413) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (419) spi_flash: detected chip: generic[0m
+[0;32mI (422) spi_flash: flash io: dio[0m
+[0;32mI (426) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (431) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (438) main_task: Started on CPU0[0m
+[0;32mI (438) main_task: Calling app_main()[0m
+[0;32mI (448) button: IoT Button Version: 3.4.0[0m
+[0;32mI (448) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (448) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (458) pp: pp rom version: 9387209[0m
+[0;32mI (458) net80211: net80211 rom version: 9387209[0m
+[0;32mI (478) wifi_init: rx ba win: 6[0m
+[0;32mI (478) wifi_init: accept mbox: 6[0m
+[0;32mI (478) wifi_init: tcpip mbox: 32[0m
+[0;32mI (478) wifi_init: udp mbox: 6[0m
+[0;32mI (478) wifi_init: tcp mbox: 6[0m
+[0;32mI (478) wifi_init: tcp tx win: 5760[0m
+[0;32mI (488) wifi_init: tcp rx win: 5760[0m
+[0;32mI (488) wifi_init: tcp mss: 1440[0m
+[0;32mI (488) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (498) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (778) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (818) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (818) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (818) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (818) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (818) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+app_nvs_load_sta_creds: SSID: LUMI_TEST Password: lumivn274!
+[0;32mI (838) wifi_app: Loaded station configuration[0m
+[0;32mI (838) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (838) esp_https_server: Starting server[0m
+[0;32mI (1128) esp_https_server: Server listening on port 443[0m
+[0;32mI (1128) https_server: Registering URI handlers[0m
+[0;32mI (1128) nvs: app_nvs_load_antenna_config: Loading antenna config from flash[0m
+[0;32mI (1128) nvs: app_nvs_load_antenna_config: Loaded power: 10[0m
+[0;32mI (1148) serial: Recv 18 bytes[0m
+[0;32mI (1178) serial: Recv 18 bytes[0m
+[0;32mI (1228) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (1228) main_task: Returned from app_main()[0m
+[0;32mI (1258) serial: Recv 19 bytes[0m
+[0;32mI (2778) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (2778) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (2778) wifi_app: Local IP: 172.16.100.108[0m
+[0;32mI (2778) wifi_app: Broadcast IP: 172.16.100.255[0m
+[0;32mI (2778) udp_task: Device MAC: F4F1FC[0m
+[0;32mI (2788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (2788) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (7788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (12788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (17788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (22788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (27788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (32788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (37788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (42788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (47788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (52788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (57788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (62788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (67788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (72788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (77788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (82788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (87788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (92788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (97788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (102788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (107788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (112788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (117788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (122788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (127788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (132788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (137788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (142788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (147788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (152788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (157788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (162788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (167788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (172788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (177788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (182788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (187788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (192788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (197788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (202788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (207788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (212788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (217788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (222788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (227788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (232788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (237788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (242788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (247788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (252788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (257788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (262788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (267788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (272788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (277788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (282788) udp_task: Discovery message sent to: 172.16.100.255[0m
+[0;32mI (287788) udp_task: Discovery message sent to: 172.16.100.255[0m
