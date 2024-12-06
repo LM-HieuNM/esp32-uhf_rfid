@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<script src='jquery-3.3.1.min.js'></script>
+		<link rel="stylesheet" href="app.css">
+		<script async src="app.js"></script>
+		<title>ESP32 Wifi Configuration</title>
+	</head>
+	<body>
+		<div id="toast-container"></div>
+		<header>
+			<h1>RFID Dashboard</h1>
+		</header>
+
+		<!-- Login Screen -->
+		<div id="login-screen" class="login-screen">
+			<div class="login-box">
+				<div class="login-header">
+					<h2>RFID UHFEx10</h2>
+					<p>Enter password to continue</p>
+				</div>
+				<div class="login-form">
+					<div class="input-group">
+						<input id="login_password" type="password" placeholder="Password" required>
+						<span class="input-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+								<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+							</svg>
+						</span>
+					</div>
+					<div class="buttons">
+						<input id="login_button" type="button" value="Login" />
+					</div>
+					<div id="login_error" class="error-message"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Content -->
+		<div id="main-content" class="container" style="display: none;">
+			<div class="main-content">
+				<div class="tabs">
+					<button class="tab-button active" data-tab="internet">Internet</button>
+					<button class="tab-button" data-tab="update">Update</button>
+				</div>
+
+				<div class="tab-content">
+					<div id="internet" class="tab-pane active">
+						<div id="WiFiConnect">
+							<h3>WiFi Connection</h3>
+							<section class="wifi-form">
+								<input id="connect_ssid" type="text" maxlength="32" placeholder="SSID" value="">
+								<input id="connect_pass" type="password" maxlength="64" placeholder="Password" value="">
+								<div class="show-password">
+									<input type="checkbox" onclick="showPassword()">
+									<label>Show Password</label>
+								</div>
+							</section>
+							<div class="buttons">
+								<input id="connect_wifi" type="button" value="Connect" />
+							</div>
+							<div id="wifi_connect_credentials_errors"></div>
+							<div id="wifi_connect_status"></div>
+
+							<div id="ConnectInfo" class="connection-info">
+								<section>
+									<div id="connected_ap_label"></div> <div id="connected_ap"></div>
+								</section>
+								<div id="ip_address_label"></div> <div id="wifi_connect_ip"></div>
+								<div id="netmask_label"></div> <div id="wifi_connect_netmask"></div>
+								<div id="gateway_label"></div> <div id="wifi_connect_gw"></div>
+								<div class="buttons">
+									<input id="disconnect_wifi" type="button" value="Disconnect" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="update" class="tab-pane">
+						<div id="OTA" class="ota-section">
+							<h3>Firmware Update</h3>
+							<div class="firmware-info">
+								<label id="latest_firmware_label">Current Version: </label>
+								<div id="latest_firmware"></div> 
+							</div>
+							<input type="file" id="selected_file" accept=".bin" style="display: none;" onchange="getFileInfo()" />
+							<div class="buttons">
+								<input type="button" value="Select File" onclick="document.getElementById('selected_file').click();" />
+								<input type="button" value="Update" onclick="updateFirmware()" />
+							</div>
+							<div id="file_info"></div>	
+							<div id="ota_update_status"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

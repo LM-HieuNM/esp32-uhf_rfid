@@ -1,0 +1,740 @@
+[0;32mI (154) esp_image: segment 1: paddr=0007c058 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403d0422
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=6c030h (442416) map[0m
+[0;32mI (154) esp_image: segment 1: paddr=0007c058 vaddr=3fc94c00 size=02dd8h ( 11736) load[0m
+[0;32mI (157) esp_image: segment 2: paddr=0007ee38 vaddr=40380000 size=011e0h (  4576) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00080020 vaddr=42000020 size=b78a4h (751780) map[0m
+[0;32mI (283) esp_image: segment 4: paddr=001378cc vaddr=403811e0 size=138b0h ( 80048) load[0m
+[0;32mI (298) esp_image: segment 5: paddr=0014b184 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (304) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (304) boot: Disabling RNG early entropy source...[0m
+[0;32mI (316) cpu_start: Unicore app[0m
+[0;32mI (324) cpu_start: Pro cpu start user code[0m
+[0;32mI (324) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (324) app_init: Application information:[0m
+[0;32mI (324) app_init: Project name:     wss_server[0m
+[0;32mI (328) app_init: App version:      1[0m
+[0;32mI (332) app_init: Compile time:     Dec  6 2024 12:16:39[0m
+[0;32mI (337) app_init: ELF file SHA256:  cd33da81c...[0m
+[0;32mI (341) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (347) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (351) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (355) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (359) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (365) heap_init: At 3FC9C070 len 00023F90 (143 KiB): RAM[0m
+[0;32mI (370) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (382) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (389) spi_flash: detected chip: generic[0m
+[0;32mI (391) spi_flash: flash io: dio[0m
+[0;32mI (395) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (400) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (407) main_task: Started on CPU0[0m
+[0;32mI (407) main_task: Calling app_main()[0m
+[0;32mI (417) button: IoT Button Version: 3.4.0[0m
+[0;32mI (417) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (417) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (427) pp: pp rom version: 9387209[0m
+[0;32mI (427) net80211: net80211 rom version: 9387209[0m
+[0;32mI (447) wifi_init: rx ba win: 6[0m
+[0;32mI (447) wifi_init: accept mbox: 6[0m
+[0;32mI (447) wifi_init: tcpip mbox: 32[0m
+[0;32mI (447) wifi_init: udp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp tx win: 5760[0m
+[0;32mI (457) wifi_init: tcp rx win: 5760[0m
+[0;32mI (457) wifi_init: tcp mss: 1440[0m
+[0;32mI (457) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (467) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (747) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (807) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (807) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (807) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (807) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (807) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (817) wifi_app: Unable to load station configuration[0m
+[0;32mI (827) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (827) esp_https_server: Starting server[0m
+[0;32mI (837) esp_https_server: Server listening on port 80[0m
+[0;32mI (837) https_server: Registering URI handlers[0m
+[0;32mI (857) serial: Recv 18 bytes[0m
+[0;32mI (877) serial: Recv 18 bytes[0m
+[0;32mI (957) serial: Recv 13 bytes[0m
+[0;32mI (4247) wifi_app: WIFI_EVENT_AP_STACONNECTED[0m
+[0;32mI (4267) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.0.2[0m
+[1;31mE (5917) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (5917) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (5917) task_wdt: Tasks currently running:[0m
+[1;31mE (5917) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (5917) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eade  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x3fc9c000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+
+FreeRTOS: FreeRTOS Task "Tag manager act" should not return, Aborting now!
+Core  0 register dump:
+MEPC    : 0x40380880  RA      : 0x40388616  SP      : 0x3fcb59d0  GP      : 0x3fc95400  
+TP      : 0x3fcb5a00  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x3fc96000  S1      : 0x00000000  A0      : 0x3fc96318  A1      : 0x3c0c44c7  
+A2      : 0x6f6e2067  A3      : 0x00000000  A4      : 0x00000001  A5      : 0x3fc9c000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc96318 <msg> "") at /home/hieunm/esp-idf/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fc96318 <msg> "") at /home/hieunm/esp-idf/components/esp_system/panic.c:468
+#1  0x40388616 in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:260
+
+
+
+ELF file SHA256: cd33da81c
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380838
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=6c030h (442416) map[0m
+[0;32mI (154) esp_image: segment 1: paddr=0007c058 vaddr=3fc94c00 size=02dd8h ( 11736) load[0m
+[0;32mI (156) esp_image: segment 2: paddr=0007ee38 vaddr=40380000 size=011e0h (  4576) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00080020 vaddr=42000020 size=b78a4h (751780) map[0m
+[0;32mI (283) esp_image: segment 4: paddr=001378cc vaddr=403811e0 size=138b0h ( 80048) load[0m
+[0;32mI (297) esp_image: segment 5: paddr=0014b184 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (304) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (304) boot: Disabling RNG early entropy source...[0m
+[0;32mI (315) cpu_start: Unicore app[0m
+[0;32mI (323) cpu_start: Pro cpu start user code[0m
+[0;32mI (323) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (324) app_init: Application information:[0m
+[0;32mI (324) app_init: Project name:     wss_server[0m
+[0;32mI (328) app_init: App version:      1[0m
+[0;32mI (331) app_init: Compile time:     Dec  6 2024 12:16:39[0m
+[0;32mI (336) app_init: ELF file SHA256:  cd33da81c...[0m
+[0;32mI (340) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (346) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (350) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (354) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (358) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (364) heap_init: At 3FC9C070 len 00023F90 (143 KiB): RAM[0m
+[0;32mI (370) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (382) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (388) spi_flash: detected chip: generic[0m
+[0;32mI (391) spi_flash: flash io: dio[0m
+[0;32mI (394) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (400) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (407) main_task: Started on CPU0[0m
+[0;32mI (407) main_task: Calling app_main()[0m
+[0;32mI (417) button: IoT Button Version: 3.4.0[0m
+[0;32mI (417) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (417) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (427) pp: pp rom version: 9387209[0m
+[0;32mI (427) net80211: net80211 rom version: 9387209[0m
+[0;32mI (447) wifi_init: rx ba win: 6[0m
+[0;32mI (447) wifi_init: accept mbox: 6[0m
+[0;32mI (447) wifi_init: tcpip mbox: 32[0m
+[0;32mI (447) wifi_init: udp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp tx win: 5760[0m
+[0;32mI (457) wifi_init: tcp rx win: 5760[0m
+[0;32mI (457) wifi_init: tcp mss: 1440[0m
+[0;32mI (457) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (467) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (747) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (787) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (787) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (787) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (787) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (797) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (797) wifi_app: Unable to load station configuration[0m
+[0;32mI (807) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (807) esp_https_server: Starting server[0m
+[0;32mI (817) esp_https_server: Server listening on port 80[0m
+[0;32mI (817) https_server: Registering URI handlers[0m
+[0;32mI (837) serial: Recv 18 bytes[0m
+[0;32mI (867) serial: Recv 18 bytes[0m
+[0;32mI (947) serial: Recv 13 bytes[0m
+[1;31mE (5907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (5907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (5907) task_wdt: Tasks currently running:[0m
+[1;31mE (5907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (5907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eae2  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (10907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (10907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (10907) task_wdt: Tasks currently running:[0m
+[1;31mE (10907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (10907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eae2  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (15907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (15907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (15907) task_wdt: Tasks currently running:[0m
+[1;31mE (15907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (15907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eada  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (20907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (20907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (20907) task_wdt: Tasks currently running:[0m
+[1;31mE (20907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (20907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eae2  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (25907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (25907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (25907) task_wdt: Tasks currently running:[0m
+[1;31mE (25907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (25907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eada  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (30907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (30907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (30907) task_wdt: Tasks currently running:[0m
+[1;31mE (30907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (30907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eada  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (35907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (35907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (35907) task_wdt: Tasks currently running:[0m
+[1;31mE (35907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (35907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eada  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (40907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (40907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (40907) task_wdt: Tasks currently running:[0m
+[1;31mE (40907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (40907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eada  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+
+FreeRTOS: FreeRTOS Task "Tag manager act" should not return, Aborting now!
+Core  0 register dump:
+MEPC    : 0x40380880  RA      : 0x40388616  SP      : 0x3fcb59d0  GP      : 0x3fc95400  
+TP      : 0x3fcb5a00  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x3fc96000  S1      : 0x00000000  A0      : 0x3fc96318  A1      : 0x3c0c44c7  
+A2      : 0x6f6e2067  A3      : 0x00000000  A4      : 0x00000001  A5      : 0x3fc9c000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc96318 <msg> "") at /home/hieunm/esp-idf/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fc96318 <msg> "") at /home/hieunm/esp-idf/components/esp_system/panic.c:468
+#1  0x40388616 in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:260
+
+
+
+ELF file SHA256: cd33da81c
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380838
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=6c030h (442416) map[0m
+[0;32mI (154) esp_image: segment 1: paddr=0007c058 vaddr=3fc94c00 size=02dd8h ( 11736) load[0m
+[0;32mI (156) esp_image: segment 2: paddr=0007ee38 vaddr=40380000 size=011e0h (  4576) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00080020 vaddr=42000020 size=b78a4h (751780) map[0m
+[0;32mI (283) esp_image: segment 4: paddr=001378cc vaddr=403811e0 size=138b0h ( 80048) load[0m
+[0;32mI (297) esp_image: segment 5: paddr=0014b184 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (304) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (304) boot: Disabling RNG early entropy source...[0m
+[0;32mI (315) cpu_start: Unicore app[0m
+[0;32mI (323) cpu_start: Pro cpu start user code[0m
+[0;32mI (323) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (324) app_init: Application information:[0m
+[0;32mI (324) app_init: Project name:     wss_server[0m
+[0;32mI (328) app_init: App version:      1[0m
+[0;32mI (331) app_init: Compile time:     Dec  6 2024 12:16:39[0m
+[0;32mI (336) app_init: ELF file SHA256:  cd33da81c...[0m
+[0;32mI (340) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (346) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (350) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (354) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (358) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (364) heap_init: At 3FC9C070 len 00023F90 (143 KiB): RAM[0m
+[0;32mI (370) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (382) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (388) spi_flash: detected chip: generic[0m
+[0;32mI (391) spi_flash: flash io: dio[0m
+[0;32mI (394) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (400) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (407) main_task: Started on CPU0[0m
+[0;32mI (407) main_task: Calling app_main()[0m
+[0;32mI (417) button: IoT Button Version: 3.4.0[0m
+[0;32mI (417) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (417) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (427) pp: pp rom version: 9387209[0m
+[0;32mI (427) net80211: net80211 rom version: 9387209[0m
+[0;32mI (447) wifi_init: rx ba win: 6[0m
+[0;32mI (447) wifi_init: accept mbox: 6[0m
+[0;32mI (447) wifi_init: tcpip mbox: 32[0m
+[0;32mI (447) wifi_init: udp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp tx win: 5760[0m
+[0;32mI (457) wifi_init: tcp rx win: 5760[0m
+[0;32mI (457) wifi_init: tcp mss: 1440[0m
+[0;32mI (457) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (467) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (747) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (797) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (797) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (797) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (807) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (807) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (817) wifi_app: Unable to load station configuration[0m
+[0;32mI (817) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (827) esp_https_server: Starting server[0m
+[0;32mI (827) esp_https_server: Server listening on port 80[0m
+[0;32mI (827) https_server: Registering URI handlers[0m
+[0;32mI (847) serial: Recv 18 bytes[0m
+[0;32mI (877) serial: Recv 18 bytes[0m
+[0;32mI (957) serial: Recv 13 bytes[0m
+
+FreeRTOS: FreeRTOS Task "Tag manager act" should not return, Aborting now!
+Core  0 register dump:
+MEPC    : 0x40380880  RA      : 0x40388616  SP      : 0x3fcb59d0  GP      : 0x3fc95400  
+TP      : 0x3fcb5a00  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x3fc96000  S1      : 0x00000000  A0      : 0x3fc96318  A1      : 0x3c0c44c7  
+A2      : 0x6f6e2067  A3      : 0x00000000  A4      : 0x00000001  A5      : 0x3fc9c000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc96318 <msg> "") at /home/hieunm/esp-idf/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fc96318 <msg> "") at /home/hieunm/esp-idf/components/esp_system/panic.c:468
+#1  0x40388616 in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:260
+
+
+
+ELF file SHA256: cd33da81c
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380838
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=6c030h (442416) map[0m
+[0;32mI (154) esp_image: segment 1: paddr=0007c058 vaddr=3fc94c00 size=02dd8h ( 11736) load[0m
+[0;32mI (156) esp_image: segment 2: paddr=0007ee38 vaddr=40380000 size=011e0h (  4576) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00080020 vaddr=42000020 size=b78a4h (751780) map[0m
+[0;32mI (283) esp_image: segment 4: paddr=001378cc vaddr=403811e0 size=138b0h ( 80048) load[0m
+[0;32mI (297) esp_image: segment 5: paddr=0014b184 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (304) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (304) boot: Disabling RNG early entropy source...[0m
+[0;32mI (315) cpu_start: Unicore app[0m
+[0;32mI (323) cpu_start: Pro cpu start user code[0m
+[0;32mI (323) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (324) app_init: Application information:[0m
+[0;32mI (324) app_init: Project name:     wss_server[0m
+[0;32mI (328) app_init: App version:      1[0m
+[0;32mI (331) app_init: Compile time:     Dec  6 2024 12:16:39[0m
+[0;32mI (336) app_init: ELF file SHA256:  cd33da81c...[0m
+[0;32mI (340) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (346) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (350) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (354) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (358) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (364) heap_init: At 3FC9C070 len 00023F90 (143 KiB): RAM[0m
+[0;32mI (370) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (382) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (388) spi_flash: detected chip: generic[0m
+[0;32mI (391) spi_flash: flash io: dio[0m
+[0;32mI (394) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (400) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (407) main_task: Started on CPU0[0m
+[0;32mI (407) main_task: Calling app_main()[0m
+[0;32mI (417) button: IoT Button Version: 3.4.0[0m
+[0;32mI (417) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (417) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (427) pp: pp rom version: 9387209[0m
+[0;32mI (427) net80211: net80211 rom version: 9387209[0m
+[0;32mI (447) wifi_init: rx ba win: 6[0m
+[0;32mI (447) wifi_init: accept mbox: 6[0m
+[0;32mI (447) wifi_init: tcpip mbox: 32[0m
+[0;32mI (447) wifi_init: udp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp tx win: 5760[0m
+[0;32mI (457) wifi_init: tcp rx win: 5760[0m
+[0;32mI (457) wifi_init: tcp mss: 1440[0m
+[0;32mI (457) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (467) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (747) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (787) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (787) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (787) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (797) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (797) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (807) wifi_app: Unable to load station configuration[0m
+[0;32mI (807) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (817) esp_https_server: Starting server[0m
+[0;32mI (817) esp_https_server: Server listening on port 80[0m
+[0;32mI (817) https_server: Registering URI handlers[0m
+[0;32mI (837) serial: Recv 18 bytes[0m
+[0;32mI (867) serial: Recv 18 bytes[0m
+[0;32mI (917) serial: Recv 6 bytes[0m
+[0;32mI (927) serial: Recv 7 bytes[0m
+
+FreeRTOS: FreeRTOS Task "Tag manager act" should not return, Aborting now!
+Core  0 register dump:
+MEPC    : 0x40380880  RA      : 0x40388616  SP      : 0x3fcb59b0  GP      : 0x3fc95400  
+TP      : 0x3fcb59e0  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x3fc96000  S1      : 0x00000000  A0      : 0x3fc96318  A1      : 0x3c0c44c7  
+A2      : 0x6f6e2067  A3      : 0x00000000  A4      : 0x00000001  A5      : 0x3fc9c000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000002  MTVAL   : 0x00000000  
+MHARTID : 0x00000000  
+
+panic_abort (details=details@entry=0x3fc96318 <msg> "") at /home/hieunm/esp-idf/components/esp_system/panic.c:468
+468	    asm("unimp");   // should be an invalid operation on RISC-V targets
+#0  panic_abort (details=details@entry=0x3fc96318 <msg> "") at /home/hieunm/esp-idf/components/esp_system/panic.c:468
+#1  0x40388616 in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:260
+
+
+
+ELF file SHA256: cd33da81c
+
+Rebooting...
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40380838
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (45) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=6c030h (442416) map[0m
+[0;32mI (154) esp_image: segment 1: paddr=0007c058 vaddr=3fc94c00 size=02dd8h ( 11736) load[0m
+[0;32mI (156) esp_image: segment 2: paddr=0007ee38 vaddr=40380000 size=011e0h (  4576) load[0m
+[0;32mI (159) esp_image: segment 3: paddr=00080020 vaddr=42000020 size=b78a4h (751780) map[0m
+[0;32mI (283) esp_image: segment 4: paddr=001378cc vaddr=403811e0 size=138b0h ( 80048) load[0m
+[0;32mI (297) esp_image: segment 5: paddr=0014b184 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (304) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (304) boot: Disabling RNG early entropy source...[0m
+[0;32mI (315) cpu_start: Unicore app[0m
+[0;32mI (323) cpu_start: Pro cpu start user code[0m
+[0;32mI (323) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (324) app_init: Application information:[0m
+[0;32mI (324) app_init: Project name:     wss_server[0m
+[0;32mI (328) app_init: App version:      1[0m
+[0;32mI (331) app_init: Compile time:     Dec  6 2024 12:16:39[0m
+[0;32mI (336) app_init: ELF file SHA256:  cd33da81c...[0m
+[0;32mI (340) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (346) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (350) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (354) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (358) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (364) heap_init: At 3FC9C070 len 00023F90 (143 KiB): RAM[0m
+[0;32mI (370) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (376) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (382) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (388) spi_flash: detected chip: generic[0m
+[0;32mI (391) spi_flash: flash io: dio[0m
+[0;32mI (394) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (400) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (407) main_task: Started on CPU0[0m
+[0;32mI (407) main_task: Calling app_main()[0m
+[0;32mI (417) button: IoT Button Version: 3.4.0[0m
+[0;32mI (417) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (417) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (427) pp: pp rom version: 9387209[0m
+[0;32mI (427) net80211: net80211 rom version: 9387209[0m
+[0;32mI (447) wifi_init: rx ba win: 6[0m
+[0;32mI (447) wifi_init: accept mbox: 6[0m
+[0;32mI (447) wifi_init: tcpip mbox: 32[0m
+[0;32mI (447) wifi_init: udp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp mbox: 6[0m
+[0;32mI (447) wifi_init: tcp tx win: 5760[0m
+[0;32mI (457) wifi_init: tcp rx win: 5760[0m
+[0;32mI (457) wifi_init: tcp mss: 1440[0m
+[0;32mI (457) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (467) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (747) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (787) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (797) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (797) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (797) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (797) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+[0;32mI (807) wifi_app: Unable to load station configuration[0m
+[0;32mI (807) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (817) esp_https_server: Starting server[0m
+[0;32mI (817) esp_https_server: Server listening on port 80[0m
+[0;32mI (827) https_server: Registering URI handlers[0m
+[0;32mI (847) serial: Recv 18 bytes[0m
+[0;32mI (867) serial: Recv 18 bytes[0m
+[0;32mI (947) serial: Recv 13 bytes[0m
+[1;31mE (5907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (5907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (5907) task_wdt: Tasks currently running:[0m
+[1;31mE (5907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (5907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eada  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (10907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (10907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (10907) task_wdt: Tasks currently running:[0m
+[1;31mE (10907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (10907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eada  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (15907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (15907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (15907) task_wdt: Tasks currently running:[0m
+[1;31mE (15907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (15907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eada  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  
+[1;31mE (20907) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (20907) task_wdt:  - IDLE (CPU 0)[0m
+[1;31mE (20907) task_wdt: Tasks currently running:[0m
+[1;31mE (20907) task_wdt: CPU 0: Task manager ha[0m
+[1;31mE (20907) task_wdt: Print CPU 0 (current core) backtrace[0m
+esp_backtrace_print: Print CPU 0 (current core) registers
+Core  0 register dump:
+MEPC    : 0x4200eada  RA      : 0x403885d0  SP      : 0x3fcb7af0  GP      : 0x3fc95400  
+TP      : 0x3fcb7b50  T0      : 0x00000000  T1      : 0x00000000  T2      : 0x00000000  
+S0/FP   : 0x00000000  S1      : 0x00000000  A0      : 0x00000000  A1      : 0x00000000  
+A2      : 0x00000000  A3      : 0x00000000  A4      : 0x00000000  A5      : 0x00000000  
+A6      : 0x00000000  A7      : 0x00000000  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001889  MTVEC   : 0x40380001  MCAUSE  : 0xdeadc0de  MTVAL   : 0xdeadc0de  
+MHARTID : 0x00000000  

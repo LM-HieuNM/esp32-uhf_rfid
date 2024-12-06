@@ -1,0 +1,41 @@
+[1/11] Performing build step for 'bootloader'
+[1/1] cd /home/hieunm/Desktop/wss_server/build/bootloader/esp-idf/esptool_py && /home/hieunm/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/hieunm/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/hieunm/Desktop/wss_server/build/bootloader/bootloader.bin
+Bootloader binary size 0x5150 bytes. 0x2eb0 bytes (36%) free.
+[2/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lib/time/sntp_time.c.obj
+/home/hieunm/Desktop/wss_server/main/lib/time/sntp_time.c: In function 'initialize_sntp':
+/home/hieunm/Desktop/wss_server/main/lib/time/sntp_time.c:14:5: warning: 'sntp_setoperatingmode' is deprecated: use esp_sntp_setoperatingmode() instead [-Wdeprecated-declarations]
+   14 |     sntp_setoperatingmode(SNTP_OPMODE_POLL);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/hieunm/Desktop/wss_server/main/lib/time/sntp_time.c:1:
+/home/hieunm/esp-idf/components/lwip/include/apps/esp_sntp.h:249:6: note: declared here
+  249 | void sntp_setoperatingmode(u8_t operating_mode)
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/hieunm/Desktop/wss_server/main/lib/time/sntp_time.c:15:5: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+   15 |     sntp_setservername(0, "pool.ntp.org");
+      |     ^~~~~~~~~~~~~~~~~~
+/home/hieunm/esp-idf/components/lwip/include/apps/esp_sntp.h:263:6: note: declared here
+  263 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/hieunm/Desktop/wss_server/main/lib/time/sntp_time.c:20:5: warning: 'sntp_init' is deprecated: use esp_sntp_init() instead [-Wdeprecated-declarations]
+   20 |     sntp_init();
+      |     ^~~~~~~~~
+/home/hieunm/esp-idf/components/lwip/include/apps/esp_sntp.h:269:6: note: declared here
+  269 | void sntp_init(void)
+      |      ^~~~~~~~~
+/home/hieunm/Desktop/wss_server/main/lib/time/sntp_time.c: In function 'init_time_sntp':
+/home/hieunm/Desktop/wss_server/main/lib/time/sntp_time.c:53:11: warning: unused variable 'timestamp' [-Wunused-variable]
+   53 |    time_t timestamp = now;
+      |           ^~~~~~~~~
+[3/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/lib/wifi_app/wifi_app.c.obj
+[4/9] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/lib/tag_manager/tag_list.cpp.obj
+[5/9] Linking C static library esp-idf/main/libmain.a
+[6/9] Generating ld/sections.ld
+[7/9] Linking CXX executable wss_server.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /home/hieunm/Desktop/wss_server/build/wss_server.bin
+[9/9] cd /home/hieunm/Desktop/wss_server/build/esp-idf/esptool_py && /home/hieunm/.espressif/python_env/idf5.4_py3.10_env/bin/python /home/hieunm/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/hieunm/Desktop/wss_server/build/partition_table/partition-table.bin /home/hieunm/Desktop/wss_server/build/wss_server.bin
+wss_server.bin binary size 0x147240 bytes. Smallest app partition is 0x177000 bytes. 0x2fdc0 bytes (13%) free.

@@ -1,0 +1,4623 @@
+[0;32mI (157) esp_image: segment 1: paddr=00080a90 vaddr=3fc94c00 sizeESP-ROM:esp32c3-api1-20210207[0m
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403d041c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x1574
+load:0x403cc710,len:0xc30
+load:0x403ce710,len:0x2f4c
+entry 0x403cc71a
+[0;32mI (24) boot: ESP-IDF v5.4-beta1-233-g8ea7ae7086-dirt 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Dec  6 2024 12:16:49[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (38) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (42) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (55) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (68) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (78) esp_image: segment 0: paddr=00010020 vaddr=3c0f0020 size=70a68h (461416) map[0m
+[0;32mI (157) esp_image: segment 1: paddr=00080a90 vaddr=3fc94c00 size=02ee8h ( 12008) load[0m
+[0;32mI (160) esp_image: segment 2: paddr=00083980 vaddr=40380000 size=0c698h ( 50840) load[0m
+[0;32mI (170) esp_image: segment 3: paddr=00090020 vaddr=42000020 size=e647ch (943228) map[0m
+[0;32mI (318) esp_image: segment 4: paddr=001764a4 vaddr=4038c698 size=08414h ( 33812) load[0m
+[0;32mI (324) esp_image: segment 5: paddr=0017e8c0 vaddr=50000200 size=0001ch (    28) load[0m
+[0;32mI (331) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (331) boot: Disabling RNG early entropy source...[0m
+[0;32mI (343) cpu_start: Unicore app[0m
+[0;32mI (352) cpu_start: Pro cpu start user code[0m
+[0;32mI (352) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (352) app_init: Application information:[0m
+[0;32mI (352) app_init: Project name:     wss_server[0m
+[0;32mI (356) app_init: App version:      1[0m
+[0;32mI (359) app_init: Compile time:     Dec  6 2024 12:16:39[0m
+[0;32mI (364) app_init: ELF file SHA256:  49860fb61...[0m
+[0;32mI (369) app_init: ESP-IDF:          v5.4-beta1-233-g8ea7ae7086-dirt[0m
+[0;32mI (375) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (378) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (382) efuse_init: Chip rev:         v0.4[0m
+[0;32mI (386) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (393) heap_init: At 3FC9D880 len 00022780 (137 KiB): RAM[0m
+[0;32mI (398) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (404) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (410) heap_init: At 5000021C len 00001DCC (7 KiB): RTCRAM[0m
+[0;32mI (416) spi_flash: detected chip: generic[0m
+[0;32mI (419) spi_flash: flash io: dio[0m
+[0;32mI (423) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (428) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (435) main_task: Started on CPU0[0m
+[0;32mI (435) main_task: Calling app_main()[0m
+[0;32mI (445) button: IoT Button Version: 3.4.0[0m
+[0;32mI (445) gpio: GPIO[2]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (445) wifi_app: STARTING WIFI APPLICATION[0m
+[0;32mI (455) pp: pp rom version: 9387209[0m
+[0;32mI (455) net80211: net80211 rom version: 9387209[0m
+[0;32mI (475) wifi_init: rx ba win: 6[0m
+[0;32mI (475) wifi_init: accept mbox: 6[0m
+[0;32mI (475) wifi_init: tcpip mbox: 32[0m
+[0;32mI (475) wifi_init: udp mbox: 6[0m
+[0;32mI (475) wifi_init: tcp mbox: 6[0m
+[0;32mI (475) wifi_init: tcp tx win: 5760[0m
+[0;32mI (485) wifi_init: tcp rx win: 5760[0m
+[0;32mI (485) wifi_init: tcp mss: 1440[0m
+[0;32mI (485) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (495) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (765) phy_init: phy_version 1180,01f2a49,Jun  4 2024,16:34:25[0m
+[0;32mI (825) wifi_app: WIFI_EVENT_STA_START[0m
+[0;32mI (825) wifi_app: WIFI_EVENT_AP_START[0m
+[0;32mI (825) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.0.1[0m
+[0;32mI (835) wifi_app: WIFI_APP_MSG_LOAD_SAVED_CREDENTIALS[0m
+[0;32mI (835) nvs: app_nvs_load_sta_creds: Loading Wifi credentials from flash[0m
+app_nvs_load_sta_creds: SSID: LUMI_TEST Password: lumivn274!
+[0;32mI (845) wifi_app: Loaded station configuration[0m
+[0;32mI (855) wifi_app: WIFI_APP_MSG_START_HTTP_SERVER[0m
+[0;32mI (855) esp_https_server: Starting server[0m
+[0;32mI (865) esp_https_server: Server listening on port 80[0m
+[0;32mI (1145) https_server: Registering URI handlers[0m
+[0;32mI (1155) serial: Recv 18 bytes[0m
+[0;32mI (1185) serial: Recv 18 bytes[0m
+[0;32mI (1185) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 202
+[0;32mI (1235) main_task: Returned from app_main()[0m
+[0;32mI (1265) serial: Recv 13 bytes[0m
+[0;32mI (4015) wifi_app: WIFI_EVENT_STA_DISCONNECTED[0m
+WIFI_EVENT_STA_DISCONNECTED, reason code 205
+[0;32mI (4115) wifi_app: WIFI_EVENT_STA_CONNECTED[0m
+[0;32mI (5165) wifi_app: WIFI_EVENT_AP_STACONNECTED[0m
+[0;32mI (5185) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.0.2[0m
+[0;32mI (5495) wifi_app: IP_EVENT_STA_GOT_IP[0m
+[0;32mI (5495) esp_netif_handlers: sta ip: 172.16.100.108, mask: 255.255.255.0, gw: 172.16.100.1[0m
+[0;32mI (5495) https_server: HTTP_MSG_WIFI_CONNECT_SUCCESS[0m
+[0;32mI (81145) serial: Recv 8 bytes[0m
+[0;32mI (82125) serial: Recv 68 bytes[0m
+[0;32mI (82125) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (82125) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (82155) serial: Recv 8 bytes[0m
+[0;32mI (83055) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:47+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	51,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (83165) serial: Recv 68 bytes[0m
+[0;32mI (83165) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (83165) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (83195) serial: Recv 8 bytes[0m
+[0;32mI (84105) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:48+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (84215) serial: Recv 68 bytes[0m
+[0;32mI (84215) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (84215) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (84245) serial: Recv 8 bytes[0m
+[0;32mI (85155) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:49+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	51,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (85265) serial: Recv 68 bytes[0m
+[0;32mI (85265) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (85265) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (85295) serial: Recv 8 bytes[0m
+[0;32mI (86205) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:50+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	52,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (86305) serial: Recv 34 bytes[0m
+[0;32mI (86305) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (86335) serial: Recv 8 bytes[0m
+[0;32mI (87255) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:51+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (87335) serial: Recv 34 bytes[0m
+[0;32mI (87335) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (87365) serial: Recv 8 bytes[0m
+[0;32mI (88285) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:52+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (88365) serial: Recv 34 bytes[0m
+[0;32mI (88365) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (88395) serial: Recv 8 bytes[0m
+[0;32mI (89315) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:53+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (89395) serial: Recv 34 bytes[0m
+[0;32mI (89395) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (89425) serial: Recv 8 bytes[0m
+[0;32mI (90345) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:54+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (90425) serial: Recv 34 bytes[0m
+[0;32mI (90425) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (90455) serial: Recv 8 bytes[0m
+[0;32mI (91375) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:55+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (91455) serial: Recv 34 bytes[0m
+[0;32mI (91455) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (91485) serial: Recv 8 bytes[0m
+[0;32mI (92405) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:57+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (92485) serial: Recv 34 bytes[0m
+[0;32mI (92485) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (92515) serial: Recv 8 bytes[0m
+[0;32mI (93435) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:58+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (93515) serial: Recv 34 bytes[0m
+[0;32mI (93515) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (93545) serial: Recv 8 bytes[0m
+[0;32mI (94465) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:16:59+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (94545) serial: Recv 34 bytes[0m
+[0;32mI (94545) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (94575) serial: Recv 8 bytes[0m
+[0;32mI (95495) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:00+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (95575) serial: Recv 34 bytes[0m
+[0;32mI (95575) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (95605) serial: Recv 8 bytes[0m
+[0;32mI (96525) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:01+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (96605) serial: Recv 34 bytes[0m
+[0;32mI (96605) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (96635) serial: Recv 8 bytes[0m
+[0;32mI (97555) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:02+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (97635) serial: Recv 34 bytes[0m
+[0;32mI (97635) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (97665) serial: Recv 8 bytes[0m
+[0;32mI (98585) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:03+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (98675) serial: Recv 68 bytes[0m
+[0;32mI (98675) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (98675) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (98705) serial: Recv 8 bytes[0m
+[0;32mI (99615) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:04+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	56,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (99725) serial: Recv 68 bytes[0m
+[0;32mI (99725) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (99725) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (99755) serial: Recv 8 bytes[0m
+[0;32mI (100665) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:05+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	58,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (100765) serial: Recv 34 bytes[0m
+[0;32mI (100765) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (100795) serial: Recv 8 bytes[0m
+[0;32mI (101715) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:06+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (101795) serial: Recv 34 bytes[0m
+[0;32mI (101795) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (101825) serial: Recv 8 bytes[0m
+[0;32mI (102745) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:07+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (102825) serial: Recv 34 bytes[0m
+[0;32mI (102825) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (102855) serial: Recv 8 bytes[0m
+[0;32mI (103775) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:08+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (103855) serial: Recv 34 bytes[0m
+[0;32mI (103855) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (103885) serial: Recv 8 bytes[0m
+[0;32mI (104805) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:09+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (104905) serial: Recv 102 bytes[0m
+[0;32mI (104905) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (104905) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (104905) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (104935) serial: Recv 8 bytes[0m
+[0;32mI (105835) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:10+07:00",
+	"total":	3,
+	"data":	{
+		"e200470709e060213bab010c":	{
+			"TID":	"e28038212000602160213bab",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e200470709e060213bab010c",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (105965) serial: Recv 68 bytes[0m
+[0;32mI (105965) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (105965) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (105985) serial: Recv 8 bytes[0m
+[0;32mI (106905) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:11+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (107025) serial: Recv 102 bytes[0m
+[0;32mI (107025) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (107025) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (107025) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (107055) serial: Recv 8 bytes[0m
+[0;32mI (107955) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:12+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	64,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	74,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (108105) serial: Recv 102 bytes[0m
+[0;32mI (108105) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (108105) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (108105) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (108125) serial: Recv 8 bytes[0m
+[0;32mI (109025) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:13+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (109165) serial: Recv 102 bytes[0m
+[0;32mI (109165) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (109165) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (109165) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (109195) serial: Recv 8 bytes[0m
+[0;32mI (110095) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:14+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	56,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (110245) serial: Recv 102 bytes[0m
+[0;32mI (110245) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (110245) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (110245) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (110265) serial: Recv 8 bytes[0m
+[0;32mI (111165) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:15+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	58,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (111295) serial: Recv 68 bytes[0m
+[0;32mI (111295) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (111295) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (111325) serial: Recv 8 bytes[0m
+[0;32mI (112235) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:16+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (112345) serial: Recv 68 bytes[0m
+[0;32mI (112345) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (112345) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (112375) serial: Recv 8 bytes[0m
+[0;32mI (113285) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:17+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (113385) serial: Recv 34 bytes[0m
+[0;32mI (113385) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (113415) serial: Recv 8 bytes[0m
+[0;32mI (114335) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:18+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	63,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (114415) serial: Recv 34 bytes[0m
+[0;32mI (114415) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (114445) serial: Recv 8 bytes[0m
+[0;32mI (115365) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:19+07:00",
+	"total":	1,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (115465) serial: Recv 102 bytes[0m
+[0;32mI (115465) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (115465) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (115465) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (115495) serial: Recv 8 bytes[0m
+[0;32mI (116395) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:20+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	59,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (116535) serial: Recv 102 bytes[0m
+[0;32mI (116535) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (116535) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (116535) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (116565) serial: Recv 8 bytes[0m
+[0;32mI (117465) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:22+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	64,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	60,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (117615) serial: Recv 102 bytes[0m
+[0;32mI (117615) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (117615) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (117615) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (117635) serial: Recv 8 bytes[0m
+[0;32mI (118535) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:23+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	61,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (118675) serial: Recv 102 bytes[0m
+[0;32mI (118675) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (118675) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (118675) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (118705) serial: Recv 8 bytes[0m
+[0;32mI (119605) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:24+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	64,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	59,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (119745) serial: Recv 102 bytes[0m
+[0;32mI (119745) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (119745) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (119745) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (119775) serial: Recv 8 bytes[0m
+[0;32mI (120675) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:25+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	59,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (120825) serial: Recv 102 bytes[0m
+[0;32mI (120825) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (120825) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (120825) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (120845) serial: Recv 8 bytes[0m
+[0;32mI (121745) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:26+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	61,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (121895) serial: Recv 102 bytes[0m
+[0;32mI (121895) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (121895) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (121895) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (121915) serial: Recv 8 bytes[0m
+[0;32mI (122815) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:27+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	59,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	64,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (122965) serial: Recv 102 bytes[0m
+[0;32mI (122965) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (122965) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (122965) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (122985) serial: Recv 8 bytes[0m
+[0;32mI (123885) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:28+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	59,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	62,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	56,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (124035) serial: Recv 68 bytes[0m
+[0;32mI (124035) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (124035) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (124055) serial: Recv 8 bytes[0m
+[0;32mI (124955) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:29+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (125065) serial: Recv 68 bytes[0m
+[0;32mI (125065) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (125065) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (125095) serial: Recv 8 bytes[0m
+[0;32mI (126005) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:30+07:00",
+	"total":	2,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (126135) serial: Recv 102 bytes[0m
+[0;32mI (126135) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (126135) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (126135) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (126155) serial: Recv 8 bytes[0m
+[0;32mI (127055) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:31+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	64,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (127195) serial: Recv 102 bytes[0m
+[0;32mI (127195) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (127195) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (127195) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (127215) serial: Recv 8 bytes[0m
+[0;32mI (128125) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:32+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	64,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (128265) serial: Recv 102 bytes[0m
+[0;32mI (128265) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (128265) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (128265) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (128295) serial: Recv 8 bytes[0m
+[0;32mI (129195) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:33+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	64,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (129335) serial: Recv 102 bytes[0m
+[0;32mI (129335) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (129335) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (129335) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (129365) serial: Recv 8 bytes[0m
+[0;32mI (130265) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:34+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	64,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (130405) serial: Recv 102 bytes[0m
+[0;32mI (130405) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (130405) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (130405) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (130435) serial: Recv 8 bytes[0m
+[0;32mI (131335) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:35+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (131475) serial: Recv 102 bytes[0m
+[0;32mI (131475) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (131475) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (131475) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (131505) serial: Recv 8 bytes[0m
+[0;32mI (132405) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:37+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (132545) serial: Recv 90 bytes[0m
+[0;32mI (132545) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (132545) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (132545) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (132575) serial: Recv 8 bytes[0m
+[0;32mI (133475) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:38+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e01ecb3f80d8c93fc4cd3840",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	0,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (133625) serial: Recv 102 bytes[0m
+[0;32mI (133625) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (133625) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (133625) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (133645) serial: Recv 8 bytes[0m
+[0;32mI (134545) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:39+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (134685) serial: Recv 90 bytes[0m
+[0;32mI (134685) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (134685) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (134685) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (134715) serial: Recv 8 bytes[0m
+[0;32mI (135615) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:40+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"1c5bcb3f80d8c93fc4cd3840",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	0,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (135755) serial: Recv 102 bytes[0m
+[0;32mI (135755) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (135755) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (135755) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (135785) serial: Recv 8 bytes[0m
+[0;32mI (136685) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:41+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (136825) serial: Recv 102 bytes[0m
+[0;32mI (136825) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (136825) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (136825) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (136855) serial: Recv 8 bytes[0m
+[0;32mI (137755) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:42+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (137895) serial: Recv 102 bytes[0m
+[0;32mI (137895) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (137895) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (137895) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (137925) serial: Recv 8 bytes[0m
+[0;32mI (138825) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:43+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	52,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (138965) serial: Recv 102 bytes[0m
+[0;32mI (138965) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (138965) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (138965) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (138995) serial: Recv 8 bytes[0m
+[0;32mI (139895) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:44+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	56,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (140035) serial: Recv 102 bytes[0m
+[0;32mI (140035) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (140035) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (140035) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (140055) serial: Recv 8 bytes[0m
+[0;32mI (140965) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:45+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (141105) serial: Recv 102 bytes[0m
+[0;32mI (141105) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (141105) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (141105) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (141135) serial: Recv 8 bytes[0m
+[0;32mI (142035) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:46+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (142175) serial: Recv 102 bytes[0m
+[0;32mI (142175) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (142175) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (142175) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (142195) serial: Recv 8 bytes[0m
+[0;32mI (143105) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:47+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (143245) serial: Recv 102 bytes[0m
+[0;32mI (143245) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (143245) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (143245) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (143275) serial: Recv 8 bytes[0m
+[0;32mI (144175) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:48+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	52,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (144315) serial: Recv 102 bytes[0m
+[0;32mI (144315) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (144315) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (144315) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (144345) serial: Recv 8 bytes[0m
+[0;32mI (145245) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:49+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (145385) serial: Recv 102 bytes[0m
+[0;32mI (145385) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (145385) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (145385) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (145405) serial: Recv 8 bytes[0m
+[0;32mI (146315) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:50+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (146455) serial: Recv 102 bytes[0m
+[0;32mI (146455) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (146455) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (146455) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (146485) serial: Recv 8 bytes[0m
+[0;32mI (147385) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:51+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (147525) serial: Recv 90 bytes[0m
+[0;32mI (147525) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (147525) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (147525) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (147555) serial: Recv 8 bytes[0m
+[0;32mI (148455) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:53+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"0402ca3f80d8c93fc4cd3840",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	3,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (148595) serial: Recv 102 bytes[0m
+[0;32mI (148595) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (148595) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (148595) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (148625) serial: Recv 8 bytes[0m
+[0;32mI (149525) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:54+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (149665) serial: Recv 102 bytes[0m
+[0;32mI (149665) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (149665) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (149665) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (149685) serial: Recv 8 bytes[0m
+[0;32mI (150595) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:55+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (150735) serial: Recv 102 bytes[0m
+[0;32mI (150735) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (150735) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (150735) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (150765) serial: Recv 8 bytes[0m
+[0;32mI (151665) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:56+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (151805) serial: Recv 102 bytes[0m
+[0;32mI (151805) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (151805) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (151805) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (151825) serial: Recv 8 bytes[0m
+[0;32mI (152735) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:57+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (152875) serial: Recv 102 bytes[0m
+[0;32mI (152875) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (152875) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (152875) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (152905) serial: Recv 8 bytes[0m
+[0;32mI (153805) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:58+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (153945) serial: Recv 102 bytes[0m
+[0;32mI (153945) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (153945) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (153945) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (153975) serial: Recv 8 bytes[0m
+[0;32mI (154875) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:17:59+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (155015) serial: Recv 102 bytes[0m
+[0;32mI (155015) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (155015) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (155015) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (155035) serial: Recv 8 bytes[0m
+[0;32mI (155945) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:00+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (156085) serial: Recv 102 bytes[0m
+[0;32mI (156085) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (156085) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (156085) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (156115) serial: Recv 8 bytes[0m
+[0;32mI (157015) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:01+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (157155) serial: Recv 102 bytes[0m
+[0;32mI (157155) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (157155) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (157155) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (157175) serial: Recv 8 bytes[0m
+[0;32mI (158085) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:02+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (158225) serial: Recv 102 bytes[0m
+[0;32mI (158225) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (158225) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (158225) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (158255) serial: Recv 8 bytes[0m
+[0;32mI (159155) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:03+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (159305) serial: Recv 102 bytes[0m
+[0;32mI (159305) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (159305) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (159305) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (159325) serial: Recv 8 bytes[0m
+[0;32mI (160225) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:04+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (160365) serial: Recv 102 bytes[0m
+[0;32mI (160365) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (160365) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (160365) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (160395) serial: Recv 8 bytes[0m
+[0;32mI (161295) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:05+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (161445) serial: Recv 102 bytes[0m
+[0;32mI (161445) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (161445) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (161445) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (161465) serial: Recv 8 bytes[0m
+[0;32mI (162365) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:06+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	56,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (162505) serial: Recv 102 bytes[0m
+[0;32mI (162505) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (162505) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (162505) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (162535) serial: Recv 8 bytes[0m
+[0;32mI (163435) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:08+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (163575) serial: Recv 102 bytes[0m
+[0;32mI (163575) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (163575) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (163575) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (163605) serial: Recv 8 bytes[0m
+[0;32mI (164505) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:09+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (164655) serial: Recv 102 bytes[0m
+[0;32mI (164655) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (164655) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (164655) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (164675) serial: Recv 8 bytes[0m
+[0;32mI (165575) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:10+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	56,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (165715) serial: Recv 102 bytes[0m
+[0;32mI (165715) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (165715) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (165715) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (165735) serial: Recv 8 bytes[0m
+[0;32mI (166645) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:11+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (166785) serial: Recv 102 bytes[0m
+[0;32mI (166785) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (166785) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (166785) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (166815) serial: Recv 8 bytes[0m
+[0;32mI (167715) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:12+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (167855) serial: Recv 102 bytes[0m
+[0;32mI (167855) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (167855) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (167855) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (167885) serial: Recv 8 bytes[0m
+[0;32mI (168785) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:13+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (168925) serial: Recv 90 bytes[0m
+[0;32mI (168925) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (168925) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (168925) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (168955) serial: Recv 8 bytes[0m
+[0;32mI (169855) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:14+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"1c5bcb3f80d8c93fc4cd3840",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	0,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (169995) serial: Recv 102 bytes[0m
+[0;32mI (169995) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (169995) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (169995) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (170025) serial: Recv 8 bytes[0m
+[0;32mI (170925) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:15+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (171075) serial: Recv 102 bytes[0m
+[0;32mI (171075) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (171075) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (171075) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (171095) serial: Recv 8 bytes[0m
+[0;32mI (171995) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:16+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (172135) serial: Recv 102 bytes[0m
+[0;32mI (172135) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (172135) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (172135) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (172165) serial: Recv 8 bytes[0m
+[0;32mI (173065) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:17+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (173215) serial: Recv 102 bytes[0m
+[0;32mI (173215) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (173215) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (173215) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (173235) serial: Recv 8 bytes[0m
+[0;32mI (174135) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:18+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (174285) serial: Recv 102 bytes[0m
+[0;32mI (174285) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (174285) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (174285) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (174305) serial: Recv 8 bytes[0m
+[0;32mI (175205) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:19+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (175355) serial: Recv 102 bytes[0m
+[0;32mI (175355) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (175355) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (175355) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (175375) serial: Recv 8 bytes[0m
+[0;32mI (176275) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:20+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	52,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (176425) serial: Recv 102 bytes[0m
+[0;32mI (176425) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (176425) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (176425) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (176445) serial: Recv 8 bytes[0m
+[0;32mI (177345) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:21+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (177485) serial: Recv 102 bytes[0m
+[0;32mI (177485) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (177485) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (177485) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (177515) serial: Recv 8 bytes[0m
+[0;32mI (178415) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:23+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (178555) serial: Recv 102 bytes[0m
+[0;32mI (178555) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (178555) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (178555) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (178585) serial: Recv 8 bytes[0m
+[0;32mI (179485) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:24+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (179625) serial: Recv 102 bytes[0m
+[0;32mI (179625) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (179625) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (179625) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (179655) serial: Recv 8 bytes[0m
+[0;32mI (180555) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:25+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (180695) serial: Recv 102 bytes[0m
+[0;32mI (180695) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (180695) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (180695) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (180725) serial: Recv 8 bytes[0m
+[0;32mI (181625) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:26+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (181775) serial: Recv 102 bytes[0m
+[0;32mI (181775) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (181775) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (181775) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (181795) serial: Recv 8 bytes[0m
+[0;32mI (182695) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:27+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (182835) serial: Recv 102 bytes[0m
+[0;32mI (182835) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (182835) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (182835) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (182855) serial: Recv 8 bytes[0m
+[0;32mI (183765) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:28+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	64,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (183905) serial: Recv 102 bytes[0m
+[0;32mI (183905) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (183905) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (183905) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (183935) serial: Recv 8 bytes[0m
+[0;32mI (184835) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:29+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (184975) serial: Recv 102 bytes[0m
+[0;32mI (184975) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (184975) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (184975) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (185005) serial: Recv 8 bytes[0m
+[0;32mI (185905) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:30+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (186045) serial: Recv 102 bytes[0m
+[0;32mI (186045) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (186045) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (186045) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (186065) serial: Recv 8 bytes[0m
+[0;32mI (186975) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:31+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (187115) serial: Recv 102 bytes[0m
+[0;32mI (187115) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (187115) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (187115) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (187145) serial: Recv 8 bytes[0m
+[0;32mI (188045) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:32+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	55,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (188195) serial: Recv 102 bytes[0m
+[0;32mI (188195) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (188195) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (188195) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (188215) serial: Recv 8 bytes[0m
+[0;32mI (189115) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:33+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (189265) serial: Recv 102 bytes[0m
+[0;32mI (189265) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (189265) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (189265) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (189285) serial: Recv 8 bytes[0m
+[0;32mI (190185) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:34+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (190335) serial: Recv 102 bytes[0m
+[0;32mI (190335) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (190335) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (190335) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (190355) serial: Recv 8 bytes[0m
+[0;32mI (191255) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:35+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (191395) serial: Recv 102 bytes[0m
+[0;32mI (191395) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (191395) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (191395) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (191425) serial: Recv 8 bytes[0m
+[0;32mI (192325) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:36+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (192465) serial: Recv 90 bytes[0m
+[0;32mI (192465) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (192465) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (192465) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (192485) serial: Recv 8 bytes[0m
+[0;32mI (193395) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:37+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"1c5bcb3f80d8c93fc4cd3840",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	3,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (193545) serial: Recv 102 bytes[0m
+[0;32mI (193545) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (193545) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (193545) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (193565) serial: Recv 8 bytes[0m
+[0;32mI (194465) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:39+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	65,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	68,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (194615) serial: Recv 102 bytes[0m
+[0;32mI (194615) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (194615) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (194615) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (194635) serial: Recv 8 bytes[0m
+[0;32mI (195535) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:40+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (195675) serial: Recv 102 bytes[0m
+[0;32mI (195675) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (195675) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (195675) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (195705) serial: Recv 8 bytes[0m
+[0;32mI (196605) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:41+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	70,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (196745) serial: Recv 102 bytes[0m
+[0;32mI (196745) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (196745) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (196745) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (196775) serial: Recv 8 bytes[0m
+[0;32mI (197675) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:42+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (197815) serial: Recv 90 bytes[0m
+[0;32mI (197815) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (197815) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (197815) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (197845) serial: Recv 8 bytes[0m
+[0;32mI (198745) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:43+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	67,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"1c5bcb3f80d8c93fc4cd3840",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	0,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (198895) serial: Recv 102 bytes[0m
+[0;32mI (198895) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (198895) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (198895) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (198915) serial: Recv 8 bytes[0m
+[0;32mI (199815) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:44+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	53,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (199955) serial: Recv 102 bytes[0m
+[0;32mI (199955) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (199955) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (199955) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (199985) serial: Recv 8 bytes[0m
+[0;32mI (200885) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:45+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	71,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (201025) serial: Recv 102 bytes[0m
+[0;32mI (201025) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (201025) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (201025) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (201055) serial: Recv 8 bytes[0m
+[0;32mI (201955) RFID MANAGER: JSON string: {[0m
+	"type":	"INVENTORY",
+	"timestamp":	"2024-12-06T09:18:46+07:00",
+	"total":	3,
+	"data":	{
+		"e28069950000500a27a70668":	{
+			"TID":	"e28069952000500a27a70668",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a70668",
+			"peakRssi":	69,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000400a27a72a68":	{
+			"TID":	"e28069952000400a27a72a68",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000400a27a72a68",
+			"peakRssi":	54,
+			"phase":	0,
+			"reads":	1
+		},
+		"e28069950000500a27a6f268":	{
+			"TID":	"e28069952000500a27a6f268",
+			"antenna":	1,
+			"channel":	0,
+			"eventNum":	1,
+			"format":	"epc",
+			"idHex":	"e28069950000500a27a6f268",
+			"peakRssi":	66,
+			"phase":	0,
+			"reads":	1
+		}
+	}
+}
+[0;32mI (202095) serial: Recv 102 bytes[0m
+[0;32mI (202095) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (202095) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (202095) RFID MANAGER: Phase and freq is not enabled[0m
+[0;32mI (202115) serial: Recv 8 bytes[0m

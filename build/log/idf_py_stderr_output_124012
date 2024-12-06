@@ -1,0 +1,71 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40058842: memcpy in ROM
+[0m
+[0;33m--- Stack dump detected[0m
+[0;33m--- 0x4200eae2: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eae2: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eae2: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eaea: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eaea: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eaea: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eae2: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eae2: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eae2: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eae2: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eae2: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eaea: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m--- 0x4200eae2: tag_manager_handle(void*) at /home/hieunm/Desktop/wss_server/main/lib/tag_manager/TagManage.cpp:88
+0x403885d0: vPortTaskWrapper at /home/hieunm/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:258
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/hieunm/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0m
