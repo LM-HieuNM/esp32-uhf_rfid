@@ -27,6 +27,7 @@
 #include "app_nvs.h"
 #include "button.h"
 #include "http_server.h"
+#include "esp_hid_device_main.h"
 #include "TagManage.hpp"
 
 #define PRESET_VALUE 0xFFFF
@@ -67,6 +68,7 @@ antenna_config_t current_antenna_config = {
 static const char *TASK_TAG = "RFID MANAGER";
 std::unique_ptr<TagList> g_tagList = std::make_unique<TagList>();
 bool_t is_inventory = false;
+protocol_type_t g_protocol_type;
 
 static bool setRFPower(uint8_t power);
 
@@ -135,6 +137,25 @@ static void tag_start_inventory(u8_t antenna){
     target[antenna] = !target[antenna];
 }
 
+static std::string removeWhitespace(const std::string& json) {
+    std::string result;
+    result.reserve(json.length());  // Pre-allocate space
+    bool inQuotes = false;
+    
+    for (char c : json) {
+        if (c == '"') {
+            inQuotes = !inQuotes;
+            result += c;
+        } else if (inQuotes) {
+            // Keep all characters between quotes
+            result += c;
+        } else if (!std::isspace(c)) {
+            // Only add non-whitespace characters
+            result += c;
+        }
+    }
+    return result;
+}
 static void tag_manager_handle(void *arg)
 {
 	static bool_t state = 0;
@@ -146,19 +167,35 @@ static void tag_manager_handle(void *arg)
             tag_start_inventory(0);
             // Step 2: Wait for reader to respond
             vTaskDelay(1000 / portTICK_PERIOD_MS);
-
+            size_t heap_size = esp_get_free_heap_size();
+            ESP_LOGW(TASK_TAG, "Heap Free: %u bytes", heap_size);
             // Step 3: Process the response from reader
             if(g_tagList->GetTotalReadCount() > 0){
                 // TODO: Send data to server
-                std::string jsonString = g_tagList->GetJsonString();
-                g_tagList->Clear();
-                // ESP_LOGI(TASK_TAG, "JSON string: %s", jsonString.c_str());
-                wss_server_broadcast_json(jsonString.c_str());
-                size_t heap_size = esp_get_free_heap_size();
-                ESP_LOGW(TASK_TAG, "Heap Free: %u bytes", heap_size);
+                if(g_protocol_type == PROTOCOL_WEBSOCKET){
+                    std::string jsonString = g_tagList->GetJsonString();
+                    std::string compactJson = removeWhitespace(jsonString);
+                    g_tagList->Clear();
+                    wss_server_broadcast_json(compactJson.c_str());
+                }
+                else if(g_protocol_type == PROTOCOL_BLE_HID) {
+
+
+                for (size_t i = 0; i < g_tagList->GetTagCount(); i++) {
+                    std::string singleTagJson = g_tagList->GetSingleTagJsonString(i);
+                    std::string compactJson = removeWhitespace(singleTagJson);
+                    // Gửi từng tag qua BLE
+                    esp_hidd_send_consumer_value(compactJson.c_str());
+                    esp_hidd_send_consumer_value("\n\n");
+                    ESP_LOGI(TASK_TAG, "Length: %d, Tag: %d", compactJson.length(), i);
+                    vTaskDelay(pdMS_TO_TICKS(50)); // Delay nhỏ giữa các lần gửi
+                    }
+                    g_tagList->Clear();
+                }
             }
+        }else {
+            vTaskDelay(10 / portTICK_PERIOD_MS);
         }
-        vTaskDelay(10 / portTICK_PERIOD_MS);
 	}
 }
 
@@ -177,7 +214,8 @@ static void tag_manager_action(void *arg){
     }
 }
 
-void tag_manager_init(void) {
+void tag_manager_init(uint8_t protocol_type) {
+    g_protocol_type = (protocol_type_t)protocol_type;
 	esp_log_level_set(TASK_TAG, ESP_LOG_INFO);
     serial_init();
     vTaskDelay(100 / portTICK_PERIOD_MS);

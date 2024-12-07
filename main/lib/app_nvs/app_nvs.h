@@ -42,6 +42,12 @@ typedef struct {
     } ble_hid;
 } protocol_config_t;
 
+typedef struct {
+    int power;
+    bool antennas[16];
+} antenna_config_t;
+extern antenna_config_t current_antenna_config;
+
 /**
  * Saves station mode Wifi credentials to NVS
  * @return ESP_OK if successful.

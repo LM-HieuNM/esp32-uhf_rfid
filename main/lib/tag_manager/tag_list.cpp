@@ -115,3 +115,75 @@ std::string TagList::GetJsonString() const {
 
     return result;
 }
+
+std::string TagList::GetSingleTagJsonString(size_t index) const {
+    if (index >= tags.size()) return "";
+
+    cJSON *root = cJSON_CreateObject();
+    if (root == NULL) return "";
+
+    cJSON_AddStringToObject(root, "type", "INVENTORY");
+    cJSON_AddStringToObject(root, "timestamp", get_iso_timestamp());
+    cJSON_AddNumberToObject(root, "total", 1);
+
+    // Tạo object data
+    cJSON *data = cJSON_CreateObject();
+    if (data == NULL) {
+        cJSON_Delete(root);
+        return "";
+    }
+    cJSON_AddItemToObject(root, "data", data);
+
+    // Lấy tag tại index
+    const auto& tag = tags[index];
+    
+    // Chuyển EPC thành string hex để làm key
+    std::stringstream ss;
+    for (const auto& byte : tag.tagEPC) {
+        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(byte);
+    }
+    std::string epcStr = ss.str();
+
+    // Tạo object cho tag
+    cJSON *tagObj = cJSON_CreateObject();
+    if (tagObj == NULL) {
+        cJSON_Delete(root);
+        return "";
+    }
+
+    // Chuyển TID thành string hex
+    ss.str("");
+    ss.clear();
+    for (const auto& byte : tag.tagTID) {
+        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(byte);
+    }
+    std::string tidStr = ss.str();
+
+    // Thêm thông tin của tag
+    cJSON_AddStringToObject(tagObj, "TID", tidStr.c_str());
+    cJSON_AddNumberToObject(tagObj, "antenna", tag.antenna);
+    cJSON_AddNumberToObject(tagObj, "channel", tag.freq);
+    cJSON_AddNumberToObject(tagObj, "eventNum", tag.count);
+    cJSON_AddStringToObject(tagObj, "format", "epc");
+    cJSON_AddStringToObject(tagObj, "idHex", epcStr.c_str());
+    cJSON_AddNumberToObject(tagObj, "peakRssi", tag.rssi);
+    cJSON_AddNumberToObject(tagObj, "phase", tag.phase);
+    cJSON_AddNumberToObject(tagObj, "reads", 1);
+
+    // Thêm object tag vào data với key là EPC
+    cJSON_AddItemToObject(data, epcStr.c_str(), tagObj);
+
+    // Chuyển đổi sang chuỗi
+    char *jsonString = cJSON_Print(root);
+    std::string result;
+    if (jsonString) {
+        result = std::string(jsonString);
+        free(jsonString);
+    }
+
+    // Giải phóng bộ nhớ
+    cJSON_Delete(root);
+
+    return result;
+}
+

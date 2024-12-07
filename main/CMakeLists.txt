@@ -10,7 +10,10 @@ set(srcs "main.c"
         "lib/tag_manager/tag_list.cpp"
         "lib/board/button.c"
         "lib/time/sntp_time.c"
-        "lib/upd/udp_task.c")
+        "lib/upd/udp_task.c"
+        "lib/bluetooth/esp_hid_gap.c"
+        "lib/bluetooth/esp_hid_device_main.c"
+        )
 
 set(incs "lib/wifi_app"
         "lib/https_server"
@@ -21,7 +24,8 @@ set(incs "lib/wifi_app"
         "lib/packet"
         "lib/board"
         "lib/time"
-        "lib/upd")
+        "lib/upd"
+        "lib/bluetooth")
 
 idf_component_register(SRCS "${srcs}"
                     INCLUDE_DIRS "${incs}"

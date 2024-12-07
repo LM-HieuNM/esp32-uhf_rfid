@@ -43,6 +43,8 @@ public:
 
     const tag_info_t* GetTagByEPC(const std::vector<u8_t>& tagEPC) const;
     std::string GetJsonString() const;
+    std::string GetSingleTagJsonString(size_t index) const;
+    size_t GetTagCount() const { return tags.size(); }
     // Iterator để duyệt danh sách thẻ
     auto begin() { return tags.begin(); }
     auto end() { return tags.end(); }

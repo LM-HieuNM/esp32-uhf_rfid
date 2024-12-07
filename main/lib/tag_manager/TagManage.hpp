@@ -13,14 +13,9 @@ extern "C" {
 #endif
 
 #include "typedefs.h"
+#include "app_nvs.h"
 
-typedef struct {
-    int power;
-    bool antennas[16];
-} antenna_config_t;
-extern antenna_config_t current_antenna_config;
-
-void tag_manager_init(void);
+void tag_manager_init(uint8_t protocol_type);
 void tag_manager_process(u8_p payload, u8_t len);
 char* create_json_command(void);
 void init_time_sntp(void);
