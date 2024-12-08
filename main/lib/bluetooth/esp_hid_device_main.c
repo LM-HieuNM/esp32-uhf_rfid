@@ -54,59 +54,53 @@ const unsigned char mediaReportMap[] = {
     0x09, 0x01,        // Usage (Consumer Control)
     0xA1, 0x01,        // Collection (Application)
     0x85, 0x03,        //   Report ID (3)
-    0x09, 0x02,        //   Usage (Numeric Key Pad)
-    0xA1, 0x02,        //   Collection (Logical)
-    0x05, 0x09,        //     Usage Page (Button)
-    0x19, 0x01,        //     Usage Minimum (0x01)
-    0x29, 0x0A,        //     Usage Maximum (0x0A)
-    0x15, 0x01,        //     Logical Minimum (1)
-    0x25, 0x0A,        //     Logical Maximum (10)
-    0x75, 0x04,        //     Report Size (4)
-    0x95, 0x01,        //     Report Count (1)
-    0x81, 0x00,        //     Input (Data,Array,Abs,No Wrap,Linear,Preferred State,No Null Position)
-    0xC0,              //   End Collection
-    0x05, 0x0C,        //   Usage Page (Consumer)
-    0x09, 0x86,        //   Usage (Channel)
-    0x15, 0xFF,        //   Logical Minimum (-1)
-    0x25, 0x01,        //   Logical Maximum (1)
-    0x75, 0x02,        //   Report Size (2)
-    0x95, 0x01,        //   Report Count (1)
-    0x81, 0x46,        //   Input (Data,Var,Rel,No Wrap,Linear,Preferred State,Null State)
-    0x09, 0xE9,        //   Usage (Volume Increment)
-    0x09, 0xEA,        //   Usage (Volume Decrement)
-    0x15, 0x00,        //   Logical Minimum (0)
-    0x75, 0x01,        //   Report Size (1)
-    0x95, 0x02,        //   Report Count (2)
-    0x81, 0x02,        //   Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
-    0x09, 0xE2,        //   Usage (Mute)
-    0x09, 0x30,        //   Usage (Power)
-    0x09, 0x83,        //   Usage (Recall Last)
-    0x09, 0x81,        //   Usage (Assign Selection)
-    0x09, 0xB0,        //   Usage (Play)
-    0x09, 0xB1,        //   Usage (Pause)
-    0x09, 0xB2,        //   Usage (Record)
-    0x09, 0xB3,        //   Usage (Fast Forward)
-    0x09, 0xB4,        //   Usage (Rewind)
-    0x09, 0xB5,        //   Usage (Scan Next Track)
-    0x09, 0xB6,        //   Usage (Scan Previous Track)
-    0x09, 0xB7,        //   Usage (Stop)
-    0x15, 0x01,        //   Logical Minimum (1)
-    0x25, 0x0C,        //   Logical Maximum (12)
-    0x75, 0x04,        //   Report Size (4)
-    0x95, 0x01,        //   Report Count (1)
-    0x81, 0x00,        //   Input (Data,Array,Abs,No Wrap,Linear,Preferred State,No Null Position)
-    0x09, 0x80,        //   Usage (Selection)
-    0xA1, 0x02,        //   Collection (Logical)
-    0x05, 0x09,        //     Usage Page (Button)
-    0x19, 0x01,        //     Usage Minimum (0x01)
-    0x29, 0x03,        //     Usage Maximum (0x03)
-    0x15, 0x01,        //     Logical Minimum (1)
-    0x25, 0x03,        //     Logical Maximum (3)
-    0x75, 0x02,        //     Report Size (2)
-    0x81, 0x00,        //     Input (Data,Array,Abs,No Wrap,Linear,Preferred State,No Null Position)
-    0xC0,              //   End Collection
-    0x81, 0x03,        //   Input (Const,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
-    0xC0,              // End Collection
+    // 0x09, 0x02,        //   Usage (Numeric Key Pad)
+    // 0xA1, 0x02,        //   Collection (Logical)
+    // 0x05, 0x09,        //     Usage Page (Button)
+    // 0x19, 0x01,        //     Usage Minimum (0x01)
+    // 0x29, 0x0A,        //     Usage Maximum (0x0A)
+    // 0x15, 0x01,        //     Logical Minimum (1)
+    // 0x25, 0x0A,        //     Logical Maximum (10)
+    // 0x75, 0x04,        //     Report Size (4)
+    // 0x95, 0x01,        //     Report Count (1)
+    // 0x81, 0x00,        //     Input (Data,Array,Abs,No Wrap,Linear,Preferred State,No Null Position)
+    // 0xC0,              //   End Collection
+    // 0x05, 0x0C,        //   Usage Page (Consumer)
+    // 0x09, 0x86,        //   Usage (Channel)
+    // 0x15, 0xFF,        //   Logical Minimum (-1)
+    // 0x25, 0x01,        //   Logical Maximum (1)
+    // 0x75, 0x02,        //   Report Size (2)
+    // 0x95, 0x01,        //   Report Count (1)
+    // 0x81, 0x46,        //   Input (Data,Var,Rel,No Wrap,Linear,Preferred State,Null State)
+    // 0x09, 0xE9,        //   Usage (Volume Increment)
+    // 0x09, 0xEA,        //   Usage (Volume Decrement)
+    // 0x15, 0x00,        //   Logical Minimum (0)
+    // 0x75, 0x01,        //   Report Size (1)
+    // 0x95, 0x02,        //   Report Count (2)
+    // 0x81, 0x02,        //   Input (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position)
+    // 0x09, 0xE2,        //   Usage (Mute)
+    // 0x09, 0x30,        //   Usage (Power)
+    // 0x09, 0x83,        //   Usage (Recall Last)
+    // 0x09, 0x81,        //   Usage (Assign Selection)
+    // 0x09, 0xB0,        //   Usage (Play)
+    // 0x09, 0xB1,        //   Usage (Pause)
+    // 0x09, 0xB2,        //   Usage (Record)
+    // 0x09, 0xB3,        //   Usage (Fast Forward)
+    // 0x09, 0xB4,        //   Usage (Rewind)
+    // 0x09, 0xB5,        //   Usage (Scan Next Track)
+    // 0x09, 0xB6,        //   Usage (Scan Previous Track)
+    // 0x09, 0xB7,        //   Usage (Stop)
+    // 0x15, 0x01,        //   Logical Minimum (1)
+    // 0x25, 0x0C,        //   Logical Maximum (12)
+    // 0x75, 0x04,        //   Report Size (4)
+    // 0x95, 0x01,        //   Report Count (1)
+    // 0x81, 0x00,        //   Input (Data,Array,Abs,No Wrap,Linear,Preferred State,No Null Position)
+    
+    // Thêm định nghĩa cho buffer lớn để truyền dữ liệu
+    0x75, 0x08,        //   Report Size (8)
+    0x96, 0xB9, 0x00,        //   Report Count (64) // Có thể tăng lên để có buffer lớn hơn
+    0x81, 0x02,        //   Input (Data,Var,Abs)
+    0xC0               // End Collection
 };
 
 static esp_hid_raw_report_map_t ble_report_maps[] = {
@@ -223,12 +217,12 @@ void esp_hidd_send_consumer_value(const char* json_string)
         ESP_LOGW(TAG, "JSON string too long, truncating to %d bytes", HID_CC_IN_RPT_LEN - 1);
         json_len = HID_CC_IN_RPT_LEN - 1;
     }
-    memcpy(buffer, json_string, json_len);
+    // memcpy(buffer, json_string, json_len);
     
     // ESP_LOGI(TAG, "Sending JSON (length: %d): %s", json_len, json_string);
     
     // Send the buffer as HID input
-    esp_err_t err = esp_hidd_dev_input_set(s_ble_hid_param.hid_dev, 0, HID_RPT_ID_CC_IN, buffer, HID_CC_IN_RPT_LEN);
+    esp_err_t err = esp_hidd_dev_input_set(s_ble_hid_param.hid_dev, 0, HID_RPT_ID_CC_IN, json_string, json_len);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Failed to send HID report: %s", esp_err_to_name(err));
     }
@@ -306,25 +300,11 @@ void ble_hid_init(const char* device_name, uint32_t pin_code)
     strncpy(ble_hid_config.device_name, device_name, 6);
     esp_err_t ret;
 
-    // ret = nvs_flash_init();
-    // if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-    //     ESP_ERROR_CHECK(nvs_flash_erase());
-    //     ret = nvs_flash_init();
-    // }
-    // ESP_ERROR_CHECK( ret );
-
     ESP_LOGI(TAG, "setting hid gap, mode:%d", HID_DEV_MODE);
     ret = esp_hid_gap_init(HID_DEV_MODE);
     ESP_ERROR_CHECK( ret );
-
-#if CONFIG_BT_BLE_ENABLED || CONFIG_BT_NIMBLE_ENABLED
-#if CONFIG_EXAMPLE_HID_DEVICE_ROLE == 2
-    ret = esp_hid_ble_gap_adv_init(ESP_HID_APPEARANCE_KEYBOARD, ble_hid_config.device_name);
-#elif CONFIG_EXAMPLE_HID_DEVICE_ROLE == 3
-    ret = esp_hid_ble_gap_adv_init(ESP_HID_APPEARANCE_MOUSE, ble_hid_config.device_name);
-#else
-    ret = esp_hid_ble_gap_adv_init(ESP_HID_APPEARANCE_HID_BARCODE_SCANNER, device_name, pin_code);
-#endif
+    ret = esp_hid_ble_gap_adv_init(ESP_HID_APPEARANCE_GENERIC, device_name, pin_code);
+    
     ESP_ERROR_CHECK( ret );
 #if CONFIG_BT_BLE_ENABLED
     if ((ret = esp_ble_gatts_register_callback(esp_hidd_gatts_event_handler)) != ESP_OK) {
@@ -335,7 +315,6 @@ void ble_hid_init(const char* device_name, uint32_t pin_code)
     ESP_LOGI(TAG, "setting ble device");
     ESP_ERROR_CHECK(
         esp_hidd_dev_init(&ble_hid_config, ESP_HID_TRANSPORT_BLE, ble_hidd_event_callback, &s_ble_hid_param.hid_dev));
-#endif
 
     // Configure security parameters
     esp_ble_auth_req_t auth_req = ESP_LE_AUTH_REQ_SC_MITM_BOND;

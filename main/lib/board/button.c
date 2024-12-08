@@ -2,6 +2,7 @@
 #include "freertos/event_groups.h"
 #include "iot_button.h"
 #include "esp_log.h"
+#include "app_nvs.h"
 #include "button.h"
 
 
@@ -26,6 +27,9 @@ static void button_tap2_cb(void *arg, void *data)
 static void button_tap5_cb(void *arg, void *data)
 {
     ESP_LOGI(TAG, "tap 5");
+    app_nvs_set_temp_config(1);
+    vTaskDelay(2000/portTICK_PERIOD_MS);
+    esp_restart();
 }
 
 static void board_button_init(void)

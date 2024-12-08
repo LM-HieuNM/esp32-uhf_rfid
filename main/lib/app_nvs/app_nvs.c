@@ -19,6 +19,7 @@ const char app_nvs_sta_creds_namespace[] = "stacreds";
 const char app_nvs_socket_creds_namespace[] = "socketcreds";
 const char app_nvs_antenna_namespace[] = "antenna";
 const char app_nvs_protocol_namespace[] = "protocol";
+const char app_nvs_temp_namespace[] = "temp_config";
 
 esp_err_t app_nvs_save_sta_creds(void)
 {
@@ -509,4 +510,113 @@ esp_err_t app_nvs_load_protocol_config(protocol_config_t *config)
     }
 
     return ESP_OK; // Luôn trả về OK vì đã có giá trị mặc định
+}
+
+esp_err_t app_nvs_set_temp_config(int32_t value)
+{
+    nvs_handle_t handle;
+    esp_err_t esp_err;
+
+    esp_err = nvs_open(app_nvs_temp_namespace, NVS_READWRITE, &handle);
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "Error (%s) opening NVS handle!", esp_err_to_name(esp_err));
+        return esp_err;
+    }
+
+    esp_err = nvs_set_i32(handle, "temp_value", value);
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "Error (%s) saving temp value!", esp_err_to_name(esp_err));
+        nvs_close(handle);
+        return esp_err;
+    }
+
+    esp_err = nvs_commit(handle);
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "Error (%s) committing data!", esp_err_to_name(esp_err));
+    }
+
+    nvs_close(handle);
+    ESP_LOGI(TAG, "Set temp config value: %" PRId32, value);
+    return esp_err;
+}
+
+esp_err_t app_nvs_get_temp_config(int32_t *value)
+{
+    if (value == NULL)
+    {
+        return ESP_ERR_INVALID_ARG;
+    }
+
+    nvs_handle_t handle;
+    esp_err_t esp_err;
+
+    // Khởi tạo giá trị mặc định
+    *value = 0;
+
+    // Thử mở namespace với quyền đọc/ghi để tạo mới nếu chưa tồn tại
+    esp_err = nvs_open(app_nvs_temp_namespace, NVS_READWRITE, &handle);
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "Error (%s) opening NVS handle!", esp_err_to_name(esp_err));
+        return esp_err;
+    }
+
+    // Đọc giá trị
+    esp_err = nvs_get_i32(handle, "temp_value", value);
+    if (esp_err == ESP_ERR_NVS_NOT_FOUND)
+    {
+        // Nếu chưa có giá trị, lưu giá trị mặc định
+        esp_err = nvs_set_i32(handle, "temp_value", *value);
+        if (esp_err == ESP_OK)
+        {
+            esp_err = nvs_commit(handle);
+            ESP_LOGI(TAG, "Created temp value with default: 0");
+        }
+        else
+        {
+            ESP_LOGE(TAG, "Error (%s) saving default value!", esp_err_to_name(esp_err));
+        }
+    }
+    else if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "Error (%s) reading temp value!", esp_err_to_name(esp_err));
+    }
+
+    nvs_close(handle);
+    ESP_LOGI(TAG, "Get temp config value: %" PRId32, *value);
+    return esp_err;
+}
+
+esp_err_t app_nvs_clear_temp_config(void)
+{
+    nvs_handle_t handle;
+    esp_err_t esp_err;
+
+    esp_err = nvs_open(app_nvs_temp_namespace, NVS_READWRITE, &handle);
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "Error (%s) opening NVS handle!", esp_err_to_name(esp_err));
+        return esp_err;
+    }
+
+    esp_err = nvs_erase_key(handle, "temp_value");
+    if (esp_err != ESP_OK && esp_err != ESP_ERR_NVS_NOT_FOUND)
+    {
+        ESP_LOGE(TAG, "Error (%s) erasing temp config!", esp_err_to_name(esp_err));
+        nvs_close(handle);
+        return esp_err;
+    }
+
+    esp_err = nvs_commit(handle);
+    if (esp_err != ESP_OK)
+    {
+        ESP_LOGE(TAG, "Error (%s) committing erase!", esp_err_to_name(esp_err));
+    }
+
+    nvs_close(handle);
+    ESP_LOGI(TAG, "Cleared temp config");
+    return ESP_OK;
 }

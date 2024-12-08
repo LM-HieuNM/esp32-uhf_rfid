@@ -104,21 +104,75 @@ static esp_err_t ws_handler(httpd_req_t *req)
 
     switch (ws_pkt.type) {
         case HTTPD_WS_TYPE_TEXT:
-            // Xử lý text message
+        {
             ESP_LOGI(TAG, "Received text message: %s", (char*)ws_pkt.payload);
-            // Có thể echo lại message cho client
-            httpd_ws_frame_t ws_response = {
-                .final = true,
-                .fragmented = false,
-                .type = HTTPD_WS_TYPE_TEXT,
-                .payload = ws_pkt.payload,
-                .len = ws_pkt.len
-            };
-            ret = httpd_ws_send_frame(req, &ws_response);
+            
+            // Parse JSON
+            cJSON *root = cJSON_Parse((char*)ws_pkt.payload);
+            if (root != NULL) {
+                // Lấy command và command_id
+                cJSON *command = cJSON_GetObjectItem(root, "command");
+                cJSON *command_id = cJSON_GetObjectItem(root, "command_id");
+                
+                if (command != NULL && cJSON_IsString(command)) {
+                    bool success = false;
+                    
+                    if (strcmp(command->valuestring, "start") == 0) {
+                        // Xử lý lệnh start
+                        cJSON *payload = cJSON_GetObjectItem(root, "payload");
+                        bool doNotPersistState = false;
+                        
+                        if (payload != NULL && cJSON_IsObject(payload)) {
+                            cJSON *persistState = cJSON_GetObjectItem(payload, "doNotPersistState");
+                            if (persistState != NULL && cJSON_IsBool(persistState)) {
+                                doNotPersistState = cJSON_IsTrue(persistState);
+                            }
+                        }
+                        
+                        startInventory();
+                        success = true;
+                    }
+                    else if (strcmp(command->valuestring, "stop") == 0) {
+                        // Xử lý lệnh stop
+                        stopInventory();
+                        success = true;
+                    }
+                    
+                    if (success) {
+                        // Tạo response JSON
+                        cJSON *response = cJSON_CreateObject();
+                        cJSON_AddStringToObject(response, "command", command->valuestring);
+                        if (command_id != NULL && cJSON_IsString(command_id)) {
+                            cJSON_AddStringToObject(response, "command_id", command_id->valuestring);
+                        }
+                        cJSON_AddStringToObject(response, "response", "success");
+                        cJSON_AddObjectToObject(response, "payload");  // Empty payload object
+                        
+                        char *response_str = cJSON_Print(response);
+                        
+                        // Gửi response
+                        httpd_ws_frame_t ws_response = {
+                            .final = true,
+                            .fragmented = false,
+                            .type = HTTPD_WS_TYPE_TEXT,
+                            .payload = (uint8_t*)response_str,
+                            .len = strlen(response_str)
+                        };
+                        ret = httpd_ws_send_frame(req, &ws_response);
+                        
+                        // Giải phóng bộ nhớ
+                        free(response_str);
+                        cJSON_Delete(response);
+                    }
+                }
+            }
+            cJSON_Delete(root);
+            
             if (ret != ESP_OK) {
                 ESP_LOGE(TAG, "httpd_ws_send_frame failed with %d", ret);
             }
             break;
+        }
             
         case HTTPD_WS_TYPE_BINARY:
             // Xử lý binary message
@@ -1233,3 +1287,4 @@ esp_err_t http_server_firmware_info_handler(httpd_req_t *req)
 
     return ESP_OK;
 }
+

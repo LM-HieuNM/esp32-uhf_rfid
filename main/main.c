@@ -31,20 +31,31 @@ void app_main(void)
 		ret = nvs_flash_init();
 	}
     ESP_ERROR_CHECK(ret);
+    vTaskDelay(500/portTICK_PERIOD_MS);
     board_init();
+    int32_t enable_web_conf = 0;
+    if (app_nvs_get_temp_config(&enable_web_conf) == ESP_OK) {
+        app_nvs_clear_temp_config();
 
-    protocol_config_t protocol_config;
-    app_nvs_load_protocol_config(&protocol_config);
+        if(enable_web_conf == 0) {
+            protocol_config_t protocol_config;
+            app_nvs_load_protocol_config(&protocol_config);
 
-    if(protocol_config.type == PROTOCOL_WEBSOCKET){
-        wifi_app_start();
-    }else if(protocol_config.type == PROTOCOL_BLE_HID){
-        ESP_LOGI(TAG, "BLE HID");
-        ESP_LOGI(TAG, "Device name: %s", protocol_config.ble_hid.device_name);
-        uint32_t pin_code = strtoul(protocol_config.ble_hid.pin_code, NULL, 10);
-        ESP_LOGI(TAG, "Pin code: %" PRIu32, pin_code);
-        ble_hid_init(protocol_config.ble_hid.device_name, pin_code);
+            if(protocol_config.type == PROTOCOL_WEBSOCKET){
+                wifi_app_start();
+            }else if(protocol_config.type == PROTOCOL_BLE_HID){ 
+                ESP_LOGI(TAG, "BLE HID");
+                ESP_LOGI(TAG, "Device name: %s", protocol_config.ble_hid.device_name);
+                uint32_t pin_code = strtoul(protocol_config.ble_hid.pin_code, NULL, 10);
+                ESP_LOGI(TAG, "Pin code: %" PRIu32, pin_code);
+                ble_hid_init(protocol_config.ble_hid.device_name, pin_code);
+            }
+            tag_manager_init(protocol_config.type);
+        }
+        else{
+            protocol_config_t protocol_config;
+            app_nvs_load_protocol_config(&protocol_config);
+            wifi_app_start();
+        }
     }
-
-    tag_manager_init(protocol_config.type);
 }

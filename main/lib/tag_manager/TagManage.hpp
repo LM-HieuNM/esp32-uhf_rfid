@@ -15,6 +15,8 @@ extern "C" {
 #include "typedefs.h"
 #include "app_nvs.h"
 
+void startInventory(void);
+void stopInventory(void);
 void tag_manager_init(uint8_t protocol_type);
 void tag_manager_process(u8_p payload, u8_t len);
 char* create_json_command(void);

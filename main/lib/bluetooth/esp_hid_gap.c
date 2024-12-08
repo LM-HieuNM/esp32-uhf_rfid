@@ -403,7 +403,7 @@ esp_err_t esp_hid_ble_gap_adv_init(uint16_t appearance, const char *device_name,
         .include_name = true,
         .include_txpower = true,
         .min_interval = 0x0006, //slave connection min interval, Time = min_interval * 1.25 msec
-        .max_interval = 0x0010, //slave connection max interval, Time = max_interval * 1.25 msec
+        .max_interval = 0x0008, //slave connection max interval, Time = max_interval * 1.25 msec
         .appearance = appearance,
         .manufacturer_len = 0,
         .p_manufacturer_data =  NULL,

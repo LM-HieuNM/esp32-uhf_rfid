@@ -104,6 +104,13 @@ static void EX100_init(void) {
 	send_buffer(buff3, sizeof(buff3));
 }
 
+void startInventory(void){
+    is_inventory = true;
+}
+void stopInventory(void){
+    is_inventory = false;
+    stop_reader();
+}
 static void tag_start_inventory(u8_t antenna){
     static bool_t target[16] = {0};
 
@@ -163,34 +170,37 @@ static void tag_manager_handle(void *arg)
     setRFPower(current_antenna_config.power);
 	while(1) {
         if(is_inventory){
-            // Step 1: Send command to reader
-            tag_start_inventory(0);
-            // Step 2: Wait for reader to respond
-            vTaskDelay(1000 / portTICK_PERIOD_MS);
-            size_t heap_size = esp_get_free_heap_size();
-            ESP_LOGW(TASK_TAG, "Heap Free: %u bytes", heap_size);
-            // Step 3: Process the response from reader
-            if(g_tagList->GetTotalReadCount() > 0){
-                // TODO: Send data to server
-                if(g_protocol_type == PROTOCOL_WEBSOCKET){
-                    std::string jsonString = g_tagList->GetJsonString();
-                    std::string compactJson = removeWhitespace(jsonString);
-                    g_tagList->Clear();
-                    wss_server_broadcast_json(compactJson.c_str());
-                }
-                else if(g_protocol_type == PROTOCOL_BLE_HID) {
+            for(int i = 0; i < 16; i++){
+                if(current_antenna_config.antennas[i]){
+                    // Step 1: Send command to reader
+                    tag_start_inventory(i);
+                    vTaskDelay(1000 / portTICK_PERIOD_MS);
 
-
-                for (size_t i = 0; i < g_tagList->GetTagCount(); i++) {
-                    std::string singleTagJson = g_tagList->GetSingleTagJsonString(i);
-                    std::string compactJson = removeWhitespace(singleTagJson);
-                    // Gửi từng tag qua BLE
-                    esp_hidd_send_consumer_value(compactJson.c_str());
-                    esp_hidd_send_consumer_value("\n\n");
-                    ESP_LOGI(TASK_TAG, "Length: %d, Tag: %d", compactJson.length(), i);
-                    vTaskDelay(pdMS_TO_TICKS(50)); // Delay nhỏ giữa các lần gửi
+                     // Step 2: Wait for reader to respond
+                    size_t heap_size = esp_get_free_heap_size();
+                    ESP_LOGW(TASK_TAG, "Heap Free: %u bytes", heap_size);
+                    // Step 3: Process the response from reader
+                    if(g_tagList->GetTotalReadCount() > 0){
+                        // TODO: Send data to server
+                        if(g_protocol_type == PROTOCOL_WEBSOCKET){
+                            std::string jsonString = g_tagList->GetJsonString();
+                            std::string compactJson = removeWhitespace(jsonString);
+                            g_tagList->Clear();
+                            wss_server_broadcast_json(compactJson.c_str());
+                        }   
+                        else if(g_protocol_type == PROTOCOL_BLE_HID) {
+                            for (size_t i = 0; i < g_tagList->GetTagCount(); i++) {
+                                std::string singleTagJson = g_tagList->GetSingleTagJsonString(i);
+                                std::string compactJson = removeWhitespace(singleTagJson);
+                                compactJson += "\n";
+                                // Gửi từng tag qua BLE
+                                esp_hidd_send_consumer_value(compactJson.c_str());
+                                ESP_LOGI(TASK_TAG, "Length: %d, Tag: %d", compactJson.length(), i);
+                                vTaskDelay(pdMS_TO_TICKS(100));
+                            }
+                            g_tagList->Clear();
+                        }
                     }
-                    g_tagList->Clear();
                 }
             }
         }else {
@@ -292,7 +302,19 @@ void tag_manager_process(u8_p payload, u8_t len){
             }
             break;
         }
+        case STATUS_ANT_ERR:
+        {
+            ESP_LOGI(TASK_TAG, "Antenna error");
+             if(g_protocol_type == PROTOCOL_WEBSOCKET){
+                wss_server_broadcast_json("{\"status\": \"antenna_error\"}");
+            }   
+            else if(g_protocol_type == PROTOCOL_BLE_HID) {
+                esp_hidd_send_consumer_value("{\"status\": \"antenna_error\"}");
+            }
+            break;
+        }
         default:
+            ESP_LOGW(TASK_TAG, "Unknown status: %d", byStatus);
             break;
         }
     }

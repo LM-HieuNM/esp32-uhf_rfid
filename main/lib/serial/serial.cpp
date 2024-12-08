@@ -83,8 +83,7 @@ static void rx_task(void *arg)
 {
 	uint8_t* data = (uint8_t*) malloc(RX_BUF_SIZE+1);
     while (1) {
-
-		uint16_t rxBytes = uart_read_bytes(UART_NUM_1, data, RX_BUF_SIZE, 10 / portTICK_PERIOD_MS);
+		uint16_t rxBytes = uart_read_bytes(UART_NUM_1, data, RX_BUF_SIZE, 50 / portTICK_PERIOD_MS);
 		if(rxBytes > 0) {
 			uint8_t* buffer = (uint8_t*)malloc(rxBytes);
 			memcpy(buffer, data, rxBytes);
@@ -99,7 +98,7 @@ static void rx_task(void *arg)
 				ESP_LOGE(TAG, "Failed to send to queue");
 			}
 		}
-		vTaskDelay(1 / portTICK_PERIOD_MS);
+		vTaskDelay(5 / portTICK_PERIOD_MS);
     }
     free(data);
 }

@@ -9,6 +9,8 @@
 #define MAIN_APP_NVS_H_
 
 #include "TagManage.hpp"
+#include "esp_err.h"
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -47,6 +49,14 @@ typedef struct {
     bool antennas[16];
 } antenna_config_t;
 extern antenna_config_t current_antenna_config;
+
+// Thêm namespace cho biến tạm thời
+extern const char app_nvs_temp_namespace[];
+
+// Thêm khai báo hàm
+esp_err_t app_nvs_set_temp_config(int32_t value);
+esp_err_t app_nvs_get_temp_config(int32_t *value);
+esp_err_t app_nvs_clear_temp_config(void);
 
 /**
  * Saves station mode Wifi credentials to NVS
